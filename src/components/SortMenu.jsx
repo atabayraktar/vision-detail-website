@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import usePresence from '@/hooks/usePresence';
 import GlassSurface from './GlassSurface';
 
 // No "Yeni Gelenler" option — there's no real recency signal in the data (every product's
@@ -10,6 +11,7 @@ export const SORT_OPTIONS = [
 
 export default function SortMenu({ value, onChange }) {
   const [open, setOpen] = useState(false);
+  const { mounted, closing } = usePresence(open, 350);
   const rootRef = useRef(null);
   const current = SORT_OPTIONS.find((opt) => opt.value === value) ?? SORT_OPTIONS[0];
 
@@ -46,10 +48,10 @@ export default function SortMenu({ value, onChange }) {
         </svg>
       </GlassSurface>
 
-      {open && (
+      {mounted && (
         <GlassSurface
           as="ul"
-          className="sort-menu__list glass-surface--tight glass-surface--solid"
+          className={`sort-menu__list glass-surface--tight glass-surface--solid${closing ? ' is-closing' : ''}`}
           contentClassName="sort-menu__list-content"
           role="listbox"
           aria-label="Sıralama"

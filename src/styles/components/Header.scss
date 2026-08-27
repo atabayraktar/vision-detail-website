@@ -53,12 +53,47 @@
     }
   }
 
-  &__vd-logo {
+  // Sized like the old single <Image> was — the two stacked logo variants (Header.jsx) sit
+  // absolutely inside this box instead of each carrying their own width.
+  &__vd-logo-stack {
+    position: relative;
+    display: block;
     width: 104px;
-    height: auto;
+    aspect-ratio: 140 / 58;
 
     @media (min-width: 1024px) {
       width: 126px;
+    }
+  }
+
+  &__vd-logo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    // Crossfades between the two logo files on theme change instead of an instant src-swap
+    // (see Header.jsx) — the piece that was actually snapping while every color token
+    // elsewhere already faded smoothly.
+    transition: opacity 0.35s var(--ease-out);
+
+    &--dark {
+      opacity: 1;
+    }
+
+    &--light {
+      opacity: 0;
+    }
+  }
+
+  // Logo rule (CLAUDE.md): dark variation on light surfaces, light on dark. The header
+  // itself is a light glass surface in light mode and a dark one in dark mode.
+  :root[data-theme='dark'] & {
+    .site-header__vd-logo--dark {
+      opacity: 0;
+    }
+
+    .site-header__vd-logo--light {
+      opacity: 1;
     }
   }
 
@@ -234,6 +269,13 @@
     // panel drops out of the header. translateY only, no scale — see that keyframe's
     // comment for why (scale + backdrop-filter broke the blur during the animation).
     animation: dropdown-peel 0.5s var(--ease-spring);
+
+    // Reverse the entrance keyframe on close instead of just vanishing (see Header.jsx's
+    // usePresence usage) — full shorthand redeclaration at higher specificity so it
+    // actually overrides the base animation above.
+    &.is-closing {
+      animation: dropdown-peel-close 0.35s var(--ease-out) forwards;
+    }
 
     @media (min-width: 900px) {
       display: none;

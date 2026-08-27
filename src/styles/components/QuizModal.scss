@@ -9,6 +9,10 @@
   justify-content: center;
   padding: var(--space-4);
   animation: quiz-fade 0.35s var(--ease-out);
+
+  &.is-closing {
+    animation: quiz-fade-close 0.3s var(--ease-out) forwards;
+  }
 }
 
 @keyframes quiz-fade {
@@ -20,11 +24,47 @@
   }
 }
 
+// Exit animations (played via .is-closing — see usePresence.js), shared by every backdrop/
+// panel that reuses quiz-fade/quiz-pop (QuizModal, FilterPanelSheet, the product lightbox).
+// Separate keyframe NAMES rather than `animation: quiz-fade ... reverse` on the same name —
+// see globals.scss's dropdown-peel-close comment for why: changing direction/duration
+// while animation-name stays identical doesn't restart an already-finished animation, it
+// just silently no-ops, so the panel would vanish instantly instead of fading out.
+@keyframes quiz-fade-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .quiz-modal {
   width: 100%;
   max-width: 480px;
   border-radius: var(--radius-lg);
   animation: quiz-pop 0.4s var(--ease-spring);
+
+  &.is-closing {
+    animation: quiz-pop-close 0.3s var(--ease-out) forwards;
+  }
+}
+
+// Each question (and the final result) is a freshly-keyed block (see QuizModal.jsx) — this
+// plays on every step change, not just the modal's own open/close.
+.quiz-modal__step-block {
+  animation: quiz-step-in 0.4s var(--ease-out);
+}
+
+@keyframes quiz-step-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes quiz-pop {
@@ -35,6 +75,17 @@
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes quiz-pop-close {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
   }
 }
 

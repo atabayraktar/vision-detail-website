@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { LANGUAGES, useLanguage } from '@/context/LanguageContext';
+import usePresence from '@/hooks/usePresence';
 import GlassSurface from './GlassSurface';
 
 const LANGUAGE_NAMES = { tr: 'Türkçe', en: 'English', de: 'Deutsch' };
@@ -42,6 +43,7 @@ const FLAGS = {
 export default function LanguageSwitcher({ variant = 'dropdown' }) {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
+  const { mounted, closing } = usePresence(open, 350);
   const rootRef = useRef(null);
 
   if (variant === 'inline') {
@@ -98,10 +100,10 @@ export default function LanguageSwitcher({ variant = 'dropdown' }) {
         </svg>
       </GlassSurface>
 
-      {open && (
+      {mounted && (
         <GlassSurface
           as="ul"
-          className="lang-switch__menu glass-surface--tight glass-surface--solid"
+          className={`lang-switch__menu glass-surface--tight glass-surface--solid${closing ? ' is-closing' : ''}`}
           contentClassName="lang-switch__menu-content"
           role="listbox"
           aria-label="Dil seçimi / Language / Sprache"

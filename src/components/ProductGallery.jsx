@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import usePresence from '@/hooks/usePresence';
 import GlassSurface from './GlassSurface';
 
 export default function ProductGallery({ images, alt }) {
@@ -83,19 +84,22 @@ export default function ProductGallery({ images, alt }) {
         </ul>
       )}
 
-      {lightboxOpen && (
-        <Lightbox images={images} index={index} alt={alt} total={total} onGo={go} onClose={() => setLightboxOpen(false)} />
-      )}
+      <Lightbox open={lightboxOpen} images={images} index={index} alt={alt} total={total} onGo={go} onClose={() => setLightboxOpen(false)} />
     </div>
   );
 }
 
 // Full-screen zoom — click the main image (or any thumbnail) to open. Same
-// backdrop/close/focus-trap pattern as QuizModal.jsx for consistency.
-function Lightbox({ images, index, alt, total, onGo, onClose }) {
+// backdrop/close/focus-trap pattern as QuizModal.jsx for consistency. Always mounted by
+// the parent (controlled via `open`) so usePresence can delay the unmount long enough for
+// an exit animation — see that hook's comment.
+function Lightbox({ open, images, index, alt, total, onGo, onClose }) {
   const dialogRef = useRef(null);
+  const { mounted, closing } = usePresence(open, 350);
 
   useEffect(() => {
+    if (!mounted) return undefined;
+
     const previouslyFocused = document.activeElement;
     dialogRef.current?.focus();
     document.body.style.overflow = 'hidden';
@@ -113,11 +117,13 @@ function Lightbox({ images, index, alt, total, onGo, onClose }) {
       previouslyFocused?.focus?.();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
+  }, [mounted, index]);
+
+  if (!mounted) return null;
 
   return (
     <div
-      className="product-lightbox__backdrop"
+      className={`product-lightbox__backdrop${closing ? ' is-closing' : ''}`}
       onMouseDown={(e) => e.target === e.currentTarget && onClose()}
       role="dialog"
       aria-modal="true"
@@ -137,7 +143,7 @@ function Lightbox({ images, index, alt, total, onGo, onClose }) {
           that's still inside the frame's box — clicking there hit the frame, not the
           backdrop, so nothing closed. Closing on any click here (frame or image) matches
           what people expect from "tap the dark area to dismiss." */}
-      <div className="product-lightbox__frame" onClick={onClose}>
+      <div className={`product-lightbox__frame${closing ? ' is-closing' : ''}`} onClick={onClose}>
         <Image key={images[index]} src={images[index]} alt={alt} fill sizes="100vw" style={{ objectFit: 'contain' }} priority />
       </div>
 

@@ -1,26 +1,28 @@
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { useTheme } from '@/context/ThemeContext';
 import { footer, contactSection } from '@/data/homepageContent';
 import GlassSurface from './GlassSurface';
 
 export default function Footer() {
   const { t } = useLanguage();
-  const { theme } = useTheme();
   const year = new Date().getFullYear();
-  // Logo rule: dark variation on light surfaces, light variation on dark surfaces (see
-  // CLAUDE.md's Logo rule + Header.jsx's identical swap).
-  const vdLogoSrc = theme === 'dark' ? '/logos/vision-detail-light.webp' : '/logos/vision-detail-dark.webp';
 
   return (
     <GlassSurface as="footer" className="site-footer glass-surface--calm glass-drift" contentClassName="site-footer__content">
       <a href="/" className="site-footer__logo" aria-label="Vision Detail — anasayfa">
-        <Image src={vdLogoSrc} alt="Vision Detail" width={120} height={50} />
+        {/* Both variants stacked, crossfaded in pure CSS on theme change — see Header.jsx's
+            identical technique and Footer.scss for why (an instant src-swap read as the
+            whole theme toggle "snapping" even though every color token elsewhere faded). */}
+        <span className="site-footer__logo-stack">
+          <Image src="/logos/vision-detail-dark.webp" alt="Vision Detail" width={120} height={50} className="site-footer__vd-logo site-footer__vd-logo--dark" />
+          <Image src="/logos/vision-detail-light.webp" alt="" aria-hidden="true" width={120} height={50} className="site-footer__vd-logo site-footer__vd-logo--light" />
+        </span>
         {/* Same masked-gradient hover technique as the header/About logos (see Header.jsx) —
-            a gradient-painted copy of the same image, faded in and swept on hover. */}
+            a gradient-painted copy of the same image, faded in and swept on hover. Mask
+            uses the dark file's alpha shape regardless of theme (see Header.jsx's note). */}
         <span
           className="site-footer__logo-glow"
-          style={{ maskImage: `url(${vdLogoSrc})`, WebkitMaskImage: `url(${vdLogoSrc})` }}
+          style={{ maskImage: 'url(/logos/vision-detail-dark.webp)', WebkitMaskImage: 'url(/logos/vision-detail-dark.webp)' }}
           aria-hidden="true"
         />
       </a>

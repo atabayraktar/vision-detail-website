@@ -147,6 +147,25 @@ ol {
   }
 }
 
+// Exit animation for the same panels, played via .is-closing (see usePresence.js) while
+// the component stays mounted long enough for this to finish. Deliberately a SEPARATE
+// keyframe rather than `animation: dropdown-peel ... reverse` on the same name — per the
+// CSS Animations spec, changing animation-direction/duration while animation-name stays
+// identical does NOT restart the animation, it just retargets the already-finished
+// instance, which measured as opacity frozen at 1 for the whole "closing" duration before
+// the element just vanished (verified via a requestAnimationFrame-sampled trace, 2026-08)
+// — a distinct name forces the browser to actually start a new animation.
+@keyframes dropdown-peel-close {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+}
+
 .gradient-text {
   background-image: var(--gradient-text);
   background-size: 200% auto;

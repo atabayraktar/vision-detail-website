@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import usePresence from '@/hooks/usePresence';
 import GlassSurface from './GlassSurface';
 
 const COLLAPSED_COUNT = 6;
@@ -96,10 +97,20 @@ export default function FilterPanel({ categories, active, onSelect, className = 
 // Mobile: same list rendered inside a full-screen GlassSurface sheet — see FilterPanel.scss
 // and ProductListing usage for how the two variants are toggled.
 export function FilterPanelSheet({ open, onClose, ...props }) {
-  if (!open) return null;
+  const { mounted, closing } = usePresence(open, 350);
+  if (!mounted) return null;
   return (
-    <div className="filter-sheet__backdrop" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <GlassSurface as="div" className="filter-sheet glass-surface--calm" contentClassName="filter-sheet__content">
+    <div
+      className={`filter-sheet__backdrop${closing ? ' is-closing' : ''}`}
+      onMouseDown={(e) => e.target === e.currentTarget && onClose()}
+    >
+      {/* --solid — the plain --calm tint read as too faint/washed-out to read the category
+          list against a busy product grid behind it (user-reported "çok silik"). */}
+      <GlassSurface
+        as="div"
+        className={`filter-sheet glass-surface--calm glass-surface--solid${closing ? ' is-closing' : ''}`}
+        contentClassName="filter-sheet__content"
+      >
         <div className="filter-sheet__head">
           <span className="filter-sheet__heading">Filtrele</span>
           <button type="button" className="filter-sheet__close" onClick={onClose} aria-label="Kapat">

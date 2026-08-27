@@ -1,7 +1,9 @@
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFab from '@/components/WhatsAppFab';
+import ScrollTopButton from '@/components/ScrollTopButton';
 import ProductGallery from '@/components/ProductGallery';
 import ProductInfo from '@/components/ProductInfo';
 import ProductPoster from '@/components/ProductPoster';
@@ -35,7 +37,25 @@ export async function getStaticProps({ params }) {
 export default function ProductDetailPage({ product, siblings, categories }) {
   useScrollReveal();
   const { t } = useLanguage();
+  const router = useRouter();
   const category = categories.find((c) => c.slug === product.category);
+
+  // "Almost back to where you were" (the user's own framing) rather than a plain link to
+  // /urunler: router.back() replays the actual browser history entry, which — since
+  // /urunler already syncs search/category/sort/page into the URL and reads them back on
+  // load — restores the filtered list AND (natively, via the browser's own scroll
+  // restoration) the scroll position, not just an unfiltered page 1. Only safe when the
+  // previous entry is actually this site's listing page; a bookmarked/shared product link
+  // has no useful "back" to return to, so it falls back to a plain /urunler navigation.
+  const goBack = () => {
+    const cameFromListing =
+      typeof window !== 'undefined' &&
+      window.history.length > 1 &&
+      document.referrer &&
+      new URL(document.referrer).origin === window.location.origin;
+    if (cameFromListing) router.back();
+    else router.push('/urunler');
+  };
   const name = t(product.name);
   const url = `${SITE_URL}/urunler/${product.id}`;
   const title = `${name} | Vision Detail`;
@@ -104,6 +124,13 @@ export default function ProductDetailPage({ product, siblings, categories }) {
 
       <main id="main-content">
         <section className="product-detail container">
+          <button type="button" className="product-detail__back gradient-hover" onClick={goBack}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Ürünlere geri dön
+          </button>
+
           <div className="product-detail__gallery-info" data-reveal>
             <ProductGallery images={product.gallery} alt={name} />
             <ProductInfo product={product} siblings={siblings} />
@@ -118,6 +145,7 @@ export default function ProductDetailPage({ product, siblings, categories }) {
 
       <Footer />
       <WhatsAppFab />
+      <ScrollTopButton />
     </>
   );
 }

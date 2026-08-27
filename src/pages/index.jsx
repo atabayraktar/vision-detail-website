@@ -7,6 +7,7 @@ import PolishingBanner from '@/components/PolishingBanner';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppFab from '@/components/WhatsAppFab';
+import ScrollTopButton from '@/components/ScrollTopButton';
 import useScrollReveal from '@/hooks/useScrollReveal';
 
 const SITE_URL = 'https://visiondetail.com.tr';
@@ -134,6 +135,7 @@ export default function HomePage() {
 
       <Footer />
       <WhatsAppFab />
+      <ScrollTopButton />
     </>
   );
 }

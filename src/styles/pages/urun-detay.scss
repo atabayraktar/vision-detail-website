@@ -3,6 +3,26 @@
   padding-bottom: var(--space-9);
 }
 
+.product-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-5);
+  font-family: var(--font-body);
+  font-variation-settings: 'wght' 450, 'wdth' 95;
+  font-size: 14.5px;
+  color: var(--mute);
+
+  svg {
+    transition: transform 0.3s var(--ease-spring);
+  }
+
+  &:hover svg,
+  &:focus-visible svg {
+    transform: translateX(-3px);
+  }
+}
+
 .product-detail__gallery-info {
   display: grid;
   gap: var(--space-7);

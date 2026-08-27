@@ -1,0 +1,50 @@
+.scroll-top-fab {
+  position: fixed;
+  right: var(--space-4);
+  // Stacked directly above WhatsAppFab (60px tall, same right column) with a 12px gap.
+  bottom: calc(var(--space-4) + 60px + 12px);
+  z-index: var(--z-fab);
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  // Same footer-avoidance lift as WhatsAppFab.jsx, tracked independently since --fab-lift
+  // is set inline per-element, not shared.
+  //
+  // Entrance/exit: opacity + scale + the same translateY lift, combined into one
+  // transform so the lift math isn't fought by a second transform declaration. Hidden
+  // state also scales down and disables pointer events — this is a real show/hide, not
+  // just a visual fade, so it can't be tabbed to or clicked while invisible.
+  opacity: 0;
+  transform: translateY(calc(var(--fab-lift, 0px) * -1)) scale(0.7);
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-out), transform 0.4s var(--ease-spring);
+
+  &--visible {
+    opacity: 1;
+    transform: translateY(calc(var(--fab-lift, 0px) * -1)) scale(1);
+    pointer-events: auto;
+  }
+
+  @media (min-width: 768px) {
+    right: var(--space-6);
+    bottom: calc(var(--space-6) + 60px + 12px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: opacity 0.2s linear;
+    transform: translateY(calc(var(--fab-lift, 0px) * -1));
+
+    &--visible {
+      transform: translateY(calc(var(--fab-lift, 0px) * -1));
+    }
+  }
+}
+
+.scroll-top-fab__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

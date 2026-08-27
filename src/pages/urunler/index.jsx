@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFab from '@/components/WhatsAppFab';
+import ScrollTopButton from '@/components/ScrollTopButton';
 import SearchBar from '@/components/SearchBar';
 import SortMenu, { SORT_OPTIONS } from '@/components/SortMenu';
 import FilterPanel, { FilterPanelSheet } from '@/components/FilterPanel';
@@ -202,6 +203,7 @@ export default function ProductsPage({ products: allProducts, categories }) {
 
       <Footer />
       <WhatsAppFab />
+      <ScrollTopButton />
     </>
   );
 }

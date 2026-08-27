@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLanguage } from '@/context/LanguageContext';
-import { useTheme } from '@/context/ThemeContext';
 import { header } from '@/data/homepageContent';
+import usePresence from '@/hooks/usePresence';
 import GlassSurface from './GlassSurface';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
@@ -12,14 +12,10 @@ const CHEMICALWORKZ_URL = 'https://www.chemicalworkz.de/';
 
 export default function Header() {
   const { t } = useLanguage();
-  const { theme } = useTheme();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { mounted: menuMounted, closing: menuClosing } = usePresence(menuOpen, 350);
   const [scrolled, setScrolled] = useState(false);
-  // Logo rule: dark variation on light surfaces, light variation on dark surfaces (see
-  // CLAUDE.md's Logo rule) — the header itself is a light/frosted glass surface in light
-  // mode and a dark one in dark mode, so the logo swaps with the theme.
-  const vdLogoSrc = theme === 'dark' ? '/logos/vision-detail-light.webp' : '/logos/vision-detail-dark.webp';
 
   // Small "reacts to scroll" cue for the floating glass pill — solidifies slightly once
   // there's page content behind it to blur, instead of sitting static the whole time.
@@ -57,20 +53,38 @@ export default function Header() {
     >
       <div className="site-header__brand">
         <a href="/" className="site-header__logo-link" aria-label="Vision Detail — anasayfa" onClick={onLogoClick}>
-          <Image
-            src={vdLogoSrc}
-            alt="Vision Detail"
-            width={140}
-            height={58}
-            priority
-            className="site-header__vd-logo"
-          />
+          {/* Both logo variants render at once, stacked, with the theme switch crossfading
+              their opacity in pure CSS (see Header.scss) — swapping a single <Image>'s src
+              instead snapped instantly with no way to transition between two different
+              files, which read as the whole theme toggle "just snapping" even though every
+              color token elsewhere was already crossfading. */}
+          <span className="site-header__vd-logo-stack">
+            <Image
+              src="/logos/vision-detail-dark.webp"
+              alt="Vision Detail"
+              width={140}
+              height={58}
+              priority
+              className="site-header__vd-logo site-header__vd-logo--dark"
+            />
+            <Image
+              src="/logos/vision-detail-light.webp"
+              alt=""
+              aria-hidden="true"
+              width={140}
+              height={58}
+              priority
+              className="site-header__vd-logo site-header__vd-logo--light"
+            />
+          </span>
           {/* Gradient-on-hover for a raster logo: a masked copy of the same image, painted
               with the brand gradient instead of re-colored via filter (imprecise/hacky for
-              matching exact gradient stops), faded in on hover/focus. */}
+              matching exact gradient stops), faded in on hover/focus. Mask uses the dark
+              file's alpha shape regardless of theme — both variants share the same silhouette,
+              only the ink color differs, and a mask only reads the alpha channel anyway. */}
           <span
             className="site-header__logo-glow"
-            style={{ maskImage: `url(${vdLogoSrc})`, WebkitMaskImage: `url(${vdLogoSrc})` }}
+            style={{ maskImage: 'url(/logos/vision-detail-dark.webp)', WebkitMaskImage: 'url(/logos/vision-detail-dark.webp)' }}
             aria-hidden="true"
           />
         </a>
@@ -135,11 +149,11 @@ export default function Header() {
         </div>
       </div>
 
-      {menuOpen && (
+      {menuMounted && (
         <GlassSurface
           as="div"
           id="mobile-nav"
-          className="site-header__mobile-menu glass-surface--calm glass-surface--solid"
+          className={`site-header__mobile-menu glass-surface--calm glass-surface--solid${menuClosing ? ' is-closing' : ''}`}
           contentClassName="site-header__mobile-menu-content"
         >
           <nav aria-label="Mobil menü">

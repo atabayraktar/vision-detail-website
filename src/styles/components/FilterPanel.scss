@@ -104,6 +104,13 @@
   align-items: flex-end;
   animation: quiz-fade 0.35s var(--ease-out);
 
+  // Reverse the entrance keyframe instead of just vanishing on close (see FilterPanel.jsx's
+  // usePresence usage) — a full shorthand redeclaration at higher specificity (class+class)
+  // so it actually overrides the base animation above, not just animation-direction alone.
+  &.is-closing {
+    animation: quiz-fade-close 0.3s var(--ease-out) forwards;
+  }
+
   @media (min-width: 640px) {
     align-items: center;
     justify-content: center;
@@ -117,6 +124,10 @@
   overflow-y: auto;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   animation: quiz-pop 0.4s var(--ease-spring);
+
+  &.is-closing {
+    animation: quiz-pop-close 0.3s var(--ease-out) forwards;
+  }
 
   @media (min-width: 640px) {
     max-width: 420px;

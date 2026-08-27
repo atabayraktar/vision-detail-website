@@ -59,6 +59,12 @@
   // @keyframes dropdown-peel.
   animation: dropdown-peel 0.5s var(--ease-spring);
 
+  // Reverse the entrance on close instead of vanishing (see LanguageSwitcher.jsx's
+  // usePresence usage).
+  &.is-closing {
+    animation: dropdown-peel-close 0.35s var(--ease-out) forwards;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }

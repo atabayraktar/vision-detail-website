@@ -49,7 +49,7 @@ export default function PolishingBanner() {
         </GlassSurface>
       </div>
 
-      {open && <QuizModal onClose={() => { setOpen(false); triggerRef.current?.focus(); }} />}
+      <QuizModal open={open} onClose={() => { setOpen(false); triggerRef.current?.focus(); }} />
     </section>
   );
 }
