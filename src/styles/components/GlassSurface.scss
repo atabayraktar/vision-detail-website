@@ -86,11 +86,7 @@
       position: absolute;
       inset: 0;
       opacity: 0;
-      background: radial-gradient(
-        220px circle at var(--glass-mx) var(--glass-my),
-        rgba(255, 255, 255, 0.55),
-        transparent 65%
-      );
+      background: radial-gradient(220px circle at var(--glass-mx) var(--glass-my), var(--glass-glow), transparent 65%);
       transition: opacity 0.5s var(--ease-out);
     }
   }
@@ -174,7 +170,7 @@ button.glass-surface {
   // light on hover. Smaller radius + lower peak opacity keeps it a highlight, not a
   // floodlight, without touching the (correctly-sized) glow on small glass surfaces.
   .glass-surface__shine::after {
-    background: radial-gradient(140px circle at var(--glass-mx) var(--glass-my), rgba(255, 255, 255, 0.32), transparent 65%);
+    background: radial-gradient(140px circle at var(--glass-mx) var(--glass-my), var(--glass-glow-calm), transparent 65%);
   }
 }
 

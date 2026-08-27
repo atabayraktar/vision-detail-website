@@ -90,6 +90,11 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.3),
     inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.8),
     inset -1px -1px 1px -1px rgba(255, 255, 255, 0.45);
+  // Mouse-tracked pointer glow (the radial highlight that follows the cursor — see
+  // GlassSurface.scss's __shine::after). --calm is the reduced amplitude used on large
+  // structural panes (header/footer/forms).
+  --glass-glow: rgba(255, 255, 255, 0.55);
+  --glass-glow-calm: rgba(255, 255, 255, 0.32);
   --glass-blur: 5px;
 
   // motion
@@ -190,6 +195,12 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.07),
     inset 1px 1.5px 4px -1px rgba(255, 255, 255, 0.08),
     inset -1px -1px 4px -1px rgba(255, 255, 255, 0.05);
+  // Same story as the ambient shine above: a 0.55/0.32-alpha pointer glow that's a subtle
+  // sheen against light mode's bright interior becomes a small spotlight against this dark
+  // one. Cut roughly 3.5x so the cursor still visibly "catches" the glass without the glow
+  // reading as its own light source.
+  --glass-glow: rgba(255, 255, 255, 0.16);
+  --glass-glow-calm: rgba(255, 255, 255, 0.09);
   --glass-wrapper-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
