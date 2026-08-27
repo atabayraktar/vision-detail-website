@@ -1,0 +1,37 @@
+.whatsapp-fab {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: var(--z-fab);
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  // --fab-lift (WhatsAppFab.jsx, scroll-driven) is 0 until the footer's top edge starts
+  // rising past this rest position, then tracks the overlap 1:1 — the FAB rides up and
+  // parks just above the footer instead of sitting on top of it or disappearing.
+  transform: translateY(calc(var(--fab-lift, 0px) * -1));
+
+  @media (min-width: 768px) {
+    right: var(--space-6);
+    bottom: var(--space-6);
+  }
+}
+
+.whatsapp-fab__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-fab__badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

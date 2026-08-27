@@ -1,0 +1,121 @@
+.site-footer {
+  margin: var(--space-6) var(--space-4) var(--space-4);
+  border-radius: var(--radius-lg);
+  // Scroll float (see .glass-drift): gentler and in the scroll's direction — the footer
+  // trails the page slightly instead of leading it.
+  --drift-k: 0.55;
+
+  @media (min-width: 768px) {
+    margin: var(--space-8) var(--space-6) var(--space-6);
+  }
+}
+
+// Three-part layout — logo / copyright / icons — with the copyright genuinely centered on
+// the row (not just "between" the other two) via a 1fr/auto/1fr grid, matching outer columns.
+.site-footer__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  text-align: center;
+
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-5) var(--space-7);
+  }
+}
+
+.site-footer__logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 700px) {
+    justify-self: start;
+  }
+
+  img {
+    width: 108px;
+    height: auto;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .site-footer__logo-glow {
+      opacity: 1;
+      animation: gradient-sweep 2.4s linear infinite;
+    }
+  }
+}
+
+// Same mask-image gradient-hover technique as the header/About ChemicalWorkz logos — see
+// Header.scss's &__logo-glow for why mask-size is 100% 100% (not `contain`) and why the
+// hover state runs a continuous sweep instead of a static fade.
+.site-footer__logo-glow {
+  position: absolute;
+  inset: 0;
+  background-image: var(--gradient-text);
+  background-size: 200% auto;
+  background-position: 0% center;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out);
+  pointer-events: none;
+}
+
+.site-footer__rights {
+  color: var(--faint);
+  font-size: 13px;
+  white-space: nowrap;
+
+  @media (min-width: 700px) {
+    justify-self: center;
+  }
+}
+
+.site-footer__icons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  @media (min-width: 700px) {
+    justify-self: end;
+    // No clearance margin needed for the fixed WhatsAppFab any more: it lifts to rest just
+    // above the footer instead of overlapping it (see WhatsAppFab.jsx's scroll listener).
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--mute);
+    transition: color 0.3s var(--ease-out);
+
+    // Icons can't use .gradient-hover's background-clip:text trick, so the hover state
+    // points stroke/fill directly at the shared gradient def (see Footer.jsx) instead — no
+    // background swap, same "only color that moves is the brand gradient" rule as text.
+    // Covers every shape element (Instagram's icon is rect/circle, not path — a path-only
+    // selector here left it the only icon that didn't react on hover).
+    &:hover,
+    &:focus-visible {
+      svg :is(path, rect, circle, ellipse, polygon, line)[stroke='currentColor'] {
+        stroke: url(#footer-icon-gradient);
+      }
+
+      svg :is(path, rect, circle, ellipse, polygon, line)[fill='currentColor'] {
+        fill: url(#footer-icon-gradient);
+      }
+    }
+  }
+}

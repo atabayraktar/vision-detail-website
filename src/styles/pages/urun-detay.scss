@@ -1,0 +1,14 @@
+.product-detail {
+  padding-top: calc(var(--space-9) + var(--space-6));
+  padding-bottom: var(--space-9);
+}
+
+.product-detail__gallery-info {
+  display: grid;
+  gap: var(--space-7);
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}

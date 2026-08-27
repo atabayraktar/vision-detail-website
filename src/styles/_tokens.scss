@@ -1,0 +1,153 @@
+// Vision Detail brand tokens — mirror of .claude/brand_assets/brand_guidelines.jpg.
+// Do not invent values here; pull from the brand file.
+
+:root {
+  // surfaces
+  --bg: #fcfcfd;
+  --ink: #000000;
+  --mute: rgba(0, 0, 0, 0.58);
+  // 0.4 measured ~3:1 against --bg — fails WCAG AA (4.5:1) for the small metadata text
+  // this token is used on sitewide (header info line, eyebrows, footer rights, etc).
+  // 0.55 clears AA (~4.9:1) while staying visibly lighter than --mute.
+  --faint: rgba(0, 0, 0, 0.55);
+  --line: rgba(0, 0, 0, 0.14);
+  --hair: rgba(0, 0, 0, 0.08);
+
+  // Generic ink-tinted overlays (subtle fills, hover washes, card backgrounds) — every
+  // component that used to hardcode rgba(0,0,0,X) at one of these exact opacities now
+  // references the matching token instead, so dark mode's override block below (which
+  // flips these to white-tinted) reaches every one of those spots automatically instead of
+  // needing a per-component dark-mode rule.
+  --overlay-03: rgba(0, 0, 0, 0.03);
+  --overlay-04: rgba(0, 0, 0, 0.04);
+  --overlay-05: rgba(0, 0, 0, 0.05);
+  --overlay-06: rgba(0, 0, 0, 0.06);
+  --overlay-08: rgba(0, 0, 0, 0.08);
+  --overlay-12: rgba(0, 0, 0, 0.12);
+
+  // brand gradient — hover text only, never a fill
+  --g1: #e05316;
+  --g2: #fe6a2e;
+  --g3: #ffaa49;
+  --gradient-text: linear-gradient(
+    90deg,
+    var(--g1) 0%,
+    var(--g2) 28%,
+    var(--g3) 50%,
+    var(--g2) 72%,
+    var(--g1) 100%
+  );
+
+  // liquid glass
+  //
+  // DELIBERATE DEVIATION from brand_guidelines.jpg's literal shadow/shine values,
+  // empirically isolated (2026-08, close-up pixel sampling on dark + light backdrops):
+  // - Shadow: the brand's `0 6px 6px` (blur = offset) renders a hard dark rim that pools
+  //   as gray smudges around small pills' corners on light ground (measured Δ27 vs bg at
+  //   +1px outside the edge). Same total lightness redistributed with blur > offset reads
+  //   as the intended soft float with no corner blotches (Δ19 → visually smooth).
+  // - Shine: the brand's `inset 2px 2px 1px 0 @ .6 / inset -1px -1px 1px 1px @ .4` paints
+  //   a 3-4px diffuse white band around the whole perimeter; over dark backdrops (FAB,
+  //   header on hero video) it reads as a chalky white halo hugging every edge (edge band
+  //   measured +70..+101 luminance over the surface interior — the user-reported
+  //   "çevresinde beyazlık" bug). Restructured as a crisp 1px hairline ring + the same
+  //   asymmetric top-left/bottom-right specular pair at hairline width: edge band lands
+  //   within ~±5 of the interior on dark ground while the lit-from-above asymmetry the
+  //   brand specifies stays intact. Do NOT revert to the literal brand values without
+  //   re-checking the close-up edge renders on a dark backdrop.
+  --glass-wrapper-shadow: 0 4px 14px rgba(0, 0, 0, 0.09), 0 1px 5px rgba(0, 0, 0, 0.05);
+  --glass-tint: rgba(240, 238, 233, 0.35);
+  // Stronger/more opaque variant for CTAs, modals and other surfaces that need to stay
+  // legible over unpredictable media (see GlassSurface.scss's --solid modifier).
+  --glass-tint-solid: rgba(252, 252, 253, 0.73);
+  // The floating header/footer solidify slightly once the page is scrolled under them —
+  // same family as --glass-tint, just a touch more opaque (see GlassSurface.scss's
+  // .is-scrolled state).
+  --glass-tint-scrolled: rgba(240, 238, 233, 0.55);
+  --glass-shine:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px -1px rgba(255, 255, 255, 0.25);
+  --glass-blur: 5px;
+
+  // motion
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 2.2);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  // radius scale — soft, never architectural
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  // spacing scale (4/8pt rhythm)
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  // layout
+  --container-max: 1440px;
+  --container-pad: clamp(20px, 5vw, 64px);
+  --header-height: 80px;
+
+  // z-index scale
+  --z-base: 0;
+  --z-content: 10;
+  --z-glass: 20;
+  --z-header: 40;
+  --z-fab: 60;
+  --z-modal: 100;
+}
+
+// Dark mode — toggled via html[data-theme="dark"] (see ThemeContext.jsx + the
+// FOUC-prevention script in _document.jsx). Not part of the brand file (which only
+// specifies a light palette) — these are reasonable derived choices: same gradient/accent,
+// same fonts, same glass mechanics, inverted surfaces. Re-check this block against any
+// future brand-file update that adds an official dark palette rather than trusting it as
+// permanent.
+:root[data-theme='dark'] {
+  --bg: #0a0a0b;
+  --ink: #ffffff;
+  --mute: rgba(255, 255, 255, 0.64);
+  --faint: rgba(255, 255, 255, 0.6);
+  --line: rgba(255, 255, 255, 0.16);
+  --hair: rgba(255, 255, 255, 0.09);
+
+  --overlay-03: rgba(255, 255, 255, 0.03);
+  --overlay-04: rgba(255, 255, 255, 0.04);
+  --overlay-05: rgba(255, 255, 255, 0.05);
+  --overlay-06: rgba(255, 255, 255, 0.06);
+  --overlay-08: rgba(255, 255, 255, 0.08);
+  --overlay-12: rgba(255, 255, 255, 0.12);
+
+  // Glass stays the same MECHANISM (blur + distortion + tint + shine), just re-tuned for a
+  // dark backdrop: a warm dark tint instead of warm off-white, and a shine that reads as a
+  // soft highlight against dark ground instead of the light-mode hairline (which would be
+  // nearly invisible on black). Shadow deepens since a light shadow disappears on a dark page.
+  --glass-tint: rgba(30, 28, 26, 0.45);
+  --glass-tint-solid: rgba(20, 19, 18, 0.82);
+  --glass-tint-scrolled: rgba(20, 19, 18, 0.6);
+  --glass-shine:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.22),
+    inset -1px -1px 1px -1px rgba(255, 255, 255, 0.1);
+  --glass-wrapper-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+// Typography fallback stacks. --font-archivo/--font-hanken are injected by next/font/google
+// as CSS vars scoped to the .font-root wrapper div (see _app.jsx), NOT to :root — so
+// --font-display/--font-body must be declared on that same element, not :root.
+// Custom properties substitute var() at the element where they're DECLARED, then inherit
+// the already-resolved value — declaring `--font-display: var(--font-archivo), …` at :root
+// would resolve --font-archivo before it exists there, permanently invalidating
+// --font-display (and silently falling back every consumer to the browser's default serif).
+.font-root {
+  --font-display: var(--font-archivo), 'Helvetica Neue', Arial, sans-serif;
+  --font-body: var(--font-hanken), 'Helvetica Neue', Arial, sans-serif;
+}

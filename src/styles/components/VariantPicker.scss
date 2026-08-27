@@ -1,0 +1,44 @@
+.variant-picker {
+  width: 100%;
+  margin-bottom: var(--space-5);
+}
+
+.variant-picker__label {
+  display: block;
+  font-size: 12px;
+  color: var(--faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-2);
+}
+
+.variant-picker__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.variant-picker__option {
+  display: inline-flex;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  color: var(--mute);
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+
+  // Only the sibling links are actually interactive (the current variant renders as a
+  // plain, non-interactive span — see VariantPicker.jsx) so this only ever visibly
+  // triggers on them in practice.
+  &:hover,
+  &:focus-visible {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--ink);
+  }
+
+  &--active {
+    background: var(--ink);
+    color: var(--bg);
+    box-shadow: none;
+  }
+}

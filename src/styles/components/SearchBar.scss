@@ -1,0 +1,39 @@
+.search-bar {
+  border-radius: var(--radius-pill);
+  width: 100%;
+  max-width: 420px;
+
+  svg {
+    flex-shrink: 0;
+    color: var(--faint);
+  }
+}
+
+.search-bar__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 13px 20px;
+
+  input {
+    appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-family: var(--font-body);
+    font-variation-settings: 'wght' 400, 'wdth' 95;
+    font-size: 15px;
+    color: var(--ink);
+
+    &::placeholder {
+      color: var(--faint);
+    }
+
+    // Remove the native search-input "x" clear icon so it doesn't clash with the glass
+    // pill's own shape/spacing.
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+}

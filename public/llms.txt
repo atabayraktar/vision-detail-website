@@ -1,0 +1,23 @@
+# Vision Detail
+
+> Vision Detail is the official Turkey distributor of ChemicalWorkz, a Germany-based
+> manufacturer of professional vehicle detailing equipment and premium care accessories.
+> Vision Detail brings ChemicalWorkz's German-engineered detailing products — polishers,
+> applicators, microfiber cloths, drying and inspection equipment — to professionals and
+> car enthusiasts in Turkey.
+
+## Key facts
+
+- Entity relationship: Vision Detail = ChemicalWorkz's Turkey distributor (not the manufacturer).
+- Manufacturer: ChemicalWorkz, headquartered in Germany, distributed across 10+ European countries.
+- Sales channel: WhatsApp (+90 505 483 5668) — there is no online cart/checkout on this site.
+- Contact: Instagram @visiondetail.tr, WhatsApp https://wa.me/905054835668
+
+## Pages
+
+- [Homepage](https://visiondetail.com.tr/): hero, equipment categories, ChemicalWorkz brand background, polisher-picker quiz, contact.
+- [Products](https://visiondetail.com.tr/urunler): full ChemicalWorkz product catalog available through Vision Detail, filterable by category.
+
+## Sitemap
+
+https://visiondetail.com.tr/sitemap.xml

@@ -1,0 +1,310 @@
+.site-header {
+  // fixed, not sticky: sticky kept the header in document flow, pushing the hero down and
+  // leaving a strip of bare page background above it. Fixed takes it out of flow so the
+  // hero starts at y=0 and the pill genuinely floats OVER the media (the brand's
+  // "floating" header), while still blurring whatever scrolls beneath.
+  position: fixed;
+  top: var(--space-4);
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  margin-inline: var(--space-4);
+  border-radius: var(--radius-pill);
+  // Scroll float: the pill lags a beat against scroll direction (see .glass-drift).
+  --drift-k: -0.9;
+
+  @media (min-width: 768px) {
+    margin-inline: var(--space-6);
+    top: var(--space-5);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: 14px var(--space-3) 14px var(--space-4);
+    min-height: 72px;
+
+    @media (min-width: 1024px) {
+      padding: 14px var(--space-4) 14px var(--space-5);
+    }
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-width: 0;
+  }
+
+  &__logo-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    &:hover,
+    &:focus-visible {
+      .site-header__logo-glow {
+        opacity: 1;
+        animation: gradient-sweep 2.4s linear infinite;
+      }
+    }
+  }
+
+  &__vd-logo {
+    width: 104px;
+    height: auto;
+
+    @media (min-width: 1024px) {
+      width: 126px;
+    }
+  }
+
+  // Gradient-on-hover for the raster logos (see Header.jsx) — a same-shaped mask painted
+  // with the brand gradient, faded in over the plain logo instead of replacing it.
+  //
+  // mask-size was `contain`: the mask engine fits the source's own intrinsic ratio into
+  // this box independently of how the browser actually rounded the sibling <Image>'s
+  // pixel box (e.g. the ChemicalWorkz mark's real viewBox is 374×46.01 ≈ 8.13:1, height:
+  // auto on a ~96px-wide box rounds to a whole pixel). Any sub-pixel gap between those two
+  // independently-computed fits reads as a letterboxed, misaligned gradient — a visible
+  // smudge/fringe around the glyph edges instead of a crisp recolor. This span's box is
+  // already sized to exactly match the visible logo (inset:0 on a flex-hugged parent), so
+  // stretching the mask to fill it exactly removes that gap — no letterboxing to misalign.
+  &__logo-glow {
+    position: absolute;
+    inset: 0;
+    background-image: var(--gradient-text);
+    background-size: 200% auto;
+    background-position: 0% center;
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: left center;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    opacity: 0;
+    transition: opacity 0.35s var(--ease-out);
+    pointer-events: none;
+  }
+
+  &__divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--line);
+    flex-shrink: 0;
+    display: none;
+
+    @media (min-width: 640px) {
+      display: block;
+    }
+  }
+
+  &__cw {
+    display: none;
+    // Stacked by default (logo above, info text below) — a noticeably more compact
+    // footprint than sitting side by side, so the lockup can appear this much earlier
+    // without crowding the nav. Only switches to a row once the header genuinely has
+    // width to spare.
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    min-width: 0;
+
+    @media (min-width: 640px) {
+      display: flex;
+    }
+
+    @media (min-width: 1280px) {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-3);
+    }
+  }
+
+  &__cw-logo-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    &:hover,
+    &:focus-visible {
+      .site-header__logo-glow {
+        opacity: 1;
+        animation: gradient-sweep 2.4s linear infinite;
+      }
+    }
+  }
+
+  &__cw-logo {
+    width: 118px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  &__cw-info {
+    font-family: var(--font-body);
+    font-variation-settings: 'wght' 450, 'wdth' 95;
+    font-size: 14.5px;
+    line-height: 1.35;
+    // --faint measured ~4.9:1 against the plain page bg (see brand deviation note in
+    // _tokens.scss) but the header sits on frosted glass over unpredictable media — --mute
+    // is the same legibility fix already applied to the nav links just below.
+    color: var(--mute);
+    max-width: 192px;
+    // Shows as soon as the (now-stacked, so cheap on width) __cw block itself does — was
+    // gated to 1024px+ back when it sat beside the logo and needed the extra room.
+  }
+
+  // Nav + language switcher/burger read as one grouped cluster on the right, instead of
+  // the nav floating alone in the middle of empty space (was a 3-way space-between split
+  // — brand / nav / right — now a 2-way split of brand vs. this whole group).
+  &__nav-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-shrink: 0;
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: 900px) {
+      display: block;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+    }
+
+    a {
+      font-family: var(--font-body);
+      // Bumped from the brand's base 240 — the header floats over unpredictable photo/video
+      // backdrops where the thin weight read as illegible, not just quiet.
+      font-variation-settings: 'wght' 450, 'wdth' 95;
+      font-size: 17px;
+      white-space: nowrap;
+      // Full ink at rest, overriding .gradient-hover's muted default: the header floats
+      // over unpredictable backdrops (dark hero video, mid-scroll content) where 58%
+      // black isn't reliably legible. Hover still wins with the gradient
+      // (.gradient-hover:hover is more specific than this rule).
+      color: var(--ink);
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+  }
+
+  &__lang-desktop {
+    display: none;
+
+    @media (min-width: 900px) {
+      display: block;
+    }
+  }
+
+  &__mobile-menu {
+    position: absolute;
+    top: calc(100% + var(--space-3));
+    left: 0;
+    right: 0;
+    border-radius: var(--radius-lg);
+    // Drops down from the header's bottom edge instead of just popping into place — the
+    // brand's spring easing (with its built-in overshoot) gives it a springy "bloop"
+    // landing instead of a flat slide. Shared with the language dropdown (see
+    // globals.scss's @keyframes dropdown-peel) — same trigger, same effect everywhere a
+    // panel drops out of the header. translateY only, no scale — see that keyframe's
+    // comment for why (scale + backdrop-filter broke the blur during the animation).
+    animation: dropdown-peel 0.5s var(--ease-spring);
+
+    @media (min-width: 900px) {
+      display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  &__mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding: var(--space-5);
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    nav a {
+      font-size: 18px;
+      font-family: var(--font-display);
+      font-variation-settings: 'wght' 240, 'wdth' 125;
+      display: block;
+      padding: var(--space-2) var(--space-3);
+      margin-inline: calc(var(--space-3) * -1);
+      border-radius: var(--radius-sm);
+      transition: background-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+
+      // Row highlight from the reference pen's menu variant: frosted row under the
+      // pointer — translucent white + a soft inner shadow + its own light blur.
+      &:hover,
+      &:focus-visible {
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+      }
+    }
+  }
+}
+
+.nav__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+  }
+
+  &[aria-expanded='true'] {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,225 @@
+.glass-surface {
+  position: relative;
+  isolation: isolate;
+  box-shadow: var(--glass-wrapper-shadow);
+  // The hover inflate lives on the standalone `scale` property (not transform) so it
+  // composes with — instead of overwriting — the transform-based scroll drift on
+  // .glass-drift surfaces, and can transition independently of the per-frame drift value.
+  transition: scale 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring);
+
+  // Pointer-tracked highlight — a soft light-spot that follows the cursor, set by
+  // GlassSurface's onPointerMove handler (falls back to a centered glow with no JS/touch).
+  --glass-mx: 50%;
+  --glass-my: 30%;
+
+  // Liquid hover is universal: EVERY glass surface responds (brand rule — same effect
+  // everywhere). Declared on the base class (not inherited) so a small surface nested
+  // inside a --calm one (e.g. the language trigger inside the header) keeps the full
+  // droplet response. Large structural panes override via .glass-surface--calm below.
+  --glass-hover-scale: 1.035;
+  --glass-content-scale: 0.96;
+
+  // Only the decorative blur/tint/shine layers clip to the rounded shape — NOT the whole
+  // surface. A popover rendered inside a GlassSurface (the header's language dropdown, the
+  // mobile nav panel) needs to visually extend past its trigger's box; clipping the whole
+  // .glass-surface (the old approach) silently hid every such popover.
+  &__clip {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  // The distortion lives INSIDE the backdrop-filter chain, never as an element-level
+  // `filter`. With `filter: url(...)` on this span, feDisplacementMap operates on the
+  // element's own paint (the backdrop-filter output, hard-clipped to the border box) —
+  // edge pixels displace into nothing and come back as a dark semi-transparent inset
+  // ring hugging the whole contour (the "TR button corner blackness" / banner-CTA corner
+  // smudge bug, empirically isolated 2026-08). Inside backdrop-filter the displacement
+  // samples the real backdrop, which extends past the element, so edges get true pixels
+  // on every side and the result is spec-clipped to the rounded border box. Blur stays
+  // first in the list so the visual (blur, then refraction) matches the brand reference.
+  &__effect {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+  }
+}
+
+// Progressive enhancement: browsers that can run SVG reference filters in
+// backdrop-filter (Chromium) get the displacement texture; others (Safari) keep the
+// plain blur — an acceptable, still-legible fallback, same as before.
+@supports (backdrop-filter: url('#glass-distortion')) {
+  .glass-surface__effect {
+    backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion');
+    -webkit-backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion');
+  }
+
+  // Small surfaces (buttons, pills, icon chips) get the gentler-scale distortion —
+  // see GlassFilterDefs.jsx for why the default filter tears at this size.
+  .glass-surface--tight .glass-surface__effect {
+    backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion-sm');
+    -webkit-backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion-sm');
+  }
+}
+
+.glass-surface {
+
+  &__tint {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--glass-tint);
+  }
+
+  &__shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    box-shadow: var(--glass-shine);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: radial-gradient(
+        220px circle at var(--glass-mx) var(--glass-my),
+        rgba(255, 255, 255, 0.55),
+        transparent 65%
+      );
+      transition: opacity 0.5s var(--ease-out);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    display: block;
+  }
+
+  // Stronger, more opaque tint for CTAs that sit on photos/video — the base tint is tuned
+  // for the header/footer's off-white page background and reads as too faint over media.
+  // 0.73 (was 0.82) keeps labels legible over bright photos while letting the distortion
+  // texture and backdrop actually show through — at 0.82 the surface read as a flat white
+  // pill. The shine steps up in the same move so the glass edge-light stays articulate
+  // against the denser tint (same asymmetric top-left/bottom-right ratio as the brand spec).
+  &--solid &__tint {
+    background: var(--glass-tint-solid);
+  }
+
+  // Same hairline structure as the base --glass-shine token (see _tokens.scss for the
+  // halo post-mortem), stepped up in intensity so the edge-light stays articulate against
+  // the denser --solid tint. Same asymmetry, same 1px width — never a diffuse band.
+  &--solid &__shine {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+      inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.8),
+      inset -1px -1px 1px -1px rgba(255, 255, 255, 0.45);
+  }
+}
+
+// The liquid-droplet hover from the brand's reference pen (CodePen vEOWpYM "Liquid Glass
+// Effect macOS") — no lift. The shell INFLATES slightly on the spring curve (the overshoot
+// in --ease-spring is what makes it "wobble" as the pointer arrives) while the content is
+// pressed inward a touch, like a droplet swelling around a fingertip. The pen animates
+// padding; scale reads identically and stays on the compositor (no reflow).
+// This applies to EVERY glass surface — buttons, header, footer, form, panels — per the
+// brand rule that all glass reacts identically; structural panes just use the calmer
+// amplitude from .glass-surface--calm.
+.glass-surface {
+  .glass-surface__content {
+    transition: transform 0.4s var(--ease-spring);
+  }
+
+  &:hover,
+  &:focus-visible {
+    scale: var(--glass-hover-scale);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12), 0 0 24px rgba(0, 0, 0, 0.06);
+
+    .glass-surface__shine::after {
+      opacity: 1;
+    }
+
+    .glass-surface__content {
+      transform: scale(var(--glass-content-scale));
+    }
+  }
+}
+
+a.glass-surface,
+button.glass-surface {
+  cursor: pointer;
+
+  &:active {
+    scale: 0.97;
+
+    .glass-surface__content {
+      transform: scale(0.98);
+    }
+  }
+}
+
+// Large structural surfaces (header, footer, contact form, banner/quiz panels): the full
+// 3.5% inflate reads as lurching at this size, and squeezing a form's content while the
+// user is about to type in it is hostile — so the amplitude drops but the surface still
+// visibly answers the pointer (shine + swell + shadow), same language at lower volume.
+.glass-surface--calm {
+  --glass-hover-scale: 1.012;
+  --glass-content-scale: 1;
+
+  // The base 220px/0.55-opacity mouse-glow was tuned for small surfaces (buttons, chips)
+  // where it reads as a contained highlight. Stretched across a wide structural pane (the
+  // header pill can be 1200px+) the same radius instead floods most of the surface with
+  // light on hover. Smaller radius + lower peak opacity keeps it a highlight, not a
+  // floodlight, without touching the (correctly-sized) glow on small glass surfaces.
+  .glass-surface__shine::after {
+    background: radial-gradient(140px circle at var(--glass-mx) var(--glass-my), rgba(255, 255, 255, 0.32), transparent 65%);
+  }
+}
+
+// Scroll float: elements opting in via .glass-drift ride the rAF-lerped --scroll-drift
+// variable (set on <html> in _app.jsx, a few px at most, decays to 0 at rest) so the big
+// glass panes lag a beat behind the page — "floating on" the scroll instead of welded to
+// it. --drift-k sets each surface's direction/amount. transform is excluded from the base
+// transition here: the drift value is already smoothed per-frame, and layering a 0.4s
+// spring on top would rubber-band it.
+.glass-surface.glass-drift {
+  // scale stays transitioned (the hover inflate) — only transform is excluded, since the
+  // drift value is already smoothed per-frame and a 0.4s spring on top would rubber-band it.
+  transition: scale 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring);
+  transform: translateY(calc(var(--scroll-drift, 0px) * var(--drift-k, -1)));
+  will-change: transform;
+}
+
+// The sticky header solidifies slightly once the page scrolls under it — small but
+// legible "liquid glass reacts to scroll" cue instead of sitting completely inert.
+.glass-surface.is-scrolled {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.06);
+
+  .glass-surface__tint {
+    background: var(--glass-tint-scrolled);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-surface {
+    &:hover,
+    &:focus-visible,
+    &:active {
+      scale: none;
+
+      .glass-surface__content {
+        transform: none;
+      }
+    }
+  }
+
+  .glass-surface.glass-drift {
+    transform: none;
+  }
+}
+

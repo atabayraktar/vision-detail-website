@@ -1,0 +1,143 @@
+.category-slider {
+  padding-block: var(--space-9);
+}
+
+.category-slider__head {
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-3);
+}
+
+.category-slider__title {
+  font-size: clamp(24px, 3.4vw, 38px);
+}
+
+// Both arrows grouped together at the head row's right edge (not flanking the track) —
+// same glass-squircle icon-button system as the WhatsApp FAB (Brand Guidelines · 05).
+.category-slider__arrows {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.category-slider__control {
+  width: 44px;
+  height: 44px;
+  border: none;
+  padding: 0;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+
+  .category-slider__control-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Same box as every other section's .container — same left/right inset as the rest of
+// the page, AND (this is the part that matters) this element's own border-box is what
+// actually clips the scrollable track inside it. Padding does NOT clip an overflowing
+// child in a scroll container — only the element's own box boundary does — so putting the
+// inset here (on a plain, non-scrolling wrapper) instead of as padding on the scrollable
+// track itself is what stops a 5th card from rendering (visibly) inside what used to be
+// the track's own padding-right zone.
+.category-slider__viewport {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.category-slider__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-2);
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.category-slider__card {
+  flex: 0 0 auto;
+  width: 65vw;
+  max-width: 300px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: block;
+
+  @media (min-width: 640px) {
+    width: 42vw;
+    max-width: 280px;
+  }
+
+  @media (min-width: 1024px) {
+    // Percentage widths on a flex item resolve against the track's CONTENT box (padding
+    // already excluded), so this sizes exactly 4 cards + 3 gaps to fill the track's inset
+    // content width — no partial 5th card peeking in at rest, and the row's left/right
+    // edges land flush with every other section's .container padding.
+    width: calc((100% - 3 * 20px) / 4);
+    max-width: none;
+  }
+}
+
+.category-slider__image-wrap {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--hair);
+
+  img {
+    transition: transform 0.6s var(--ease-spring);
+  }
+}
+
+// A grounded scrim so the overlaid title stays legible over any photo, without darkening
+// the whole card — just enough lift at the bottom-left corner the title sits in.
+.category-slider__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.18) 45%, transparent 70%);
+  pointer-events: none;
+}
+
+.category-slider__card:hover .category-slider__image-wrap img,
+.category-slider__card:focus-visible .category-slider__image-wrap img {
+  transform: scale(1.06);
+}
+
+// Reveal stagger: cards trail each other by 40ms as the row enters the viewport —
+// noticeable rhythm, not a parade (kept subtle per the motion guardrails).
+.category-slider__track {
+  @for $i from 1 through 8 {
+    .category-slider__card:nth-child(#{$i}) {
+      --reveal-delay: #{($i - 1) * 40}ms;
+    }
+  }
+}
+
+// Overlaid on the image, anchored to the bottom-left corner — a big, wide-set display
+// line (or two) instead of a caption sitting quietly under the photo.
+.category-slider__card-title {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 1;
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 240, 'wdth' 125;
+  font-size: clamp(19px, 2.6vw, 24px);
+  line-height: 1.15;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}

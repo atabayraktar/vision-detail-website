@@ -1,0 +1,13 @@
+.product-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+  margin-top: var(--space-8);
+
+  @media (max-width: 640px) {
+    aspect-ratio: 4 / 3;
+  }
+}

@@ -1,0 +1,136 @@
+.quiz-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: quiz-fade 0.35s var(--ease-out);
+}
+
+@keyframes quiz-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.quiz-modal {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-lg);
+  animation: quiz-pop 0.4s var(--ease-spring);
+}
+
+@keyframes quiz-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.quiz-modal__content {
+  padding: var(--space-6);
+  position: relative;
+
+  @media (max-width: 480px) {
+    padding: var(--space-5);
+  }
+}
+
+.quiz-modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: background-color 0.3s var(--ease-out);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.12);
+  }
+}
+
+.quiz-modal__step {
+  font-size: 13px;
+  color: var(--faint);
+  margin-bottom: var(--space-3);
+}
+
+.quiz-modal__question {
+  font-size: clamp(20px, 2.6vw, 26px);
+  margin-bottom: var(--space-5);
+  padding-right: var(--space-6);
+}
+
+.quiz-modal__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  button {
+    width: 100%;
+    text-align: left;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--line);
+    background: transparent;
+    font-size: 15px;
+    transition: border-color 0.3s var(--ease-out), background-color 0.3s var(--ease-out);
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--g2);
+      background: rgba(254, 106, 46, 0.06);
+    }
+  }
+}
+
+.quiz-modal__result {
+  padding-top: var(--space-2);
+
+  h2 {
+    font-size: clamp(20px, 2.6vw, 26px);
+    margin-bottom: var(--space-4);
+  }
+
+  p {
+    color: var(--mute);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: var(--space-6);
+  }
+}
+
+.quiz-modal__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--ink);
+  color: var(--bg);
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  transition: transform 0.3s var(--ease-spring);
+
+  // Inflate, don't lift — matches the sitewide liquid hover language.
+  &:hover {
+    transform: scale(1.035);
+  }
+}

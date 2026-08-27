@@ -1,0 +1,161 @@
+.hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slider__viewport {
+  overflow: hidden;
+  width: 100%;
+  // Mouse-drag swipe affordance (see HeroSlider.jsx's onMouseDown) alongside the existing
+  // touch swipe — signals the surface is draggable without adding a hard cut when the drag
+  // is released mid-motion (the slide transform's own transition handles that smoothly).
+  cursor: grab;
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.hero-slider__track {
+  display: flex;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.hero-slider__slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 100svh;
+  min-height: 560px;
+  max-height: 900px;
+  display: flex;
+  align-items: flex-end;
+
+  @media (max-width: 480px) and (orientation: landscape) {
+    height: 100svh;
+    min-height: 380px;
+  }
+}
+
+.hero-slider__media {
+  position: absolute;
+  inset: 0;
+
+  video,
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Art-directed mobile/desktop image pair (see HeroSlider.jsx) — same 640px cutoff as the
+// video sources' <source media> query, so the same viewport always gets the same crop
+// treatment regardless of which hero slide is showing.
+.hero-slider__media-mobile {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .hero-slider__media-mobile {
+    display: block;
+  }
+
+  .hero-slider__media-desktop {
+    display: none;
+  }
+}
+
+.hero-slider__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.15) 45%, rgba(0, 0, 0, 0.05) 70%);
+}
+
+.hero-slider__copy {
+  position: relative;
+  z-index: var(--z-content);
+  color: #fff;
+  padding: var(--space-7) var(--container-pad) var(--space-8);
+  max-width: 620px;
+
+  @media (max-width: 480px) {
+    padding: var(--space-6) var(--container-pad) var(--space-7);
+  }
+}
+
+.hero-slider__title {
+  color: #fff;
+  font-size: clamp(28px, 5vw, 52px);
+  margin-bottom: var(--space-4);
+}
+
+.hero-slider__info {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(14px, 1.6vw, 17px);
+  max-width: 52ch;
+  margin-bottom: var(--space-5);
+}
+
+.hero-slider__cta {
+  display: inline-block;
+  border-radius: var(--radius-pill);
+
+  .hero-slider__cta-content,
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 15px 16px 15px 26px;
+    font-size: 15px;
+
+    svg {
+      flex-shrink: 0;
+      transition: transform 0.35s var(--ease-spring);
+    }
+  }
+
+  &:hover .hero-slider__cta-content svg {
+    transform: translateX(3px);
+  }
+}
+
+.hero-slider__dots {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-content);
+  display: flex;
+  gap: var(--space-2);
+}
+
+// Visual dot stays small (brand look); the button's actual hit area is enlarged to meet
+// the 24x24px WCAG 2.5.8 / Lighthouse target-size minimum via a centered ::after dot.
+.hero-slider__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    transition: background-color 0.3s var(--ease-out), transform 0.3s var(--ease-spring);
+  }
+
+  &--active::after {
+    background: #fff;
+    transform: scale(1.3);
+  }
+}

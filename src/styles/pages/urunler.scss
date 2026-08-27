@@ -1,0 +1,86 @@
+// Unlike the homepage's hero (deliberately full-bleed under the floating header), this is
+// a plain content page — its own top padding clears the fixed header instead of hiding
+// behind it. ~header height (72px content + 24px top inset) plus real breathing room.
+.products-page {
+  padding-top: calc(var(--space-9) + var(--space-6));
+  padding-bottom: var(--space-9);
+}
+
+.products-page__title {
+  font-size: clamp(28px, 4vw, 44px);
+  margin-bottom: var(--space-3);
+}
+
+.products-page__intro {
+  color: var(--mute);
+  font-size: 16px;
+  max-width: 60ch;
+  margin-bottom: var(--space-6);
+}
+
+.products-page__toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.products-page__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+// Only the entry point into the mobile filter sheet — the desktop sidebar panel
+// (.products-page__filter-panel) handles filtering directly above 900px.
+.products-page__filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 11px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: background-color 0.25s var(--ease-out);
+  flex-shrink: 0;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.products-page__layout {
+  display: grid;
+  gap: var(--space-6);
+
+  @media (min-width: 900px) {
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+  }
+}
+
+.products-page__filter-panel {
+  display: none;
+
+  @media (min-width: 900px) {
+    display: block;
+    position: sticky;
+    top: calc(var(--space-9) + var(--space-4));
+  }
+}
+
+.products-page__results {
+  min-width: 0;
+}

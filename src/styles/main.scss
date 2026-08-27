@@ -1,0 +1,33 @@
+// Single entry point imported by _app.jsx — Next.js Pages Router only allows global
+// (non-module) CSS/SCSS to be imported from _app, so every component/page partial is
+// aggregated here instead of being imported inside its own component file. Each partial
+// still lives at src/styles/components/<Name>.scss / src/styles/pages/<name>.scss per
+// CLAUDE.md's styling convention; this file is just the required single import site.
+@use './globals';
+
+@use './components/GlassSurface';
+@use './components/LanguageSwitcher';
+@use './components/Header';
+@use './components/HeroSlider';
+@use './components/CategorySlider';
+@use './components/AboutChemicalWorkz';
+@use './components/PolishingBanner';
+@use './components/QuizModal';
+@use './components/ContactSection';
+@use './components/WhatsAppFab';
+@use './components/Footer';
+@use './components/SearchBar';
+@use './components/SortMenu';
+@use './components/FilterPanel';
+@use './components/ProductGrid';
+@use './components/ProductCard';
+@use './components/Pagination';
+@use './components/EmptyState';
+@use './components/ProductGallery';
+@use './components/ProductInfo';
+@use './components/VariantPicker';
+@use './components/ProductPoster';
+
+@use './pages/index';
+@use './pages/urunler';
+@use './pages/urun-detay';

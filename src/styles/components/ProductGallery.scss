@@ -1,0 +1,233 @@
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.product-gallery__main {
+  position: relative;
+}
+
+// Plays whenever the main image changes — a new product page (e.g. picking a different
+// color in VariantPicker), a thumbnail click, or an arrow click all remount this element
+// (see the `key={images[index]}` on the <Image> in ProductGallery.jsx). transform only,
+// deliberately not opacity — the ancestor .product-detail__gallery-info already fades in
+// via the sitewide [data-reveal] system, and stacking a second opacity animation on a
+// child of that caused a real flicker (see urun-detay.scss's git history) when the two
+// disagreed on timing; a scale-only settle can't have that problem.
+.product-gallery__image-wrap img {
+  animation: gallery-image-in 0.5s var(--ease-out);
+}
+
+@keyframes gallery-image-in {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-gallery__image-wrap img {
+    animation: none;
+  }
+}
+
+.product-gallery__image-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+  cursor: zoom-in;
+
+  // globals.scss's generic :focus-visible rule sets border-radius:var(--radius-sm) (10px)
+  // on whatever's focused — fine for small pill buttons, but it overrode this image's own
+  // 24px rounding whenever focus landed here (e.g. after closing the lightbox), making the
+  // outline (and the image inside it) read as a mismatched, mostly-square box.
+  &:focus-visible {
+    border-radius: var(--radius-lg);
+  }
+}
+
+.product-gallery__zoom-hint {
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.product-gallery__image-wrap:hover .product-gallery__zoom-hint,
+.product-gallery__image-wrap:focus-visible .product-gallery__zoom-hint {
+  opacity: 1;
+}
+
+// No hover on touch devices — the hint has to just be visible there, or nothing signals
+// the image is tappable.
+@media (hover: none) {
+  .product-gallery__zoom-hint {
+    opacity: 1;
+  }
+}
+
+// Same glass-squircle icon-button system as the category slider's arrows (Brand
+// Guidelines · 05) — kept visually consistent sitewide.
+.product-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border: none;
+  padding: 0;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+
+  &--prev {
+    left: var(--space-3);
+  }
+
+  &--next {
+    right: var(--space-3);
+  }
+}
+
+.product-gallery__arrow-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-gallery__thumbs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.product-gallery__thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--hair);
+  box-shadow: inset 0 0 0 1.5px transparent;
+  transition: box-shadow 0.25s var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 1.5px var(--line);
+  }
+
+  &--active {
+    box-shadow: inset 0 0 0 1.5px var(--g2);
+  }
+}
+
+// Full-screen zoom — same fade/pop language as QuizModal.scss's backdrop/panel.
+.product-lightbox__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  animation: quiz-fade 0.35s var(--ease-out);
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.product-lightbox__frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: quiz-pop 0.4s var(--ease-spring);
+}
+
+.product-lightbox__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.product-lightbox__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &--prev {
+    left: var(--space-4);
+  }
+
+  &--next {
+    right: var(--space-4);
+  }
+}
+
+.product-lightbox__count {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}

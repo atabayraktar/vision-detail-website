@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# claude tooling — local settings + raw source drops (not referenced by app code,
+# already processed into public/; way too large/irrelevant to ship in the repo)
+.claude/settings.local.json
+.claude/temporary screenshots/
+.claude/product-list/
+.claude/homepage_data/
+.claude/_check*.js
+.claude/tmp-*.mjs

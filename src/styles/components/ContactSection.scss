@@ -1,0 +1,245 @@
+.contact-section {
+  padding-block: var(--space-9);
+  // Clears the floating fixed header when the nav's "#iletisim" link scrolls here.
+  // Lenis's anchor scroll already lands with ~97px of clearance on its own; this adds a
+  // bit more breathing room rather than the header's full height (empirically tuned).
+  scroll-margin-top: 28px;
+}
+
+.contact-section__title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  margin-bottom: var(--space-6);
+}
+
+.contact-section__grid {
+  display: grid;
+  gap: var(--space-5);
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+  }
+}
+
+// A real embedded map now (was a decorative dotted-pattern placeholder) — the whole frame
+// is one big link out to Google Maps (see .contact-section__map-overlay), no separate
+// button floating on top of it.
+.contact-section__map {
+  position: relative;
+  min-height: 280px;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+}
+
+.contact-section__map-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  // Desaturate the default Google Maps palette a touch so it sits quietly under the glass
+  // chip instead of fighting the brand's warm-neutral surfaces with saturated map greens.
+  filter: saturate(0.85) contrast(0.96);
+}
+
+.contact-section__map-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  // Transparent — the map itself is the visible affordance, this just makes the whole
+  // frame clickable. A faint tint on hover/focus is the only feedback that it's a link.
+  background: transparent;
+  transition: background-color 0.3s var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.contact-section__form {
+  border-radius: var(--radius-lg);
+}
+
+.contact-section__form-content {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.contact-section__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  input,
+  textarea {
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: inset 0 0 0 1px var(--line);
+    padding: 13px 14px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--ink);
+    resize: vertical;
+    transition: box-shadow 0.3s var(--ease-out), background-color 0.3s var(--ease-out);
+
+    &::placeholder {
+      color: var(--faint);
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    // Brand-toned error state instead of the browser's default red outline/tooltip —
+    // validation is fully custom (form has noValidate; see ContactSection.jsx), driven by
+    // aria-invalid rather than :user-invalid so it only lights up after a real submit
+    // attempt, never on an untouched empty field. Deepest brand orange (--g1) rather than
+    // an alien red: clearly "wrong", still inside the palette. Kept BEFORE the
+    // :focus-visible rule so the focus ring wins while the user is actively fixing it.
+    &[aria-invalid='true'] {
+      background: rgba(224, 83, 22, 0.05);
+      box-shadow: inset 0 0 0 1.5px rgba(224, 83, 22, 0.6);
+    }
+
+    &:focus-visible {
+      outline: none;
+      background: #fff;
+      box-shadow: inset 0 0 0 1.5px var(--g2);
+    }
+  }
+}
+
+// Always in the DOM (see ContactSection.jsx) so its min-height reserves the same space
+// whether or not there's an error — toggling opacity instead of mounting/unmounting means
+// the field (and the rest of the form below it) never grows or shifts on validation.
+.contact-section__error {
+  min-height: 20.5px;
+  font-size: 12.5px;
+  color: var(--g1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease-out);
+
+  &.is-visible {
+    opacity: 1;
+  }
+
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+}
+
+.contact-section__submit {
+  align-self: flex-start;
+  border-radius: var(--radius-pill);
+  margin-top: var(--space-2);
+}
+
+.contact-section__submit-content {
+  padding: 13px 28px;
+  font-size: 15px;
+}
+
+// One left, one centered, one right across the row — not just three equal-width columns
+// (which left every item's own content hugging its column's left edge instead).
+.contact-section__info-row {
+  margin-top: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--hair);
+
+  @media (min-width: 480px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  li {
+    display: flex;
+  }
+}
+
+// The whole item is now one link (icon + label + value) instead of just the value text —
+// gap/alignment live here so the entire row is a single clickable/tappable target.
+.contact-section__info-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: inherit;
+  border-radius: var(--radius-md);
+  transition: transform 0.3s var(--ease-spring);
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-1px);
+
+    .contact-section__info-value {
+      color: var(--g2);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--g2);
+    outline-offset: 4px;
+  }
+}
+
+.contact-section__info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  background: rgba(0, 0, 0, 0.05);
+
+  &--whatsapp {
+    color: #25d366;
+  }
+}
+
+.contact-section__info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contact-section__info-value {
+  font-size: 14px;
+  color: var(--ink);
+  transition: color 0.3s var(--ease-out);
+}
+
+.contact-section__info-label {
+  font-size: 11px;
+  color: var(--faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

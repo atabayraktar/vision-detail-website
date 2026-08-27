@@ -1,0 +1,145 @@
+.lang-switch {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-switch__trigger {
+  border-radius: var(--radius-pill);
+}
+
+.lang-switch__trigger-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-family: var(--font-body);
+  font-variation-settings: 'wght' 450, 'wdth' 95;
+  // Same scale as the nav links it sits beside (Header.scss __nav a) — was noticeably
+  // smaller and read as an afterthought next to the enlarged nav text.
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+// Real flag chip shared by the trigger, every dropdown row, and the mobile inline row —
+// the rounding comes from overflow:hidden here, not an SVG clipPath (see LanguageSwitcher.jsx).
+.lang-switch__flag {
+  display: inline-flex;
+  align-self: center;
+  width: 18px;
+  height: 13px;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.lang-switch__chevron {
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.lang-switch__trigger[aria-expanded='true'] .lang-switch__chevron {
+  transform: rotate(180deg);
+}
+
+.lang-switch__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: var(--z-glass);
+  border-radius: var(--radius-md);
+  min-width: 140px;
+  // Same "drops off the header" entrance as the mobile nav panel — see globals.scss's
+  // @keyframes dropdown-peel.
+  animation: dropdown-peel 0.5s var(--ease-spring);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.lang-switch__menu-content {
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lang-switch__option {
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  text-align: left;
+  color: var(--mute);
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+
+  // Frosted row-highlight from the reference pen's menu variant — translucent white with
+  // a soft inner shadow and its own light blur, instead of a flat grey wash.
+  &:hover,
+  &:focus-visible {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: var(--ink);
+  }
+
+  // Gradient-ring border on the selected language — background layered as two images
+  // (solid fill in the padding-box, gradient in the border-box) is the standard way to get
+  // a crisp gradient border on a rounded shape; border-image doesn't handle border-radius.
+  &--active {
+    color: var(--ink);
+    border: 1.5px solid transparent;
+    background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)) padding-box, var(--gradient-text) border-box;
+    padding: 7.5px 8.5px;
+  }
+}
+
+.lang-switch__option-code {
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 450, 'wdth' 110;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.lang-switch__option-name {
+  font-family: var(--font-body);
+  font-variation-settings: 'wght' 450, 'wdth' 95;
+  font-size: 13px;
+}
+
+// Flat inline row used inside the mobile menu (no popover — see LanguageSwitcher.jsx).
+.lang-switch--inline {
+  display: flex;
+  gap: var(--space-2);
+
+  .lang-switch__option {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 6px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+  }
+
+  .lang-switch__option-name {
+    flex-basis: 100%;
+  }
+
+  .lang-switch__option--active {
+    border-color: var(--ink);
+    background: rgba(0, 0, 0, 0.06);
+  }
+}

@@ -1,0 +1,177 @@
+.about-cw {
+  padding-block: var(--space-9);
+  // Clears the floating fixed header when the nav's "#chemicalworkz" link scrolls here.
+  // Lenis's anchor scroll already lands with ~97px of clearance on its own; this adds a
+  // bit more breathing room rather than the header's full height (empirically tuned).
+  scroll-margin-top: 28px;
+}
+
+.about-cw__top {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  margin-bottom: var(--space-8);
+
+  // Two-column: the copy is left-aligned (not centered) and TOP-aligned with the image —
+  // heading and image start on the same y, per the latest design direction.
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+    text-align: left;
+  }
+}
+
+.about-cw__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+}
+
+.about-cw__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 900px) {
+    align-items: flex-start;
+    justify-self: stretch;
+  }
+}
+
+.about-cw__title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  margin-bottom: var(--space-4);
+}
+
+.about-cw__paragraph {
+  // Darker than --mute (0,0,0,.58) — the paragraph is the section's main copy, not a
+  // caption, and read too light against the amount of space it fills.
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 16.5px;
+  line-height: 1.7;
+  max-width: 46ch;
+}
+
+// "Visit the site" — logo + label, brand-gradient on hover (same mask-image technique as
+// the header logos: a gradient-painted copy of the raster/SVG mark, faded in over it).
+.about-cw__site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.about-cw__site-link-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 96px;
+    height: auto;
+  }
+}
+
+// mask-size: 100% 100% (not `contain`) — see the matching note on Header.scss's
+// &__logo-glow: this box is already sized to exactly match the visible logo, so
+// stretching the mask to fill it exactly avoids the sub-pixel letterbox gap that made
+// the gradient overlay read as a smudged/misaligned fringe instead of a crisp recolor.
+.about-cw__site-link-glow {
+  position: absolute;
+  inset: 0;
+  background-image: var(--gradient-text);
+  background-size: 200% auto;
+  background-position: 0% center;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+.about-cw__site-link:hover .about-cw__site-link-glow,
+.about-cw__site-link:focus-visible .about-cw__site-link-glow {
+  opacity: 1;
+  animation: gradient-sweep 2.4s linear infinite;
+}
+
+.about-cw__boxes {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+
+  @media (min-width: 560px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+// Real GlassSurface (not a flat rgba panel) — layout lives on the __content span,
+// the box itself only sets shape. Hover/shine/inflate come from the shared glass system.
+// Card anatomy: big display stat + a quiet boxless line icon on one row, description
+// beneath — the stat carries the hierarchy and goes brand-gradient on card hover
+// (ancestor rule lives next to the other .gradient-hover rules in globals.scss).
+.about-cw__box {
+  border-radius: var(--radius-lg);
+}
+
+.about-cw__box-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  height: 100%;
+}
+
+// Reveal stagger — boxes trail each other by 40ms as the row enters (subtle, one-shot).
+.about-cw__boxes {
+  @for $i from 1 through 5 {
+    .about-cw__box:nth-child(#{$i}) {
+      --reveal-delay: #{($i - 1) * 40}ms;
+    }
+  }
+}
+
+.about-cw__box-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.about-cw__stat.gradient-hover {
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 240, 'wdth' 125;
+  font-size: clamp(28px, 2.4vw, 34px);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  // Full-strength ink at rest — this is the card's headline, not a muted secondary
+  // label (overrides .gradient-hover's rest color; the hover gradient still applies).
+  color: var(--ink);
+}
+
+.about-cw__box-icon {
+  display: flex;
+  flex-shrink: 0;
+  // Quiet annotation, clearly subordinate to the stat; sits directly on the card glass.
+  color: var(--faint);
+  margin-top: 2px;
+}
+
+.about-cw__box-info {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mute);
+}
