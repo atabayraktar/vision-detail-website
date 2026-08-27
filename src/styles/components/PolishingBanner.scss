@@ -7,7 +7,12 @@
 .polishing-banner__frame {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  // The supplied mobile photo is natively 900x675 (4:3, landscape) — a 4:5 portrait box
+  // forced it into a much taller frame than the photo itself, so object-fit:cover had to
+  // crop heavily off the top/bottom to fill the extra height (the user-reported "mobilde
+  // bannerin heighti fazla" bug). Matching the frame to the photo's own ratio keeps nearly
+  // the whole shot in frame, cropping from the sides (scaling to fit width) instead.
+  aspect-ratio: 4 / 3;
   display: flex;
   align-items: flex-end;
   padding: var(--space-4);

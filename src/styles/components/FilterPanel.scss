@@ -27,6 +27,27 @@
   gap: 2px;
 }
 
+// grid-template-rows 0fr -> 1fr is the standard height-animate trick for content whose
+// height isn't known up front (category count varies) — the grid item's min-height:0 lets
+// it shrink to the 0fr track instead of forcing its own content height, and the track
+// itself animates, so the reveal genuinely grows/shrinks instead of snapping in at full
+// height (the previous behavior — plain conditional render — the user reported as
+// "tak tak açılıyo", opening abruptly with no animation).
+.filter-panel__extra {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease-spring);
+
+  &--open {
+    grid-template-rows: 1fr;
+  }
+}
+
+.filter-panel__extra-list {
+  min-height: 0;
+  overflow: hidden;
+}
+
 .filter-panel__item {
   width: 100%;
   text-align: left;
@@ -51,6 +72,9 @@
 
 .filter-panel__more {
   margin-top: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-size: 13px;
   color: var(--faint);
   text-decoration: underline;
@@ -59,6 +83,14 @@
   &:hover {
     color: var(--g2);
   }
+}
+
+.filter-panel__more-chevron {
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.filter-panel__more--open .filter-panel__more-chevron {
+  transform: rotate(180deg);
 }
 
 // Mobile full-screen filter sheet.

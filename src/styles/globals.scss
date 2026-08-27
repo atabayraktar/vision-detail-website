@@ -4,6 +4,21 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  // Smooth dark/light crossfade: every color-ish property gets a base transition so
+  // toggling the theme fades colors in instead of snapping instantly. Color-only
+  // (background-color/border-color/color/fill/stroke) — never transform or layout
+  // properties, so this can't fight the transform-based motion used elsewhere. box-shadow
+  // is deliberately excluded (expensive to animate across many elements at once; components
+  // that already transition their own box-shadow on hover keep doing so via their more
+  // specific selector, which wins over this universal one and fully replaces it — CSS
+  // `transition` is a shorthand, not additive, so there's no double animation).
+  // Component rules with their own `transition` naturally override this per-element (class
+  // specificity beats the universal selector), so nothing here fights an existing
+  // hover/press transition — this only fills the gap on elements that had none.
+  // Skipped entirely under prefers-reduced-motion via the transition-duration override
+  // below, same as every other animation on the site.
+  transition: background-color 0.35s var(--ease-out), border-color 0.35s var(--ease-out),
+    color 0.35s var(--ease-out), fill 0.35s var(--ease-out), stroke 0.35s var(--ease-out);
 }
 
 html {

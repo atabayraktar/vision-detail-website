@@ -18,8 +18,12 @@ export default function FilterPanel({ categories, active, onSelect, className = 
     if (activeIndex >= COLLAPSED_COUNT) setExpanded(true);
   }, [active, categories]);
 
-  const visible = expanded ? categories : categories.slice(0, COLLAPSED_COUNT);
-  const hasMore = categories.length > COLLAPSED_COUNT;
+  // Split into an always-visible base list and a collapsible "extra" tail instead of
+  // slicing one array — the base items need to stay mounted and static while only the
+  // extra tail animates open/closed (see the grid-rows 0fr/1fr technique in FilterPanel.scss).
+  const base = categories.slice(0, COLLAPSED_COUNT);
+  const extra = categories.slice(COLLAPSED_COUNT);
+  const hasMore = extra.length > 0;
 
   return (
     <div className={`filter-panel ${className}`}>
@@ -42,7 +46,7 @@ export default function FilterPanel({ categories, active, onSelect, className = 
             Tümü
           </button>
         </li>
-        {visible.map((cat) => (
+        {base.map((cat) => (
           <li key={cat.slug}>
             <button
               type="button"
@@ -56,8 +60,33 @@ export default function FilterPanel({ categories, active, onSelect, className = 
       </ul>
 
       {hasMore && (
-        <button type="button" className="filter-panel__more" onClick={() => setExpanded((e) => !e)}>
+        <div className={`filter-panel__extra${expanded ? ' filter-panel__extra--open' : ''}`}>
+          <ul className="filter-panel__list filter-panel__extra-list">
+            {extra.map((cat) => (
+              <li key={cat.slug}>
+                <button
+                  type="button"
+                  className={`filter-panel__item${active === cat.slug ? ' filter-panel__item--active' : ''}`}
+                  onClick={() => onSelect(cat.slug)}
+                >
+                  {t(cat.label)}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {hasMore && (
+        <button
+          type="button"
+          className={`filter-panel__more${expanded ? ' filter-panel__more--open' : ''}`}
+          onClick={() => setExpanded((e) => !e)}
+        >
           {expanded ? 'Daha az göster' : 'Daha fazla göster'}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="filter-panel__more-chevron">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </button>
       )}
     </div>

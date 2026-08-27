@@ -15,7 +15,7 @@ import { products, PRODUCT_CATEGORIES } from '@/data/products';
 import useScrollReveal from '@/hooks/useScrollReveal';
 
 const SITE_URL = 'https://visiondetail.com.tr';
-const TITLE = 'Ürünler | Vision Detail — ChemicalWorkz Türkiye';
+const TITLE = 'Ürünler | Vision Detail';
 const DESCRIPTION =
   "ChemicalWorkz'in Türkiye distribütörü Vision Detail üzerinden polisaj makineleri, detay fırçaları, mikrofiber bezler ve daha fazla profesyonel detailing ekipmanını keşfedin.";
 const PAGE_SIZE = 12;

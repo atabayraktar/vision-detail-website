@@ -38,7 +38,7 @@ export default function ProductDetailPage({ product, siblings, categories }) {
   const category = categories.find((c) => c.slug === product.category);
   const name = t(product.name);
   const url = `${SITE_URL}/urunler/${product.id}`;
-  const title = `${name} | Vision Detail — ChemicalWorkz Türkiye`;
+  const title = `${name} | Vision Detail`;
   const description = t(product.description);
 
   const productJsonLd = {

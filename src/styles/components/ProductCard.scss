@@ -12,14 +12,25 @@
   overflow: hidden;
   background: var(--hair);
 
+  // --ease-spring overshoots past its target before settling (that's what makes it feel
+  // springy) — fine growing INTO 1.06, but applied to the reverse (1.06 -> 1) it overshoots
+  // the other way and the scale briefly dips below 1, shrinking the image smaller than its
+  // own overflow:hidden box and exposing the rounded corners behind it for a frame (the
+  // user-reported "köşeleri gözüküyo" bug). object-fit:cover only guarantees full coverage
+  // at scale >= 1, so undershooting even slightly breaks that guarantee. Fixed by using
+  // different easing per direction: this base rule (used when returning to rest, since a
+  // property change animates with the transition of the style it's animating TO) settles
+  // without overshoot; the :hover rule below overrides it back to the springier curve for
+  // the entrance.
   img {
-    transition: transform 0.6s var(--ease-spring);
+    transition: transform 0.4s var(--ease-out);
   }
 }
 
 .product-card:hover .product-card__image-wrap img,
 .product-card:focus-visible .product-card__image-wrap img {
   transform: scale(1.06);
+  transition: transform 0.6s var(--ease-spring);
 }
 
 .product-card__badge {

@@ -10,7 +10,7 @@ import WhatsAppFab from '@/components/WhatsAppFab';
 import useScrollReveal from '@/hooks/useScrollReveal';
 
 const SITE_URL = 'https://visiondetail.com.tr';
-const TITLE = 'Vision Detail | ChemicalWorkz Türkiye Distribütörü';
+const TITLE = 'Vision Detail';
 const DESCRIPTION =
   "Vision Detail, Almanya merkezli ChemicalWorkz'ün Türkiye distribütörüdür. Profesyonel detailing ekipmanları, polisaj makineleri ve bakım aksesuarlarını keşfedin.";
 

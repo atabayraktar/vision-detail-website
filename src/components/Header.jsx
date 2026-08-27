@@ -40,6 +40,15 @@ export default function Header() {
     }
   };
 
+  // "ChemicalWorkz" and "İletişim" are in-page anchors to homepage-only sections — a bare
+  // "#chemicalworkz" href from /urunler or /urunler/[id] just appends the hash to the
+  // CURRENT url (e.g. /urunler#chemicalworkz), which points at nothing and silently does
+  // nothing (the user-reported "çalışmıyo" bug). Off the homepage these need the leading
+  // "/" to actually navigate there first; on the homepage itself, the bare hash is what
+  // keeps the existing Lenis-eased in-page scroll (see _app.jsx) instead of forcing a full
+  // reload of "/" just to land on a section already on screen.
+  const resolveNavHref = (href) => (href.startsWith('#') && router.pathname !== '/' ? `/${href}` : href);
+
   return (
     <GlassSurface
       as="header"
@@ -98,7 +107,7 @@ export default function Header() {
           <ul>
             {header.nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="gradient-hover">
+                <a href={resolveNavHref(item.href)} className="gradient-hover">
                   {t(item.label)}
                 </a>
               </li>
@@ -137,7 +146,7 @@ export default function Header() {
             <ul>
               {header.nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="gradient-hover" onClick={() => setMenuOpen(false)}>
+                  <a href={resolveNavHref(item.href)} className="gradient-hover" onClick={() => setMenuOpen(false)}>
                     {t(item.label)}
                   </a>
                 </li>

@@ -28,6 +28,13 @@ export default function GlassFilterDefs() {
         <feGaussianBlur in="mapped" stdDeviation="3" result="softMap" />
         <feDisplacementMap in="SourceGraphic" in2="softMap" scale="150" xChannelSelector="R" yChannelSelector="G" />
       </filter>
+      {/* stdDeviation bumped 2 -> 4 (dark mode, 2026-08): the sharp gamma curve above turns
+          the turbulence into near-binary bands rather than a smooth gradient, and at small
+          button sizes that shows up as a visible hard seam/streak through the refraction —
+          nearly invisible against a light-mode interior, but a distinct line against a dark
+          one (user-reported "white lines on swipe/CTA buttons"). More blur on the
+          displacement map softens that transition into a gradient too gentle to read as a
+          seam, while still moving enough to feel like refraction. */}
       <filter id="glass-distortion-sm" x="-20%" y="-20%" width="140%" height="140%">
         <feTurbulence type="fractalNoise" baseFrequency="0.03 0.03" numOctaves="1" seed="5" result="turbulence" />
         <feComponentTransfer in="turbulence" result="mapped">
@@ -35,7 +42,7 @@ export default function GlassFilterDefs() {
           <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
           <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
         </feComponentTransfer>
-        <feGaussianBlur in="mapped" stdDeviation="2" result="softMap" />
+        <feGaussianBlur in="mapped" stdDeviation="4" result="softMap" />
         <feDisplacementMap in="SourceGraphic" in2="softMap" scale="18" xChannelSelector="R" yChannelSelector="G" />
       </filter>
     </svg>

@@ -165,21 +165,24 @@
 // (which left every item's own content hugging its column's left edge instead).
 .contact-section__info-row {
   margin-top: var(--space-7);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-4);
+  // 2x2 grid on mobile instead of 4 stacked rows (the user-reported "alt alta 4 tane"
+  // layout) — halves the vertical space this block needs on a small screen while still
+  // giving each item room to breathe.
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4) var(--space-3);
   padding-top: var(--space-6);
   border-top: 1px solid var(--hair);
 
   @media (min-width: 480px) {
-    flex-direction: row;
+    grid-template-columns: repeat(4, auto);
     align-items: center;
     justify-content: space-between;
   }
 
   li {
     display: flex;
+    min-width: 0;
   }
 }
 

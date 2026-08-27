@@ -97,8 +97,13 @@
   overflow: hidden;
   background: var(--hair);
 
+  // Same directional-easing split as ProductCard.scss's image hover, for the same reason:
+  // --ease-spring's overshoot dips the scale below 1 on the way back to rest, briefly
+  // shrinking the image inside its own overflow:hidden box and exposing the rounded
+  // corners behind it. This base rule (active on the way back to rest) uses a
+  // non-overshooting curve; the hover rule below restores the springier entrance.
   img {
-    transition: transform 0.6s var(--ease-spring);
+    transition: transform 0.4s var(--ease-out);
   }
 }
 
@@ -114,6 +119,7 @@
 .category-slider__card:hover .category-slider__image-wrap img,
 .category-slider__card:focus-visible .category-slider__image-wrap img {
   transform: scale(1.06);
+  transition: transform 0.6s var(--ease-spring);
 }
 
 // Reveal stagger: cards trail each other by 40ms as the row enters the viewport —
