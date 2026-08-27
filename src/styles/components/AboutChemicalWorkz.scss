@@ -52,7 +52,7 @@
 .about-cw__paragraph {
   // Darker than --mute (0,0,0,.58) — the paragraph is the section's main copy, not a
   // caption, and read too light against the amount of space it fills.
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--ink-strong);
   font-size: 16.5px;
   line-height: 1.7;
   max-width: 46ch;

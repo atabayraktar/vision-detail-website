@@ -53,7 +53,7 @@
 
   &:hover,
   &:focus-visible {
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--overlay-04);
   }
 
   @media (min-width: 900px) {

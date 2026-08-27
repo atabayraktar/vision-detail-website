@@ -63,8 +63,8 @@
 
   &:hover,
   &:focus-visible {
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
+    background: var(--glass-row-hover-bg);
+    box-shadow: var(--glass-row-hover-shadow);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     color: var(--ink);

@@ -17,7 +17,7 @@
   transition: background-color 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
 
   &:hover:not(:disabled) {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--overlay-05);
   }
 
   &:disabled {
@@ -40,7 +40,7 @@
   transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
 
   &:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--overlay-05);
     color: var(--ink);
   }
 

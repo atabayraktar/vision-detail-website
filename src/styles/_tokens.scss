@@ -25,6 +25,23 @@
   --overlay-08: rgba(0, 0, 0, 0.08);
   --overlay-12: rgba(0, 0, 0, 0.12);
 
+  // Body copy that's deliberately darker/stronger than --mute (a section's main paragraph,
+  // not a caption) but not full --ink. Same rationale as --mute/--faint: needs its own
+  // dark-mode mirror so it doesn't render as near-invisible near-black text on a dark page.
+  --ink-strong: rgba(0, 0, 0, 0.75);
+
+  // Frosted row-highlight shared by every glass dropdown/menu (language switcher, sort
+  // menu, mobile nav panel) — see their .scss files' "reference pen" comment. Needs a
+  // dark-mode mirror because a flat white-at-50% wash over the (already dark) --solid glass
+  // tint would blow out far brighter than the light-mode version reads.
+  --glass-row-hover-bg: rgba(255, 255, 255, 0.5);
+  --glass-row-hover-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
+
+  // Contact form input fill — needs its own token because plain white-tinted glass reads
+  // as a white field with white (--ink) text in dark mode.
+  --input-bg: rgba(255, 255, 255, 0.65);
+  --input-bg-hover: rgba(255, 255, 255, 0.85);
+
   // brand gradient — hover text only, never a fill
   --g1: #e05316;
   --g2: #fe6a2e;
@@ -125,6 +142,12 @@
   --overlay-06: rgba(255, 255, 255, 0.06);
   --overlay-08: rgba(255, 255, 255, 0.08);
   --overlay-12: rgba(255, 255, 255, 0.12);
+
+  --ink-strong: rgba(255, 255, 255, 0.82);
+  --glass-row-hover-bg: rgba(255, 255, 255, 0.15);
+  --glass-row-hover-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.35);
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --input-bg-hover: rgba(255, 255, 255, 0.14);
 
   // Glass stays the same MECHANISM (blur + distortion + tint + shine), just re-tuned for a
   // dark backdrop: a warm dark tint instead of warm off-white, and a shine that reads as a

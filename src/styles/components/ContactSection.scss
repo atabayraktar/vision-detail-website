@@ -55,7 +55,7 @@
 
   &:hover,
   &:focus-visible {
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--overlay-04);
   }
 }
 
@@ -87,7 +87,7 @@
   textarea {
     border: 1px solid transparent;
     border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.65);
+    background: var(--input-bg);
     box-shadow: inset 0 0 0 1px var(--line);
     padding: 13px 14px;
     font-family: var(--font-body);
@@ -101,7 +101,7 @@
     }
 
     &:hover {
-      background: rgba(255, 255, 255, 0.85);
+      background: var(--input-bg-hover);
     }
 
     // Brand-toned error state instead of the browser's default red outline/tooltip —
@@ -217,7 +217,7 @@
   align-items: center;
   justify-content: center;
   color: var(--ink);
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--overlay-05);
 
   &--whatsapp {
     color: #25d366;

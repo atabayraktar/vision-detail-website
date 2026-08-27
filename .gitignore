@@ -19,11 +19,7 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 
-# claude tooling — local settings + raw source drops (not referenced by app code,
-# already processed into public/; way too large/irrelevant to ship in the repo)
-.claude/settings.local.json
-.claude/temporary screenshots/
-.claude/product-list/
-.claude/homepage_data/
-.claude/_check*.js
-.claude/tmp-*.mjs
+# claude tooling — local dev scripts, brand reference assets, raw source drops and
+# settings; not referenced by app code (everything needed is already processed into
+# public/), kept out of the repo entirely.
+.claude/

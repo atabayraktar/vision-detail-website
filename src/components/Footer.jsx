@@ -1,21 +1,26 @@
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
 import { footer, contactSection } from '@/data/homepageContent';
 import GlassSurface from './GlassSurface';
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const year = new Date().getFullYear();
+  // Logo rule: dark variation on light surfaces, light variation on dark surfaces (see
+  // CLAUDE.md's Logo rule + Header.jsx's identical swap).
+  const vdLogoSrc = theme === 'dark' ? '/logos/vision-detail-light.webp' : '/logos/vision-detail-dark.webp';
 
   return (
     <GlassSurface as="footer" className="site-footer glass-surface--calm glass-drift" contentClassName="site-footer__content">
       <a href="/" className="site-footer__logo" aria-label="Vision Detail — anasayfa">
-        <Image src="/logos/vision-detail-dark.webp" alt="Vision Detail" width={120} height={50} />
+        <Image src={vdLogoSrc} alt="Vision Detail" width={120} height={50} />
         {/* Same masked-gradient hover technique as the header/About logos (see Header.jsx) —
             a gradient-painted copy of the same image, faded in and swept on hover. */}
         <span
           className="site-footer__logo-glow"
-          style={{ maskImage: 'url(/logos/vision-detail-dark.webp)', WebkitMaskImage: 'url(/logos/vision-detail-dark.webp)' }}
+          style={{ maskImage: `url(${vdLogoSrc})`, WebkitMaskImage: `url(${vdLogoSrc})` }}
           aria-hidden="true"
         />
       </a>

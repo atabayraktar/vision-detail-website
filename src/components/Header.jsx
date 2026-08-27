@@ -2,17 +2,24 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLanguage } from '@/context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
 import { header } from '@/data/homepageContent';
 import GlassSurface from './GlassSurface';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 
 const CHEMICALWORKZ_URL = 'https://www.chemicalworkz.de/';
 
 export default function Header() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Logo rule: dark variation on light surfaces, light variation on dark surfaces (see
+  // CLAUDE.md's Logo rule) — the header itself is a light/frosted glass surface in light
+  // mode and a dark one in dark mode, so the logo swaps with the theme.
+  const vdLogoSrc = theme === 'dark' ? '/logos/vision-detail-light.webp' : '/logos/vision-detail-dark.webp';
 
   // Small "reacts to scroll" cue for the floating glass pill — solidifies slightly once
   // there's page content behind it to blur, instead of sitting static the whole time.
@@ -42,7 +49,7 @@ export default function Header() {
       <div className="site-header__brand">
         <a href="/" className="site-header__logo-link" aria-label="Vision Detail — anasayfa" onClick={onLogoClick}>
           <Image
-            src="/logos/vision-detail-dark.webp"
+            src={vdLogoSrc}
             alt="Vision Detail"
             width={140}
             height={58}
@@ -54,7 +61,7 @@ export default function Header() {
               matching exact gradient stops), faded in on hover/focus. */}
           <span
             className="site-header__logo-glow"
-            style={{ maskImage: 'url(/logos/vision-detail-dark.webp)', WebkitMaskImage: 'url(/logos/vision-detail-dark.webp)' }}
+            style={{ maskImage: `url(${vdLogoSrc})`, WebkitMaskImage: `url(${vdLogoSrc})` }}
             aria-hidden="true"
           />
         </a>
@@ -100,7 +107,8 @@ export default function Header() {
         </nav>
 
         <div className="site-header__right">
-          <div className="site-header__lang-desktop">
+          <div className="site-header__controls-desktop">
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
           <button
@@ -136,7 +144,10 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <LanguageSwitcher variant="inline" />
+          <div className="site-header__mobile-controls">
+            <ThemeToggle variant="inline" />
+            <LanguageSwitcher variant="inline" />
+          </div>
         </GlassSurface>
       )}
     </GlassSurface>

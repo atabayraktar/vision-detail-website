@@ -139,10 +139,16 @@
     }
   }
 
+  // Genuine vector mark (see CLAUDE.md) — no separate light asset was supplied, so dark
+  // mode recolors it to white via filter instead of shipping a second file (see the
+  // [data-theme='dark'] override at the bottom of this file). brightness(0) flattens the
+  // black ink to pure black first (safe against the SVG's own fill value), invert(1) then
+  // flips it to white.
   &__cw-logo {
     width: 118px;
     height: auto;
     flex-shrink: 0;
+    transition: filter 0.3s var(--ease-out);
   }
 
   &__cw-info {
@@ -204,13 +210,16 @@
     flex-shrink: 0;
   }
 
-  &__lang-desktop {
+  &__controls-desktop {
     display: none;
 
     @media (min-width: 900px) {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
     }
   }
+
 
   &__mobile-menu {
     position: absolute;
@@ -261,13 +270,23 @@
       // pointer — translucent white + a soft inner shadow + its own light blur.
       &:hover,
       &:focus-visible {
-        background-color: rgba(255, 255, 255, 0.5);
-        box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.1);
+        background-color: var(--glass-row-hover-bg);
+        box-shadow: var(--glass-row-hover-shadow);
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
       }
     }
   }
+}
+
+.site-header__mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+:root[data-theme='dark'] .site-header__cw-logo {
+  filter: brightness(0) invert(1);
 }
 
 .nav__burger {
