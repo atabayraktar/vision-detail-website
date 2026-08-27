@@ -85,6 +85,11 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.12),
     inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.5),
     inset -1px -1px 1px -1px rgba(255, 255, 255, 0.25);
+  // Stepped-up shine for --solid glass (CTAs/modals over media — see GlassSurface.scss).
+  --glass-shine-solid:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.8),
+    inset -1px -1px 1px -1px rgba(255, 255, 255, 0.45);
   --glass-blur: 5px;
 
   // motion
@@ -150,16 +155,41 @@
   --input-bg-hover: rgba(255, 255, 255, 0.14);
 
   // Glass stays the same MECHANISM (blur + distortion + tint + shine), just re-tuned for a
-  // dark backdrop: a warm dark tint instead of warm off-white, and a shine that reads as a
-  // soft highlight against dark ground instead of the light-mode hairline (which would be
-  // nearly invisible on black). Shadow deepens since a light shadow disappears on a dark page.
+  // dark backdrop: a warm dark tint instead of warm off-white. Shadow deepens since a light
+  // shadow disappears on a dark page.
+  //
+  // Shine values are NOT a straight port of the light-mode alphas (see that block's own
+  // deviation note) — the same absolute white alpha reads completely differently depending
+  // on what it's blended over. Against light mode's near-white interior tint (~248) a 0.5/
+  // 0.22 specular is nearly invisible (blends into a surface that's already that bright).
+  // Against this dark tint (~20) the identical alpha is a huge relative jump — empirically
+  // measured (pixel-sampled edge of the floating header, 2026-08): interior ~21, edge spike
+  // to ~60 at .22 alpha — a crisp, bright ring around every glass surface (the user-reported
+  // "white lines around the liquid glass" bug). Cutting alpha alone to ~.14 only pulled the
+  // spike to ~44 (still a visible line) — a directional specular this strong will always
+  // read as a ring against a near-black interior, no matter how much it's blurred. Rather
+  // than chase a lower alpha that still shows a line, the asymmetric top/bottom specular
+  // pair is toned down to near-parity with the hairline (peak ~32, diff ~12 from the ~20
+  // interior — a whisper, not a line) and leans on the mouse-tracked hover glow
+  // (.glass-surface__shine::after, transient/interactive) as dark mode's primary "catches
+  // the light" moment instead of an always-on bright edge. Do NOT copy the light-mode
+  // numbers here even at reduced opacity without re-checking a pixel sample against this
+  // dark interior first.
   --glass-tint: rgba(30, 28, 26, 0.45);
   --glass-tint-solid: rgba(20, 19, 18, 0.82);
   --glass-tint-scrolled: rgba(20, 19, 18, 0.6);
   --glass-shine:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-    inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.22),
-    inset -1px -1px 1px -1px rgba(255, 255, 255, 0.1);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1.5px 4px -1px rgba(255, 255, 255, 0.05),
+    inset -1px -1px 4px -1px rgba(255, 255, 255, 0.03);
+  // --solid surfaces (mobile nav panel, dropdowns, modals) are the ones the "white lines"
+  // report was actually about — this variant's light-mode alpha (.8 peak) is roughly 4x the
+  // base shine's, so it needed the same dark-mode softening, scaled up slightly (this
+  // surface's tint is denser, same rationale as the light-mode version stepping up together).
+  --glass-shine-solid:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+    inset 1px 1.5px 4px -1px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 4px -1px rgba(255, 255, 255, 0.05);
   --glass-wrapper-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
