@@ -1,8 +1,9 @@
 .scroll-top-fab {
   position: fixed;
-  right: var(--space-4);
-  // Stacked directly above WhatsAppFab (60px tall, same right column) with a 12px gap.
-  bottom: calc(var(--space-4) + 60px + 12px);
+  // Left, mirroring WhatsAppFab's own bottom inset on the right — its own corner instead
+  // of stacked above WhatsApp on the same side.
+  left: var(--space-4);
+  bottom: var(--space-4);
   z-index: var(--z-fab);
   width: 52px;
   height: 52px;
@@ -27,8 +28,8 @@
   }
 
   @media (min-width: 768px) {
-    right: var(--space-6);
-    bottom: calc(var(--space-6) + 60px + 12px);
+    left: var(--space-6);
+    bottom: var(--space-6);
   }
 
   @media (prefers-reduced-motion: reduce) {

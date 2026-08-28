@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Header from '@/components/Header';
@@ -71,6 +71,37 @@ export default function ProductsPage({ products: allProducts, categories }) {
     if (typeof sayfa === 'string' && !Number.isNaN(Number(sayfa))) setPage(Math.max(1, Number(sayfa)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
+
+  // "Ürünlere geri dön" on the product detail page uses router.back() to land on roughly
+  // the same view — the URL-synced filters/sort/page above already handle that half, this
+  // handles the scroll position half, which the browser's own scroll restoration doesn't
+  // reliably reproduce here (this page's content height depends on client-side state that
+  // hydrates from the URL a render AFTER first paint, so Next's automatic restore fires
+  // against the wrong — pre-hydration — page height and lands at the top).
+  //
+  // Saved once per navigation-away (routeChangeStart fires as soon as a product card is
+  // clicked, before this page unmounts), restored once after the query-hydration effect
+  // above has actually applied (same deps, so this re-fires in the render right after
+  // hydration commits) — a double rAF waits for that render's layout to actually paint
+  // before scrolling, since the grid's final height isn't there yet on the same frame the
+  // state updates.
+  const scrollRestoredRef = useRef(false);
+  useEffect(() => {
+    const saveScroll = () => sessionStorage.setItem('urunler-scroll-y', String(window.scrollY));
+    router.events.on('routeChangeStart', saveScroll);
+    return () => router.events.off('routeChangeStart', saveScroll);
+  }, [router.events]);
+
+  useEffect(() => {
+    if (!router.isReady || scrollRestoredRef.current) return;
+    scrollRestoredRef.current = true;
+    const saved = sessionStorage.getItem('urunler-scroll-y');
+    if (!saved) return;
+    sessionStorage.removeItem('urunler-scroll-y');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => window.scrollTo(0, Number(saved)));
+    });
+  }, [router.isReady, category, query, sort, page]);
 
   // Keep the URL in sync (shareable filtered view) without a full navigation/reload.
   useEffect(() => {

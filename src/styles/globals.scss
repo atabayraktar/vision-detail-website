@@ -29,6 +29,15 @@ html {
   // one wrote scrollTop last on a given frame won, landing the target at an inconsistent
   // position instead of respecting Lenis's configured offset.
   scroll-behavior: auto;
+  // Every modal/sheet (QuizModal, the product lightbox, the mobile filter sheet) locks
+  // background scroll via body.style.overflow = 'hidden' while open — on a desktop browser
+  // with a classic (non-overlay) scrollbar, that removes the scrollbar and the page content
+  // reflows a few px wider, then narrows back the instant it closes: a visible side-to-side
+  // "jump" the user shouldn't see. Reserving the gutter permanently (whether or not a
+  // scrollbar is actually showing right now) means removing/restoring the scrollbar never
+  // changes the content's available width. Degrades harmlessly on browsers that don't
+  // support the property (Safari <17) — same jump as before there, nothing worse.
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: reduce) {

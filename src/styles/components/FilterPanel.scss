@@ -125,6 +125,15 @@
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   animation: quiz-pop 0.4s var(--ease-spring);
 
+  // Reported unreadable/"silik" (washed-out) on mobile even with --solid — that variant is
+  // still only ~73-82% opaque by design (it's meant to sit over media and let SOME texture
+  // through). This full-screen category list is dense text content, not a CTA over a photo,
+  // so it gets a fully opaque fill instead of trusting backdrop-filter support/quality on
+  // every device — guaranteed legible regardless of GPU/browser blur rendering.
+  .glass-surface__tint {
+    background: var(--bg);
+  }
+
   &.is-closing {
     animation: quiz-pop-close 0.3s var(--ease-out) forwards;
   }
