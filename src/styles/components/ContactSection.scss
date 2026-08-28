@@ -82,7 +82,11 @@
 
   label {
     font-size: 12px;
-    font-weight: 500;
+    // .font-root sets font-variation-settings: 'wght' 240 on the whole app — inherited
+    // variation-settings win over the font-weight property for a registered variable axis,
+    // so plain `font-weight: 700` here rendered as a no-op (still 240). Has to be
+    // overridden as its own variation-settings to actually go bold.
+    font-variation-settings: 'wght' 700, 'wdth' 95;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     // Darker than --faint (tuned for 11-13px metadata elsewhere) — a form label the user
