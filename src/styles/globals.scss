@@ -284,6 +284,25 @@ html.has-reveal [data-reveal] {
   }
 }
 
+// Page-level entrance (see _app.jsx's .page-transition wrapper): the one thing data-reveal
+// doesn't cover, since several sections (the product grid, most of a product detail page)
+// deliberately opt out of the scroll-reveal treatment for instant-feeling browsing. A real
+// route change still needs to not be a hard cut, so the whole incoming page gets a quiet
+// fade. Opacity only — see _app.jsx's comment on why `transform` here would break the
+// fixed-position header/FAB for the animation's duration.
+.page-transition {
+  animation: page-fade-in 0.45s var(--ease-out) both;
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .container {
   width: 100%;
   max-width: var(--container-max);

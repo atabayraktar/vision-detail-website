@@ -30,9 +30,9 @@ export const heroSlides = [
       poster: '/images/hero-1-poster.webp',
     },
     title: {
-      tr: "ChemicalWorkz Türkiye'de!",
-      en: 'ChemicalWorkz is now in Turkey!',
-      de: 'ChemicalWorkz jetzt in der Türkei!',
+      tr: "chemicalworkz Türkiye'de!",
+      en: 'chemicalworkz is now in Turkey!',
+      de: 'chemicalworkz jetzt in der Türkei!',
     },
     info: {
       tr: 'Alman kalitesiyle geliştirilen ChemicalWorkz detailing ürünlerini keşfedin; profesyonel ekipmanları, bakım aksesuarlarını ve ürün detaylarını yakından inceleyin.',
@@ -167,7 +167,7 @@ export const equipmentSection = {
 };
 
 export const aboutChemicalWorkz = {
-  title: { tr: 'ChemicalWorkz Hakkında', en: 'About ChemicalWorkz', de: 'Über ChemicalWorkz' },
+  title: { tr: 'chemicalworkz Hakkında', en: 'About chemicalworkz', de: 'Über chemicalworkz' },
   paragraph: {
     tr: "Almanya merkezli ChemicalWorkz, profesyonel araç bakım ve detailing sektöründe geliştirdiği yenilikçi ekipmanlar ve premium aksesuarlarla kısa sürede global ölçekte güçlü bir konum elde etmiş bir markadır. Profesyonellerin ihtiyaçları doğrultusunda tasarlanıp test edilen ürünleri; yüksek kalite standartları, modern tasarımı ve uzun ömürlü performansıyla öne çıkar. Bugün birçok ülkedeki distribütör ağıyla otomobil tutkunlarına ve detailing profesyonellerine ulaşan ChemicalWorkz, Alman mühendisliğini günlük kullanıma taşıyan güvenilir markalar arasında yer almaktadır. Vision Detail olarak bu kalite anlayışını, ChemicalWorkz'ün Türkiye distribütörü kimliğimizle Türkiye'deki kullanıcılarla buluşturuyoruz.",
     en: "Headquartered in Germany, ChemicalWorkz has quickly built a strong global presence in professional vehicle care and detailing through innovative equipment and premium accessories. Designed and tested around the needs of professionals, its products stand out through high quality standards, modern design and long-lasting performance. Reaching car enthusiasts and detailing professionals through a distributor network spanning many countries today, ChemicalWorkz is among the trusted brands bringing German engineering into everyday use. As Vision Detail, we bring this quality standard to users in Turkey as ChemicalWorkz's official Turkish distributor.",

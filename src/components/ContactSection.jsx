@@ -142,7 +142,11 @@ export default function ContactSection() {
 
         <GlassSurface
           as="form"
-          className="contact-section__form glass-surface--calm"
+          // --solid (not just --calm's 0.35-opacity base tint): the form's labels/inputs
+          // need to stay legible even where backdrop-filter's blur doesn't render (see
+          // GlassSurface.scss's --menu note on the mobile-menu/dropdowns) — --calm alone
+          // was too faint once blur wasn't there to do the rest of the legibility work.
+          className="contact-section__form glass-surface--calm glass-surface--solid"
           contentClassName="contact-section__form-content"
           onSubmit={onSubmit}
           noValidate

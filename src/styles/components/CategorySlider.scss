@@ -1,5 +1,10 @@
 .category-slider {
-  padding-block: var(--space-9);
+  // See AboutChemicalWorkz.scss's note on this same mobile-first reduction.
+  padding-block: var(--space-8);
+
+  @media (min-width: 768px) {
+    padding-block: var(--space-9);
+  }
 }
 
 .category-slider__head {

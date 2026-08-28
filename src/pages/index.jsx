@@ -12,8 +12,16 @@ import useScrollReveal from '@/hooks/useScrollReveal';
 
 const SITE_URL = 'https://visiondetail.com.tr';
 const TITLE = 'Vision Detail';
+// Browser-tab title only (the user's explicit call) — og:title/twitter:title below still
+// use TITLE, unchanged, since those are for link-preview cards, not "the tab".
+const TAB_TITLE = 'Vision Detail | chemicalworkz Türkiye';
 const DESCRIPTION =
   "Vision Detail, Almanya merkezli ChemicalWorkz'ün Türkiye distribütörüdür. Profesyonel detailing ekipmanları, polisaj makineleri ve bakım aksesuarlarını keşfedin.";
+
+// Same handles ContactSection.jsx renders on the page (contactSection.instagramHref /
+// facebookHref in homepageContent.js) — kept as literals here rather than imported so this
+// file's JSON-LD stays readable at a glance; update both places together if a handle changes.
+const SOCIAL_LINKS = ['https://www.instagram.com/visiondetail.tr', 'https://www.facebook.com/profile.php?id=61592227389637'];
 
 const ORGANIZATION_JSON_LD = {
   '@context': 'https://schema.org',
@@ -21,11 +29,12 @@ const ORGANIZATION_JSON_LD = {
   name: 'Vision Detail',
   url: SITE_URL,
   logo: `${SITE_URL}/logos/vision-detail-dark.webp`,
-  sameAs: ['https://www.instagram.com/visiondetail.tr', 'https://wa.me/905409982505'],
+  sameAs: [...SOCIAL_LINKS, 'https://wa.me/905409982505'],
   parentOrganization: {
     '@type': 'Organization',
     name: 'ChemicalWorkz',
   },
+  areaServed: 'TR',
   description: "Vision Detail, ChemicalWorkz'ün resmi Türkiye distribütörüdür.",
 };
 
@@ -37,7 +46,13 @@ const LOCAL_BUSINESS_JSON_LD = {
   url: SITE_URL,
   image: `${SITE_URL}/images/polishing-banner.webp`,
   hasMap: 'https://maps.app.goo.gl/E5zz1XL8ZF2bohJ2A',
-  sameAs: ['https://www.instagram.com/visiondetail.tr'],
+  // Real coordinates (same pair ContactSection.jsx's map embed uses — homepageContent.js's
+  // contactSection.mapCoords) — no street-level postal address is supplied in the site's
+  // content source, and fabricating one would misinform rather than help. Coordinates are
+  // real data, so they're safe to add for LocalBusiness completeness.
+  geo: { '@type': 'GeoCoordinates', latitude: 40.149898, longitude: 26.443142 },
+  areaServed: 'TR',
+  sameAs: SOCIAL_LINKS,
 };
 
 const BREADCRUMB_JSON_LD = {
@@ -90,7 +105,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>{TITLE}</title>
+        <title>{TAB_TITLE}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={DESCRIPTION} />
         <meta name="robots" content="index, follow" />

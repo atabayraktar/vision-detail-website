@@ -58,7 +58,7 @@ export default function ProductDetailPage({ product, siblings, categories }) {
   };
   const name = t(product.name);
   const url = `${SITE_URL}/urunler/${product.id}`;
-  const title = `${name} | Vision Detail`;
+  const title = `${name} | Vision Detail | chemicalworkz`;
   const description = t(product.description);
 
   const productJsonLd = {
@@ -69,7 +69,12 @@ export default function ProductDetailPage({ product, siblings, categories }) {
     sku: product.id,
     image: `${SITE_URL}${product.image}`,
     brand: { '@type': 'Brand', name: 'ChemicalWorkz' },
+    // Literally true (not just the retail brand) — ChemicalWorkz manufactures these, Vision
+    // Detail distributes them (the entity relationship the GEO rules ask to state in real
+    // text; this is the schema-level echo of the same fact).
+    manufacturer: { '@type': 'Organization', name: 'ChemicalWorkz' },
     category: category ? t(category.label) : undefined,
+    inLanguage: 'tr',
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',

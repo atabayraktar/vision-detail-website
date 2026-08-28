@@ -108,7 +108,7 @@ export function FilterPanelSheet({ open, onClose, ...props }) {
           list against a busy product grid behind it (user-reported "çok silik"). */}
       <GlassSurface
         as="div"
-        className={`filter-sheet glass-surface--calm glass-surface--solid${closing ? ' is-closing' : ''}`}
+        className={`filter-sheet glass-surface--calm glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
         contentClassName="filter-sheet__content"
       >
         <div className="filter-sheet__head">

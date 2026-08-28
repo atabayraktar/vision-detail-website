@@ -51,7 +51,7 @@ export default function SortMenu({ value, onChange }) {
       {mounted && (
         <GlassSurface
           as="ul"
-          className={`sort-menu__list glass-surface--tight glass-surface--solid${closing ? ' is-closing' : ''}`}
+          className={`sort-menu__list glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
           contentClassName="sort-menu__list-content"
           role="listbox"
           aria-label="Sıralama"

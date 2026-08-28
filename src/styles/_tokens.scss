@@ -81,6 +81,14 @@
   // same family as --glass-tint, just a touch more opaque (see GlassSurface.scss's
   // .is-scrolled state).
   --glass-tint-scrolled: rgba(240, 238, 233, 0.55);
+  // Near-opaque, for panels whose whole job is carrying readable text over arbitrary page
+  // content behind them (mobile nav menu, language dropdown) — see GlassSurface.scss's
+  // .glass-surface--menu. backdrop-filter's blur is layered on top when the device renders
+  // it, but on hardware/browsers where the SVG-filter-in-backdrop-filter combo silently
+  // fails to paint (confirmed 2026-08 — no GPU compositing available), --glass-tint-solid's
+  // 0.73 alone left real page content legible through the panel, on top of the panel's own
+  // nav/menu text. This is the fallback that makes the panel legible either way.
+  --glass-tint-menu: rgba(252, 252, 253, 0.96);
   --glass-shine:
     inset 0 0 0 1px rgba(255, 255, 255, 0.12),
     inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.5),
@@ -183,6 +191,8 @@
   --glass-tint: rgba(30, 28, 26, 0.45);
   --glass-tint-solid: rgba(20, 19, 18, 0.82);
   --glass-tint-scrolled: rgba(20, 19, 18, 0.6);
+  // See the light-theme block's note on --glass-tint-menu.
+  --glass-tint-menu: rgba(20, 19, 18, 0.96);
   --glass-shine:
     inset 0 0 0 1px rgba(255, 255, 255, 0.05),
     inset 1px 1.5px 4px -1px rgba(255, 255, 255, 0.05),

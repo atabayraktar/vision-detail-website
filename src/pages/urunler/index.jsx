@@ -16,9 +16,9 @@ import { products, PRODUCT_CATEGORIES } from '@/data/products';
 import useScrollReveal from '@/hooks/useScrollReveal';
 
 const SITE_URL = 'https://visiondetail.com.tr';
-const TITLE = 'Ürünler | Vision Detail';
+const TITLE = 'Ürünler | Vision Detail | chemicalworkz';
 const DESCRIPTION =
-  "ChemicalWorkz'in Türkiye distribütörü Vision Detail üzerinden polisaj makineleri, detay fırçaları, mikrofiber bezler ve daha fazla profesyonel detailing ekipmanını keşfedin.";
+  "chemicalworkz'in Türkiye distribütörü Vision Detail üzerinden polisaj makineleri, detay fırçaları, mikrofiber bezler ve daha fazla profesyonel detailing ekipmanını keşfedin.";
 const PAGE_SIZE = 12;
 
 const BREADCRUMB_JSON_LD = {
@@ -185,7 +185,7 @@ export default function ProductsPage({ products: allProducts, categories }) {
         <section className="products-page container">
           <h1 className="products-page__title" data-reveal>Ürünler</h1>
           <p className="products-page__intro" data-reveal>
-            ChemicalWorkz&apos;in Türkiye distribütörü Vision Detail üzerinden profesyonel detailing ekipmanlarını ve
+            chemicalworkz&apos;in Türkiye distribütörü Vision Detail üzerinden profesyonel detailing ekipmanlarını ve
             bakım aksesuarlarını keşfedin.
           </p>
 

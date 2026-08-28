@@ -37,11 +37,12 @@
     justify-self: start;
   }
 
-  img {
-    width: 108px;
-    height: auto;
-  }
-
+  // No `img` sizing rule here — the two stacked logo variants are sized by
+  // .site-footer__vd-logo (width/height: 100%, filling .site-footer__logo-stack's 120x50
+  // box exactly). A leftover `img { width: 108px; height: auto; }` rule used to live here
+  // from before the crossfade refactor; at (0,1,1) it outranked .site-footer__vd-logo's
+  // (0,1,0) and force-shrank both images to 108x45, off the glow overlay's 120x50 mask —
+  // the mismatch is what made the hover gradient sweep read as garbled/doubled text.
   &:hover,
   &:focus-visible {
     .site-footer__logo-glow {

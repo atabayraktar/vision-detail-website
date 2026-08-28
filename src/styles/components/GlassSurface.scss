@@ -113,6 +113,18 @@
   &--solid &__shine {
     box-shadow: var(--glass-shine-solid);
   }
+
+  // For panels whose entire job is carrying readable running text/nav over arbitrary page
+  // content (the header's mobile nav menu, the language dropdown) — near-opaque so the
+  // panel stays legible even on a device/browser where the SVG-filter-in-backdrop-filter
+  // combo silently fails to paint (see _tokens.scss's --glass-tint-menu note; confirmed
+  // 2026-08 on hardware without GPU compositing). Meant to be paired with --solid in markup
+  // (for the shine/hover treatment) — equal specificity to --solid's own &__tint rule above,
+  // so it wins by winning on source order (declared after it here); HTML class order is
+  // irrelevant to that, only this file's rule order is.
+  &--menu &__tint {
+    background: var(--glass-tint-menu);
+  }
 }
 
 // The liquid-droplet hover from the brand's reference pen (CodePen vEOWpYM "Liquid Glass
@@ -193,7 +205,15 @@ button.glass-surface {
 .glass-surface.is-scrolled {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.06);
 
-  .glass-surface__tint {
+  // Direct-child combinators (clip is a child, tint a grandchild) instead of the bare
+  // descendant selector this used to be: that matched ANY .glass-surface__tint anywhere
+  // inside an .is-scrolled ancestor, including a nested GlassSurface's own tint (e.g. the
+  // header's mobile-menu dropdown, itself a .glass-surface mounted *inside* the header) —
+  // silently swapping that nested panel's --glass-tint-solid for the header's own
+  // --glass-tint-scrolled (less opaque) the moment the page had been scrolled. Scoping this
+  // to the surface's own tint only is what --glass-tint-menu's legibility guarantee
+  // (GlassSurface.scss's .glass-surface--menu) actually depends on holding.
+  > .glass-surface__clip > .glass-surface__tint {
     background: var(--glass-tint-scrolled);
   }
 }

@@ -103,7 +103,7 @@ export default function LanguageSwitcher({ variant = 'dropdown' }) {
       {mounted && (
         <GlassSurface
           as="ul"
-          className={`lang-switch__menu glass-surface--tight glass-surface--solid${closing ? ' is-closing' : ''}`}
+          className={`lang-switch__menu glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
           contentClassName="lang-switch__menu-content"
           role="listbox"
           aria-label="Dil seçimi / Language / Sprache"

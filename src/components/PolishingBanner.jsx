@@ -34,7 +34,9 @@ export default function PolishingBanner() {
           className={polishingBanner.mobileImage ? 'polishing-banner__image-desktop' : undefined}
           style={{ objectFit: 'cover' }}
         />
-        <GlassSurface as="div" className="polishing-banner__panel glass-surface--calm glass-drift" contentClassName="polishing-banner__panel-content">
+        {/* No .glass-drift — see Header.jsx's note: the scroll-lag transform breaks
+            backdrop-filter rendering on this element/its descendants after scrolling. */}
+        <GlassSurface as="div" className="polishing-banner__panel glass-surface--calm" contentClassName="polishing-banner__panel-content">
           <h2 className="polishing-banner__title">{t(polishingBanner.title)}</h2>
           <GlassSurface
             as="button"

@@ -72,7 +72,7 @@ export default function QuizModal({ open, onClose }) {
     >
       <GlassSurface
         as="div"
-        className={`quiz-modal glass-surface--calm glass-surface--solid${closing ? ' is-closing' : ''}`}
+        className={`quiz-modal glass-surface--calm glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
         contentClassName="quiz-modal__content"
         role="dialog"
         aria-modal="true"

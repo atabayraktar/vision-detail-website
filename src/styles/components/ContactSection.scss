@@ -1,9 +1,14 @@
 .contact-section {
-  padding-block: var(--space-9);
+  // See AboutChemicalWorkz.scss's note on this same mobile-first reduction.
+  padding-block: var(--space-8);
   // Clears the floating fixed header when the nav's "#iletisim" link scrolls here.
   // Lenis's anchor scroll already lands with ~97px of clearance on its own; this adds a
   // bit more breathing room rather than the header's full height (empirically tuned).
   scroll-margin-top: 28px;
+
+  @media (min-width: 768px) {
+    padding-block: var(--space-9);
+  }
 }
 
 .contact-section__title {
@@ -80,7 +85,10 @@
     font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--faint);
+    // Darker than --faint (tuned for 11-13px metadata elsewhere) — a form label the user
+    // is about to act on reads better with more weight, same token ProductInfo/About use
+    // for their own primary-copy-that-needs-more-than-mute cases.
+    color: var(--ink-strong);
   }
 
   input,

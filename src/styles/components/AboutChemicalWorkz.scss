@@ -1,9 +1,16 @@
 .about-cw {
-  padding-block: var(--space-9);
+  // Mobile-first: lighter section padding below tablet — --space-9 (96px) per edge read as
+  // excessive gap between sections on a ~375px-tall-content viewport; --space-8 keeps clear
+  // separation without the page feeling mostly whitespace. Unchanged from tablet up.
+  padding-block: var(--space-8);
   // Clears the floating fixed header when the nav's "#chemicalworkz" link scrolls here.
   // Lenis's anchor scroll already lands with ~97px of clearance on its own; this adds a
   // bit more breathing room rather than the header's full height (empirically tuned).
   scroll-margin-top: 28px;
+
+  @media (min-width: 768px) {
+    padding-block: var(--space-9);
+  }
 }
 
 .about-cw__top {
@@ -75,7 +82,15 @@
   img {
     width: 96px;
     height: auto;
+    transition: filter 0.3s var(--ease-out);
   }
+}
+
+// Same dark-theme invert as the header's ChemicalWorkz mark (Header.scss's &__cw-logo) —
+// the source SVG is solid black, so dark surfaces need it flipped to white rather than
+// shipping a second logo asset.
+:root[data-theme='dark'] .about-cw__site-link-logo img {
+  filter: brightness(0) invert(1);
 }
 
 // mask-size: 100% 100% (not `contain`) — see the matching note on Header.scss's

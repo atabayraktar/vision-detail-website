@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-const LANGUAGES = ['tr', 'en', 'de'];
+const LANGUAGES = ['tr', 'de', 'en'];
 const STORAGE_KEY = 'vd-lang';
 
 const LanguageContext = createContext({

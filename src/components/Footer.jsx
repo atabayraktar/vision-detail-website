@@ -8,7 +8,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <GlassSurface as="footer" className="site-footer glass-surface--calm glass-drift" contentClassName="site-footer__content">
+    // No .glass-drift — see Header.jsx's note: the scroll-lag transform breaks
+    // backdrop-filter rendering on this element/its descendants after scrolling.
+    <GlassSurface as="footer" className="site-footer glass-surface--calm" contentClassName="site-footer__content">
       <a href="/" className="site-footer__logo" aria-label="Vision Detail — anasayfa">
         {/* Both variants stacked, crossfaded in pure CSS on theme change — see Header.jsx's
             identical technique and Footer.scss for why (an instant src-swap read as the

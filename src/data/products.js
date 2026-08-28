@@ -118,9 +118,9 @@ export const products = [
       "de": "Druckluft-Reinigungspistole"
     },
     "description": {
-      "tr": "Mini Hava Tabancası, hava tabancası kategorisinde basınçlı hava temizleme tabancası. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Mini Air Gun is a compressed air cleaning gun product in our air gun range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mini-Luftpistole ist ein Produkt der Kategorie Druckluftpistole mit Druckluft-Reinigungspistole. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Mini Hava Tabancası, hava tabancası kategorisinde basınçlı hava temizleme tabancası. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Mini Air Gun is a compressed air cleaning gun product in our air gun range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mini-Luftpistole ist ein Produkt der Kategorie Druckluftpistole mit Druckluft-Reinigungspistole. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -151,9 +151,9 @@ export const products = [
       "de": "Hybrid-Poliermaschine"
     },
     "description": {
-      "tr": "EVO Mini, polisaj makinesi kategorisinde hibrit polisaj makinesi. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "EVO Mini is a hybrid polisher product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "EVO Mini ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "EVO Mini, polisaj makinesi kategorisinde hibrit polisaj makinesi. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "EVO Mini is a hybrid polisher product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "EVO Mini ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -183,9 +183,9 @@ export const products = [
       "de": "Hybrid-Poliermaschine"
     },
     "description": {
-      "tr": "EVO Mini Pro, polisaj makinesi kategorisinde hibrit polisaj makinesi. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "EVO Mini Pro is a hybrid polisher product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "EVO Mini Pro ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "EVO Mini Pro, polisaj makinesi kategorisinde hibrit polisaj makinesi. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "EVO Mini Pro is a hybrid polisher product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "EVO Mini Pro ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -214,9 +214,9 @@ export const products = [
       "de": "Performance-Pad | Starker Schnitt"
     },
     "description": {
-      "tr": "Ağır Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | ağır kesim. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Heavy Cutting Pad is a performance pad | heavy cutting product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Heavy-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Starker Schnitt. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ağır Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | ağır kesim. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Heavy Cutting Pad is a performance pad | heavy cutting product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Heavy-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Starker Schnitt. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -243,9 +243,9 @@ export const products = [
       "de": "Performance-Pad | Mittel-Stark"
     },
     "description": {
-      "tr": "Orta Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-zor. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Medium Cutting Pad is a performance pad | medium-heavy product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Medium-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Stark. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Orta Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-zor. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Medium Cutting Pad is a performance pad | medium-heavy product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Medium-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Stark. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -272,9 +272,9 @@ export const products = [
       "de": "Mikrofaser-Pad | Starker Abtrag"
     },
     "description": {
-      "tr": "MikroFiber Polisaj Pedi, polisaj pedleri kategorisinde mikrofiber ped | yüksek aşındırıcı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Polishing Pad is a microfiber pad | high cut product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Polierpad ist ein Produkt der Kategorie Polierpads mit Mikrofaser-Pad | Starker Abtrag. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "MikroFiber Polisaj Pedi, polisaj pedleri kategorisinde mikrofiber ped | yüksek aşındırıcı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Microfiber Polishing Pad is a microfiber pad | high cut product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mikrofaser-Polierpad ist ein Produkt der Kategorie Polierpads mit Mikrofaser-Pad | Starker Abtrag. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -300,9 +300,9 @@ export const products = [
       "de": "Performance-Pad | Mittel-Weich"
     },
     "description": {
-      "tr": "Tek Adım Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "One-Step Polishing Pad is a performance pad | medium-soft product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "One-Step-Polierpad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Tek Adım Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "One-Step Polishing Pad is a performance pad | medium-soft product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "One-Step-Polierpad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -329,9 +329,9 @@ export const products = [
       "de": "Performance-Pad | Weich"
     },
     "description": {
-      "tr": "Yumuşak Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Finishing Pad is a performance pad | soft product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Soft-Finishing-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Finishing Pad is a performance pad | soft product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Soft-Finishing-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -358,9 +358,9 @@ export const products = [
       "de": "Performance-Pad | Naturwolle"
     },
     "description": {
-      "tr": "Yün Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | doğal yün. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wool Cutting Pad is a performance pad | natural wool product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Woll-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Naturwolle. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yün Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | doğal yün. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wool Cutting Pad is a performance pad | natural wool product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Woll-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Naturwolle. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -387,9 +387,9 @@ export const products = [
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "16mm",
@@ -417,9 +417,9 @@ export const products = [
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
@@ -447,9 +447,9 @@ export const products = [
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "24mm",
@@ -477,9 +477,9 @@ export const products = [
       "de": "Ultra Weich"
     },
     "description": {
-      "tr": "Ultra Yumuşak Detay Fırçası, detay fırçaları kategorisinde ultra yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft Detailing Brush is a ultra soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Ultra Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak Detay Fırçası, detay fırçaları kategorisinde ultra yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft Detailing Brush is a ultra soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Ultra Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
@@ -505,9 +505,9 @@ export const products = [
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "16mm",
@@ -536,9 +536,9 @@ export const products = [
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
@@ -567,9 +567,9 @@ export const products = [
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "24mm",
@@ -598,9 +598,9 @@ export const products = [
       "de": "Detailing-Bürsten-Set | Lila"
     },
     "description": {
-      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | mor. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft 2-Piece Set is a detailing brush set | purple product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Lila. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | mor. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft 2-Piece Set is a detailing brush set | purple product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Lila. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Mor",
@@ -629,9 +629,9 @@ export const products = [
       "de": "Detailing-Bürsten-Set | Türkis"
     },
     "description": {
-      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | turkuaz. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft 2-Piece Set is a detailing brush set | turquoise product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Türkis. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | turkuaz. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft 2-Piece Set is a detailing brush set | turquoise product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Türkis. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Turkuaz",
@@ -660,9 +660,9 @@ export const products = [
       "de": "Chemikalienbeständig"
     },
     "description": {
-      "tr": "Lastik Parlatıcı Fırça, detay fırçaları kategorisinde kimyasal maddelere dayanıklı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Tire Dressing Brush is a chemical resistant product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Reifenglanz-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Chemikalienbeständig. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Lastik Parlatıcı Fırça, detay fırçaları kategorisinde kimyasal maddelere dayanıklı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Tire Dressing Brush is a chemical resistant product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Reifenglanz-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Chemikalienbeständig. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -690,9 +690,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Siyah",
@@ -722,9 +722,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Mavi",
@@ -754,9 +754,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Yeşil",
@@ -786,9 +786,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Kırmızı",
@@ -818,9 +818,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Sarı",
@@ -850,9 +850,9 @@ export const products = [
       "de": "5-8 bar"
     },
     "description": {
-      "tr": "Doldurulabilir Basınçlı Sprey, sprey şişeleri kategorisinde 5-8 bar. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Refillable Pressure Sprayer is a 5-8 bar product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Nachfüllbarer Drucksprüher ist ein Produkt der Kategorie Sprühflaschen mit 5-8 bar. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Doldurulabilir Basınçlı Sprey, sprey şişeleri kategorisinde 5-8 bar. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Refillable Pressure Sprayer is a 5-8 bar product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Nachfüllbarer Drucksprüher ist ein Produkt der Kategorie Sprühflaschen mit 5-8 bar. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -880,9 +880,9 @@ export const products = [
       "de": "Polymer-Technologie | 11x7x4,5cm"
     },
     "description": {
-      "tr": "Sihirli Kil Süngeri, yardımcılar kategorisinde polimer teknolojisi | 11x7x4.5cm. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Magic Clay Sponge is a polymer technology | 11x7x4.5cm product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Magic-Clay-Schwamm ist ein Produkt der Kategorie Zubehör mit Polymer-Technologie | 11x7x4,5cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sihirli Kil Süngeri, yardımcılar kategorisinde polimer teknolojisi | 11x7x4.5cm. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Magic Clay Sponge is a polymer technology | 11x7x4.5cm product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Magic-Clay-Schwamm ist ein Produkt der Kategorie Zubehör mit Polymer-Technologie | 11x7x4,5cm. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -907,9 +907,9 @@ export const products = [
       "de": "Vielseitig"
     },
     "description": {
-      "tr": "Mikrofiber Eldiven, yardımcılar kategorisinde çok amaçlı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Wash Mitt is a multi-purpose product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Waschhandschuh ist ein Produkt der Kategorie Zubehör mit Vielseitig. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Mikrofiber Eldiven, yardımcılar kategorisinde çok amaçlı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Microfiber Wash Mitt is a multi-purpose product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mikrofaser-Waschhandschuh ist ein Produkt der Kategorie Zubehör mit Vielseitig. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -934,9 +934,9 @@ export const products = [
       "de": "Für enge Stellen"
     },
     "description": {
-      "tr": "Parlatma Konileri, yardımcılar kategorisinde dar alanlar için. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Polishing Cones is a for tight spaces product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Polierkegel ist ein Produkt der Kategorie Zubehör mit Für enge Stellen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Parlatma Konileri, yardımcılar kategorisinde dar alanlar için. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Polishing Cones is a for tight spaces product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Polierkegel ist ein Produkt der Kategorie Zubehör mit Für enge Stellen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -962,9 +962,9 @@ export const products = [
       "de": "Hochwertiger Kunststoff | 10x15cm"
     },
     "description": {
-      "tr": "Kablo Kaydırıcı, yardımcılar kategorisinde yüksek kaliteli plastik | 10x15cm. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Hose Guide is a high-quality plastic | 10x15cm product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schlauchführung ist ein Produkt der Kategorie Zubehör mit Hochwertiger Kunststoff | 10x15cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Kablo Kaydırıcı, yardımcılar kategorisinde yüksek kaliteli plastik | 10x15cm. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Hose Guide is a high-quality plastic | 10x15cm product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schlauchführung ist ein Produkt der Kategorie Zubehör mit Hochwertiger Kunststoff | 10x15cm. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -989,9 +989,9 @@ export const products = [
       "de": "Montageset | 12 Teile"
     },
     "description": {
-      "tr": "Alet Takımı, yardımcılar kategorisinde montaj aparatı | 12 parça. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Tool Kit is a assembly kit | 12 pieces product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Werkzeugset ist ein Produkt der Kategorie Zubehör mit Montageset | 12 Teile. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Alet Takımı, yardımcılar kategorisinde montaj aparatı | 12 parça. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Tool Kit is a assembly kit | 12 pieces product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Werkzeugset ist ein Produkt der Kategorie Zubehör mit Montageset | 12 Teile. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1016,9 +1016,9 @@ export const products = [
       "de": "Magnetisches Trockentuch"
     },
     "description": {
-      "tr": "Manyetik Havlu, manyetik bez kategorisinde manyetik kurulama havlusu. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Magnetic Drying Towel is a magnetic drying towel product in our magnetic cloth range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Magnet-Trockentuch ist ein Produkt der Kategorie Magnettuch mit Magnetisches Trockentuch. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Manyetik Havlu, manyetik bez kategorisinde manyetik kurulama havlusu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Magnetic Drying Towel is a magnetic drying towel product in our magnetic cloth range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Magnet-Trockentuch ist ein Produkt der Kategorie Magnettuch mit Magnetisches Trockentuch. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1044,9 +1044,9 @@ export const products = [
       "de": "Mikrofaser | 20 Stück"
     },
     "description": {
-      "tr": "Boya Rötuş Çubukları, yardımcılar kategorisinde mikrofiber | 20 adet. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Paint Touch-Up Sticks is a microfiber | 20 pieces product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Lack-Ausbesserstifte ist ein Produkt der Kategorie Zubehör mit Mikrofaser | 20 Stück. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Boya Rötuş Çubukları, yardımcılar kategorisinde mikrofiber | 20 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Paint Touch-Up Sticks is a microfiber | 20 pieces product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Lack-Ausbesserstifte ist ein Produkt der Kategorie Zubehör mit Mikrofaser | 20 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1075,9 +1075,9 @@ export const products = [
       "de": "Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm"
     },
     "description": {
-      "tr": "Cam Keçe, keçeler kategorisinde cam uygulayıcı | cam parlatma için ideal | 6x4x5cm. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Glass Felt Applicator is a glass applicator | ideal for glass polishing | 6x4x5cm product in our felt pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Glas-Filzapplikator ist ein Produkt der Kategorie Filzpads mit Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Cam Keçe, keçeler kategorisinde cam uygulayıcı | cam parlatma için ideal | 6x4x5cm. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Glass Felt Applicator is a glass applicator | ideal for glass polishing | 6x4x5cm product in our felt pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Glas-Filzapplikator ist ein Produkt der Kategorie Filzpads mit Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1108,9 +1108,9 @@ export const products = [
       "de": "10er-Set"
     },
     "description": {
-      "tr": "Mikrofiber Kurulama Havlusu, mikrofiber bezler kategorisinde 10'lu paket. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Drying Towel is a pack of 10 product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Trockentuch ist ein Produkt der Kategorie Mikrofasertücher mit 10er-Set. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Mikrofiber Kurulama Havlusu, mikrofiber bezler kategorisinde 10'lu paket. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Microfiber Drying Towel is a pack of 10 product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mikrofaser-Trockentuch ist ein Produkt der Kategorie Mikrofasertücher mit 10er-Set. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "10'lu",
@@ -1138,9 +1138,9 @@ export const products = [
       "de": "1 Stück"
     },
     "description": {
-      "tr": "Cam Mikrofiber Bezi, mikrofiber bezler kategorisinde 1 adet. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Glass Microfiber Cloth is a 1 piece product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Glas-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 1 Stück. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Cam Mikrofiber Bezi, mikrofiber bezler kategorisinde 1 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Glass Microfiber Cloth is a 1 piece product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Glas-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 1 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "1 adet",
@@ -1166,9 +1166,9 @@ export const products = [
       "de": "5 Stück"
     },
     "description": {
-      "tr": "Cam Mikrofiber Bezi, mikrofiber bezler kategorisinde 5 adet. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Glass Microfiber Cloth is a 5 pieces product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Glas-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Cam Mikrofiber Bezi, mikrofiber bezler kategorisinde 5 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Glass Microfiber Cloth is a 5 pieces product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Glas-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "5 adet",
@@ -1196,9 +1196,9 @@ export const products = [
       "de": "1 Stück"
     },
     "description": {
-      "tr": "İç Mekan Temizlik Bezi, mikrofiber bezler kategorisinde 1 adet. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Interior Cleaning Cloth is a 1 piece product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Innenraum-Reinigungstuch ist ein Produkt der Kategorie Mikrofasertücher mit 1 Stück. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "İç Mekan Temizlik Bezi, mikrofiber bezler kategorisinde 1 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Interior Cleaning Cloth is a 1 piece product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Innenraum-Reinigungstuch ist ein Produkt der Kategorie Mikrofasertücher mit 1 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "1 adet",
@@ -1223,9 +1223,9 @@ export const products = [
       "de": "5 Stück"
     },
     "description": {
-      "tr": "İç Mekan Temizlik Bezi, mikrofiber bezler kategorisinde 5 adet. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Interior Cleaning Cloth is a 5 pieces product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Innenraum-Reinigungstuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "İç Mekan Temizlik Bezi, mikrofiber bezler kategorisinde 5 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Interior Cleaning Cloth is a 5 pieces product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Innenraum-Reinigungstuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "5 adet",
@@ -1250,9 +1250,9 @@ export const products = [
       "de": "5 Stück"
     },
     "description": {
-      "tr": "Universal Mikrofiber Bez, mikrofiber bezler kategorisinde 5 adet. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Universal Microfiber Cloth is a 5 pieces product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Universal-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Universal Mikrofiber Bez, mikrofiber bezler kategorisinde 5 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Universal Microfiber Cloth is a 5 pieces product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Universal-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "5 adet",
@@ -1278,9 +1278,9 @@ export const products = [
       "de": "Robuste Borsten"
     },
     "description": {
-      "tr": "Lastik Temizlik Fırçası, detay fırçaları kategorisinde dayanıklı kıllar. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Tire Cleaning Brush is a durable bristles product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Reifen-Reinigungsbürste ist ein Produkt der Kategorie Detailing-Bürsten mit Robuste Borsten. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Lastik Temizlik Fırçası, detay fırçaları kategorisinde dayanıklı kıllar. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Tire Cleaning Brush is a durable bristles product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Reifen-Reinigungsbürste ist ein Produkt der Kategorie Detailing-Bürsten mit Robuste Borsten. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1306,9 +1306,9 @@ export const products = [
       "de": "Große Größe"
     },
     "description": {
-      "tr": "Universal Detay Fırçası, detay fırçaları kategorisinde büyük boy. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Universal Detailing Brush is a large size product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Universal-Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Große Größe. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Universal Detay Fırçası, detay fırçaları kategorisinde büyük boy. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Universal Detailing Brush is a large size product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Universal-Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Große Größe. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "Büyük",
@@ -1333,9 +1333,9 @@ export const products = [
       "de": "Schnelltrocknung"
     },
     "description": {
-      "tr": "Kurutma Makinesi, kurutucu kategorisinde yüksek hızlı kurutma. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Blower Dryer is a high-speed drying product in our blower dryer range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Trockner ist ein Produkt der Kategorie Trockner mit Schnelltrocknung. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Kurutma Makinesi, kurutucu kategorisinde yüksek hızlı kurutma. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Blower Dryer is a high-speed drying product in our blower dryer range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Trockner ist ein Produkt der Kategorie Trockner mit Schnelltrocknung. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1363,9 +1363,9 @@ export const products = [
       "de": "Dual-Action-Polieren"
     },
     "description": {
-      "tr": "DA12 Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "DA12 Polisher is a dual action polishing product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "DA12 Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "DA12 Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "DA12 Polisher is a dual action polishing product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "DA12 Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1395,9 +1395,9 @@ export const products = [
       "de": "Dual-Action-Polieren"
     },
     "description": {
-      "tr": "DA9 Pro Max Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "DA9 Pro Max Polisher is a dual action polishing product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "DA9 Pro Max Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "DA9 Pro Max Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "DA9 Pro Max Polisher is a dual action polishing product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "DA9 Pro Max Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1426,9 +1426,9 @@ export const products = [
       "de": "Hohe Leistung"
     },
     "description": {
-      "tr": "Rotary Polisaj Makinesi, polisaj makinesi kategorisinde yüksek performans. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Rotary Polisher is a high performance product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Rotationspoliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Hohe Leistung. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Rotary Polisaj Makinesi, polisaj makinesi kategorisinde yüksek performans. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Rotary Polisher is a high performance product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Rotationspoliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Hohe Leistung. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1456,9 +1456,9 @@ export const products = [
       "de": "Große Kapazität"
     },
     "description": {
-      "tr": "Basınçlı Sprey Şişesi, sprey şişeleri kategorisinde geniş kapasiteli. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Pressure Spray Bottle is a large capacity product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Druck-Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit Große Kapazität. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Basınçlı Sprey Şişesi, sprey şişeleri kategorisinde geniş kapasiteli. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Pressure Spray Bottle is a large capacity product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Druck-Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit Große Kapazität. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1487,9 +1487,9 @@ export const products = [
       "de": "Auftragswerkzeug"
     },
     "description": {
-      "tr": "El Yıkama Aplikatörü, uygulayıcılar kategorisinde uygulama aparatı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Hand Wash Applicator is a application tool product in our applicators range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Handwasch-Applikator ist ein Produkt der Kategorie Applikatoren mit Auftragswerkzeug. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "El Yıkama Aplikatörü, uygulayıcılar kategorisinde uygulama aparatı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Hand Wash Applicator is a application tool product in our applicators range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Handwasch-Applikator ist ein Produkt der Kategorie Applikatoren mit Auftragswerkzeug. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1517,9 +1517,9 @@ export const products = [
       "de": "Auftragswerkzeug"
     },
     "description": {
-      "tr": "Mikrofiber Aplikatör, uygulayıcılar kategorisinde uygulama aparatı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Applicator is a application tool product in our applicators range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Applikator ist ein Produkt der Kategorie Applikatoren mit Auftragswerkzeug. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Mikrofiber Aplikatör, uygulayıcılar kategorisinde uygulama aparatı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Microfiber Applicator is a application tool product in our applicators range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mikrofaser-Applikator ist ein Produkt der Kategorie Applikatoren mit Auftragswerkzeug. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1547,9 +1547,9 @@ export const products = [
       "de": "Weiche Textur"
     },
     "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1574,9 +1574,9 @@ export const products = [
       "de": "Weiche Textur"
     },
     "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Mavi",
@@ -1605,9 +1605,9 @@ export const products = [
       "de": "Weiche Textur"
     },
     "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Yeşil",
@@ -1636,9 +1636,9 @@ export const products = [
       "de": "Weiche Textur"
     },
     "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Kırmızı",
@@ -1662,14 +1662,14 @@ export const products = [
     },
     "category": "yardimcilar",
     "tagline": {
-      "tr": "ChemicalWorkz Aksesuarı",
-      "en": "ChemicalWorkz Accessory",
-      "de": "ChemicalWorkz-Zubehör"
+      "tr": "chemicalworkz Aksesuarı",
+      "en": "chemicalworkz Accessory",
+      "de": "chemicalworkz-Zubehör"
     },
     "description": {
-      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit ChemicalWorkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit chemicalworkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1692,14 +1692,14 @@ export const products = [
     },
     "category": "yardimcilar",
     "tagline": {
-      "tr": "ChemicalWorkz Aksesuarı",
-      "en": "ChemicalWorkz Accessory",
-      "de": "ChemicalWorkz-Zubehör"
+      "tr": "chemicalworkz Aksesuarı",
+      "en": "chemicalworkz Accessory",
+      "de": "chemicalworkz-Zubehör"
     },
     "description": {
-      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit ChemicalWorkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit chemicalworkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1719,14 +1719,14 @@ export const products = [
     },
     "category": "yardimcilar",
     "tagline": {
-      "tr": "ChemicalWorkz Aksesuarı",
-      "en": "ChemicalWorkz Accessory",
-      "de": "ChemicalWorkz-Zubehör"
+      "tr": "chemicalworkz Aksesuarı",
+      "en": "chemicalworkz Accessory",
+      "de": "chemicalworkz-Zubehör"
     },
     "description": {
-      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit ChemicalWorkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit chemicalworkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,

@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import { Archivo, Hanken_Grotesk } from 'next/font/google';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
@@ -26,6 +27,19 @@ const hankenGrotesk = Hanken_Grotesk({
 });
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
+  // False on the very first render (server-rendered markup and the client's initial
+  // hydration pass agree, so no mismatch) and flips true only after that first paint has
+  // already happened. Gates the fade-in below to real client-side navigations — without
+  // this, the wrapper animated from opacity:0 on the FIRST load too, delaying the hero's
+  // LCP paint by the animation's own duration for no reason (there's nothing to transition
+  // *from* on a hard navigation; the static HTML should just be there immediately).
+  const hasMountedRef = useRef(false);
+  useEffect(() => {
+    hasMountedRef.current = true;
+  }, []);
+
   // Real inertia smooth-scroll (the reference the user pointed at only used native CSS
   // scroll-behavior:smooth, which does nothing for mouse-wheel input — this is what
   // actually makes wheel/trackpad scrolling feel eased instead of stepping in raw OS
@@ -96,7 +110,19 @@ export default function App({ Component, pageProps }) {
           <a href="#main-content" className="skip-link">
             Ana içeriğe geç
           </a>
-          <Component {...pageProps} />
+          {/* Keyed to the route pattern (not full asPath, so filter/sort/page query changes
+              on the same page don't retrigger it) — remounting this wrapper on every real
+              navigation replays the fade-in below. Client-side route swaps otherwise have no
+              transition at all (the new page just appears), which is what made "Ürünlere
+              geri dön" (router.back() from a product page to /urunler) read as an abrupt
+              snap instead of the "no hard cuts" motion language the rest of the site uses.
+              Opacity-only, deliberately no transform: Header/WhatsAppFab/ScrollTopButton are
+              all position:fixed *inside* Component, and animating `transform` on an ancestor
+              would create a new containing block for them for the animation's duration,
+              breaking their fixed positioning against the viewport mid-transition. */}
+          <div key={router.pathname} className={hasMountedRef.current ? 'page-transition' : undefined}>
+            <Component {...pageProps} />
+          </div>
         </LanguageProvider>
       </ThemeProvider>
     </div>

@@ -48,7 +48,15 @@ export default function Header() {
   return (
     <GlassSurface
       as="header"
-      className={`site-header glass-surface--calm glass-drift${scrolled ? ' is-scrolled' : ''}`}
+      // No .glass-drift here — the scroll-lag transform on this element (or any ancestor
+      // of a backdrop-filter user) breaks backdrop-filter rendering the moment a
+      // backdrop-filter layer is freshly created while that transform is active: the
+      // mobile menu / language dropdown mounting while the header had already drifted from
+      // scrolling rendered with zero blur, page content showing straight through (a real,
+      // reproducible Chromium compositing bug, not a one-off). The header itself is exactly
+      // that ancestor for both dropdowns, so it can't carry this transform. Confirmed via a
+      // real scroll-then-open repro; lost effect is a few px of decorative parallax.
+      className={`site-header glass-surface--calm${scrolled ? ' is-scrolled' : ''}`}
       contentClassName="site-header__content"
     >
       <div className="site-header__brand">
@@ -153,7 +161,11 @@ export default function Header() {
         <GlassSurface
           as="div"
           id="mobile-nav"
-          className={`site-header__mobile-menu glass-surface--calm glass-surface--solid${menuClosing ? ' is-closing' : ''}`}
+          // --tight swaps in the smaller-scale distortion filter (see GlassSurface.scss and
+          // GlassFilterDefs.jsx) — the default one tears at this panel's size, which is what
+          // read as the menu "screwing up" (page content bleeding through, garbled text).
+          // The language dropdown already uses this same fix; this panel just never got it.
+          className={`site-header__mobile-menu glass-surface--calm glass-surface--tight glass-surface--solid glass-surface--menu${menuClosing ? ' is-closing' : ''}`}
           contentClassName="site-header__mobile-menu-content"
         >
           <nav aria-label="Mobil menü">
