@@ -6,51 +6,43 @@
 
 export const PRODUCT_CATEGORIES = [
   {
-    "slug": "detay-fircalari",
+    "slug": "hava-tabancasi",
     "label": {
-      "tr": "Detay Fırçaları",
-      "en": "Detailing Brushes",
-      "de": "Detailing-Bürsten"
+      "tr": "Hava Tabancası",
+      "en": "Air Gun",
+      "de": "Druckluftpistole"
     }
   },
   {
-    "slug": "keceler",
+    "slug": "polisaj-makinesi",
     "label": {
-      "tr": "Keçeler",
-      "en": "Felt Pads",
-      "de": "Filzpads"
+      "tr": "Polisaj Makineleri",
+      "en": "Polishers",
+      "de": "Poliermaschinen"
     }
   },
   {
-    "slug": "kontrol-isigi",
+    "slug": "polisaj-pedleri",
     "label": {
-      "tr": "Kontrol Işığı",
-      "en": "Inspection Light",
-      "de": "Prüflicht"
+      "tr": "Polisaj Pedleri",
+      "en": "Polishing Pads",
+      "de": "Polierpads"
     }
   },
   {
-    "slug": "kurutucu",
+    "slug": "fircalar",
     "label": {
-      "tr": "Kurutucu",
-      "en": "Blower Dryer",
-      "de": "Trockner"
+      "tr": "Fırçalar",
+      "en": "Brushes",
+      "de": "Bürsten"
     }
   },
   {
-    "slug": "manyetik-bez",
+    "slug": "bezler",
     "label": {
-      "tr": "Manyetik Bez",
-      "en": "Magnetic Cloth",
-      "de": "Magnettuch"
-    }
-  },
-  {
-    "slug": "mikrofiber-bezler",
-    "label": {
-      "tr": "Mikrofiber Bezler",
-      "en": "Microfiber Cloths",
-      "de": "Mikrofasertücher"
+      "tr": "Bezler",
+      "en": "Cloths",
+      "de": "Tücher"
     }
   },
   {
@@ -62,35 +54,11 @@ export const PRODUCT_CATEGORIES = [
     }
   },
   {
-    "slug": "uygulayicilar",
+    "slug": "keceler",
     "label": {
-      "tr": "Uygulayıcılar",
-      "en": "Applicators",
-      "de": "Applikatoren"
-    }
-  },
-  {
-    "slug": "hava-tabancasi",
-    "label": {
-      "tr": "Hava Tabancası",
-      "en": "Air Gun",
-      "de": "Druckluftpistole"
-    }
-  },
-  {
-    "slug": "polisaj-makinesi",
-    "label": {
-      "tr": "Polisaj Makinesi",
-      "en": "Polishers",
-      "de": "Poliermaschinen"
-    }
-  },
-  {
-    "slug": "polisaj-pedleri",
-    "label": {
-      "tr": "Polisaj Pedleri",
-      "en": "Polishing Pads",
-      "de": "Polierpads"
+      "tr": "Keçeler",
+      "en": "Felt Pads",
+      "de": "Filzpads"
     }
   },
   {
@@ -125,6 +93,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-mag/cw-mag-packshot_result.webp",
     "gallery": [
       "/images/products/cw-mag/cw-mag-packshot_result.webp",
@@ -169,13 +138,14 @@ export const products = [
       "de": "Hybrid-Poliermaschine"
     },
     "description": {
-      "tr": "EVO Mini, polisaj makinesi kategorisinde hibrit polisaj makinesi. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "tr": "EVO Mini, polisaj makineleri kategorisinde hibrit polisaj makinesi. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
       "en": "EVO Mini is a hybrid polisher product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
       "de": "EVO Mini ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-evo-mini/cw-evo-mini-packshot_result.webp",
     "gallery": [
       "/images/products/cw-evo-mini/cw-evo-mini-packshot_result.webp",
@@ -219,13 +189,14 @@ export const products = [
       "de": "Hybrid-Poliermaschine"
     },
     "description": {
-      "tr": "EVO Mini Pro, polisaj makinesi kategorisinde hibrit polisaj makinesi. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "tr": "EVO Mini Pro, polisaj makineleri kategorisinde hibrit polisaj makinesi. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
       "en": "EVO Mini Pro is a hybrid polisher product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
       "de": "EVO Mini Pro ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-packshot_result.webp",
     "gallery": [
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-packshot_result.webp",
@@ -273,6 +244,7 @@ export const products = [
     "color": null,
     "size": "125mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-packshot_result.webp",
@@ -320,6 +292,7 @@ export const products = [
     "color": null,
     "size": "30mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-30-heavy/chemicalworkz-heavy-cutting-performance-pad-30mm-grau.webp",
     "gallery": [
       "/images/products/cw-pp-30-heavy/chemicalworkz-heavy-cutting-performance-pad-30mm-grau.webp"
@@ -359,6 +332,7 @@ export const products = [
     "color": null,
     "size": "50mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-50-heavy/chemicalworkz-heavy-cutting-performance-pad-50mm-grau.webp",
     "gallery": [
       "/images/products/cw-pp-50-heavy/chemicalworkz-heavy-cutting-performance-pad-50mm-grau.webp"
@@ -398,6 +372,7 @@ export const products = [
     "color": null,
     "size": "75mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-75-heavy/chemicalworkz-heavy-cutting-performance-pad-75mm-grau.webp",
     "gallery": [
       "/images/products/cw-pp-75-heavy/chemicalworkz-heavy-cutting-performance-pad-75mm-grau.webp"
@@ -437,6 +412,7 @@ export const products = [
     "color": null,
     "size": "125mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-125-medium/cw-pp-125-medium-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-medium/cw-pp-125-medium-packshot_result.webp",
@@ -484,6 +460,7 @@ export const products = [
     "color": null,
     "size": "30mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-30-medium/chemicalworkz-medium-polishing-performance-pad-30mm-blau.webp",
     "gallery": [
       "/images/products/cw-pp-30-medium/chemicalworkz-medium-polishing-performance-pad-30mm-blau.webp"
@@ -523,6 +500,7 @@ export const products = [
     "color": null,
     "size": "50mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-50-medium/chemicalworkz-medium-polishing-performance-pad-50mm-blau.webp",
     "gallery": [
       "/images/products/cw-pp-50-medium/chemicalworkz-medium-polishing-performance-pad-50mm-blau.webp"
@@ -562,6 +540,7 @@ export const products = [
     "color": null,
     "size": "75mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-75-medium/chemicalworkz-medium-polishing-performance-pad-75mm-blau.webp",
     "gallery": [
       "/images/products/cw-pp-75-medium/chemicalworkz-medium-polishing-performance-pad-75mm-blau.webp"
@@ -601,6 +580,7 @@ export const products = [
     "color": null,
     "size": "125mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-125-mf/cw-pp-125-mf-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-mf/cw-pp-125-mf-packshot_result.webp",
@@ -645,6 +625,7 @@ export const products = [
     "color": null,
     "size": "75mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-75-mf/chemicalworkz-microfiber-performance-pad-75mm.webp",
     "gallery": [
       "/images/products/cw-pp-75-mf/chemicalworkz-microfiber-performance-pad-75mm.webp"
@@ -683,6 +664,7 @@ export const products = [
     "color": null,
     "size": "125mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-125-os/cw-pp-125-os-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-os/cw-pp-125-os-packshot_result.webp",
@@ -730,6 +712,7 @@ export const products = [
     "color": null,
     "size": "125mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-125-soft/cw-pp-125-soft-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-soft/cw-pp-125-soft-packshot_result.webp",
@@ -777,6 +760,7 @@ export const products = [
     "color": null,
     "size": "30mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-30-soft/chemicalworkz-fine-finishing-performance-pad-30mm-schwarz.webp",
     "gallery": [
       "/images/products/cw-pp-30-soft/chemicalworkz-fine-finishing-performance-pad-30mm-schwarz.webp"
@@ -816,6 +800,7 @@ export const products = [
     "color": null,
     "size": "50mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-50-soft/chemicalworkz-fine-finishing-performance-pad-50mm-schwarz.webp",
     "gallery": [
       "/images/products/cw-pp-50-soft/chemicalworkz-fine-finishing-performance-pad-50mm-schwarz.webp"
@@ -855,6 +840,7 @@ export const products = [
     "color": null,
     "size": "75mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-75-soft/chemicalworkz-fine-finishing-performance-pad-75mm-schwarz.webp",
     "gallery": [
       "/images/products/cw-pp-75-soft/chemicalworkz-fine-finishing-performance-pad-75mm-schwarz.webp"
@@ -894,6 +880,7 @@ export const products = [
     "color": null,
     "size": "125mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result.webp",
@@ -937,6 +924,7 @@ export const products = [
     "color": null,
     "size": "50mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-50-wool/chemicalworkz-wool-cutting-perfomance-pad-50mm.webp",
     "gallery": [
       "/images/products/cw-pp-50-wool/chemicalworkz-wool-cutting-perfomance-pad-50mm.webp"
@@ -976,6 +964,7 @@ export const products = [
     "color": null,
     "size": "75mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-75-wool/chemicalworkz-wool-cutting-perfomance-pad-75mm.webp",
     "gallery": [
       "/images/products/cw-pp-75-wool/chemicalworkz-wool-cutting-perfomance-pad-75mm.webp"
@@ -1015,6 +1004,7 @@ export const products = [
     "color": null,
     "size": "75mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm.webp",
     "gallery": [
       "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm.webp",
@@ -1044,20 +1034,21 @@ export const products = [
       "en": "Soft Detailing Brush",
       "de": "Weiche Detailing-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Süper Yumuşak",
       "en": "Super Soft",
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, fırçalar kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "16mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result.webp",
     "gallery": [
       "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result.webp",
@@ -1090,20 +1081,21 @@ export const products = [
       "en": "Soft Detailing Brush",
       "de": "Weiche Detailing-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Süper Yumuşak",
       "en": "Super Soft",
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, fırçalar kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result.webp",
     "gallery": [
       "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result.webp",
@@ -1136,20 +1128,21 @@ export const products = [
       "en": "Soft Detailing Brush",
       "de": "Weiche Detailing-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Süper Yumuşak",
       "en": "Super Soft",
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, fırçalar kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "24mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot.webp",
     "gallery": [
       "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot.webp",
@@ -1182,20 +1175,21 @@ export const products = [
       "en": "Ultra Soft Detailing Brush",
       "de": "Ultra-Weiche Detailing-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Ultra Yumuşak",
       "en": "Ultra Soft",
       "de": "Ultra Weich"
     },
     "description": {
-      "tr": "Ultra Yumuşak Detay Fırçası, detay fırçaları kategorisinde ultra yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft Detailing Brush is a ultra soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Ultra Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak Detay Fırçası, fırçalar kategorisinde ultra yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft Detailing Brush is a ultra soft product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiche Detailing-Bürste ist ein Produkt der Kategorie Bürsten mit Ultra Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-db-us/CW-DB-US-packshot_result.webp",
     "gallery": [
       "/images/products/cw-db-us/CW-DB-US-packshot_result.webp",
@@ -1222,20 +1216,21 @@ export const products = [
       "en": "Black Detailing Brush",
       "de": "Schwarze Detailing-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Yumuşak",
       "en": "Soft",
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, fırçalar kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "16mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-db-bb-16/CW-DB-BB-16-packshot_result.webp",
     "gallery": [
       "/images/products/cw-db-bb-16/CW-DB-BB-16-packshot_result.webp",
@@ -1270,20 +1265,21 @@ export const products = [
       "en": "Black Detailing Brush",
       "de": "Schwarze Detailing-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Yumuşak",
       "en": "Soft",
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, fırçalar kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-db-bb-20/CW-DB-BB-20-packshot_result.webp",
     "gallery": [
       "/images/products/cw-db-bb-20/CW-DB-BB-20-packshot_result.webp",
@@ -1318,20 +1314,21 @@ export const products = [
       "en": "Black Detailing Brush",
       "de": "Schwarze Detailing-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Yumuşak",
       "en": "Soft",
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, fırçalar kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "24mm",
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result.webp",
     "gallery": [
       "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result.webp",
@@ -1366,16 +1363,16 @@ export const products = [
       "en": "Ultra Soft 2-Piece Set",
       "de": "Ultra-Weiches 2er-Set"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Detay Fırçası Seti | Mor",
       "en": "Detailing Brush Set | Purple",
       "de": "Detailing-Bürsten-Set | Lila"
     },
     "description": {
-      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | mor. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft 2-Piece Set is a detailing brush set | purple product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Lila. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak 2'li, fırçalar kategorisinde detay fırçası seti | mor. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft 2-Piece Set is a detailing brush set | purple product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Bürsten mit Detailing-Bürsten-Set | Lila. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Mor",
@@ -1384,6 +1381,7 @@ export const products = [
     },
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-usd-purple/cw-usd-purple-packshot_result.webp",
     "gallery": [
       "/images/products/cw-usd-purple/cw-usd-purple-packshot_result.webp"
@@ -1406,16 +1404,16 @@ export const products = [
       "en": "Ultra Soft 2-Piece Set",
       "de": "Ultra-Weiches 2er-Set"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Detay Fırçası Seti | Turkuaz",
       "en": "Detailing Brush Set | Turquoise",
       "de": "Detailing-Bürsten-Set | Türkis"
     },
     "description": {
-      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | turkuaz. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft 2-Piece Set is a detailing brush set | turquoise product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Türkis. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak 2'li, fırçalar kategorisinde detay fırçası seti | turkuaz. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft 2-Piece Set is a detailing brush set | turquoise product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Bürsten mit Detailing-Bürsten-Set | Türkis. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Turkuaz",
@@ -1424,6 +1422,7 @@ export const products = [
     },
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-usd-turquoise/cw-usd-turquoise-packshot_result.webp",
     "gallery": [
       "/images/products/cw-usd-turquoise/cw-usd-turquoise-packshot_result.webp"
@@ -1446,20 +1445,21 @@ export const products = [
       "en": "Tire Dressing Brush",
       "de": "Reifenglanz-Bürste"
     },
-    "category": "detay-fircalari",
+    "category": "fircalar",
     "tagline": {
       "tr": "Kimyasal Maddelere Dayanıklı",
       "en": "Chemical Resistant",
       "de": "Chemikalienbeständig"
     },
     "description": {
-      "tr": "Lastik Parlatıcı Fırça, detay fırçaları kategorisinde kimyasal maddelere dayanıklı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Tire Dressing Brush is a chemical resistant product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Reifenglanz-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Chemikalienbeständig. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Lastik Parlatıcı Fırça, fırçalar kategorisinde kimyasal maddelere dayanıklı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Tire Dressing Brush is a chemical resistant product in our brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Reifenglanz-Bürste ist ein Produkt der Kategorie Bürsten mit Chemikalienbeständig. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-tdb/cw-tdb-packshot_result.webp",
     "gallery": [
       "/images/products/cw-tdb/cw-tdb-packshot_result.webp",
@@ -1510,6 +1510,7 @@ export const products = [
     },
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-sb-L-b/CW-SB-L-B-packshot_result.webp",
     "gallery": [
       "/images/products/cw-sb-L-b/CW-SB-L-B-packshot_result.webp",
@@ -1552,6 +1553,7 @@ export const products = [
     },
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-sb-L-bL/CW-SB-L-BL-packshot_result.webp",
     "gallery": [
       "/images/products/cw-sb-L-bL/CW-SB-L-BL-packshot_result.webp",
@@ -1594,6 +1596,7 @@ export const products = [
     },
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-sb-L-gr/CW-SB-L-GR-packshot_result.webp",
     "gallery": [
       "/images/products/cw-sb-L-gr/CW-SB-L-GR-packshot_result.webp",
@@ -1636,6 +1639,7 @@ export const products = [
     },
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-sb-L-re/CW-SB-L-RE-packshot_result.webp",
     "gallery": [
       "/images/products/cw-sb-L-re/CW-SB-L-RE-packshot_result.webp",
@@ -1678,6 +1682,7 @@ export const products = [
     },
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-sb-L-ye/CW-SB-L-YE-packshot_result.webp",
     "gallery": [
       "/images/products/cw-sb-L-ye/CW-SB-L-YE-packshot_result.webp",
@@ -1716,6 +1721,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-rps/cw-rps-packshot_result.webp",
     "gallery": [
       "/images/products/cw-rps/cw-rps-packshot_result.webp",
@@ -1762,6 +1768,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-cs/cw-cs-packshot_result.webp",
     "gallery": [
       "/images/products/cw-cs/cw-cs-packshot_result.webp"
@@ -1798,6 +1805,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-amm-gray/cw-amm-gray-packshot_result.webp",
     "gallery": [
       "/images/products/cw-amm-gray/cw-amm-gray-packshot_result.webp"
@@ -1834,6 +1842,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pc-s/CW-PC-S-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pc-s/CW-PC-S-packshot_result.webp",
@@ -1872,6 +1881,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-hg/cw-hg-1pc-packshot_result.webp",
     "gallery": [
       "/images/products/cw-hg/cw-hg-1pc-packshot_result.webp"
@@ -1908,6 +1918,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-mw/CW-MW-packshot_result.webp",
     "gallery": [
       "/images/products/cw-mw/CW-MW-packshot_result.webp"
@@ -1930,20 +1941,21 @@ export const products = [
       "en": "Magnetic Drying Towel",
       "de": "Magnet-Trockentuch"
     },
-    "category": "manyetik-bez",
+    "category": "bezler",
     "tagline": {
       "tr": "Manyetik Kurulama Havlusu",
       "en": "Magnetic Drying Towel",
       "de": "Magnetisches Trockentuch"
     },
     "description": {
-      "tr": "Manyetik Havlu, manyetik bez kategorisinde manyetik kurulama havlusu. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Magnetic Drying Towel is a magnetic drying towel product in our magnetic cloth range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Magnet-Trockentuch ist ein Produkt der Kategorie Magnettuch mit Magnetisches Trockentuch. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "Manyetik Havlu, bezler kategorisinde manyetik kurulama havlusu. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Magnetic Drying Towel is a magnetic drying towel product in our cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Magnet-Trockentuch ist ein Produkt der Kategorie Tücher mit Magnetisches Trockentuch. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-ms/cw-ms-packshot_result.webp",
     "gallery": [
       "/images/products/cw-ms/cw-ms-packshot_result.webp",
@@ -1961,7 +1973,8 @@ export const products = [
     },
     "video": {
       "mp4": "/videos/cw-ms-a1.mp4",
-      "webm": "/videos/cw-ms-a1.webm"
+      "webm": "/videos/cw-ms-a1.webm",
+      "poster": "/images/products/cw-ms/cw-ms-a1-poster.webp"
     }
   },
   {
@@ -1985,6 +1998,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pss/cw-pss-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pss/cw-pss-packshot_result.webp",
@@ -2029,6 +2043,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-ga/cw-ga-packshot.webp",
     "gallery": [
       "/images/products/cw-ga/cw-ga-packshot.webp",
@@ -2081,6 +2096,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": false,
     "image": "/images/products/cw-hwa/cw-hwa-packshot_result.webp",
     "gallery": [
       "/images/products/cw-hwa/cw-hwa-packshot_result.webp"
@@ -2099,20 +2115,21 @@ export const products = [
       "en": "Carbon Fiber Glass Cloth",
       "de": "Karbonfaser-Glastuch"
     },
-    "category": "mikrofiber-bezler",
+    "category": "bezler",
     "tagline": {
       "tr": "Karbon Mikrofiber | 40x40cm",
       "en": "Carbon Microfiber | 40x40cm",
       "de": "Karbon-Mikrofaser | 40x40cm"
     },
     "description": {
-      "tr": "KarbonFiber Cam Bezi, mikrofiber bezler kategorisinde karbon mikrofiber | 40x40cm. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Carbon Fiber Glass Cloth is a carbon microfiber | 40x40cm product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Karbonfaser-Glastuch ist ein Produkt der Kategorie Mikrofasertücher mit Karbon-Mikrofaser | 40x40cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+      "tr": "KarbonFiber Cam Bezi, bezler kategorisinde karbon mikrofiber | 40x40cm. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Carbon Fiber Glass Cloth is a carbon microfiber | 40x40cm product in our cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Karbonfaser-Glastuch ist ein Produkt der Kategorie Tücher mit Karbon-Mikrofaser | 40x40cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result.webp",
     "gallery": [
       "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result.webp",
@@ -2159,6 +2176,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-pbk/cw-pbk-packshot.webp",
     "gallery": [
       "/images/products/cw-pbk/cw-pbk-packshot.webp",
@@ -2203,6 +2221,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-fe/cw-fe-packshot.webp",
     "gallery": [
       "/images/products/cw-fe/cw-fe-packshot.webp",
@@ -2245,6 +2264,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-dss-10/cw-dss-10-packshot.webp",
     "gallery": [
       "/images/products/cw-dss-10/cw-dss-10-packshot.webp"
@@ -2281,6 +2301,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": true,
     "image": "/images/products/cw-icpe-1/cw-icpe-1-packshot.webp",
     "gallery": [
       "/images/products/cw-icpe-1/cw-icpe-1-packshot.webp",
@@ -2317,13 +2338,14 @@ export const products = [
       "de": "Dual-Action-Polieren"
     },
     "description": {
-      "tr": "DA12 Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "tr": "DA12 Polisaj Makinesi, polisaj makineleri kategorisinde dual action polisaj. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
       "en": "DA12 Polisher is a dual action polishing product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
       "de": "DA12 Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": false,
     "image": "/images/products/cw-da12/cw-da12-packshot_result.webp",
     "gallery": [
       "/images/products/cw-da12/cw-da12-packshot_result.webp"
@@ -2349,13 +2371,14 @@ export const products = [
       "de": "Dual-Action-Polieren"
     },
     "description": {
-      "tr": "DA9 Pro Max Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "tr": "DA9 Pro Max Polisaj Makinesi, polisaj makineleri kategorisinde dual action polisaj. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
       "en": "DA9 Pro Max Polisher is a dual action polishing product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
       "de": "DA9 Pro Max Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
+    "inStock": false,
     "image": "/images/products/cw-da9-pro-max/cw-da9-pro-max-packshot_result.webp",
     "gallery": [
       "/images/products/cw-da9-pro-max/cw-da9-pro-max-packshot_result.webp"

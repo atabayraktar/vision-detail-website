@@ -6,15 +6,14 @@ import GlassSurface from './GlassSurface';
 export default function ProductCard({ product, priority = false }) {
   const { t } = useLanguage();
 
-  return (
-    // No data-reveal here: useScrollReveal's IntersectionObserver only scans once at
-    // mount, but this grid re-renders a different set of cards on every search/filter/
-    // sort/page change — cards added after that initial scan would never get observed
-    // and stay stuck at opacity:0 (confirmed: this was silently hiding every live-search
-    // result). A grid that refilters as you type shouldn't fade in on each keystroke
-    // anyway — instant feedback reads as more responsive here than the reveal treatment
-    // fits sections that only render once, like the homepage.
-    <Link href={`/urunler/${product.id}`} className="product-card">
+  // Out-of-stock products (STOK column of the source Excel — see scripts/build-products.mjs)
+  // render as a dimmed, non-interactive card: on a static export the detail page's HTML
+  // still exists at its URL (getStaticPaths builds every id), so the correct way to keep
+  // people out of it is simply not linking there — a plain <div> instead of the <Link>.
+  const inStock = product.inStock !== false;
+
+  const body = (
+    <>
       <span className="product-card__image-wrap">
         <Image
           src={product.image}
@@ -24,7 +23,9 @@ export default function ProductCard({ product, priority = false }) {
           style={{ objectFit: 'contain' }}
           priority={priority}
         />
-        {product.isNew && <span className="product-card__badge">Yeni</span>}
+        {product.isNew && inStock && <span className="product-card__badge">Yeni</span>}
+        {/* Text label, not just dimming — stock state must not be conveyed by opacity alone. */}
+        {!inStock && <span className="product-card__badge product-card__badge--stock">Stokta Yok</span>}
       </span>
       <span className="product-card__body">
         <span className="product-card__name">{t(product.name)}</span>
@@ -37,18 +38,41 @@ export default function ProductCard({ product, priority = false }) {
         )}
         {/* No real price data (see src/data/products.js) — every product routes to a
             WhatsApp inquiry instead of a cart, so this reads as an invitation, not a gap. */}
-        <span className="product-card__price">Fiyat için WhatsApp'tan sorun</span>
-        <GlassSurface
-          as="span"
-          className="product-card__cta glass-surface--tight glass-surface--solid"
-          contentClassName="product-card__cta-content"
-        >
-          {/* .btn-glass__label already goes gradient when ANY ancestor a/button is
-              hovered (see globals.scss) — the whole card is the <a>, so hovering the
-              image also lights this up, not just the pill itself. */}
-          <span className="btn-glass__label">İncele</span>
-        </GlassSurface>
+        {inStock ? (
+          <>
+            <span className="product-card__price">Fiyat için WhatsApp&apos;tan sorun</span>
+            <GlassSurface
+              as="span"
+              className="product-card__cta glass-surface--tight glass-surface--solid"
+              contentClassName="product-card__cta-content"
+            >
+              {/* .btn-glass__label already goes gradient when ANY ancestor a/button is
+                  hovered (see globals.scss) — the whole card is the <a>, so hovering the
+                  image also lights this up, not just the pill itself. */}
+              <span className="btn-glass__label">İncele</span>
+            </GlassSurface>
+          </>
+        ) : (
+          <span className="product-card__price">Şu an temin edilemiyor</span>
+        )}
       </span>
+    </>
+  );
+
+  if (!inStock) {
+    return <div className="product-card product-card--out-of-stock">{body}</div>;
+  }
+
+  return (
+    // No data-reveal here: useScrollReveal's IntersectionObserver only scans once at
+    // mount, but this grid re-renders a different set of cards on every search/filter/
+    // sort/page change — cards added after that initial scan would never get observed
+    // and stay stuck at opacity:0 (confirmed: this was silently hiding every live-search
+    // result). A grid that refilters as you type shouldn't fade in on each keystroke
+    // anyway — instant feedback reads as more responsive here than the reveal treatment
+    // fits sections that only render once, like the homepage.
+    <Link href={`/urunler/${product.id}`} className="product-card">
+      {body}
     </Link>
   );
 }

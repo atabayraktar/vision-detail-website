@@ -522,7 +522,8 @@
   "VIDEO_DATA": {
     "cw-ms": {
       "mp4": "/videos/cw-ms-a1.mp4",
-      "webm": "/videos/cw-ms-a1.webm"
+      "webm": "/videos/cw-ms-a1.webm",
+      "poster": "/images/products/cw-ms/cw-ms-a1-poster.webp"
     }
   }
 }

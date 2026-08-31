@@ -123,15 +123,16 @@ export const equipmentSection = {
     de: ['Innovative Produkte', 'für jede Herausforderung.'],
   },
   // Curated, not exhaustive — only categories with a real supplied photo in
-  // .claude/homepage_data/equipment-category-section/ appear here (kontrol-isigi, kurutucu
-  // and uygulayicilar still have none, so they're intentionally left out rather than shown
-  // with a reused/placeholder image; see PRODUCT_CATEGORIES in scripts/build-products.mjs
-  // for the full category list used by /urunler's filter panel).
+  // .claude/homepage_data/equipment-category-section/ appear here. Slugs must match
+  // PRODUCT_CATEGORIES in scripts/build-products.mjs (the user's 8 real Excel categories):
+  // the old detay-fircalari card became fircalar, and the two separate cloth cards
+  // (manyetik-bez + mikrofiber-bezler) merged into one bezler card so every card lands on
+  // a populated /urunler filter.
   categories: [
     {
-      slug: 'detay-fircalari',
+      slug: 'fircalar',
       image: '/images/equipment/detay-fircalari.webp',
-      title: { tr: 'Detay Fırçaları', en: 'Detailing Brushes', de: 'Detailing-Bürsten' },
+      title: { tr: 'Fırçalar', en: 'Brushes', de: 'Bürsten' },
     },
     {
       slug: 'keceler',
@@ -139,14 +140,9 @@ export const equipmentSection = {
       title: { tr: 'Keçeler', en: 'Felt Pads', de: 'Filzpads' },
     },
     {
-      slug: 'manyetik-bez',
-      image: '/images/equipment/manyetik-bez.webp',
-      title: { tr: 'Manyetik Bez', en: 'Magnetic Cloth', de: 'Magnettuch' },
-    },
-    {
-      slug: 'mikrofiber-bezler',
+      slug: 'bezler',
       image: '/images/equipment/mikrofiber-bezler.webp',
-      title: { tr: 'Mikrofiber Bezler', en: 'Microfiber Cloths', de: 'Mikrofasertücher' },
+      title: { tr: 'Bezler', en: 'Cloths', de: 'Tücher' },
     },
     {
       slug: 'sprey-siseleri',

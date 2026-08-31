@@ -7,6 +7,10 @@ import '@/styles/main.scss';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 import GlassFilterDefs from '@/components/GlassFilterDefs';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import WhatsAppFab from '@/components/WhatsAppFab';
+import ScrollTopButton from '@/components/ScrollTopButton';
 
 // Self-hosted via next/font (built at compile time, no external request at runtime) —
 // same Archivo/Hanken Grotesk variable families the brand file specifies, still driven by
@@ -184,6 +188,17 @@ export default function App({ Component, pageProps }) {
           <a href="#main-content" className="skip-link">
             Ana içeriğe geç
           </a>
+          {/* Persistent chrome — Header/Footer/WhatsAppFab/ScrollTopButton live HERE, as
+              siblings of the keyed page-transition div below, never inside it. Rendering
+              them per-page meant every client-side navigation unmounted and remounted them
+              (the keyed div fully swaps its subtree), tearing down the header's warm
+              backdrop-filter + SVG-distortion compositing layer and standing a fresh one up
+              cold — whose first frames render flat/unblurred (the user-visible "header
+              flashes opaque then pops back to glass" bug on nav). Same cold-layer problem
+              already fixed for the header's mobile dropdown (see Header.jsx); the fix here
+              is to simply never unmount the chrome. None of these four take props, so the
+              move is pure relocation. */}
+          <Header />
           {/* Keyed to the route pattern (not full asPath, so filter/sort/page query changes
               on the same page don't retrigger it) — remounting this wrapper on every real
               navigation replays the fade-in below. Client-side route swaps otherwise have no
@@ -191,14 +206,17 @@ export default function App({ Component, pageProps }) {
               geri dön" (router.back() from a product page to /urunler) read as an abrupt
               snap instead of the "no hard cuts" motion language the rest of the site uses.
               `ready` (see above) gates the actual fade — see .page-transition/.is-visible in
-              globals.scss. Opacity-only, deliberately no transform: Header/WhatsAppFab/
-              ScrollTopButton are all position:fixed *inside* Component, and animating
-              `transform` on an ancestor would create a new containing block for them for the
-              animation's duration, breaking their fixed positioning against the viewport
+              globals.scss. Opacity-only, deliberately no transform: kept that way even now
+              that the fixed-position chrome (Header/WhatsAppFab/ScrollTopButton) sits
+              outside this div — per-page content can still contain fixed/sticky descendants
+              (e.g. modals), and a transforming ancestor would become their containing block
               mid-transition. */}
           <div key={router.pathname} className={`page-transition${ready ? ' is-visible' : ''}`}>
             <Component {...pageProps} />
           </div>
+          <Footer />
+          <WhatsAppFab />
+          <ScrollTopButton />
         </LanguageProvider>
       </ThemeProvider>
     </div>

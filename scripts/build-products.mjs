@@ -34,20 +34,28 @@ const posterDataFile = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'po
 const POSTER_DATA = posterDataFile.POSTER_DATA;
 const VIDEO_DATA = posterDataFile.VIDEO_DATA;
 
+// Exactly the 8 top-level categories from the source Excel's ANA KATEGORİLER column
+// (rows 2-9, in the Excel's own order — vision-detail-ürün-listesi.xlsx, 2026-08 refresh).
+// The old finer subcategories were never the user's: detay-fircalari → fircalar,
+// manyetik-bez + mikrofiber-bezler → bezler, and kontrol-isigi / kurutucu / uygulayicilar
+// (all long since product-less after the catalog refresh) are gone entirely.
+// TR "Polisaj Makineleri" (plural) follows the newer Excel; the slug stays polisaj-makinesi
+// so existing links (homepage hero CTA, shared filter URLs) keep working.
 const CATEGORIES = [
-  { slug: 'detay-fircalari', label: { tr: 'Detay Fırçaları', en: 'Detailing Brushes', de: 'Detailing-Bürsten' } },
-  { slug: 'keceler', label: { tr: 'Keçeler', en: 'Felt Pads', de: 'Filzpads' } },
-  { slug: 'kontrol-isigi', label: { tr: 'Kontrol Işığı', en: 'Inspection Light', de: 'Prüflicht' } },
-  { slug: 'kurutucu', label: { tr: 'Kurutucu', en: 'Blower Dryer', de: 'Trockner' } },
-  { slug: 'manyetik-bez', label: { tr: 'Manyetik Bez', en: 'Magnetic Cloth', de: 'Magnettuch' } },
-  { slug: 'mikrofiber-bezler', label: { tr: 'Mikrofiber Bezler', en: 'Microfiber Cloths', de: 'Mikrofasertücher' } },
-  { slug: 'sprey-siseleri', label: { tr: 'Sprey Şişeleri', en: 'Spray Bottles', de: 'Sprühflaschen' } },
-  { slug: 'uygulayicilar', label: { tr: 'Uygulayıcılar', en: 'Applicators', de: 'Applikatoren' } },
   { slug: 'hava-tabancasi', label: { tr: 'Hava Tabancası', en: 'Air Gun', de: 'Druckluftpistole' } },
-  { slug: 'polisaj-makinesi', label: { tr: 'Polisaj Makinesi', en: 'Polishers', de: 'Poliermaschinen' } },
+  { slug: 'polisaj-makinesi', label: { tr: 'Polisaj Makineleri', en: 'Polishers', de: 'Poliermaschinen' } },
   { slug: 'polisaj-pedleri', label: { tr: 'Polisaj Pedleri', en: 'Polishing Pads', de: 'Polierpads' } },
+  { slug: 'fircalar', label: { tr: 'Fırçalar', en: 'Brushes', de: 'Bürsten' } },
+  { slug: 'bezler', label: { tr: 'Bezler', en: 'Cloths', de: 'Tücher' } },
+  { slug: 'sprey-siseleri', label: { tr: 'Sprey Şişeleri', en: 'Spray Bottles', de: 'Sprühflaschen' } },
+  { slug: 'keceler', label: { tr: 'Keçeler', en: 'Felt Pads', de: 'Filzpads' } },
   { slug: 'yardimcilar', label: { tr: 'Yardımcılar', en: 'Accessories', de: 'Zubehör' } },
 ];
+
+// STOK column of the newer Excel (vision-detail-ürün-listesi.xlsx): every product row says
+// "var" except the bottom three (rows 54-56: cw-da9-pro-max, cw-da12, cw-hwa), whose STOK
+// cell is empty — those are the user's "en alttaki 3 üründe stok yok".
+const OUT_OF_STOCK = new Set(['cw-da9-pro-max', 'cw-da12', 'cw-hwa']);
 const catLabel = (slug) => CATEGORIES.find((c) => c.slug === slug).label;
 
 const COLORS = {
@@ -165,34 +173,34 @@ const SEEDS = [
     posterFile: '6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp',
     name: { tr: 'Cam Performans Pedi', en: 'Glass Performance Pad', de: 'Glas-Performance-Pad' },
     tagline: { tr: 'Yüksek Kaliteli Keçe | Aşındırıcı', en: 'High-Quality Felt | Abrasive', de: 'Hochwertiger Filz | Abrasiv' } },
-  { id: 'cw-db-ws-16', dir: 'Fırçalar/cw-db-ws-16', category: 'detay-fircalari', size: '16mm',
+  { id: 'cw-db-ws-16', dir: 'Fırçalar/cw-db-ws-16', category: 'fircalar', size: '16mm',
     name: { tr: 'Yumuşak Detay Fırçası', en: 'Soft Detailing Brush', de: 'Weiche Detailing-Bürste' },
     tagline: { tr: 'Süper Yumuşak', en: 'Super Soft', de: 'Super Weich' } },
-  { id: 'cw-db-ws-20', dir: 'Fırçalar/cw-db-ws-20', category: 'detay-fircalari', size: '20mm',
+  { id: 'cw-db-ws-20', dir: 'Fırçalar/cw-db-ws-20', category: 'fircalar', size: '20mm',
     name: { tr: 'Yumuşak Detay Fırçası', en: 'Soft Detailing Brush', de: 'Weiche Detailing-Bürste' },
     tagline: { tr: 'Süper Yumuşak', en: 'Super Soft', de: 'Super Weich' } },
-  { id: 'cw-db-ws-24', dir: 'Fırçalar/cw-db-ws-24', category: 'detay-fircalari', size: '24mm',
+  { id: 'cw-db-ws-24', dir: 'Fırçalar/cw-db-ws-24', category: 'fircalar', size: '24mm',
     name: { tr: 'Yumuşak Detay Fırçası', en: 'Soft Detailing Brush', de: 'Weiche Detailing-Bürste' },
     tagline: { tr: 'Süper Yumuşak', en: 'Super Soft', de: 'Super Weich' } },
-  { id: 'cw-db-us', dir: 'Fırçalar/cw-db-us', category: 'detay-fircalari', size: '20mm',
+  { id: 'cw-db-us', dir: 'Fırçalar/cw-db-us', category: 'fircalar', size: '20mm',
     name: { tr: 'Ultra Yumuşak Detay Fırçası', en: 'Ultra Soft Detailing Brush', de: 'Ultra-Weiche Detailing-Bürste' },
     tagline: { tr: 'Ultra Yumuşak', en: 'Ultra Soft', de: 'Ultra Weich' } },
-  { id: 'cw-db-bb-16', dir: 'Fırçalar/cw-db-bb-16', category: 'detay-fircalari', size: '16mm',
+  { id: 'cw-db-bb-16', dir: 'Fırçalar/cw-db-bb-16', category: 'fircalar', size: '16mm',
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
     tagline: { tr: 'Yumuşak', en: 'Soft', de: 'Weich' } },
-  { id: 'cw-db-bb-20', dir: 'Fırçalar/cw-db-bb-20', category: 'detay-fircalari', size: '20mm',
+  { id: 'cw-db-bb-20', dir: 'Fırçalar/cw-db-bb-20', category: 'fircalar', size: '20mm',
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
     tagline: { tr: 'Yumuşak', en: 'Soft', de: 'Weich' } },
-  { id: 'cw-db-bb-24', dir: 'Fırçalar/cw-db-bb-24', category: 'detay-fircalari', size: '24mm',
+  { id: 'cw-db-bb-24', dir: 'Fırçalar/cw-db-bb-24', category: 'fircalar', size: '24mm',
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
     tagline: { tr: 'Yumuşak', en: 'Soft', de: 'Weich' } },
-  { id: 'cw-usd-purple', dir: 'Fırçalar/cw-usd-purple', category: 'detay-fircalari', color: 'Mor',
+  { id: 'cw-usd-purple', dir: 'Fırçalar/cw-usd-purple', category: 'fircalar', color: 'Mor',
     name: { tr: "Ultra Yumuşak 2'li", en: 'Ultra Soft 2-Piece Set', de: 'Ultra-Weiches 2er-Set' },
     tagline: { tr: 'Detay Fırçası Seti | Mor', en: 'Detailing Brush Set | Purple', de: 'Detailing-Bürsten-Set | Lila' } },
-  { id: 'cw-usd-turquoise', dir: 'Fırçalar/cw-usd-turquoise', category: 'detay-fircalari', color: 'Turkuaz',
+  { id: 'cw-usd-turquoise', dir: 'Fırçalar/cw-usd-turquoise', category: 'fircalar', color: 'Turkuaz',
     name: { tr: "Ultra Yumuşak 2'li", en: 'Ultra Soft 2-Piece Set', de: 'Ultra-Weiches 2er-Set' },
     tagline: { tr: 'Detay Fırçası Seti | Turkuaz', en: 'Detailing Brush Set | Turquoise', de: 'Detailing-Bürsten-Set | Türkis' } },
-  { id: 'cw-tdb', dir: 'Fırçalar/cw-tdb', category: 'detay-fircalari',
+  { id: 'cw-tdb', dir: 'Fırçalar/cw-tdb', category: 'fircalar',
     name: { tr: 'Lastik Parlatıcı Fırça', en: 'Tire Dressing Brush', de: 'Reifenglanz-Bürste' },
     tagline: { tr: 'Kimyasal Maddelere Dayanıklı', en: 'Chemical Resistant', de: 'Chemikalienbeständig' } },
   { id: 'cw-sb-L-b', dir: 'Sprey Şişeleri/cw-sb-L-b', category: 'sprey-siseleri', color: 'Siyah',
@@ -228,7 +236,7 @@ const SEEDS = [
   { id: 'cw-mw', dir: 'Yardımcılar/cw-mw', category: 'yardimcilar',
     name: { tr: 'Alet Takımı', en: 'Tool Kit', de: 'Werkzeugset' },
     tagline: { tr: 'Montaj Aparatı | 12 parça', en: 'Assembly Kit | 12 pieces', de: 'Montageset | 12 Teile' } },
-  { id: 'cw-ms', dir: 'Bezler/cw-ms', category: 'manyetik-bez',
+  { id: 'cw-ms', dir: 'Bezler/cw-ms', category: 'bezler',
     name: { tr: 'Manyetik Havlu', en: 'Magnetic Drying Towel', de: 'Magnet-Trockentuch' },
     tagline: { tr: 'Manyetik Kurulama Havlusu', en: 'Magnetic Drying Towel', de: 'Magnetisches Trockentuch' } },
   { id: 'cw-pss', dir: 'Yardımcılar/cw-pss', category: 'yardimcilar',
@@ -246,7 +254,7 @@ const SEEDS = [
     tagline: { tr: 'Uygulama Aparatı', en: 'Application Tool', de: 'Auftragswerkzeug' } },
   // Renamed from cw-cfgt-1pcs; Excel gives it a real product name instead of the previously
   // inferred "Cam Mikrofiber Bezi".
-  { id: 'cw-cfgt-1pc', dir: 'Bezler/cw-cfgt-1pc', category: 'mikrofiber-bezler',
+  { id: 'cw-cfgt-1pc', dir: 'Bezler/cw-cfgt-1pc', category: 'bezler',
     name: { tr: 'KarbonFiber Cam Bezi', en: 'Carbon Fiber Glass Cloth', de: 'Karbonfaser-Glastuch' },
     tagline: { tr: 'Karbon Mikrofiber | 40x40cm', en: 'Carbon Microfiber | 40x40cm', de: 'Karbon-Mikrofaser | 40x40cm' } },
   // New this catalog refresh — real Excel rows + photographed folders.
@@ -380,6 +388,7 @@ async function main() {
       color: seed.color ? COLORS[seed.color] : null,
       size: seed.size || null,
       isNew: false,
+      inStock: !OUT_OF_STOCK.has(seed.id),
       image: `/images/products/${seed.id}/${primary}`,
       gallery: gallery.map((f) => `/images/products/${seed.id}/${f}`),
       galleryThumbs: gallery.map((f) => `/images/products/${seed.id}/${thumbName(f)}`),

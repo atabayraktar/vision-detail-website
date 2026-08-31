@@ -1,9 +1,5 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import WhatsAppFab from '@/components/WhatsAppFab';
-import ScrollTopButton from '@/components/ScrollTopButton';
 import ProductGallery from '@/components/ProductGallery';
 import ProductInfo from '@/components/ProductInfo';
 import ProductPoster from '@/components/ProductPoster';
@@ -42,8 +38,8 @@ export async function getStaticProps({ params }) {
   // Both lists only ever feed VariantPicker/ProductCard — trim to what those actually read
   // (same reasoning as /urunler's getStaticProps) instead of re-serializing each matched
   // product's full gallery/posterDescription/video payload again on every detail page.
-  const leanProduct = ({ id, name, tagline, category, color, size, isNew, image }) => ({
-    id, name, tagline, category, color, size, isNew, image,
+  const leanProduct = ({ id, name, tagline, category, color, size, isNew, inStock, image }) => ({
+    id, name, tagline, category, color, size, isNew, inStock, image,
   });
   return {
     props: {
@@ -98,7 +94,7 @@ export default function ProductDetailPage({ product, siblings, related, categori
     inLanguage: 'tr',
     offers: {
       '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
+      availability: product.inStock === false ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
       // No cart/checkout on this site (WhatsApp is the sales channel — CLAUDE.md hard
       // rule) and no real price data exists — url points at the page itself rather than
       // fabricating a price, which schema.org's Offer otherwise expects.
@@ -146,8 +142,6 @@ export default function ProductDetailPage({ product, siblings, related, categori
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       </Head>
 
-      <Header />
-
       <main id="main-content">
         <section className="product-detail container">
           <button type="button" className="product-detail__back gradient-hover" onClick={goBack}>
@@ -163,17 +157,19 @@ export default function ProductDetailPage({ product, siblings, related, categori
           </div>
 
           {/* Poster images/description come straight from the source Excel's ÜRÜN POSTERİ
-              GÖRSELİ / ÜRÜN POSTERİ AÇIKLAMASI columns (see scripts/build-products.mjs) —
-              not every SKU has them, ProductPoster itself no-ops when posterImages is empty. */}
-          <ProductPoster images={product.posterImages} description={product.posterDescription} alt={`${name} — ${t(product.tagline)}`} />
+              GÖRSELİ / ÜRÜN POSTERİ AÇIKLAMASI columns (see scripts/build-products.mjs);
+              cw-ms's poster cell is genuinely a video clip, which ProductPoster renders as
+              a full-width loop. The component no-ops when a SKU has no poster media at all. */}
+          <ProductPoster
+            images={product.posterImages}
+            video={product.video}
+            description={product.posterDescription}
+            alt={`${name} — ${t(product.tagline)}`}
+          />
 
           <RelatedProducts products={related} />
         </section>
       </main>
-
-      <Footer />
-      <WhatsAppFab />
-      <ScrollTopButton />
     </>
   );
 }

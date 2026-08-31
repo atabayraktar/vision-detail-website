@@ -4,9 +4,12 @@ import GlassSurface from './GlassSurface';
 
 // No "Yeni Gelenler" option — there's no real recency signal in the data (every product's
 // isNew is false, see src/data/products.js), so it was always a no-op sort.
+// "Önce Stokta Olanlar" sorts in-stock products first (out-of-stock cards render dimmed
+// and unlinked — see ProductCard.jsx), with name A-Z as the tiebreak within each group.
 export const SORT_OPTIONS = [
   { value: 'name-asc', label: 'İsim A-Z' },
   { value: 'name-desc', label: 'İsim Z-A' },
+  { value: 'stock', label: 'Önce Stokta Olanlar' },
 ];
 
 export default function SortMenu({ value, onChange }) {

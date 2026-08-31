@@ -93,22 +93,32 @@
   transform: rotate(180deg);
 }
 
-// Mobile full-screen filter sheet.
+// Mobile full-screen filter sheet. Always in the DOM (see FilterPanel.jsx) so the sheet's
+// backdrop-filter compositing layer stays warm — the old usePresence mount + quiz-fade/
+// quiz-pop keyframes stood the glass up cold on every open, flashing flat/unblurred first
+// frames (same bug + same fix as Header.scss's __mobile-menu; read the comments there).
+// Hidden state is opacity + pointer-events only: NEVER display:none or visibility:hidden.
 .filter-sheet__backdrop {
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
   background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(2px);
   display: flex;
   align-items: flex-end;
-  animation: quiz-fade 0.35s var(--ease-out);
+  opacity: 0;
+  pointer-events: none;
+  // Closed-state transition = the CLOSE motion (~65% of open, project convention).
+  transition: opacity 0.25s var(--ease-out);
 
-  // Reverse the entrance keyframe instead of just vanishing on close (see FilterPanel.jsx's
-  // usePresence usage) — a full shorthand redeclaration at higher specificity (class+class)
-  // so it actually overrides the base animation above, not just animation-direction alone.
-  &.is-closing {
-    animation: quiz-fade-close 0.3s var(--ease-out) forwards;
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.35s var(--ease-out);
+    // The scrim's own soft blur lives only on the open state: unlike the sheet's glass it
+    // covers the whole viewport, and an always-composited full-screen backdrop-filter is a
+    // scroll-perf tax on the grid behind it. Standing THIS layer up cold is imperceptible —
+    // 2px of blur arriving under a scrim that's still fading in from opacity 0.
+    backdrop-filter: blur(2px);
   }
 
   @media (min-width: 640px) {
@@ -123,24 +133,30 @@
   max-height: 85vh;
   overflow-y: auto;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  animation: quiz-pop 0.4s var(--ease-spring);
+  // translateY only, no scale — scale + backdrop-filter breaks the blur mid-animation
+  // (see Header.scss's __mobile-menu note on the old dropdown-peel keyframes).
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
 
-  // Was forced to a fully opaque var(--bg) here after being reported unreadable/"silik" on
-  // mobile — that killed the glass entirely (flat, no blur/translucency showing at all,
-  // user-reported "liquid glass olucak" after seeing it). The actual fix for "readable
-  // dense text over arbitrary content" already exists as --glass-tint-menu (96% opaque,
-  // same token the header's mobile nav/language dropdown use successfully) via the
-  // `glass-surface--menu` class already on this element in FilterPanel.jsx — no local
-  // override needed, and removing it is what restores real blur/distortion here instead of
-  // silently disabling it wholesale.
-  &.is-closing {
-    animation: quiz-pop-close 0.3s var(--ease-out) forwards;
+  &.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition: opacity 0.35s var(--ease-out), transform 0.4s var(--ease-spring);
   }
 
   @media (min-width: 640px) {
     max-width: 420px;
     max-height: 80vh;
     border-radius: var(--radius-lg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    // Instant show/hide, no slide.
+    transition: none;
+    transform: none;
   }
 }
 

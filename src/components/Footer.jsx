@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { footer, contactSection } from '@/data/homepageContent';
 import GlassSurface from './GlassSurface';
@@ -11,7 +12,9 @@ export default function Footer() {
     // No .glass-drift — see Header.jsx's note: the scroll-lag transform breaks
     // backdrop-filter rendering on this element/its descendants after scrolling.
     <GlassSurface as="footer" className="site-footer glass-surface--calm" contentClassName="site-footer__content">
-      <a href="/" className="site-footer__logo" aria-label="Vision Detail — anasayfa">
+      {/* next/link (not a plain <a>) so this stays a client-side navigation — a full reload
+          rebuilds the persistent header/footer glass cold and flashes it flat (Header.jsx). */}
+      <Link href="/" className="site-footer__logo" aria-label="Vision Detail — anasayfa">
         {/* Both variants stacked, crossfaded in pure CSS on theme change — see Header.jsx's
             identical technique and Footer.scss for why (an instant src-swap read as the
             whole theme toggle "snapping" even though every color token elsewhere faded). */}
@@ -27,7 +30,7 @@ export default function Footer() {
           style={{ maskImage: 'url(/logos/vision-detail-dark.webp)', WebkitMaskImage: 'url(/logos/vision-detail-dark.webp)' }}
           aria-hidden="true"
         />
-      </a>
+      </Link>
 
       <p className="site-footer__rights">
         © {year} Vision Detail — {t(footer.rights)}

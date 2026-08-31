@@ -262,19 +262,25 @@
     left: 0;
     right: 0;
     border-radius: var(--radius-lg);
-    // Drops down from the header's bottom edge instead of just popping into place — the
-    // brand's spring easing (with its built-in overshoot) gives it a springy "bloop"
-    // landing instead of a flat slide. Shared with the language dropdown (see
-    // globals.scss's @keyframes dropdown-peel) — same trigger, same effect everywhere a
-    // panel drops out of the header. translateY only, no scale — see that keyframe's
-    // comment for why (scale + backdrop-filter broke the blur during the animation).
-    animation: dropdown-peel 0.5s var(--ease-spring);
+    // Always in the DOM (see Header.jsx) so the compositor keeps the backdrop-filter layer
+    // warm — mounting it at click time made the first frames render unblurred (a sharp
+    // flash, then a blur snap). Hidden state is opacity + pointer-events only: NEVER
+    // display:none or visibility:hidden here, both stop compositing and bring the flash
+    // back. Show/hide is a plain transition now (not the shared dropdown-peel keyframes —
+    // those were tied to mount/unmount). translateY only, no scale — scale +
+    // backdrop-filter broke the blur mid-animation (see globals.scss's dropdown-peel).
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    // Closed-state transition = the CLOSE motion (~65% of open, project convention).
+    transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 
-    // Reverse the entrance keyframe on close instead of just vanishing (see Header.jsx's
-    // usePresence usage) — full shorthand redeclaration at higher specificity so it
-    // actually overrides the base animation above.
-    &.is-closing {
-      animation: dropdown-peel-close 0.35s var(--ease-out) forwards;
+    &.is-open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      // Open is snappier than the old 0.5s keyframe but keeps the spring landing.
+      transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-spring);
     }
 
     @media (min-width: 900px) {
@@ -282,7 +288,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      animation: none;
+      // Instant show/hide, no slide.
+      transition: none;
+      transform: none;
     }
   }
 

@@ -53,6 +53,35 @@
   letter-spacing: 0.02em;
 }
 
+// Out-of-stock (see ProductCard.jsx): the card is a plain <div>, not a link — dim the
+// media and copy, but keep the "Stokta Yok" badge at full strength so the state is read
+// from text, not inferred from the dimming alone.
+.product-card--out-of-stock {
+  cursor: default;
+
+  .product-card__image-wrap img {
+    opacity: 0.45;
+    filter: grayscale(0.35);
+  }
+
+  .product-card__body {
+    opacity: 0.55;
+  }
+
+  // Non-interactive card — no hover zoom (the base :hover rule only matches on
+  // .product-card:hover, so neutralize it here rather than relying on pointer absence).
+  &:hover .product-card__image-wrap img {
+    transform: none;
+  }
+
+  .product-card__badge--stock {
+    opacity: 1;
+    background: var(--bg);
+    color: var(--mute);
+    border: 1px solid var(--line);
+  }
+}
+
 .product-card__body {
   display: flex;
   flex-direction: column;

@@ -115,13 +115,22 @@
   }
 
   // For panels whose entire job is carrying readable running text/nav over arbitrary page
-  // content (the header's mobile nav menu, the language dropdown) — near-opaque so the
-  // panel stays legible even on a device/browser where the SVG-filter-in-backdrop-filter
-  // combo silently fails to paint (see _tokens.scss's --glass-tint-menu note; confirmed
-  // 2026-08 on hardware without GPU compositing). Meant to be paired with --solid in markup
+  // content (the header's mobile nav menu, the language dropdown, the mobile filter sheet) —
+  // see _tokens.scss's --glass-tint-menu note. Meant to be paired with --solid in markup
   // (for the shine/hover treatment) — equal specificity to --solid's own &__tint rule above,
   // so it wins by winning on source order (declared after it here); HTML class order is
   // irrelevant to that, only this file's rule order is.
+  //
+  // --glass-blur used to be overridden here to --glass-blur-menu (18px, vs the base 5px)
+  // to keep text legible back when --glass-tint-menu sat at a much denser 0.8/0.96 opacity.
+  // Now that --glass-tint-menu is set equal to the header pill's own --glass-tint (per
+  // explicit user instruction, 2026-09), that extra blur is no longer just unnecessary —
+  // it's the reason these panels still read as visibly MORE opaque/foggy than the pill
+  // despite having the exact same tint color: a much stronger blur smooths the backdrop's
+  // local contrast into a flatter wash, which reads as "more solid" even at identical alpha
+  // (confirmed via computed-style + a real device recording, 2026-09 — matching tint alone
+  // was not enough). Removed so --menu panels inherit the same base --glass-blur (5px) as
+  // the pill — same tint AND same blur, actually identical glass, not just same color.
   &--menu &__tint {
     background: var(--glass-tint-menu);
   }

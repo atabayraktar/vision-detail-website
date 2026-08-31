@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useLanguage } from '@/context/LanguageContext';
 import { header } from '@/data/homepageContent';
-import usePresence from '@/hooks/usePresence';
 import GlassSurface from './GlassSurface';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
@@ -14,7 +14,6 @@ export default function Header() {
   const { t } = useLanguage();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
-  const { mounted: menuMounted, closing: menuClosing } = usePresence(menuOpen, 350);
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
 
@@ -37,6 +36,18 @@ export default function Header() {
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [menuOpen]);
+
+  // The header is now a persistent singleton in _app.jsx (never unmounted on client-side
+  // navigation — that remount was what flashed the glass pill flat/opaque on every nav).
+  // Closing the mobile menu on navigation used to be a free side effect of that unmount;
+  // now it has to be explicit. routeChangeStart (not Complete) so the menu is already
+  // folding as the new page comes in. The nav links' own onClick close still covers the
+  // hash-anchor cases that never touch the router.
+  useEffect(() => {
+    const close = () => setMenuOpen(false);
+    router.events.on('routeChangeStart', close);
+    return () => router.events.off('routeChangeStart', close);
+  }, [router.events]);
 
   // Small "reacts to scroll" cue for the floating glass pill — solidifies slightly once
   // there's page content behind it to blur, instead of sitting static the whole time.
@@ -65,6 +76,17 @@ export default function Header() {
   // keeps the existing Lenis-eased in-page scroll (see _app.jsx) instead of forcing a full
   // reload of "/" just to land on a section already on screen.
   const resolveNavHref = (href) => (href.startsWith('#') && router.pathname !== '/' ? `/${href}` : href);
+
+  // Real-page nav items ("/urunler", the logo's "/") render as next/link so navigation is
+  // CLIENT-SIDE — as plain <a> tags they forced a full browser reload, which rebuilds the
+  // whole document and stands the header's backdrop-filter compositing layer up cold (the
+  // flat/opaque header flash the user recorded when tapping "Ürünler" in the mobile menu).
+  // The persistent-header layout in _app.jsx only helps navigations that go through Next's
+  // router, so these links have to actually use it. Hash items stay plain <a>: on the
+  // homepage that's what keeps the Lenis-eased in-page scroll, and off it the full
+  // "/#section" load scrolls to the section natively — a client-side hash nav would get
+  // overridden by _app.jsx's own scroll positioning (it scrolls to 0/saved on route change).
+  const NavAnchor = ({ href, ...rest }) => (href.startsWith('#') || href.startsWith('/#') ? <a href={href} {...rest} /> : <Link href={href} {...rest} />);
 
   // Clears a section's hash from the URL once you've scrolled fully past it — clicking
   // "ChemicalWorkz" leaves "#chemicalworkz" sitting in the address bar forever otherwise,
@@ -109,7 +131,7 @@ export default function Header() {
       contentClassName="site-header__content"
     >
       <div className="site-header__brand">
-        <a href="/" className="site-header__logo-link" aria-label="Vision Detail — anasayfa" onClick={onLogoClick}>
+        <Link href="/" className="site-header__logo-link" aria-label="Vision Detail — anasayfa" onClick={onLogoClick}>
           {/* Both logo variants render at once, stacked, with the theme switch crossfading
               their opacity in pure CSS (see Header.scss) — swapping a single <Image>'s src
               instead snapped instantly with no way to transition between two different
@@ -144,7 +166,7 @@ export default function Header() {
             style={{ maskImage: 'url(/logos/vision-detail-dark.webp)', WebkitMaskImage: 'url(/logos/vision-detail-dark.webp)' }}
             aria-hidden="true"
           />
-        </a>
+        </Link>
         <span className="site-header__divider" aria-hidden="true" />
         <div className="site-header__cw">
           <a
@@ -178,9 +200,9 @@ export default function Header() {
           <ul>
             {header.nav.map((item) => (
               <li key={item.href}>
-                <a href={resolveNavHref(item.href)} className="gradient-hover">
+                <NavAnchor href={resolveNavHref(item.href)} className="gradient-hover">
                   {t(item.label)}
-                </a>
+                </NavAnchor>
               </li>
             ))}
           </ul>
@@ -206,34 +228,44 @@ export default function Header() {
         </div>
       </div>
 
-      {menuMounted && (
-        <GlassSurface
-          as="div"
-          id="mobile-nav"
-          // --tight swaps in the smaller-scale distortion filter (see GlassSurface.scss and
-          // GlassFilterDefs.jsx) — the default one tears at this panel's size, which is what
-          // read as the menu "screwing up" (page content bleeding through, garbled text).
-          // The language dropdown already uses this same fix; this panel just never got it.
-          className={`site-header__mobile-menu glass-surface--calm glass-surface--tight glass-surface--solid glass-surface--menu${menuClosing ? ' is-closing' : ''}`}
-          contentClassName="site-header__mobile-menu-content"
-        >
-          <nav aria-label="Mobil menü">
-            <ul>
-              {header.nav.map((item) => (
-                <li key={item.href}>
-                  <a href={resolveNavHref(item.href)} className="gradient-hover" onClick={() => setMenuOpen(false)}>
-                    {t(item.label)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="site-header__mobile-controls">
-            <ThemeToggle variant="inline" />
-            <LanguageSwitcher variant="inline" />
-          </div>
-        </GlassSurface>
-      )}
+      {/* Always mounted, shown/hidden via opacity — NOT conditionally rendered like the
+          other popovers (no usePresence here). Mounting a fresh backdrop-filter surface at
+          click time forces the compositor to stand up the blur + SVG-distortion layer from
+          scratch, and its first frames render with no blur — the page behind flashed sharp,
+          then snapped blurry. Keeping the node permanently in the DOM (opacity: 0, never
+          display:none/visibility:hidden — those stop compositing and defeat the pre-warm)
+          keeps that layer warm so the blur is there from the very first frame. While closed
+          it's inert + aria-hidden + pointer-events:none, so it's invisible to keyboard,
+          screen readers and taps. React 18 doesn't forward a boolean `inert`, hence the
+          empty-string form. */}
+      <GlassSurface
+        as="div"
+        id="mobile-nav"
+        // --tight swaps in the smaller-scale distortion filter (see GlassSurface.scss and
+        // GlassFilterDefs.jsx) — the default one tears at this panel's size, which is what
+        // read as the menu "screwing up" (page content bleeding through, garbled text).
+        // The language dropdown already uses this same fix; this panel just never got it.
+        className={`site-header__mobile-menu glass-surface--calm glass-surface--tight glass-surface--solid glass-surface--menu${menuOpen ? ' is-open' : ''}`}
+        contentClassName="site-header__mobile-menu-content"
+        aria-hidden={!menuOpen}
+        inert={menuOpen ? undefined : ''}
+      >
+        <nav aria-label="Mobil menü">
+          <ul>
+            {header.nav.map((item) => (
+              <li key={item.href}>
+                <NavAnchor href={resolveNavHref(item.href)} className="gradient-hover" onClick={() => setMenuOpen(false)}>
+                  {t(item.label)}
+                </NavAnchor>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="site-header__mobile-controls">
+          <ThemeToggle variant="inline" />
+          <LanguageSwitcher variant="inline" />
+        </div>
+      </GlassSurface>
     </GlassSurface>
   );
 }

@@ -1,26 +1,107 @@
+// D2 poster spread — see ProductPoster.jsx for the content shapes this adapts to
+// (video / 1 / 2 / 3 photos, plus multi-paragraph editorial copy with "Öneri:"-style
+// callout paragraphs). Same section rhythm as RelatedProducts: hairline top rule +
+// eyebrow, so the long-form text reads as an anchored editorial block, not a loose wall.
 .product-poster {
-  margin-top: var(--space-8);
+  margin-top: var(--space-9);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--hair);
 }
 
-// Intro copy for the 2-3 image "spread" variant (see ProductPoster.jsx) — real written
-// poster description, so it reads like editorial copy, not a caption.
+.product-poster__eyebrow {
+  font-size: 13px;
+  font-variation-settings: 'wght' 450, 'wdth' 95;
+  color: var(--faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-5);
+}
+
+// Editorial two-column copy on desktop: display-type lead on the left, supporting
+// paragraphs on the right. Single-paragraph products keep one readable measure instead.
 .product-poster__text {
-  max-width: 640px;
+  display: grid;
+  gap: var(--space-5);
   margin-bottom: var(--space-6);
+
+  @media (min-width: 900px) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    column-gap: var(--space-8);
+    align-items: start;
+  }
+}
+
+.product-poster__text--solo {
+  max-width: 720px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-poster__lead {
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 240, 'wdth' 110;
+  font-size: clamp(19px, 2.3vw, 25px);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.product-poster__more {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 
   p {
     font-size: 15.5px;
     line-height: 1.7;
     color: var(--ink-strong);
-
-    & + p {
-      margin-top: var(--space-4);
-    }
   }
 }
 
-// Original D2 treatment — one full-bleed shot. Still used whenever a product has exactly
-// one poster photo (or none of the 2-3 image "spread" applies).
+// "Öneri:" / "Önemli not:" paragraphs from the source copy — a quiet hairline callout,
+// not a colored panel (the gradient stays locked to hover text, and glass is reserved
+// for surfaces that actually float).
+.product-poster__note {
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--line);
+}
+
+.product-poster__note-label {
+  display: block;
+  font-size: 12px;
+  font-variation-settings: 'wght' 500, 'wdth' 95;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: var(--space-2);
+}
+
+.product-poster__media {
+  display: grid;
+  gap: var(--space-4);
+}
+
+// Video case (cw-ms): full-width cinematic loop. Kept 16:9 at every size — cropping a
+// moving clip reads worse than a shorter panel on mobile.
+.product-poster__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+}
+
+.product-poster__video-el {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// 1 photo: the original full-bleed treatment.
 .product-poster__single {
   position: relative;
   width: 100%;
@@ -34,33 +115,59 @@
   }
 }
 
-// 2-3 photos: an equal-width row, stacked on mobile — same "simple grid, no slider
-// machinery" language as ProductGrid/RelatedProducts rather than a fresh pattern.
-.product-poster__row {
+// 2 photos: a weighted pair — the first shot leads, the second supports. Equal heights
+// via a shared clamped row height so the bottom edge stays flush.
+.product-poster__duo {
   display: grid;
-  grid-template-columns: 1fr;
   gap: var(--space-4);
+  grid-template-columns: 1fr;
 
   @media (min-width: 700px) {
-    &.product-poster__row--2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    &.product-poster__row--3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-columns: 1.4fr 1fr;
   }
 }
 
-.product-poster__row-image {
+.product-poster__duo-image {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--hair);
+  aspect-ratio: 4 / 3;
 
-  @media (max-width: 699px) {
-    aspect-ratio: 4 / 3;
+  @media (min-width: 700px) {
+    aspect-ratio: auto;
+    height: clamp(280px, 34vw, 480px);
+  }
+}
+
+// 3 photos: editorial mosaic — first shot runs tall on the left, the other two stack
+// beside it; the whole block keeps a 16:9 footprint on desktop.
+.product-poster__mosaic {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+
+  @media (min-width: 700px) {
+    grid-template-columns: 1.55fr 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.product-poster__mosaic-image {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+  aspect-ratio: 4 / 3;
+
+  @media (min-width: 700px) {
+    aspect-ratio: auto;
+
+    &:first-child {
+      grid-row: 1 / span 2;
+    }
   }
 }

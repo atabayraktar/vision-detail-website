@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import usePresence from '@/hooks/usePresence';
 import GlassSurface from './GlassSurface';
 
 const COLLAPSED_COUNT = 6;
@@ -100,22 +99,30 @@ export default function FilterPanel({ categories, active, onSelect, className = 
 // tap — the sheet only ever holds one control (the category list), so there's nothing left
 // to "apply" once a choice is made.
 export function FilterPanelSheet({ open, onClose, onSelect, ...props }) {
-  const { mounted, closing } = usePresence(open, 350);
-  if (!mounted) return null;
   const handleSelect = (value) => {
     onSelect(value);
     onClose();
   };
+  // Always mounted, shown/hidden via opacity + a class transition — same pattern (and same
+  // reasoning) as Header.jsx's mobile menu: conditionally mounting this GlassSurface at tap
+  // time (the old usePresence approach) stood its backdrop-filter + distortion compositing
+  // layer up cold, so the sheet's first frames rendered flat/unblurred before snapping to
+  // glass. Keeping it in the DOM (opacity: 0, never display:none/visibility:hidden — those
+  // stop compositing and defeat the pre-warm) keeps the layer warm from page load. Closed
+  // it's inert + aria-hidden + pointer-events:none. React 18 doesn't forward a boolean
+  // `inert`, hence the empty-string form.
   return (
     <div
-      className={`filter-sheet__backdrop${closing ? ' is-closing' : ''}`}
+      className={`filter-sheet__backdrop${open ? ' is-open' : ''}`}
       onMouseDown={(e) => e.target === e.currentTarget && onClose()}
+      aria-hidden={!open}
+      inert={open ? undefined : ''}
     >
       {/* --solid — the plain --calm tint read as too faint/washed-out to read the category
           list against a busy product grid behind it (user-reported "çok silik"). */}
       <GlassSurface
         as="div"
-        className={`filter-sheet glass-surface--calm glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
+        className={`filter-sheet glass-surface--calm glass-surface--tight glass-surface--solid glass-surface--menu${open ? ' is-open' : ''}`}
         contentClassName="filter-sheet__content"
       >
         <div className="filter-sheet__head">

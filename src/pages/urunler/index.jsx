@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import WhatsAppFab from '@/components/WhatsAppFab';
-import ScrollTopButton from '@/components/ScrollTopButton';
 import SearchBar from '@/components/SearchBar';
 import SortMenu, { SORT_OPTIONS } from '@/components/SortMenu';
 import FilterPanel, { FilterPanelSheet } from '@/components/FilterPanel';
@@ -42,7 +38,7 @@ const BREADCRUMB_JSON_LD = {
 // still has to ship in the static HTML and get parsed/hydrated client-side, which is
 // exactly what CLAUDE.md's Lighthouse performance target keeps flagging as the risk here.
 export async function getStaticProps() {
-  const listProducts = products.map(({ id, name, tagline, category, color, size, isNew, image }) => ({
+  const listProducts = products.map(({ id, name, tagline, category, color, size, isNew, inStock, image }) => ({
     id,
     name,
     tagline,
@@ -50,6 +46,7 @@ export async function getStaticProps() {
     color,
     size,
     isNew,
+    inStock,
     image,
   }));
   return { props: { products: listProducts, categories: PRODUCT_CATEGORIES } };
@@ -119,10 +116,14 @@ export default function ProductsPage({ products: allProducts, categories }) {
         return name.includes(q) || tagline.includes(q);
       });
     }
-    // Only two sort values exist now (see SortMenu.jsx's SORT_OPTIONS) — no "newest"
-    // fallback needed, there's no real recency data to sort by.
+    // Three sort values (see SortMenu.jsx's SORT_OPTIONS): name A-Z / Z-A, plus "Önce
+    // Stokta Olanlar" — in-stock products first, name A-Z as the tiebreak in each group.
     const sorted = [...list];
     if (sort === 'name-desc') sorted.sort((a, b) => t(b.name).localeCompare(t(a.name), 'tr'));
+    else if (sort === 'stock')
+      sorted.sort(
+        (a, b) => (b.inStock === false ? 0 : 1) - (a.inStock === false ? 0 : 1) || t(a.name).localeCompare(t(b.name), 'tr')
+      );
     else sorted.sort((a, b) => t(a.name).localeCompare(t(b.name), 'tr'));
     return sorted;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -165,8 +166,6 @@ export default function ProductsPage({ products: allProducts, categories }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSON_LD) }} />
       </Head>
-
-      <Header />
 
       <main id="main-content">
         <section className="products-page container">
@@ -218,10 +217,6 @@ export default function ProductsPage({ products: allProducts, categories }) {
         active={category}
         onSelect={setCategory}
       />
-
-      <Footer />
-      <WhatsAppFab />
-      <ScrollTopButton />
     </>
   );
 }
