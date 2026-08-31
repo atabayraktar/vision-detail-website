@@ -95,10 +95,17 @@ export default function FilterPanel({ categories, active, onSelect, className = 
 }
 
 // Mobile: same list rendered inside a full-screen GlassSurface sheet — see FilterPanel.scss
-// and ProductListing usage for how the two variants are toggled.
-export function FilterPanelSheet({ open, onClose, ...props }) {
+// and ProductListing usage for how the two variants are toggled. Picking a category closes
+// the sheet immediately (like a native dropdown) instead of requiring a separate "Uygula"
+// tap — the sheet only ever holds one control (the category list), so there's nothing left
+// to "apply" once a choice is made.
+export function FilterPanelSheet({ open, onClose, onSelect, ...props }) {
   const { mounted, closing } = usePresence(open, 350);
   if (!mounted) return null;
+  const handleSelect = (value) => {
+    onSelect(value);
+    onClose();
+  };
   return (
     <div
       className={`filter-sheet__backdrop${closing ? ' is-closing' : ''}`}
@@ -119,16 +126,7 @@ export function FilterPanelSheet({ open, onClose, ...props }) {
             </svg>
           </button>
         </div>
-        <FilterPanel {...props} />
-        <GlassSurface
-          as="button"
-          type="button"
-          className="filter-sheet__apply glass-surface--tight glass-surface--solid"
-          contentClassName="filter-sheet__apply-content"
-          onClick={onClose}
-        >
-          <span className="btn-glass__label">Uygula</span>
-        </GlassSurface>
+        <FilterPanel {...props} onSelect={handleSelect} />
       </GlassSurface>
     </div>
   );

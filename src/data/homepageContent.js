@@ -30,9 +30,9 @@ export const heroSlides = [
       poster: '/images/hero-1-poster.webp',
     },
     title: {
-      tr: "chemicalworkz Türkiye'de!",
-      en: 'chemicalworkz is now in Turkey!',
-      de: 'chemicalworkz jetzt in der Türkei!',
+      tr: "ChemicalWorkz Türkiye'de!",
+      en: 'ChemicalWorkz is now in Turkey!',
+      de: 'ChemicalWorkz jetzt in der Türkei!',
     },
     info: {
       tr: 'Alman kalitesiyle geliştirilen ChemicalWorkz detailing ürünlerini keşfedin; profesyonel ekipmanları, bakım aksesuarlarını ve ürün detaylarını yakından inceleyin.',
@@ -63,7 +63,7 @@ export const heroSlides = [
       de: 'Poliermaschinen, die fortschrittliche Technologie mit ergonomischem Design verbinden — für professionelle Ergebnisse durch starke, anpassungsfähige Leistung, einfache Bedienung und langlebige Konstruktion.',
     },
     cta: { tr: 'Daha fazla bilgi edin', en: 'Learn more', de: 'Mehr erfahren' },
-    href: '/urunler',
+    href: '/urunler?kategori=polisaj-makinesi',
   },
   {
     id: 'hero-3',
@@ -86,7 +86,7 @@ export const heroSlides = [
       de: 'Die Mini-Luftpistole erreicht jede Stelle, an die ein Tuch nicht herankommt, und entfernt selbst hartnäckigsten Schmutz präzise, effizient und mit maximaler Kontrolle.',
     },
     cta: { tr: 'Daha fazla bilgi edin', en: 'Learn more', de: 'Mehr erfahren' },
-    href: '/urunler',
+    href: '/urunler/cw-mag',
   },
   {
     id: 'hero-4',
@@ -112,7 +112,7 @@ export const heroSlides = [
       de: 'Pad-Optionen für unterschiedliche Oberflächen, Arbeitsschritte und Polieranforderungen — für ausgewogene Leistung und kontrollierte Ergebnisse.',
     },
     cta: { tr: 'Daha fazla bilgi edin', en: 'Learn more', de: 'Mehr erfahren' },
-    href: '/urunler',
+    href: '/urunler?kategori=polisaj-pedleri',
   },
 ];
 
@@ -122,6 +122,11 @@ export const equipmentSection = {
     en: ['Innovative products', 'for every challenge.'],
     de: ['Innovative Produkte', 'für jede Herausforderung.'],
   },
+  // Curated, not exhaustive — only categories with a real supplied photo in
+  // .claude/homepage_data/equipment-category-section/ appear here (kontrol-isigi, kurutucu
+  // and uygulayicilar still have none, so they're intentionally left out rather than shown
+  // with a reused/placeholder image; see PRODUCT_CATEGORIES in scripts/build-products.mjs
+  // for the full category list used by /urunler's filter panel).
   categories: [
     {
       slug: 'detay-fircalari',
@@ -132,16 +137,6 @@ export const equipmentSection = {
       slug: 'keceler',
       image: '/images/equipment/keceler.webp',
       title: { tr: 'Keçeler', en: 'Felt Pads', de: 'Filzpads' },
-    },
-    {
-      slug: 'kontrol-isigi',
-      image: '/images/equipment/kontrol-isigi.webp',
-      title: { tr: 'Kontrol Işığı', en: 'Inspection Light', de: 'Prüflicht' },
-    },
-    {
-      slug: 'kurutucu',
-      image: '/images/equipment/kurutucu.webp',
-      title: { tr: 'Kurutucu', en: 'Blower Dryer', de: 'Trockner' },
     },
     {
       slug: 'manyetik-bez',
@@ -158,16 +153,11 @@ export const equipmentSection = {
       image: '/images/equipment/sprey-siseleri.webp',
       title: { tr: 'Sprey Şişeleri', en: 'Spray Bottles', de: 'Sprühflaschen' },
     },
-    {
-      slug: 'uygulayicilar',
-      image: '/images/equipment/uygulayicilar.webp',
-      title: { tr: 'Uygulayıcılar', en: 'Applicators', de: 'Applikatoren' },
-    },
   ],
 };
 
 export const aboutChemicalWorkz = {
-  title: { tr: 'chemicalworkz Hakkında', en: 'About chemicalworkz', de: 'Über chemicalworkz' },
+  title: { tr: 'ChemicalWorkz Hakkında', en: 'About ChemicalWorkz', de: 'Über ChemicalWorkz' },
   paragraph: {
     tr: "Almanya merkezli ChemicalWorkz, profesyonel araç bakım ve detailing sektöründe geliştirdiği yenilikçi ekipmanlar ve premium aksesuarlarla kısa sürede global ölçekte güçlü bir konum elde etmiş bir markadır. Profesyonellerin ihtiyaçları doğrultusunda tasarlanıp test edilen ürünleri; yüksek kalite standartları, modern tasarımı ve uzun ömürlü performansıyla öne çıkar. Bugün birçok ülkedeki distribütör ağıyla otomobil tutkunlarına ve detailing profesyonellerine ulaşan ChemicalWorkz, Alman mühendisliğini günlük kullanıma taşıyan güvenilir markalar arasında yer almaktadır. Vision Detail olarak bu kalite anlayışını, ChemicalWorkz'ün Türkiye distribütörü kimliğimizle Türkiye'deki kullanıcılarla buluşturuyoruz.",
     en: "Headquartered in Germany, ChemicalWorkz has quickly built a strong global presence in professional vehicle care and detailing through innovative equipment and premium accessories. Designed and tested around the needs of professionals, its products stand out through high quality standards, modern design and long-lasting performance. Reaching car enthusiasts and detailing professionals through a distributor network spanning many countries today, ChemicalWorkz is among the trusted brands bringing German engineering into everyday use. As Vision Detail, we bring this quality standard to users in Turkey as ChemicalWorkz's official Turkish distributor.",
@@ -227,93 +217,19 @@ export const aboutChemicalWorkz = {
 
 export const polishingBanner = {
   image: '/images/polishing-banner.webp',
+  imageDark: '/images/polishing-banner-dark.webp',
   // Real art-directed portrait crop for mobile, not a resize — see PolishingBanner.jsx.
   mobileImage: '/images/polishing-banner-mobile.webp',
+  mobileImageDark: '/images/polishing-banner-mobile-dark.webp',
   title: {
-    tr: 'Hangi polisaj makinesi bana uygun?',
-    en: 'Which polisher is right for me?',
-    de: 'Welche Poliermaschine passt zu mir?',
+    tr: 'Küçük, güçlü, çok yönlü: EVO Mini.',
+    en: 'Small, powerful, versatile: the EVO Mini.',
+    de: 'Klein, stark, vielseitig: der EVO Mini.',
   },
   cta: {
-    tr: 'Seçmenize yardımcı olalım.',
-    en: 'Let us help you choose.',
-    de: 'Wir helfen Ihnen bei der Auswahl.',
-  },
-};
-
-// Placeholder — .claude/homepage_data/polishing-banner-section/polishing-banner-pop-up/ was
-// supplied empty. Real quiz copy/logic (mapped to the actual ChemicalWorkz product catalog)
-// is still pending; this is a reasonable stand-in so the pop-up isn't broken in the meantime.
-export const quiz = {
-  title: {
-    tr: 'Size uygun polisaj makinesini bulalım',
-    en: "Let's find the right polisher for you",
-    de: 'Finden wir die richtige Poliermaschine für Sie',
-  },
-  questions: [
-    {
-      id: 'surface',
-      question: {
-        tr: 'Hangi yüzeyle çalışacaksınız?',
-        en: 'Which surface will you be working on?',
-        de: 'An welcher Oberfläche arbeiten Sie?',
-      },
-      options: [
-        { value: 'paint', label: { tr: 'Boya / Lake', en: 'Paint', de: 'Lack' } },
-        { value: 'glass', label: { tr: 'Cam', en: 'Glass', de: 'Glas' } },
-        { value: 'plastic', label: { tr: 'Plastik / Vinil', en: 'Plastic / Vinyl', de: 'Kunststoff / Vinyl' } },
-      ],
-    },
-    {
-      id: 'experience',
-      question: {
-        tr: 'Deneyim seviyeniz nedir?',
-        en: 'What is your experience level?',
-        de: 'Wie ist Ihr Erfahrungsstand?',
-      },
-      options: [
-        { value: 'beginner', label: { tr: 'Yeni başlıyorum', en: 'Just starting out', de: 'Anfänger' } },
-        { value: 'intermediate', label: { tr: 'Orta düzey', en: 'Intermediate', de: 'Fortgeschritten' } },
-        { value: 'pro', label: { tr: 'Profesyonel', en: 'Professional', de: 'Profi' } },
-      ],
-    },
-    {
-      id: 'scope',
-      question: {
-        tr: 'Ne kadarlık bir alanla çalışacaksınız?',
-        en: 'How large is the area you work on?',
-        de: 'Wie groß ist die Fläche, an der Sie arbeiten?',
-      },
-      options: [
-        { value: 'spot', label: { tr: 'Küçük dokunuşlar', en: 'Small touch-ups', de: 'Kleine Ausbesserungen' } },
-        { value: 'full', label: { tr: 'Tüm araç', en: 'Full vehicle', de: 'Ganzes Fahrzeug' } },
-      ],
-    },
-    {
-      id: 'power',
-      question: {
-        tr: 'Güç kaynağı tercihiniz nedir?',
-        en: 'What is your power source preference?',
-        de: 'Welche Stromquelle bevorzugen Sie?',
-      },
-      options: [
-        { value: 'corded', label: { tr: 'Kablolu', en: 'Corded', de: 'Kabelgebunden' } },
-        { value: 'cordless', label: { tr: 'Akülü', en: 'Cordless', de: 'Akkubetrieben' } },
-      ],
-    },
-  ],
-  result: {
-    title: {
-      tr: 'Teşekkürler!',
-      en: 'Thank you!',
-      de: 'Vielen Dank!',
-    },
-    body: {
-      tr: 'Cevaplarınıza göre size en uygun ChemicalWorkz polisaj makinesini önerebilmemiz için ekibimizle WhatsApp üzerinden iletişime geçin — hazır bekliyoruz.',
-      en: 'Based on your answers, reach out to our team on WhatsApp so we can recommend the right ChemicalWorkz polisher for you — we\'re ready to help.',
-      de: 'Kontaktieren Sie unser Team basierend auf Ihren Antworten per WhatsApp, damit wir Ihnen die passende ChemicalWorkz Poliermaschine empfehlen können.',
-    },
-    cta: { tr: 'WhatsApp ile Bilgi Al', en: 'Ask on WhatsApp', de: 'Per WhatsApp anfragen' },
+    tr: "EVO Mini'yi keşfedin",
+    en: 'Discover the EVO Mini',
+    de: 'EVO Mini entdecken',
   },
 };
 

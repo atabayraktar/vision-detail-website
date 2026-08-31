@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLanguage } from '@/context/LanguageContext';
@@ -16,6 +16,27 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { mounted: menuMounted, closing: menuClosing } = usePresence(menuOpen, 350);
   const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef(null);
+
+  // Same outside-tap-closes behavior as LanguageSwitcher's dropdown — the mobile menu is
+  // the same class of floating panel, and the user-reported bug was that it only closed via
+  // the burger toggle or a nav link, not by tapping the page behind it like every other
+  // dropdown on the site.
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onPointerDown = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) setMenuOpen(false);
+    };
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [menuOpen]);
 
   // Small "reacts to scroll" cue for the floating glass pill — solidifies slightly once
   // there's page content behind it to blur, instead of sitting static the whole time.
@@ -45,9 +66,37 @@ export default function Header() {
   // reload of "/" just to land on a section already on screen.
   const resolveNavHref = (href) => (href.startsWith('#') && router.pathname !== '/' ? `/${href}` : href);
 
+  // Clears a section's hash from the URL once you've scrolled fully past it — clicking
+  // "ChemicalWorkz" leaves "#chemicalworkz" sitting in the address bar forever otherwise,
+  // stale the moment you keep scrolling past that section. Homepage-only (these ids only
+  // exist there); a plain history.replaceState (not router.replace) so this never touches
+  // Next's router — no route-change events, no page-transition/scroll-restore side effects
+  // for what is purely a same-page URL cosmetic.
+  useEffect(() => {
+    if (router.pathname !== '/') return undefined;
+
+    const hashIds = header.nav
+      .map((item) => item.href)
+      .filter((href) => href.startsWith('#'))
+      .map((href) => href.slice(1));
+    const sections = hashIds.map((id) => document.getElementById(id)).filter(Boolean);
+    if (!sections.length) return undefined;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting && window.location.hash === `#${entry.target.id}`) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      });
+    });
+    sections.forEach((section) => io.observe(section));
+    return () => io.disconnect();
+  }, [router.pathname]);
+
   return (
     <GlassSurface
       as="header"
+      ref={headerRef}
       // No .glass-drift here — the scroll-lag transform on this element (or any ancestor
       // of a backdrop-filter user) breaks backdrop-filter rendering the moment a
       // backdrop-filter layer is freshly created while that transform is active: the

@@ -53,6 +53,30 @@
   }
 }
 
+// Dark-mode crossfade — same opacity-pair technique as Header.jsx's logo stack (see
+// Header.scss's &__vd-logo). Layered independently of the mobile/desktop display toggle
+// above: whichever of the two images is display:block for the current viewport still
+// needs its own light/dark pair resolved on top of that.
+.polishing-banner__image--light {
+  opacity: 1;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+.polishing-banner__image--dark {
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+:root[data-theme='dark'] {
+  .polishing-banner__image--light {
+    opacity: 0;
+  }
+
+  .polishing-banner__image--dark {
+    opacity: 1;
+  }
+}
+
 .polishing-banner__panel {
   position: relative;
   z-index: var(--z-content);

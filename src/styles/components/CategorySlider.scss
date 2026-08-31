@@ -20,6 +20,16 @@
   font-size: clamp(24px, 3.4vw, 38px);
 }
 
+// The bottom line of a two-line title reads as bold — a light emphasis bump (not the
+// brand's full 700 weight, per the "bold ama hafif" call), applied via
+// font-variation-settings specifically: the app-wide 'wght' 240 set on .font-root is a
+// registered variable-axis value, and inherited variation-settings win over a plain
+// font-weight declaration on a variable font (see ContactSection.scss's note on the same
+// issue), so font-weight alone here would silently no-op.
+.category-slider__title-line--bold {
+  font-variation-settings: 'wght' 560, 'wdth' 125;
+}
+
 // Both arrows grouped together at the head row's right edge (not flanking the track) —
 // same glass-squircle icon-button system as the WhatsApp FAB (Brand Guidelines · 05).
 .category-slider__arrows {
@@ -65,9 +75,23 @@
   scroll-snap-type: x mandatory;
   padding-bottom: var(--space-2);
   scrollbar-width: none;
+  cursor: grab;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  // Applied for the duration of a mouse drag (see CategorySlider.jsx) — turns off
+  // snap/scroll-behavior smoothing and card hover affordances so the drag tracks the
+  // cursor 1:1 instead of fighting a snap point or an image mid-hover-scale.
+  &.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+
+    .category-slider__card {
+      pointer-events: none;
+    }
   }
 }
 

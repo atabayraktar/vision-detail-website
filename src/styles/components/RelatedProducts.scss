@@ -1,0 +1,90 @@
+.related-products {
+  margin-top: var(--space-9);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--hair);
+}
+
+.related-products__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.related-products__title {
+  font-size: clamp(21px, 2.6vw, 28px);
+}
+
+// Same glass-squircle icon-button system as CategorySlider's arrows (Brand Guidelines · 05).
+.related-products__arrows {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.related-products__control {
+  width: 44px;
+  height: 44px;
+  border: none;
+  padding: 0;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+
+  .related-products__control-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Same clip-boundary note as CategorySlider__viewport: this container's own border-box is
+// what clips the overflowing track, not padding on the track itself — the section already
+// sits inside .container (see urun-detay.scss's .product-detail), so the track's own
+// negative-margin isn't needed here.
+.related-products__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-2);
+  scrollbar-width: none;
+  cursor: grab;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+
+    .related-products__card {
+      pointer-events: none;
+    }
+  }
+}
+
+.related-products__card {
+  flex: 0 0 auto;
+  width: 60vw;
+  max-width: 240px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  @media (min-width: 640px) {
+    width: 38vw;
+    max-width: 240px;
+  }
+
+  @media (min-width: 1024px) {
+    // Percentage widths on a flex item resolve against the track's content box — sizes
+    // exactly 4 cards + 3 gaps to fill the row with no partial 5th card peeking in at rest.
+    width: calc((100% - 3 * 20px) / 4);
+    max-width: none;
+  }
+}

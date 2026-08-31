@@ -81,28 +81,36 @@ async function imageToWebp(srcPath, outPath, maxWidth, quality) {
 
 async function main() {
   // 1. Vision Detail logo (dark + light) — rasterized from the pseudo-vector source SVGs.
-  await logoToWebp('logo-dark.svg', LOGOS_SRC, 'vision-detail-dark');
-  await logoToWebp('logo-light.svg', LOGOS_SRC, 'vision-detail-light');
+  // The puppeteer rasterization pass is the slowest step here, so skip it when the source
+  // SVG hasn't actually changed since the last output was produced (mtime compare) rather
+  // than blindly re-rasterizing on every pipeline re-run.
+  for (const [svg, outName] of [['logo-dark.svg', 'vision-detail-dark'], ['logo-light.svg', 'vision-detail-light']]) {
+    const srcPath = path.join(LOGOS_SRC, svg);
+    const outPath = path.join(ROOT, 'public', 'logos', outName + '.webp');
+    if (fs.existsSync(outPath) && fs.statSync(outPath).mtimeMs > fs.statSync(srcPath).mtimeMs) {
+      console.log(`logo ${outName}: source unchanged, skipping rasterization`);
+      continue;
+    }
+    await logoToWebp(svg, LOGOS_SRC, outName);
+  }
 
   // 2. ChemicalWorkz logo — genuine vector, copy through untouched.
   const cwSvg = path.join(DATA, 'header', 'siyah_logo_chemicalworkz (1).svg');
   fs.copyFileSync(cwSvg, path.join(ROOT, 'public', 'logos', 'chemicalworkz-dark.svg'));
   console.log('logo chemicalworkz-dark.svg: copied as-is (genuine vector)');
 
-  // 3. Equipment category images. Only 5 of the 8 homepage categories have a real supplied
-  // photo (kontrol-isigi/kurutucu/uygulayicilar still fall back to a reused image — see
-  // homepageContent.js) — skip missing sources instead of crashing so this script stays
-  // re-runnable as more real photos land.
+  // 3. Equipment category images. Only these 5 homepage categories have a real supplied
+  // photo — homepageContent.js's equipmentSection.categories is curated to match exactly
+  // this set (kontrol-isigi/kurutucu/uygulayicilar still have none, so they're left out of
+  // the homepage slider entirely rather than shown with a reused/placeholder image). Missing
+  // sources still skip instead of crashing so this stays re-runnable as more photos land.
   const eqDir = path.join(DATA, 'equipment-category-section');
   const eqSlugs = {
     'Detay Fırçaları_result.webp': 'detay-fircalari',
     'Keçeler_result.webp': 'keceler',
-    'Kontrol Işığı_result.webp': 'kontrol-isigi',
-    'kurutucu_result.webp': 'kurutucu',
     'Manyetik Bez_result.webp': 'manyetik-bez',
     'Mikrofiber Bezler_result.webp': 'mikrofiber-bezler',
     'Sprey Şişeleri_result.webp': 'sprey-siseleri',
-    'Uygulayıcılar_result.webp': 'uygulayicilar',
   };
   for (const [file, slug] of Object.entries(eqSlugs)) {
     const src = path.join(eqDir, file);
@@ -125,16 +133,35 @@ async function main() {
 
   // 4. Polishing banner image — desktop (wide) + a genuinely different art-directed mobile
   // crop (portrait, not just a resize — see the aspect ratios) swapped in via a media query
-  // in PolishingBanner.jsx, not just responsive `sizes`.
+  // in PolishingBanner.jsx, not just responsive `sizes`. The 2026-08 catalog refresh added
+  // dedicated dark-mode variants (banner-dark/mobile-banner-dark, alongside the previous
+  // light-only banner-light/mobile-banner-light) — processed here into public/ under
+  // -dark-suffixed names so they're ready to use, but PolishingBanner.jsx/homepageContent.js
+  // still only wire up the light variant (`polishing-banner.webp` / `-mobile.webp`, kept
+  // under their original filenames so nothing else needs to change); switching the component
+  // to actually pick the dark asset per theme is a separate follow-up, not an asset-pipeline
+  // change.
   await imageToWebp(
-    path.join(DATA, 'polishing-banner-section', 'polishing-banner_result.webp'),
+    path.join(DATA, 'polishing-banner-section', 'banner-light.webp'),
     path.join(ROOT, 'public', 'images', 'polishing-banner.webp'),
     1920,
     80
   );
   await imageToWebp(
-    path.join(DATA, 'polishing-banner-section', 'polishing-banner-mobil.webp'),
+    path.join(DATA, 'polishing-banner-section', 'mobile-banner-light.webp'),
     path.join(ROOT, 'public', 'images', 'polishing-banner-mobile.webp'),
+    900,
+    80
+  );
+  await imageToWebp(
+    path.join(DATA, 'polishing-banner-section', 'banner-dark.webp'),
+    path.join(ROOT, 'public', 'images', 'polishing-banner-dark.webp'),
+    1920,
+    80
+  );
+  await imageToWebp(
+    path.join(DATA, 'polishing-banner-section', 'mobile-banner-dark.webp'),
+    path.join(ROOT, 'public', 'images', 'polishing-banner-mobile-dark.webp'),
     900,
     80
   );
@@ -147,7 +174,7 @@ async function main() {
     82
   );
   await imageToWebp(
-    path.join(DATA, 'hero-section', 'hero-4', 'pads-hero-mobil.webp'),
+    path.join(DATA, 'hero-section', 'hero-4', 'pads-hero-mobile.webp'),
     path.join(ROOT, 'public', 'images', 'hero-4-pads-mobile.webp'),
     900,
     82

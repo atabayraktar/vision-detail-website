@@ -25,10 +25,22 @@
 
 .product-detail__gallery-info {
   display: grid;
+  // No grid-template-columns at all below 900px meant this fell back to grid's implicit
+  // single-column auto-placement — and an implicit auto track sizes to its content's
+  // own intrinsic (min-content) width, NOT the grid container's available width. With a
+  // gallery thumbnail rail wide enough (several 68px thumbs in a row), that pushed this
+  // whole grid — and via it, the fixed-position header's own left:0/right:0 width
+  // calculation, since a layout-viewport-widening element widens the viewport fixed
+  // elements resolve against too — past the real viewport on narrow phones (confirmed via
+  // bisection: hiding the thumbnail rail was the only thing that fixed document-level
+  // scrollWidth). minmax(0, 1fr) at every breakpoint (not bare 1fr) is the actual fix:
+  // grid items have the same "automatic minimum size = content's min-content" default as
+  // flex items, so 1fr alone doesn't reliably force the track down to the container width.
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-7);
 
   @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: start;
   }
 }

@@ -31,12 +31,47 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-30-heavy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-50-heavy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-75-heavy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://visiondetail.com.tr/urunler/cw-pp-125-medium</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-30-medium</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-50-medium</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-75-medium</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://visiondetail.com.tr/urunler/cw-pp-125-mf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-75-mf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -51,7 +86,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-30-soft</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-50-soft</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-75-soft</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://visiondetail.com.tr/urunler/cw-pp-125-wool</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-50-wool</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-75-wool</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://visiondetail.com.tr/urunler/cw-pp-75-gp</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -176,47 +241,32 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-ac250-10pcs</loc>
+    <loc>https://visiondetail.com.tr/urunler/cw-hwa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-cfgt-1pcs</loc>
+    <loc>https://visiondetail.com.tr/urunler/cw-cfgt-1pc</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-cfgt-5pcs</loc>
+    <loc>https://visiondetail.com.tr/urunler/cw-pbk</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-ipw-1pcs</loc>
+    <loc>https://visiondetail.com.tr/urunler/cw-fe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-ipw-5pcs</loc>
+    <loc>https://visiondetail.com.tr/urunler/cw-dss-10</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-iup-5pcs</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-tcb</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-utb-L</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-dryer</loc>
+    <loc>https://visiondetail.com.tr/urunler/cw-icpe-1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -227,61 +277,6 @@
   </url>
   <url>
     <loc>https://visiondetail.com.tr/urunler/cw-da9-pro-max</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-rotary</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-pcg</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-hwa</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-ma</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-swb-L</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-swb-L-blue</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-swb-L-green</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-swb-L-red</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-cL</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-cm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://visiondetail.com.tr/urunler/cw-hL</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

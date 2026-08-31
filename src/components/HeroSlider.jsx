@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { heroSlides } from '@/data/homepageContent';
 import GlassSurface from './GlassSurface';
@@ -184,7 +185,7 @@ export default function HeroSlider() {
                 )}
                 <p className="hero-slider__info">{t(slide.info)}</p>
                 <GlassSurface
-                  as="a"
+                  as={Link}
                   href={slide.href}
                   className="hero-slider__cta glass-surface--tight glass-surface--solid"
                   contentClassName="hero-slider__cta-content"

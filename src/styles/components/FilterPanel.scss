@@ -125,15 +125,14 @@
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   animation: quiz-pop 0.4s var(--ease-spring);
 
-  // Reported unreadable/"silik" (washed-out) on mobile even with --solid — that variant is
-  // still only ~73-82% opaque by design (it's meant to sit over media and let SOME texture
-  // through). This full-screen category list is dense text content, not a CTA over a photo,
-  // so it gets a fully opaque fill instead of trusting backdrop-filter support/quality on
-  // every device — guaranteed legible regardless of GPU/browser blur rendering.
-  .glass-surface__tint {
-    background: var(--bg);
-  }
-
+  // Was forced to a fully opaque var(--bg) here after being reported unreadable/"silik" on
+  // mobile — that killed the glass entirely (flat, no blur/translucency showing at all,
+  // user-reported "liquid glass olucak" after seeing it). The actual fix for "readable
+  // dense text over arbitrary content" already exists as --glass-tint-menu (96% opaque,
+  // same token the header's mobile nav/language dropdown use successfully) via the
+  // `glass-surface--menu` class already on this element in FilterPanel.jsx — no local
+  // override needed, and removing it is what restores real blur/distortion here instead of
+  // silently disabling it wholesale.
   &.is-closing {
     animation: quiz-pop-close 0.3s var(--ease-out) forwards;
   }
@@ -178,14 +177,3 @@
   }
 }
 
-.filter-sheet__apply {
-  width: 100%;
-  border-radius: var(--radius-pill);
-  margin-top: var(--space-5);
-}
-
-.filter-sheet__apply-content {
-  padding: 14px;
-  text-align: center;
-  display: block;
-}

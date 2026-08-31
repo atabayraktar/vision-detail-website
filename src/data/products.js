@@ -118,9 +118,9 @@ export const products = [
       "de": "Druckluft-Reinigungspistole"
     },
     "description": {
-      "tr": "Mini Hava Tabancası, hava tabancası kategorisinde basınçlı hava temizleme tabancası. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Mini Air Gun is a compressed air cleaning gun product in our air gun range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mini-Luftpistole ist ein Produkt der Kategorie Druckluftpistole mit Druckluft-Reinigungspistole. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Mini Hava Tabancası, hava tabancası kategorisinde basınçlı hava temizleme tabancası. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Mini Air Gun is a compressed air cleaning gun product in our air gun range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mini-Luftpistole ist ein Produkt der Kategorie Druckluftpistole mit Druckluft-Reinigungspistole. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -135,7 +135,25 @@ export const products = [
       "/images/products/cw-mag/cw-mag-a3_result.webp",
       "/images/products/cw-mag/cw-mag-a1_result.webp"
     ],
-    "poster": "/images/products/cw-mag/cw-mag-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-mag/cw-mag-packshot_result-thumb.webp",
+      "/images/products/cw-mag/cw-mag-u1_result-thumb.webp",
+      "/images/products/cw-mag/cw-mag-u2_result-thumb.webp",
+      "/images/products/cw-mag/cw-mag-u3_result-thumb.webp",
+      "/images/products/cw-mag/cw-mag-a2_result-thumb.webp",
+      "/images/products/cw-mag/cw-mag-a3_result-thumb.webp",
+      "/images/products/cw-mag/cw-mag-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-mag/cw-mag-a1_result.webp",
+      "/images/products/cw-mag/cw-mag-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz Mini Hava Tabancası, hızlı ve hassas temizlik için vazgeçilmez bir araçtır. Kirli yüzeyleri, ulaşılması zor köşeleri veya hassas parçaları temizlemek için profesyonel düzeyde teknoloji sunar. Kompakt, güçlü ve son derece kullanışlı bu küçük güç merkeziyle araçların temizliğini kısa sürede tamamlayabilirsiniz.",
+      "en": "The Chemicalworkz Mini Air Gun is an indispensable tool for fast, precise cleaning. It brings professional-grade technology to dirty surfaces, hard-to-reach corners and delicate parts alike. Compact, powerful and remarkably handy, this little powerhouse lets you finish cleaning a vehicle in no time.",
+      "de": "Die Chemicalworkz Mini-Luftpistole ist ein unverzichtbares Werkzeug für schnelle, präzise Reinigung. Sie bringt professionelle Technik an verschmutzte Flächen, schwer zugängliche Ecken und empfindliche Teile gleichermaßen. Kompakt, leistungsstark und äußerst praktisch – mit diesem kleinen Kraftpaket erledigen Sie die Fahrzeugreinigung im Handumdrehen."
+    },
+    "video": null
   },
   {
     "id": "cw-evo-mini",
@@ -151,9 +169,9 @@ export const products = [
       "de": "Hybrid-Poliermaschine"
     },
     "description": {
-      "tr": "EVO Mini, polisaj makinesi kategorisinde hibrit polisaj makinesi. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "EVO Mini is a hybrid polisher product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "EVO Mini ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "EVO Mini, polisaj makinesi kategorisinde hibrit polisaj makinesi. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "EVO Mini is a hybrid polisher product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "EVO Mini ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -167,7 +185,25 @@ export const products = [
       "/images/products/cw-evo-mini/cw-evo-mini-a3_result.webp",
       "/images/products/cw-evo-mini/cw-evo-mini-a1_result.webp"
     ],
-    "poster": "/images/products/cw-evo-mini/cw-evo-mini-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-evo-mini/cw-evo-mini-packshot_result-thumb.webp",
+      "/images/products/cw-evo-mini/cw-evo-mini-u1_result-thumb.webp",
+      "/images/products/cw-evo-mini/cw-evo-mini-u2_result-thumb.webp",
+      "/images/products/cw-evo-mini/cw-evo-mini-a2_result-thumb.webp",
+      "/images/products/cw-evo-mini/cw-evo-mini-a3_result-thumb.webp",
+      "/images/products/cw-evo-mini/cw-evo-mini-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-evo-mini/cw-evo-mini-a1_result.webp",
+      "/images/products/cw-evo-mini/cw-evo-mini-a2_result.webp",
+      "/images/products/cw-evo-mini/cw-evo-mini-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz® EVO Mini parlatma makinesi, yüksek performansı ve çok yönlü uygulamalarının yanı sıra zamansız tasarımıyla da öne çıkıyor. Geliştirme sürecinde ergonomiye en yüksek öncelik verilmiş; bu da chemicalworkz® EVO Mini'yi yeni başlayanlardan profesyonellere kadar herkes için ideal bir araç haline getiriyor.\n\nEVO Mini, kapsamlı bir aksesuar yelpazesiyle standart olarak sunulmaktadır. 38 mm ve 50 mm destek plakalarına ek olarak, pakette gerekli montaj aletleri, iki pil, iki fırça aparatı, iki göbek adaptörü, iki döner mil, bir şarj istasyonu ve saklama için sağlam bir sert taşıma çantası bulunmaktadır.",
+      "en": "The Chemicalworkz® EVO Mini polisher stands out for its high performance and versatile applications as much as its timeless design. Ergonomics were given top priority throughout development, which makes the EVO Mini an ideal tool for everyone from beginners to professionals.\n\nThe EVO Mini ships with a comprehensive accessory range as standard. Alongside 38 mm and 50 mm backing plates, the kit includes the necessary assembly tools, two batteries, two brush attachments, two hub adapters, two spindles, a charging station and a sturdy hard case for storage.",
+      "de": "Die Chemicalworkz® EVO Mini Poliermaschine überzeugt ebenso durch ihre hohe Leistung und vielseitigen Einsatzmöglichkeiten wie durch ihr zeitloses Design. Bei der Entwicklung stand die Ergonomie an oberster Stelle – das macht die EVO Mini zum idealen Werkzeug für Einsteiger ebenso wie für Profis.\n\nDie EVO Mini wird standardmäßig mit einem umfangreichen Zubehörpaket geliefert. Neben 38-mm- und 50-mm-Stütztellern enthält das Set das nötige Montagewerkzeug, zwei Akkus, zwei Bürstenaufsätze, zwei Nabenadapter, zwei Drehspindeln, eine Ladestation sowie einen robusten Hartschalenkoffer zur Aufbewahrung."
+    },
+    "video": null
   },
   {
     "id": "cw-evo-mini-pro",
@@ -183,9 +219,9 @@ export const products = [
       "de": "Hybrid-Poliermaschine"
     },
     "description": {
-      "tr": "EVO Mini Pro, polisaj makinesi kategorisinde hibrit polisaj makinesi. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "EVO Mini Pro is a hybrid polisher product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "EVO Mini Pro ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "EVO Mini Pro, polisaj makinesi kategorisinde hibrit polisaj makinesi. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "EVO Mini Pro is a hybrid polisher product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "EVO Mini Pro ist ein Produkt der Kategorie Poliermaschinen mit Hybrid-Poliermaschine. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -198,7 +234,23 @@ export const products = [
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a2_result.webp",
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a1_result.webp"
     ],
-    "poster": "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-packshot_result-thumb.webp",
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u1_result-thumb.webp",
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u2_result-thumb.webp",
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a2_result-thumb.webp",
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a1_result.webp",
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Cihazın en dikkat çekici özelliklerinden biri, orta kısımda yer alan LED ekranıdır. Bu ekran sadece mevcut ayarı, hızı, pil seviyesini ve toplam çalışma süresini göstermekle kalmaz, aynı zamanda ekranın etrafındaki döner kontrol tekerleği aracılığıyla da kontrol edilir. Sezgisel, hassas ve bu cihaz sınıfında benzersizdir.\n\n5800 RPM'ye kadar ulaşan muazzam güç çıkışına rağmen, EVO Mini Pro son derece düşük titreşimle çalışır ve 1,2 kg ağırlığıyla elde rahatça dengelenir. Tipik chemicalworkz tarzındaki ince tasarım, hassas işler veya ince sonlandırma için mükemmel bir kavrama ve profesyonel bir his sağlar.\n\nBirlikte verilen aksesuarlarla her duruma hazırsınız: Dört adet destek plakası (30 mm, 38 mm, 50 mm, 75 mm), iki adet döner uzatma parçası (kısa ve uzun), parlatma mili için MPS adaptörü, şarj cihazı, montaj anahtarı, sert taşıma çantası ve elbette iki adet güçlü 12V / 2,5Ah pil.\n\nDöner adaptörün kullanımıyla ilgili önemli not:\nDöner adaptör yalnızca 30 mm, 38 mm ve 50 mm destek plakalarıyla kullanım için tasarlanmıştır. 75 mm'lik bir destek plakasının döner modda kullanılmasına izin verilmez, çünkü bu makine üzerinde aşırı gerilime neden olur.\n\n50 mm'lik destek plakası döndürme modunda kullanıldığında, makine en fazla 4. seviyeye kadar çalıştırılabilir. Bu seviye, EVO Mini Pro'nun güvenli ve uzun ömürlü kullanımını sağlamak için teknik olarak izin verilen maksimum seviyeyi temsil eder.",
+      "en": "One of the device's most distinctive features is the LED display at its center. It doesn't just show the current setting, speed, battery level and total run time — it's also operated via the rotary control wheel surrounding it. Intuitive, precise, and unique in this class of device.\n\nDespite a tremendous power output of up to 5,800 RPM, the EVO Mini Pro runs with remarkably low vibration and balances comfortably in the hand at just 1.2 kg. The slim design typical of Chemicalworkz gives a perfect grip and a professional feel for precision work or fine finishing.\n\nThe included accessories cover every situation: four backing plates (30 mm, 38 mm, 50 mm, 75 mm), two rotary extensions (short and long), an MPS adapter for the polishing spindle, a charger, an assembly wrench, a hard case, and of course two powerful 12V/2.5Ah batteries.\n\nImportant note on using the rotary adapter:\nThe rotary adapter is designed for use only with the 30 mm, 38 mm and 50 mm backing plates. Using a 75 mm backing plate in rotary mode is not permitted, as it puts excessive strain on the machine.\n\nWhen the 50 mm backing plate is used in rotary mode, the machine may be operated at speed level 4 at most. This level represents the technically permitted maximum for safe, long-lasting use of the EVO Mini Pro.",
+      "de": "Eines der auffälligsten Merkmale des Geräts ist das LED-Display in der Mitte. Es zeigt nicht nur die aktuelle Einstellung, Drehzahl, den Akkustand und die gesamte Laufzeit an, sondern wird auch über das umliegende Drehrad bedient. Intuitiv, präzise und in dieser Geräteklasse einzigartig.\n\nTrotz einer enormen Leistungsabgabe von bis zu 5.800 U/min läuft die EVO Mini Pro äußerst vibrationsarm und liegt mit nur 1,2 kg ausgewogen in der Hand. Das für Chemicalworkz typische schlanke Design sorgt für einen perfekten Griff und ein professionelles Gefühl bei Präzisionsarbeiten oder der Feinbearbeitung.\n\nMit dem mitgelieferten Zubehör sind Sie für jede Situation gerüstet: vier Stützteller (30 mm, 38 mm, 50 mm, 75 mm), zwei Drehverlängerungen (kurz und lang), ein MPS-Adapter für die Polierspindel, ein Ladegerät, ein Montageschlüssel, ein Hartschalenkoffer und natürlich zwei leistungsstarke 12-V-/2,5-Ah-Akkus.\n\nWichtiger Hinweis zur Nutzung des Drehadapters:\nDer Drehadapter ist ausschließlich für die Verwendung mit den Stütztellern 30 mm, 38 mm und 50 mm ausgelegt. Der Einsatz eines 75-mm-Stütztellers im Drehmodus ist nicht zulässig, da dies die Maschine übermäßig belastet.\n\nWird der 50-mm-Stützteller im Drehmodus verwendet, darf die Maschine höchstens auf Stufe 4 betrieben werden. Diese Stufe stellt das technisch zulässige Maximum für einen sicheren und langlebigen Betrieb der EVO Mini Pro dar."
+    },
+    "video": null
   },
   {
     "id": "cw-pp-125-heavy",
@@ -214,9 +266,9 @@ export const products = [
       "de": "Performance-Pad | Starker Schnitt"
     },
     "description": {
-      "tr": "Ağır Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | ağır kesim. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Heavy Cutting Pad is a performance pad | heavy cutting product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Heavy-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Starker Schnitt. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ağır Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | ağır kesim. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Heavy Cutting Pad is a performance pad | heavy cutting product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Heavy-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Starker Schnitt. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -224,10 +276,145 @@ export const products = [
     "image": "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-packshot_result.webp",
-      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a2_result.webp",
-      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result.webp"
+      "/images/products/cw-pp-125-heavy/pads_u1.webp",
+      "/images/products/cw-pp-125-heavy/pads_u2.webp",
+      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result.webp",
+      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a2_result.webp"
     ],
-    "poster": "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-packshot_result-thumb.webp",
+      "/images/products/cw-pp-125-heavy/pads_u1-thumb.webp",
+      "/images/products/cw-pp-125-heavy/pads_u2-thumb.webp",
+      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result-thumb.webp",
+      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a2_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result.webp",
+      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Benzersiz malzeme bileşimi ve hassas üretimi sayesinde, chemicalworkz Ağır Kesim Performans Pedi, olağanüstü yüksek kesme gücü sunarak, inatçı kusurları ve derin çizikleri bile güvenilir bir şekilde giderir. Optimize edilmiş yapısı, tutarlı ısı dağılımı sağlayarak, yoğun kullanım sırasında bile parlatma sıcaklıklarını ideal aralıkta tutar – termal katkı maddelerine gerek kalmadan.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Ağır Kesim Performans Pedini yüksek performanslı parlatma bileşikleriyle birlikte kullanmanızı öneririz. Çok aşamalı bir parlatma işleminin ilk aşaması için veya yün veya mikrofiber parlatma pedleri kullandıktan sonra kusurları gidermek için güçlü bir araç olarak idealdir.\n\nChemicalworkz Ağır Kesim Performans Pedi, maksimum hassasiyet, verimlilik ve uzun kullanım ömrü anlamına gelir. En kısa sürede en iyi sonuçları sunmak için özel olarak geliştirilmiştir; profesyonel oto detaycıları ve taviz vermeyi reddeden iddialı hobi tutkunları için idealdir.",
+      "en": "Thanks to its unique material composition and precision manufacturing, the Chemicalworkz Heavy Cutting Performance Pad delivers exceptionally high cutting power, reliably removing even stubborn defects and deep scratches. Its optimized structure ensures consistent heat distribution, keeping polishing temperatures in the ideal range even under heavy use — with no thermal additives required.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Heavy Cutting Performance Pad with high-performance polishing compounds. It's ideal as the first stage of a multi-step polishing process, or as a powerful tool for removing defects after using wool or microfiber polishing pads.\n\nThe Chemicalworkz Heavy Cutting Performance Pad stands for maximum precision, efficiency and long service life. It was developed specifically to deliver the best results in the shortest time — ideal for professional auto detailers and ambitious enthusiasts who refuse to compromise.",
+      "de": "Dank seiner einzigartigen Materialzusammensetzung und präzisen Fertigung liefert das Chemicalworkz Heavy-Cutting-Pad außergewöhnlich hohe Schnittleistung und entfernt selbst hartnäckige Lackfehler und tiefe Kratzer zuverlässig. Die optimierte Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei intensivem Einsatz im idealen Bereich – ganz ohne thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Heavy-Cutting-Pad mit Hochleistungs-Polituren zu kombinieren. Es eignet sich ideal als erste Stufe eines mehrstufigen Polierprozesses oder als kraftvolles Werkzeug zur Fehlerbeseitigung nach dem Einsatz von Woll- oder Mikrofaser-Polierpads.\n\nDas Chemicalworkz Heavy-Cutting-Pad steht für maximale Präzision, Effizienz und lange Lebensdauer. Es wurde speziell dafür entwickelt, in kürzester Zeit beste Ergebnisse zu liefern – ideal für professionelle Fahrzeugaufbereiter und anspruchsvolle Enthusiasten, die keine Kompromisse eingehen."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-30-heavy",
+    "name": {
+      "tr": "Ağır Polisaj Pedi",
+      "en": "Heavy Cutting Pad",
+      "de": "Heavy-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Ağır Kesim",
+      "en": "Performance Pad | Heavy Cutting",
+      "de": "Performance-Pad | Starker Schnitt"
+    },
+    "description": {
+      "tr": "Ağır Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | ağır kesim. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Heavy Cutting Pad is a performance pad | heavy cutting product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Heavy-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Starker Schnitt. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "30mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-30-heavy/chemicalworkz-heavy-cutting-performance-pad-30mm-grau.webp",
+    "gallery": [
+      "/images/products/cw-pp-30-heavy/chemicalworkz-heavy-cutting-performance-pad-30mm-grau.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-30-heavy/chemicalworkz-heavy-cutting-performance-pad-30mm-grau-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-30-heavy/cw-pp-125-heavy-a1_result.webp",
+      "/images/products/cw-pp-30-heavy/cw-pp-125-heavy-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Benzersiz malzeme bileşimi ve hassas üretimi sayesinde, chemicalworkz Ağır Kesim Performans Pedi, olağanüstü yüksek kesme gücü sunarak, inatçı kusurları ve derin çizikleri bile güvenilir bir şekilde giderir. Optimize edilmiş yapısı, tutarlı ısı dağılımı sağlayarak, yoğun kullanım sırasında bile parlatma sıcaklıklarını ideal aralıkta tutar – termal katkı maddelerine gerek kalmadan.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Ağır Kesim Performans Pedini yüksek performanslı parlatma bileşikleriyle birlikte kullanmanızı öneririz. Çok aşamalı bir parlatma işleminin ilk aşaması için veya yün veya mikrofiber parlatma pedleri kullandıktan sonra kusurları gidermek için güçlü bir araç olarak idealdir.\n\nChemicalworkz Ağır Kesim Performans Pedi, maksimum hassasiyet, verimlilik ve uzun kullanım ömrü anlamına gelir. En kısa sürede en iyi sonuçları sunmak için özel olarak geliştirilmiştir; profesyonel oto detaycıları ve taviz vermeyi reddeden iddialı hobi tutkunları için idealdir.",
+      "en": "Thanks to its unique material composition and precision manufacturing, the Chemicalworkz Heavy Cutting Performance Pad delivers exceptionally high cutting power, reliably removing even stubborn defects and deep scratches. Its optimized structure ensures consistent heat distribution, keeping polishing temperatures in the ideal range even under heavy use — with no thermal additives required.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Heavy Cutting Performance Pad with high-performance polishing compounds. It's ideal as the first stage of a multi-step polishing process, or as a powerful tool for removing defects after using wool or microfiber polishing pads.\n\nThe Chemicalworkz Heavy Cutting Performance Pad stands for maximum precision, efficiency and long service life. It was developed specifically to deliver the best results in the shortest time — ideal for professional auto detailers and ambitious enthusiasts who refuse to compromise.",
+      "de": "Dank seiner einzigartigen Materialzusammensetzung und präzisen Fertigung liefert das Chemicalworkz Heavy-Cutting-Pad außergewöhnlich hohe Schnittleistung und entfernt selbst hartnäckige Lackfehler und tiefe Kratzer zuverlässig. Die optimierte Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei intensivem Einsatz im idealen Bereich – ganz ohne thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Heavy-Cutting-Pad mit Hochleistungs-Polituren zu kombinieren. Es eignet sich ideal als erste Stufe eines mehrstufigen Polierprozesses oder als kraftvolles Werkzeug zur Fehlerbeseitigung nach dem Einsatz von Woll- oder Mikrofaser-Polierpads.\n\nDas Chemicalworkz Heavy-Cutting-Pad steht für maximale Präzision, Effizienz und lange Lebensdauer. Es wurde speziell dafür entwickelt, in kürzester Zeit beste Ergebnisse zu liefern – ideal für professionelle Fahrzeugaufbereiter und anspruchsvolle Enthusiasten, die keine Kompromisse eingehen."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-50-heavy",
+    "name": {
+      "tr": "Ağır Polisaj Pedi",
+      "en": "Heavy Cutting Pad",
+      "de": "Heavy-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Ağır Kesim",
+      "en": "Performance Pad | Heavy Cutting",
+      "de": "Performance-Pad | Starker Schnitt"
+    },
+    "description": {
+      "tr": "Ağır Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | ağır kesim. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Heavy Cutting Pad is a performance pad | heavy cutting product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Heavy-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Starker Schnitt. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "50mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-50-heavy/chemicalworkz-heavy-cutting-performance-pad-50mm-grau.webp",
+    "gallery": [
+      "/images/products/cw-pp-50-heavy/chemicalworkz-heavy-cutting-performance-pad-50mm-grau.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-50-heavy/chemicalworkz-heavy-cutting-performance-pad-50mm-grau-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-50-heavy/cw-pp-125-heavy-a1_result.webp",
+      "/images/products/cw-pp-50-heavy/cw-pp-125-heavy-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Benzersiz malzeme bileşimi ve hassas üretimi sayesinde, chemicalworkz Ağır Kesim Performans Pedi, olağanüstü yüksek kesme gücü sunarak, inatçı kusurları ve derin çizikleri bile güvenilir bir şekilde giderir. Optimize edilmiş yapısı, tutarlı ısı dağılımı sağlayarak, yoğun kullanım sırasında bile parlatma sıcaklıklarını ideal aralıkta tutar – termal katkı maddelerine gerek kalmadan.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Ağır Kesim Performans Pedini yüksek performanslı parlatma bileşikleriyle birlikte kullanmanızı öneririz. Çok aşamalı bir parlatma işleminin ilk aşaması için veya yün veya mikrofiber parlatma pedleri kullandıktan sonra kusurları gidermek için güçlü bir araç olarak idealdir.\n\nChemicalworkz Ağır Kesim Performans Pedi, maksimum hassasiyet, verimlilik ve uzun kullanım ömrü anlamına gelir. En kısa sürede en iyi sonuçları sunmak için özel olarak geliştirilmiştir; profesyonel oto detaycıları ve taviz vermeyi reddeden iddialı hobi tutkunları için idealdir.",
+      "en": "Thanks to its unique material composition and precision manufacturing, the Chemicalworkz Heavy Cutting Performance Pad delivers exceptionally high cutting power, reliably removing even stubborn defects and deep scratches. Its optimized structure ensures consistent heat distribution, keeping polishing temperatures in the ideal range even under heavy use — with no thermal additives required.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Heavy Cutting Performance Pad with high-performance polishing compounds. It's ideal as the first stage of a multi-step polishing process, or as a powerful tool for removing defects after using wool or microfiber polishing pads.\n\nThe Chemicalworkz Heavy Cutting Performance Pad stands for maximum precision, efficiency and long service life. It was developed specifically to deliver the best results in the shortest time — ideal for professional auto detailers and ambitious enthusiasts who refuse to compromise.",
+      "de": "Dank seiner einzigartigen Materialzusammensetzung und präzisen Fertigung liefert das Chemicalworkz Heavy-Cutting-Pad außergewöhnlich hohe Schnittleistung und entfernt selbst hartnäckige Lackfehler und tiefe Kratzer zuverlässig. Die optimierte Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei intensivem Einsatz im idealen Bereich – ganz ohne thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Heavy-Cutting-Pad mit Hochleistungs-Polituren zu kombinieren. Es eignet sich ideal als erste Stufe eines mehrstufigen Polierprozesses oder als kraftvolles Werkzeug zur Fehlerbeseitigung nach dem Einsatz von Woll- oder Mikrofaser-Polierpads.\n\nDas Chemicalworkz Heavy-Cutting-Pad steht für maximale Präzision, Effizienz und lange Lebensdauer. Es wurde speziell dafür entwickelt, in kürzester Zeit beste Ergebnisse zu liefern – ideal für professionelle Fahrzeugaufbereiter und anspruchsvolle Enthusiasten, die keine Kompromisse eingehen."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-75-heavy",
+    "name": {
+      "tr": "Ağır Polisaj Pedi",
+      "en": "Heavy Cutting Pad",
+      "de": "Heavy-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Ağır Kesim",
+      "en": "Performance Pad | Heavy Cutting",
+      "de": "Performance-Pad | Starker Schnitt"
+    },
+    "description": {
+      "tr": "Ağır Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | ağır kesim. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Heavy Cutting Pad is a performance pad | heavy cutting product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Heavy-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Starker Schnitt. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "75mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-75-heavy/chemicalworkz-heavy-cutting-performance-pad-75mm-grau.webp",
+    "gallery": [
+      "/images/products/cw-pp-75-heavy/chemicalworkz-heavy-cutting-performance-pad-75mm-grau.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-75-heavy/chemicalworkz-heavy-cutting-performance-pad-75mm-grau-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-75-heavy/cw-pp-125-heavy-a1_result.webp",
+      "/images/products/cw-pp-75-heavy/cw-pp-125-heavy-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Benzersiz malzeme bileşimi ve hassas üretimi sayesinde, chemicalworkz Ağır Kesim Performans Pedi, olağanüstü yüksek kesme gücü sunarak, inatçı kusurları ve derin çizikleri bile güvenilir bir şekilde giderir. Optimize edilmiş yapısı, tutarlı ısı dağılımı sağlayarak, yoğun kullanım sırasında bile parlatma sıcaklıklarını ideal aralıkta tutar – termal katkı maddelerine gerek kalmadan.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Ağır Kesim Performans Pedini yüksek performanslı parlatma bileşikleriyle birlikte kullanmanızı öneririz. Çok aşamalı bir parlatma işleminin ilk aşaması için veya yün veya mikrofiber parlatma pedleri kullandıktan sonra kusurları gidermek için güçlü bir araç olarak idealdir.\n\nChemicalworkz Ağır Kesim Performans Pedi, maksimum hassasiyet, verimlilik ve uzun kullanım ömrü anlamına gelir. En kısa sürede en iyi sonuçları sunmak için özel olarak geliştirilmiştir; profesyonel oto detaycıları ve taviz vermeyi reddeden iddialı hobi tutkunları için idealdir.",
+      "en": "Thanks to its unique material composition and precision manufacturing, the Chemicalworkz Heavy Cutting Performance Pad delivers exceptionally high cutting power, reliably removing even stubborn defects and deep scratches. Its optimized structure ensures consistent heat distribution, keeping polishing temperatures in the ideal range even under heavy use — with no thermal additives required.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Heavy Cutting Performance Pad with high-performance polishing compounds. It's ideal as the first stage of a multi-step polishing process, or as a powerful tool for removing defects after using wool or microfiber polishing pads.\n\nThe Chemicalworkz Heavy Cutting Performance Pad stands for maximum precision, efficiency and long service life. It was developed specifically to deliver the best results in the shortest time — ideal for professional auto detailers and ambitious enthusiasts who refuse to compromise.",
+      "de": "Dank seiner einzigartigen Materialzusammensetzung und präzisen Fertigung liefert das Chemicalworkz Heavy-Cutting-Pad außergewöhnlich hohe Schnittleistung und entfernt selbst hartnäckige Lackfehler und tiefe Kratzer zuverlässig. Die optimierte Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei intensivem Einsatz im idealen Bereich – ganz ohne thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Heavy-Cutting-Pad mit Hochleistungs-Polituren zu kombinieren. Es eignet sich ideal als erste Stufe eines mehrstufigen Polierprozesses oder als kraftvolles Werkzeug zur Fehlerbeseitigung nach dem Einsatz von Woll- oder Mikrofaser-Polierpads.\n\nDas Chemicalworkz Heavy-Cutting-Pad steht für maximale Präzision, Effizienz und lange Lebensdauer. Es wurde speziell dafür entwickelt, in kürzester Zeit beste Ergebnisse zu liefern – ideal für professionelle Fahrzeugaufbereiter und anspruchsvolle Enthusiasten, die keine Kompromisse eingehen."
+    },
+    "video": null
   },
   {
     "id": "cw-pp-125-medium",
@@ -243,9 +430,9 @@ export const products = [
       "de": "Performance-Pad | Mittel-Stark"
     },
     "description": {
-      "tr": "Orta Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-zor. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Medium Cutting Pad is a performance pad | medium-heavy product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Medium-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Stark. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Orta Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-zor. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Medium Cutting Pad is a performance pad | medium-heavy product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Medium-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Stark. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -253,10 +440,145 @@ export const products = [
     "image": "/images/products/cw-pp-125-medium/cw-pp-125-medium-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-medium/cw-pp-125-medium-packshot_result.webp",
-      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a2_result.webp",
-      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result.webp"
+      "/images/products/cw-pp-125-medium/pads_u1.webp",
+      "/images/products/cw-pp-125-medium/pads_u2.webp",
+      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result.webp",
+      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a2_result.webp"
     ],
-    "poster": "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-pp-125-medium/cw-pp-125-medium-packshot_result-thumb.webp",
+      "/images/products/cw-pp-125-medium/pads_u1-thumb.webp",
+      "/images/products/cw-pp-125-medium/pads_u2-thumb.webp",
+      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result-thumb.webp",
+      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a2_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result.webp",
+      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Eşsiz köpük yapısı sayesinde, chemicalworkz Orta Performanslı Parlatma Pedi, kesme gücü ve yüzey işleme arasında ideal bir denge sunar. Hafif ve orta dereceli kusurları gidermek ve yüzeyleri son parlatma adımına hazırlamak için mükemmeldir. Yenilikçi yapısı, eşit ısı dağılımı sağlayarak, özel termal katkı maddelerine gerek kalmadan, uzun süreli kullanımda bile parlatma sıcaklıklarını sabit tutar.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Orta Sertlikte Parlatma Performans Pedini yüksek kaliteli ince kesim veya son işlem cilalarıyla birlikte kullanmanızı öneririz. Bu ped, çok aşamalı bir parlatma işleminde ikinci parlatma aşaması için veya daha sert pedler kullandıktan sonra yüzeyi iyileştirmek için tek başına bir araç olarak ideal bir seçimdir.\n\nChemicalworkz Orta Sertlikte Parlatma Performans Pedi, esneklik, verimlilik ve uzun kullanım ömrü anlamına gelir. Özellikle zorlu araç detaycıları ve oto bakım profesyonelleri için en iyi sonuçları sunmak üzere geliştirilmiştir; profesyonel kullanım ve iddialı otomobil tutkunları için mükemmeldir.",
+      "en": "Thanks to its unique foam structure, the Chemicalworkz Medium Performance Polishing Pad strikes an ideal balance between cutting power and surface finish. It's perfect for removing light-to-medium defects and preparing surfaces for the final polishing step. Its innovative structure ensures even heat distribution, keeping polishing temperatures stable even during extended use — with no special thermal additives needed.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Medium Polishing Performance Pad with high-quality fine-cut or finishing polishes. This pad is an ideal choice as the second polishing stage in a multi-step process, or on its own to refine a surface after using harder pads.\n\nThe Chemicalworkz Medium Polishing Performance Pad stands for flexibility, efficiency and long service life. It was developed to deliver the best results for demanding auto detailers and car care professionals alike — ideal for professional use and ambitious car enthusiasts.",
+      "de": "Dank seiner einzigartigen Schaumstoffstruktur bietet das Chemicalworkz Medium-Polierpad eine ideale Balance zwischen Schnittleistung und Oberflächenfinish. Es eignet sich hervorragend zur Beseitigung leichter bis mittlerer Lackfehler und zur Vorbereitung der Oberfläche auf den letzten Polierschritt. Die innovative Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei längerem Einsatz konstant – ganz ohne spezielle thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Medium-Polierpad mit hochwertigen Fein- oder Finish-Polituren zu kombinieren. Dieses Pad eignet sich ideal als zweite Stufe in einem mehrstufigen Polierprozess oder allein, um die Oberfläche nach dem Einsatz härterer Pads zu verfeinern.\n\nDas Chemicalworkz Medium-Polierpad steht für Flexibilität, Effizienz und lange Lebensdauer. Es wurde entwickelt, um anspruchsvollen Fahrzeugaufbereitern und Pflegeprofis gleichermaßen beste Ergebnisse zu liefern – ideal für den professionellen Einsatz und ambitionierte Autoliebhaber."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-30-medium",
+    "name": {
+      "tr": "Orta Polisaj Pedi",
+      "en": "Medium Cutting Pad",
+      "de": "Medium-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Orta-Zor",
+      "en": "Performance Pad | Medium-Heavy",
+      "de": "Performance-Pad | Mittel-Stark"
+    },
+    "description": {
+      "tr": "Orta Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-zor. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Medium Cutting Pad is a performance pad | medium-heavy product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Medium-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Stark. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "30mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-30-medium/chemicalworkz-medium-polishing-performance-pad-30mm-blau.webp",
+    "gallery": [
+      "/images/products/cw-pp-30-medium/chemicalworkz-medium-polishing-performance-pad-30mm-blau.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-30-medium/chemicalworkz-medium-polishing-performance-pad-30mm-blau-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-30-medium/cw-pp-125-medium-a1_result.webp",
+      "/images/products/cw-pp-30-medium/cw-pp-125-medium-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Eşsiz köpük yapısı sayesinde, chemicalworkz Orta Performanslı Parlatma Pedi, kesme gücü ve yüzey işleme arasında ideal bir denge sunar. Hafif ve orta dereceli kusurları gidermek ve yüzeyleri son parlatma adımına hazırlamak için mükemmeldir. Yenilikçi yapısı, eşit ısı dağılımı sağlayarak, özel termal katkı maddelerine gerek kalmadan, uzun süreli kullanımda bile parlatma sıcaklıklarını sabit tutar.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Orta Sertlikte Parlatma Performans Pedini yüksek kaliteli ince kesim veya son işlem cilalarıyla birlikte kullanmanızı öneririz. Bu ped, çok aşamalı bir parlatma işleminde ikinci parlatma aşaması için veya daha sert pedler kullandıktan sonra yüzeyi iyileştirmek için tek başına bir araç olarak ideal bir seçimdir.\n\nChemicalworkz Orta Sertlikte Parlatma Performans Pedi, esneklik, verimlilik ve uzun kullanım ömrü anlamına gelir. Özellikle zorlu araç detaycıları ve oto bakım profesyonelleri için en iyi sonuçları sunmak üzere geliştirilmiştir; profesyonel kullanım ve iddialı otomobil tutkunları için mükemmeldir.",
+      "en": "Thanks to its unique foam structure, the Chemicalworkz Medium Performance Polishing Pad strikes an ideal balance between cutting power and surface finish. It's perfect for removing light-to-medium defects and preparing surfaces for the final polishing step. Its innovative structure ensures even heat distribution, keeping polishing temperatures stable even during extended use — with no special thermal additives needed.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Medium Polishing Performance Pad with high-quality fine-cut or finishing polishes. This pad is an ideal choice as the second polishing stage in a multi-step process, or on its own to refine a surface after using harder pads.\n\nThe Chemicalworkz Medium Polishing Performance Pad stands for flexibility, efficiency and long service life. It was developed to deliver the best results for demanding auto detailers and car care professionals alike — ideal for professional use and ambitious car enthusiasts.",
+      "de": "Dank seiner einzigartigen Schaumstoffstruktur bietet das Chemicalworkz Medium-Polierpad eine ideale Balance zwischen Schnittleistung und Oberflächenfinish. Es eignet sich hervorragend zur Beseitigung leichter bis mittlerer Lackfehler und zur Vorbereitung der Oberfläche auf den letzten Polierschritt. Die innovative Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei längerem Einsatz konstant – ganz ohne spezielle thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Medium-Polierpad mit hochwertigen Fein- oder Finish-Polituren zu kombinieren. Dieses Pad eignet sich ideal als zweite Stufe in einem mehrstufigen Polierprozess oder allein, um die Oberfläche nach dem Einsatz härterer Pads zu verfeinern.\n\nDas Chemicalworkz Medium-Polierpad steht für Flexibilität, Effizienz und lange Lebensdauer. Es wurde entwickelt, um anspruchsvollen Fahrzeugaufbereitern und Pflegeprofis gleichermaßen beste Ergebnisse zu liefern – ideal für den professionellen Einsatz und ambitionierte Autoliebhaber."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-50-medium",
+    "name": {
+      "tr": "Orta Polisaj Pedi",
+      "en": "Medium Cutting Pad",
+      "de": "Medium-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Orta-Zor",
+      "en": "Performance Pad | Medium-Heavy",
+      "de": "Performance-Pad | Mittel-Stark"
+    },
+    "description": {
+      "tr": "Orta Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-zor. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Medium Cutting Pad is a performance pad | medium-heavy product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Medium-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Stark. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "50mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-50-medium/chemicalworkz-medium-polishing-performance-pad-50mm-blau.webp",
+    "gallery": [
+      "/images/products/cw-pp-50-medium/chemicalworkz-medium-polishing-performance-pad-50mm-blau.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-50-medium/chemicalworkz-medium-polishing-performance-pad-50mm-blau-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-50-medium/cw-pp-125-medium-a1_result.webp",
+      "/images/products/cw-pp-50-medium/cw-pp-125-medium-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Eşsiz köpük yapısı sayesinde, chemicalworkz Orta Performanslı Parlatma Pedi, kesme gücü ve yüzey işleme arasında ideal bir denge sunar. Hafif ve orta dereceli kusurları gidermek ve yüzeyleri son parlatma adımına hazırlamak için mükemmeldir. Yenilikçi yapısı, eşit ısı dağılımı sağlayarak, özel termal katkı maddelerine gerek kalmadan, uzun süreli kullanımda bile parlatma sıcaklıklarını sabit tutar.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Orta Sertlikte Parlatma Performans Pedini yüksek kaliteli ince kesim veya son işlem cilalarıyla birlikte kullanmanızı öneririz. Bu ped, çok aşamalı bir parlatma işleminde ikinci parlatma aşaması için veya daha sert pedler kullandıktan sonra yüzeyi iyileştirmek için tek başına bir araç olarak ideal bir seçimdir.\n\nChemicalworkz Orta Sertlikte Parlatma Performans Pedi, esneklik, verimlilik ve uzun kullanım ömrü anlamına gelir. Özellikle zorlu araç detaycıları ve oto bakım profesyonelleri için en iyi sonuçları sunmak üzere geliştirilmiştir; profesyonel kullanım ve iddialı otomobil tutkunları için mükemmeldir.",
+      "en": "Thanks to its unique foam structure, the Chemicalworkz Medium Performance Polishing Pad strikes an ideal balance between cutting power and surface finish. It's perfect for removing light-to-medium defects and preparing surfaces for the final polishing step. Its innovative structure ensures even heat distribution, keeping polishing temperatures stable even during extended use — with no special thermal additives needed.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Medium Polishing Performance Pad with high-quality fine-cut or finishing polishes. This pad is an ideal choice as the second polishing stage in a multi-step process, or on its own to refine a surface after using harder pads.\n\nThe Chemicalworkz Medium Polishing Performance Pad stands for flexibility, efficiency and long service life. It was developed to deliver the best results for demanding auto detailers and car care professionals alike — ideal for professional use and ambitious car enthusiasts.",
+      "de": "Dank seiner einzigartigen Schaumstoffstruktur bietet das Chemicalworkz Medium-Polierpad eine ideale Balance zwischen Schnittleistung und Oberflächenfinish. Es eignet sich hervorragend zur Beseitigung leichter bis mittlerer Lackfehler und zur Vorbereitung der Oberfläche auf den letzten Polierschritt. Die innovative Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei längerem Einsatz konstant – ganz ohne spezielle thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Medium-Polierpad mit hochwertigen Fein- oder Finish-Polituren zu kombinieren. Dieses Pad eignet sich ideal als zweite Stufe in einem mehrstufigen Polierprozess oder allein, um die Oberfläche nach dem Einsatz härterer Pads zu verfeinern.\n\nDas Chemicalworkz Medium-Polierpad steht für Flexibilität, Effizienz und lange Lebensdauer. Es wurde entwickelt, um anspruchsvollen Fahrzeugaufbereitern und Pflegeprofis gleichermaßen beste Ergebnisse zu liefern – ideal für den professionellen Einsatz und ambitionierte Autoliebhaber."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-75-medium",
+    "name": {
+      "tr": "Orta Polisaj Pedi",
+      "en": "Medium Cutting Pad",
+      "de": "Medium-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Orta-Zor",
+      "en": "Performance Pad | Medium-Heavy",
+      "de": "Performance-Pad | Mittel-Stark"
+    },
+    "description": {
+      "tr": "Orta Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-zor. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Medium Cutting Pad is a performance pad | medium-heavy product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Medium-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Stark. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "75mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-75-medium/chemicalworkz-medium-polishing-performance-pad-75mm-blau.webp",
+    "gallery": [
+      "/images/products/cw-pp-75-medium/chemicalworkz-medium-polishing-performance-pad-75mm-blau.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-75-medium/chemicalworkz-medium-polishing-performance-pad-75mm-blau-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-75-medium/cw-pp-125-medium-a1_result.webp",
+      "/images/products/cw-pp-75-medium/cw-pp-125-medium-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Eşsiz köpük yapısı sayesinde, chemicalworkz Orta Performanslı Parlatma Pedi, kesme gücü ve yüzey işleme arasında ideal bir denge sunar. Hafif ve orta dereceli kusurları gidermek ve yüzeyleri son parlatma adımına hazırlamak için mükemmeldir. Yenilikçi yapısı, eşit ısı dağılımı sağlayarak, özel termal katkı maddelerine gerek kalmadan, uzun süreli kullanımda bile parlatma sıcaklıklarını sabit tutar.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Orta Sertlikte Parlatma Performans Pedini yüksek kaliteli ince kesim veya son işlem cilalarıyla birlikte kullanmanızı öneririz. Bu ped, çok aşamalı bir parlatma işleminde ikinci parlatma aşaması için veya daha sert pedler kullandıktan sonra yüzeyi iyileştirmek için tek başına bir araç olarak ideal bir seçimdir.\n\nChemicalworkz Orta Sertlikte Parlatma Performans Pedi, esneklik, verimlilik ve uzun kullanım ömrü anlamına gelir. Özellikle zorlu araç detaycıları ve oto bakım profesyonelleri için en iyi sonuçları sunmak üzere geliştirilmiştir; profesyonel kullanım ve iddialı otomobil tutkunları için mükemmeldir.",
+      "en": "Thanks to its unique foam structure, the Chemicalworkz Medium Performance Polishing Pad strikes an ideal balance between cutting power and surface finish. It's perfect for removing light-to-medium defects and preparing surfaces for the final polishing step. Its innovative structure ensures even heat distribution, keeping polishing temperatures stable even during extended use — with no special thermal additives needed.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Medium Polishing Performance Pad with high-quality fine-cut or finishing polishes. This pad is an ideal choice as the second polishing stage in a multi-step process, or on its own to refine a surface after using harder pads.\n\nThe Chemicalworkz Medium Polishing Performance Pad stands for flexibility, efficiency and long service life. It was developed to deliver the best results for demanding auto detailers and car care professionals alike — ideal for professional use and ambitious car enthusiasts.",
+      "de": "Dank seiner einzigartigen Schaumstoffstruktur bietet das Chemicalworkz Medium-Polierpad eine ideale Balance zwischen Schnittleistung und Oberflächenfinish. Es eignet sich hervorragend zur Beseitigung leichter bis mittlerer Lackfehler und zur Vorbereitung der Oberfläche auf den letzten Polierschritt. Die innovative Struktur sorgt für eine gleichmäßige Wärmeverteilung und hält die Poliertemperatur auch bei längerem Einsatz konstant – ganz ohne spezielle thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Medium-Polierpad mit hochwertigen Fein- oder Finish-Polituren zu kombinieren. Dieses Pad eignet sich ideal als zweite Stufe in einem mehrstufigen Polierprozess oder allein, um die Oberfläche nach dem Einsatz härterer Pads zu verfeinern.\n\nDas Chemicalworkz Medium-Polierpad steht für Flexibilität, Effizienz und lange Lebensdauer. Es wurde entwickelt, um anspruchsvollen Fahrzeugaufbereitern und Pflegeprofis gleichermaßen beste Ergebnisse zu liefern – ideal für den professionellen Einsatz und ambitionierte Autoliebhaber."
+    },
+    "video": null
   },
   {
     "id": "cw-pp-125-mf",
@@ -272,9 +594,9 @@ export const products = [
       "de": "Mikrofaser-Pad | Starker Abtrag"
     },
     "description": {
-      "tr": "MikroFiber Polisaj Pedi, polisaj pedleri kategorisinde mikrofiber ped | yüksek aşındırıcı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Polishing Pad is a microfiber pad | high cut product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Polierpad ist ein Produkt der Kategorie Polierpads mit Mikrofaser-Pad | Starker Abtrag. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "MikroFiber Polisaj Pedi, polisaj pedleri kategorisinde mikrofiber ped | yüksek aşındırıcı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Microfiber Polishing Pad is a microfiber pad | high cut product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mikrofaser-Polierpad ist ein Produkt der Kategorie Polierpads mit Mikrofaser-Pad | Starker Abtrag. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -282,9 +604,63 @@ export const products = [
     "image": "/images/products/cw-pp-125-mf/cw-pp-125-mf-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-mf/cw-pp-125-mf-packshot_result.webp",
+      "/images/products/cw-pp-125-mf/pads_u1.webp",
+      "/images/products/cw-pp-125-mf/pads_u2.webp",
       "/images/products/cw-pp-125-mf/cw-pp-125-mf-a1_result.webp"
     ],
-    "poster": "/images/products/cw-pp-125-mf/cw-pp-125-mf-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-pp-125-mf/cw-pp-125-mf-packshot_result-thumb.webp",
+      "/images/products/cw-pp-125-mf/pads_u1-thumb.webp",
+      "/images/products/cw-pp-125-mf/pads_u2-thumb.webp",
+      "/images/products/cw-pp-125-mf/cw-pp-125-mf-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-125-mf/cw-pp-125-mf-a1_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz Mikrofiber Performans Pedinin mikrofiberi, yüksek kesme performansı için özel olarak tasarlanmış ve en zorlu gereksinimleri bile karşılamak üzere titizlikle test edilmiştir. Optimize edilmiş yapısı, derin çizikleri, yoğun girdapları ve ciddi boya kusurlarını gidermek için ideal olan etkili aşındırma gücü sağlar. Sağlam köpük mükemmel stabilite sağlayarak, tamamen kusur gidermeye odaklanmanıza olanak tanır.\n\nÖneri:\nChemicalworkz Mikrofiber Performans Pedi, parlatma bileşikleriyle kullanım için geliştirilmiştir ve çok aşamalı bir parlatma işleminin ilk aşaması için idealdir. Maksimum malzeme kaldırma sağlamak için pedi yüksek kaliteli parlatma bileşikleriyle birlikte kullanmanızı öneririz.",
+      "en": "The microfiber on the Chemicalworkz Microfiber Performance Pad is specifically engineered for high cutting performance and rigorously tested to meet even the toughest demands. Its optimized structure delivers effective abrasive power, ideal for removing deep scratches, heavy swirls and serious paint defects. The firm foam core provides excellent stability, letting you focus entirely on defect removal.\n\nRecommendation:\nThe Chemicalworkz Microfiber Performance Pad is designed for use with polishing compounds and is ideal as the first stage of a multi-step polishing process. We recommend pairing the pad with a high-quality polishing compound to achieve maximum material removal.",
+      "de": "Die Mikrofaser des Chemicalworkz Mikrofaser-Polierpads wurde speziell für eine hohe Schnittleistung entwickelt und rigoros getestet, um auch anspruchsvollsten Anforderungen gerecht zu werden. Die optimierte Struktur liefert eine wirksame Abtragsleistung, ideal zur Beseitigung tiefer Kratzer, starker Hologramme und schwerwiegender Lackfehler. Der feste Schaumstoffkern sorgt für exzellente Stabilität, sodass Sie sich voll und ganz auf die Fehlerbeseitigung konzentrieren können.\n\nEmpfehlung:\nDas Chemicalworkz Mikrofaser-Polierpad ist für die Verwendung mit Polituren konzipiert und eignet sich ideal als erste Stufe eines mehrstufigen Polierprozesses. Wir empfehlen, das Pad mit einer hochwertigen Politur zu kombinieren, um einen maximalen Materialabtrag zu erzielen."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-75-mf",
+    "name": {
+      "tr": "MikroFiber Polisaj Pedi",
+      "en": "Microfiber Polishing Pad",
+      "de": "Mikrofaser-Polierpad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Mikrofiber Ped | Yüksek Aşındırıcı",
+      "en": "Microfiber Pad | High Cut",
+      "de": "Mikrofaser-Pad | Starker Abtrag"
+    },
+    "description": {
+      "tr": "MikroFiber Polisaj Pedi, polisaj pedleri kategorisinde mikrofiber ped | yüksek aşındırıcı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Microfiber Polishing Pad is a microfiber pad | high cut product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mikrofaser-Polierpad ist ein Produkt der Kategorie Polierpads mit Mikrofaser-Pad | Starker Abtrag. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "75mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-75-mf/chemicalworkz-microfiber-performance-pad-75mm.webp",
+    "gallery": [
+      "/images/products/cw-pp-75-mf/chemicalworkz-microfiber-performance-pad-75mm.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-75-mf/chemicalworkz-microfiber-performance-pad-75mm-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-75-mf/cw-pp-125-mf-a1_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz Mikrofiber Performans Pedinin mikrofiberi, yüksek kesme performansı için özel olarak tasarlanmış ve en zorlu gereksinimleri bile karşılamak üzere titizlikle test edilmiştir. Optimize edilmiş yapısı, derin çizikleri, yoğun girdapları ve ciddi boya kusurlarını gidermek için ideal olan etkili aşındırma gücü sağlar. Sağlam köpük mükemmel stabilite sağlayarak, tamamen kusur gidermeye odaklanmanıza olanak tanır.\n\nÖneri:\nChemicalworkz Mikrofiber Performans Pedi, parlatma bileşikleriyle kullanım için geliştirilmiştir ve çok aşamalı bir parlatma işleminin ilk aşaması için idealdir. Maksimum malzeme kaldırma sağlamak için pedi yüksek kaliteli parlatma bileşikleriyle birlikte kullanmanızı öneririz.",
+      "en": "The microfiber on the Chemicalworkz Microfiber Performance Pad is specifically engineered for high cutting performance and rigorously tested to meet even the toughest demands. Its optimized structure delivers effective abrasive power, ideal for removing deep scratches, heavy swirls and serious paint defects. The firm foam core provides excellent stability, letting you focus entirely on defect removal.\n\nRecommendation:\nThe Chemicalworkz Microfiber Performance Pad is designed for use with polishing compounds and is ideal as the first stage of a multi-step polishing process. We recommend pairing the pad with a high-quality polishing compound to achieve maximum material removal.",
+      "de": "Die Mikrofaser des Chemicalworkz Mikrofaser-Polierpads wurde speziell für eine hohe Schnittleistung entwickelt und rigoros getestet, um auch anspruchsvollsten Anforderungen gerecht zu werden. Die optimierte Struktur liefert eine wirksame Abtragsleistung, ideal zur Beseitigung tiefer Kratzer, starker Hologramme und schwerwiegender Lackfehler. Der feste Schaumstoffkern sorgt für exzellente Stabilität, sodass Sie sich voll und ganz auf die Fehlerbeseitigung konzentrieren können.\n\nEmpfehlung:\nDas Chemicalworkz Mikrofaser-Polierpad ist für die Verwendung mit Polituren konzipiert und eignet sich ideal als erste Stufe eines mehrstufigen Polierprozesses. Wir empfehlen, das Pad mit einer hochwertigen Politur zu kombinieren, um einen maximalen Materialabtrag zu erzielen."
+    },
+    "video": null
   },
   {
     "id": "cw-pp-125-os",
@@ -300,9 +676,9 @@ export const products = [
       "de": "Performance-Pad | Mittel-Weich"
     },
     "description": {
-      "tr": "Tek Adım Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "One-Step Polishing Pad is a performance pad | medium-soft product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "One-Step-Polierpad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Tek Adım Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | orta-yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "One-Step Polishing Pad is a performance pad | medium-soft product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "One-Step-Polierpad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Mittel-Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -310,10 +686,28 @@ export const products = [
     "image": "/images/products/cw-pp-125-os/cw-pp-125-os-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-os/cw-pp-125-os-packshot_result.webp",
-      "/images/products/cw-pp-125-os/cw-pp-125-os-a2_result.webp",
-      "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result.webp"
+      "/images/products/cw-pp-125-os/pads_u1.webp",
+      "/images/products/cw-pp-125-os/pads_u2.webp",
+      "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result.webp",
+      "/images/products/cw-pp-125-os/cw-pp-125-os-a2_result.webp"
     ],
-    "poster": "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-pp-125-os/cw-pp-125-os-packshot_result-thumb.webp",
+      "/images/products/cw-pp-125-os/pads_u1-thumb.webp",
+      "/images/products/cw-pp-125-os/pads_u2-thumb.webp",
+      "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result-thumb.webp",
+      "/images/products/cw-pp-125-os/cw-pp-125-os-a2_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result.webp",
+      "/images/products/cw-pp-125-os/cw-pp-125-os-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Eşsiz köpük yapısı sayesinde, chemicalworkz One Step Performance Pad, hafif ve orta dereceli kusurların giderilmesini ve parlak bir yüzey elde edilmesini tek adımda mümkün kılar. Optimize edilmiş yapısı, eşit ısı dağılımı sağlar ve ek termal katkı maddelerine gerek kalmadan, uzun süreli parlatma seanslarında bile aşırı ısınmayı önler.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz One Step Performance Pad'i özel olarak formüle edilmiş One Step cilalarıyla birlikte kullanmanızı öneririz. Bu ped, ister rötuş ister son işlem olsun, tek adımda verimlilik ve kaliteyi birleştirmek isteyen detaycılar için idealdir.\n\nChemicalworkz One Step Performance Pad, çok yönlülük, verimlilik ve uzun ömürlülüğü temsil eder. Zorlu detaycılar için bile en kısa sürede en iyi sonuçları sunmak üzere geliştirilmiştir; profesyonel kullanıcılar ve iddialı hobi tutkunları için mükemmeldir.",
+      "en": "Thanks to its unique foam structure, the Chemicalworkz One Step Performance Pad makes it possible to remove light-to-medium defects and achieve a glossy finish in a single step. Its optimized structure ensures even heat distribution and prevents overheating even during long polishing sessions, with no extra thermal additives needed.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz One Step Performance Pad with specially formulated One Step polishes. This pad is ideal for detailers who want to combine efficiency and quality in a single step, whether for touch-ups or a final finish.\n\nThe Chemicalworkz One Step Performance Pad stands for versatility, efficiency and durability. It was developed to deliver the best results in the shortest time, even for demanding detailers — ideal for professional users and ambitious enthusiasts.",
+      "de": "Dank seiner einzigartigen Schaumstoffstruktur ermöglicht das Chemicalworkz One-Step-Pad die Beseitigung leichter bis mittlerer Lackfehler und ein glänzendes Finish in nur einem Arbeitsschritt. Die optimierte Struktur sorgt für eine gleichmäßige Wärmeverteilung und verhindert Überhitzung auch bei langen Poliersitzungen – ganz ohne zusätzliche thermische Zusatzstoffe.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz One-Step-Pad mit speziell formulierten One-Step-Polituren zu kombinieren. Dieses Pad eignet sich ideal für Aufbereiter, die Effizienz und Qualität in einem einzigen Arbeitsschritt vereinen möchten – ob für Ausbesserungen oder das Finish.\n\nDas Chemicalworkz One-Step-Pad steht für Vielseitigkeit, Effizienz und Langlebigkeit. Es wurde entwickelt, um selbst anspruchsvollen Aufbereitern in kürzester Zeit beste Ergebnisse zu liefern – ideal für den professionellen Einsatz und ambitionierte Enthusiasten."
+    },
+    "video": null
   },
   {
     "id": "cw-pp-125-soft",
@@ -329,9 +723,9 @@ export const products = [
       "de": "Performance-Pad | Weich"
     },
     "description": {
-      "tr": "Yumuşak Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Finishing Pad is a performance pad | soft product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Soft-Finishing-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Finishing Pad is a performance pad | soft product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Soft-Finishing-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -339,10 +733,145 @@ export const products = [
     "image": "/images/products/cw-pp-125-soft/cw-pp-125-soft-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-soft/cw-pp-125-soft-packshot_result.webp",
-      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a2_result.webp",
-      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result.webp"
+      "/images/products/cw-pp-125-soft/pads_u1.webp",
+      "/images/products/cw-pp-125-soft/pads_u2.webp",
+      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result.webp",
+      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a2_result.webp"
     ],
-    "poster": "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-pp-125-soft/cw-pp-125-soft-packshot_result-thumb.webp",
+      "/images/products/cw-pp-125-soft/pads_u1-thumb.webp",
+      "/images/products/cw-pp-125-soft/pads_u2-thumb.webp",
+      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result-thumb.webp",
+      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a2_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result.webp",
+      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Yumuşak, ince gözenekli yapısı sayesinde chemicalworkz Fine Finishing Performance Pad, boyalı yüzeylerin son parlatma ve inceltilmesi için idealdir. En ince parlatma izlerini bile giderir ve derin, parlak, yüksek parlaklıkta bir yüzey bırakır. Özel malzeme bileşimi, eşit ısı dağılımı sağlar, böylece uzun süreli kullanımda bile yüzey sıcaklıkları optimum seviyede kalır.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Fine Finishing Performance Pad'i yüksek kaliteli, yüksek parlaklık veren veya son kat cilalarıyla birlikte kullanmanızı öneririz. Çok aşamalı bir cilalama işleminin son aşaması için veya kusur giderme işleminden sonra mükemmel bir sonuç için cilalama pedi olarak idealdir. Ayrıca, boya yüzeyini en iyi şekilde korumak ve sızdırmaz hale getirmek için cilaların ve koruyucu maddelerin eşit şekilde uygulanması için de mükemmeldir.\n\nChemicalworkz Fine Finishing Performance Pad, hassasiyet, verimlilik ve etkileyici dayanıklılığı temsil eder. Detaycıların ve araç hazırlayıcılarının kusursuz bir sonuç elde etmelerini sağlamak için özel olarak geliştirilmiştir; profesyonel uygulamalar ve mükemmelliğe ulaşmayı hedefleyen tutkulu otomobil meraklıları için idealdir.",
+      "en": "With its soft, fine-pored structure, the Chemicalworkz Fine Finishing Performance Pad is ideal for the final polish and refinement of painted surfaces. It removes even the finest polishing marks, leaving a deep, glossy, high-shine finish. Its special material composition ensures even heat distribution, keeping surface temperatures optimal even during extended use.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Fine Finishing Performance Pad with high-quality, high-gloss or finishing polishes. It's ideal as the final stage of a multi-step polishing process, or as a finishing pad for a flawless result after defect removal. It's also excellent for evenly applying waxes and sealants to protect the paint surface at its best.\n\nThe Chemicalworkz Fine Finishing Performance Pad stands for precision, efficiency and impressive durability. It was developed specifically to help detailers and car preparers achieve a flawless result — ideal for professional applications and passionate car enthusiasts striving for perfection.",
+      "de": "Mit seiner weichen, feinporigen Struktur eignet sich das Chemicalworkz Finish-Pad ideal für die abschließende Politur und Verfeinerung lackierter Oberflächen. Es entfernt selbst feinste Polierspuren und hinterlässt ein tiefes, glänzendes Hochglanzfinish. Die besondere Materialzusammensetzung sorgt für eine gleichmäßige Wärmeverteilung, sodass die Oberflächentemperatur auch bei längerem Einsatz optimal bleibt.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Finish-Pad mit hochwertigen Hochglanz- oder Finish-Polituren zu kombinieren. Es eignet sich ideal als letzte Stufe eines mehrstufigen Polierprozesses oder als Finish-Pad für ein makelloses Ergebnis nach der Fehlerbeseitigung. Ebenso hervorragend geeignet für das gleichmäßige Auftragen von Wachsen und Versiegelungen zum bestmöglichen Schutz der Lackoberfläche.\n\nDas Chemicalworkz Finish-Pad steht für Präzision, Effizienz und beeindruckende Langlebigkeit. Es wurde speziell entwickelt, um Aufbereitern und Fahrzeugpflegern zu einem makellosen Ergebnis zu verhelfen – ideal für den professionellen Einsatz und leidenschaftliche Autoliebhaber, die nach Perfektion streben."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-30-soft",
+    "name": {
+      "tr": "Yumuşak Polisaj Pedi",
+      "en": "Soft Finishing Pad",
+      "de": "Soft-Finishing-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Yumuşak",
+      "en": "Performance Pad | Soft",
+      "de": "Performance-Pad | Weich"
+    },
+    "description": {
+      "tr": "Yumuşak Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Finishing Pad is a performance pad | soft product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Soft-Finishing-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "30mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-30-soft/chemicalworkz-fine-finishing-performance-pad-30mm-schwarz.webp",
+    "gallery": [
+      "/images/products/cw-pp-30-soft/chemicalworkz-fine-finishing-performance-pad-30mm-schwarz.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-30-soft/chemicalworkz-fine-finishing-performance-pad-30mm-schwarz-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-30-soft/cw-pp-125-soft-a1_result.webp",
+      "/images/products/cw-pp-30-soft/cw-pp-125-soft-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Yumuşak, ince gözenekli yapısı sayesinde chemicalworkz Fine Finishing Performance Pad, boyalı yüzeylerin son parlatma ve inceltilmesi için idealdir. En ince parlatma izlerini bile giderir ve derin, parlak, yüksek parlaklıkta bir yüzey bırakır. Özel malzeme bileşimi, eşit ısı dağılımı sağlar, böylece uzun süreli kullanımda bile yüzey sıcaklıkları optimum seviyede kalır.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Fine Finishing Performance Pad'i yüksek kaliteli, yüksek parlaklık veren veya son kat cilalarıyla birlikte kullanmanızı öneririz. Çok aşamalı bir cilalama işleminin son aşaması için veya kusur giderme işleminden sonra mükemmel bir sonuç için cilalama pedi olarak idealdir. Ayrıca, boya yüzeyini en iyi şekilde korumak ve sızdırmaz hale getirmek için cilaların ve koruyucu maddelerin eşit şekilde uygulanması için de mükemmeldir.\n\nChemicalworkz Fine Finishing Performance Pad, hassasiyet, verimlilik ve etkileyici dayanıklılığı temsil eder. Detaycıların ve araç hazırlayıcılarının kusursuz bir sonuç elde etmelerini sağlamak için özel olarak geliştirilmiştir; profesyonel uygulamalar ve mükemmelliğe ulaşmayı hedefleyen tutkulu otomobil meraklıları için idealdir.",
+      "en": "With its soft, fine-pored structure, the Chemicalworkz Fine Finishing Performance Pad is ideal for the final polish and refinement of painted surfaces. It removes even the finest polishing marks, leaving a deep, glossy, high-shine finish. Its special material composition ensures even heat distribution, keeping surface temperatures optimal even during extended use.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Fine Finishing Performance Pad with high-quality, high-gloss or finishing polishes. It's ideal as the final stage of a multi-step polishing process, or as a finishing pad for a flawless result after defect removal. It's also excellent for evenly applying waxes and sealants to protect the paint surface at its best.\n\nThe Chemicalworkz Fine Finishing Performance Pad stands for precision, efficiency and impressive durability. It was developed specifically to help detailers and car preparers achieve a flawless result — ideal for professional applications and passionate car enthusiasts striving for perfection.",
+      "de": "Mit seiner weichen, feinporigen Struktur eignet sich das Chemicalworkz Finish-Pad ideal für die abschließende Politur und Verfeinerung lackierter Oberflächen. Es entfernt selbst feinste Polierspuren und hinterlässt ein tiefes, glänzendes Hochglanzfinish. Die besondere Materialzusammensetzung sorgt für eine gleichmäßige Wärmeverteilung, sodass die Oberflächentemperatur auch bei längerem Einsatz optimal bleibt.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Finish-Pad mit hochwertigen Hochglanz- oder Finish-Polituren zu kombinieren. Es eignet sich ideal als letzte Stufe eines mehrstufigen Polierprozesses oder als Finish-Pad für ein makelloses Ergebnis nach der Fehlerbeseitigung. Ebenso hervorragend geeignet für das gleichmäßige Auftragen von Wachsen und Versiegelungen zum bestmöglichen Schutz der Lackoberfläche.\n\nDas Chemicalworkz Finish-Pad steht für Präzision, Effizienz und beeindruckende Langlebigkeit. Es wurde speziell entwickelt, um Aufbereitern und Fahrzeugpflegern zu einem makellosen Ergebnis zu verhelfen – ideal für den professionellen Einsatz und leidenschaftliche Autoliebhaber, die nach Perfektion streben."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-50-soft",
+    "name": {
+      "tr": "Yumuşak Polisaj Pedi",
+      "en": "Soft Finishing Pad",
+      "de": "Soft-Finishing-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Yumuşak",
+      "en": "Performance Pad | Soft",
+      "de": "Performance-Pad | Weich"
+    },
+    "description": {
+      "tr": "Yumuşak Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Finishing Pad is a performance pad | soft product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Soft-Finishing-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "50mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-50-soft/chemicalworkz-fine-finishing-performance-pad-50mm-schwarz.webp",
+    "gallery": [
+      "/images/products/cw-pp-50-soft/chemicalworkz-fine-finishing-performance-pad-50mm-schwarz.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-50-soft/chemicalworkz-fine-finishing-performance-pad-50mm-schwarz-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-50-soft/cw-pp-125-soft-a1_result.webp",
+      "/images/products/cw-pp-50-soft/cw-pp-125-soft-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Yumuşak, ince gözenekli yapısı sayesinde chemicalworkz Fine Finishing Performance Pad, boyalı yüzeylerin son parlatma ve inceltilmesi için idealdir. En ince parlatma izlerini bile giderir ve derin, parlak, yüksek parlaklıkta bir yüzey bırakır. Özel malzeme bileşimi, eşit ısı dağılımı sağlar, böylece uzun süreli kullanımda bile yüzey sıcaklıkları optimum seviyede kalır.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Fine Finishing Performance Pad'i yüksek kaliteli, yüksek parlaklık veren veya son kat cilalarıyla birlikte kullanmanızı öneririz. Çok aşamalı bir cilalama işleminin son aşaması için veya kusur giderme işleminden sonra mükemmel bir sonuç için cilalama pedi olarak idealdir. Ayrıca, boya yüzeyini en iyi şekilde korumak ve sızdırmaz hale getirmek için cilaların ve koruyucu maddelerin eşit şekilde uygulanması için de mükemmeldir.\n\nChemicalworkz Fine Finishing Performance Pad, hassasiyet, verimlilik ve etkileyici dayanıklılığı temsil eder. Detaycıların ve araç hazırlayıcılarının kusursuz bir sonuç elde etmelerini sağlamak için özel olarak geliştirilmiştir; profesyonel uygulamalar ve mükemmelliğe ulaşmayı hedefleyen tutkulu otomobil meraklıları için idealdir.",
+      "en": "With its soft, fine-pored structure, the Chemicalworkz Fine Finishing Performance Pad is ideal for the final polish and refinement of painted surfaces. It removes even the finest polishing marks, leaving a deep, glossy, high-shine finish. Its special material composition ensures even heat distribution, keeping surface temperatures optimal even during extended use.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Fine Finishing Performance Pad with high-quality, high-gloss or finishing polishes. It's ideal as the final stage of a multi-step polishing process, or as a finishing pad for a flawless result after defect removal. It's also excellent for evenly applying waxes and sealants to protect the paint surface at its best.\n\nThe Chemicalworkz Fine Finishing Performance Pad stands for precision, efficiency and impressive durability. It was developed specifically to help detailers and car preparers achieve a flawless result — ideal for professional applications and passionate car enthusiasts striving for perfection.",
+      "de": "Mit seiner weichen, feinporigen Struktur eignet sich das Chemicalworkz Finish-Pad ideal für die abschließende Politur und Verfeinerung lackierter Oberflächen. Es entfernt selbst feinste Polierspuren und hinterlässt ein tiefes, glänzendes Hochglanzfinish. Die besondere Materialzusammensetzung sorgt für eine gleichmäßige Wärmeverteilung, sodass die Oberflächentemperatur auch bei längerem Einsatz optimal bleibt.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Finish-Pad mit hochwertigen Hochglanz- oder Finish-Polituren zu kombinieren. Es eignet sich ideal als letzte Stufe eines mehrstufigen Polierprozesses oder als Finish-Pad für ein makelloses Ergebnis nach der Fehlerbeseitigung. Ebenso hervorragend geeignet für das gleichmäßige Auftragen von Wachsen und Versiegelungen zum bestmöglichen Schutz der Lackoberfläche.\n\nDas Chemicalworkz Finish-Pad steht für Präzision, Effizienz und beeindruckende Langlebigkeit. Es wurde speziell entwickelt, um Aufbereitern und Fahrzeugpflegern zu einem makellosen Ergebnis zu verhelfen – ideal für den professionellen Einsatz und leidenschaftliche Autoliebhaber, die nach Perfektion streben."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-75-soft",
+    "name": {
+      "tr": "Yumuşak Polisaj Pedi",
+      "en": "Soft Finishing Pad",
+      "de": "Soft-Finishing-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Yumuşak",
+      "en": "Performance Pad | Soft",
+      "de": "Performance-Pad | Weich"
+    },
+    "description": {
+      "tr": "Yumuşak Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Finishing Pad is a performance pad | soft product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Soft-Finishing-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "75mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-75-soft/chemicalworkz-fine-finishing-performance-pad-75mm-schwarz.webp",
+    "gallery": [
+      "/images/products/cw-pp-75-soft/chemicalworkz-fine-finishing-performance-pad-75mm-schwarz.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-75-soft/chemicalworkz-fine-finishing-performance-pad-75mm-schwarz-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-75-soft/cw-pp-125-soft-a1_result.webp",
+      "/images/products/cw-pp-75-soft/cw-pp-125-soft-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Yumuşak, ince gözenekli yapısı sayesinde chemicalworkz Fine Finishing Performance Pad, boyalı yüzeylerin son parlatma ve inceltilmesi için idealdir. En ince parlatma izlerini bile giderir ve derin, parlak, yüksek parlaklıkta bir yüzey bırakır. Özel malzeme bileşimi, eşit ısı dağılımı sağlar, böylece uzun süreli kullanımda bile yüzey sıcaklıkları optimum seviyede kalır.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Fine Finishing Performance Pad'i yüksek kaliteli, yüksek parlaklık veren veya son kat cilalarıyla birlikte kullanmanızı öneririz. Çok aşamalı bir cilalama işleminin son aşaması için veya kusur giderme işleminden sonra mükemmel bir sonuç için cilalama pedi olarak idealdir. Ayrıca, boya yüzeyini en iyi şekilde korumak ve sızdırmaz hale getirmek için cilaların ve koruyucu maddelerin eşit şekilde uygulanması için de mükemmeldir.\n\nChemicalworkz Fine Finishing Performance Pad, hassasiyet, verimlilik ve etkileyici dayanıklılığı temsil eder. Detaycıların ve araç hazırlayıcılarının kusursuz bir sonuç elde etmelerini sağlamak için özel olarak geliştirilmiştir; profesyonel uygulamalar ve mükemmelliğe ulaşmayı hedefleyen tutkulu otomobil meraklıları için idealdir.",
+      "en": "With its soft, fine-pored structure, the Chemicalworkz Fine Finishing Performance Pad is ideal for the final polish and refinement of painted surfaces. It removes even the finest polishing marks, leaving a deep, glossy, high-shine finish. Its special material composition ensures even heat distribution, keeping surface temperatures optimal even during extended use.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Fine Finishing Performance Pad with high-quality, high-gloss or finishing polishes. It's ideal as the final stage of a multi-step polishing process, or as a finishing pad for a flawless result after defect removal. It's also excellent for evenly applying waxes and sealants to protect the paint surface at its best.\n\nThe Chemicalworkz Fine Finishing Performance Pad stands for precision, efficiency and impressive durability. It was developed specifically to help detailers and car preparers achieve a flawless result — ideal for professional applications and passionate car enthusiasts striving for perfection.",
+      "de": "Mit seiner weichen, feinporigen Struktur eignet sich das Chemicalworkz Finish-Pad ideal für die abschließende Politur und Verfeinerung lackierter Oberflächen. Es entfernt selbst feinste Polierspuren und hinterlässt ein tiefes, glänzendes Hochglanzfinish. Die besondere Materialzusammensetzung sorgt für eine gleichmäßige Wärmeverteilung, sodass die Oberflächentemperatur auch bei längerem Einsatz optimal bleibt.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Finish-Pad mit hochwertigen Hochglanz- oder Finish-Polituren zu kombinieren. Es eignet sich ideal als letzte Stufe eines mehrstufigen Polierprozesses oder als Finish-Pad für ein makelloses Ergebnis nach der Fehlerbeseitigung. Ebenso hervorragend geeignet für das gleichmäßige Auftragen von Wachsen und Versiegelungen zum bestmöglichen Schutz der Lackoberfläche.\n\nDas Chemicalworkz Finish-Pad steht für Präzision, Effizienz und beeindruckende Langlebigkeit. Es wurde speziell entwickelt, um Aufbereitern und Fahrzeugpflegern zu einem makellosen Ergebnis zu verhelfen – ideal für den professionellen Einsatz und leidenschaftliche Autoliebhaber, die nach Perfektion streben."
+    },
+    "video": null
   },
   {
     "id": "cw-pp-125-wool",
@@ -358,9 +887,9 @@ export const products = [
       "de": "Performance-Pad | Naturwolle"
     },
     "description": {
-      "tr": "Yün Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | doğal yün. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wool Cutting Pad is a performance pad | natural wool product in our polishing pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Woll-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Naturwolle. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yün Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | doğal yün. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wool Cutting Pad is a performance pad | natural wool product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Woll-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Naturwolle. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "125mm",
@@ -368,10 +897,145 @@ export const products = [
     "image": "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result.webp",
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a2_result.webp",
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result.webp"
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result.webp",
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a2_result.webp"
     ],
-    "poster": "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result-thumb.webp",
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result-thumb.webp",
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a2_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result.webp",
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Yenilikçi malzeme karışımı sayesinde, Yün Kesme Performans Pedi, profesyonel araç detaylandırmasının zorlu koşulları için ideal olan yüksek malzeme kaldırma oranları sunar. Özel tasarımı ayrıca sıçrama riskini en aza indirir ve temiz bir çalışma ortamı sağlar.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Yün Kesme Performans Pedini, özellikle parlatma makineleriyle kullanım için tasarlanmış yüksek kaliteli parlatma bileşikleriyle birlikte kullanmanızı öneririz. İki aşamalı bir işlemin ilk parlatma aşamasında veya tek aşamalı bir sistemin parçası olarak, Yün Kesme Performans Pedimiz yüzey kalitesinde önemli bir iyileşme sağlar.\n\nChemicalworkz Yün Kesme Performans Pedi, yalnızca verimli parlatma performansı değil, aynı zamanda parlatma rutininizde sürdürülebilirliği de temsil eder. Bu yenilikçi parlatma pedinin avantajlarını keşfedin.",
+      "en": "Thanks to its innovative material blend, the Wool Cutting Performance Pad delivers high material-removal rates, ideal for the demanding conditions of professional vehicle detailing. Its special design also minimizes splatter, keeping the work area clean.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Wool Cutting Performance Pad with high-quality polishing compounds designed specifically for use with polishing machines. Whether as the first polishing stage of a two-step process or as part of a one-step system, our Wool Cutting Performance Pad delivers a significant improvement in surface quality.\n\nThe Chemicalworkz Wool Cutting Performance Pad stands not only for efficient polishing performance but also for sustainability in your polishing routine. Discover the advantages of this innovative polishing pad.",
+      "de": "Dank seiner innovativen Materialmischung bietet das Woll-Cutting-Pad hohe Abtragsraten, ideal für die anspruchsvollen Bedingungen der professionellen Fahrzeugaufbereitung. Sein spezielles Design minimiert zudem Spritzer und sorgt für einen sauberen Arbeitsbereich.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Woll-Cutting-Pad mit hochwertigen, speziell für Poliermaschinen entwickelten Polituren zu kombinieren. Ob als erste Polierstufe eines zweistufigen Prozesses oder als Teil eines One-Step-Systems – unser Woll-Cutting-Pad sorgt für eine deutliche Verbesserung der Oberflächenqualität.\n\nDas Chemicalworkz Woll-Cutting-Pad steht nicht nur für effiziente Polierleistung, sondern auch für Nachhaltigkeit in Ihrer Polierroutine. Entdecken Sie die Vorteile dieses innovativen Polierpads."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-50-wool",
+    "name": {
+      "tr": "Yün Polisaj Pedi",
+      "en": "Wool Cutting Pad",
+      "de": "Woll-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Doğal Yün",
+      "en": "Performance Pad | Natural Wool",
+      "de": "Performance-Pad | Naturwolle"
+    },
+    "description": {
+      "tr": "Yün Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | doğal yün. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wool Cutting Pad is a performance pad | natural wool product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Woll-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Naturwolle. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "50mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-50-wool/chemicalworkz-wool-cutting-perfomance-pad-50mm.webp",
+    "gallery": [
+      "/images/products/cw-pp-50-wool/chemicalworkz-wool-cutting-perfomance-pad-50mm.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-50-wool/chemicalworkz-wool-cutting-perfomance-pad-50mm-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-50-wool/cw-pp-125-wool-a1_result.webp",
+      "/images/products/cw-pp-50-wool/cw-pp-125-wool-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Yenilikçi malzeme karışımı sayesinde, Yün Kesme Performans Pedi, profesyonel araç detaylandırmasının zorlu koşulları için ideal olan yüksek malzeme kaldırma oranları sunar. Özel tasarımı ayrıca sıçrama riskini en aza indirir ve temiz bir çalışma ortamı sağlar.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Yün Kesme Performans Pedini, özellikle parlatma makineleriyle kullanım için tasarlanmış yüksek kaliteli parlatma bileşikleriyle birlikte kullanmanızı öneririz. İki aşamalı bir işlemin ilk parlatma aşamasında veya tek aşamalı bir sistemin parçası olarak, Yün Kesme Performans Pedimiz yüzey kalitesinde önemli bir iyileşme sağlar.\n\nChemicalworkz Yün Kesme Performans Pedi, yalnızca verimli parlatma performansı değil, aynı zamanda parlatma rutininizde sürdürülebilirliği de temsil eder. Bu yenilikçi parlatma pedinin avantajlarını keşfedin.",
+      "en": "Thanks to its innovative material blend, the Wool Cutting Performance Pad delivers high material-removal rates, ideal for the demanding conditions of professional vehicle detailing. Its special design also minimizes splatter, keeping the work area clean.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Wool Cutting Performance Pad with high-quality polishing compounds designed specifically for use with polishing machines. Whether as the first polishing stage of a two-step process or as part of a one-step system, our Wool Cutting Performance Pad delivers a significant improvement in surface quality.\n\nThe Chemicalworkz Wool Cutting Performance Pad stands not only for efficient polishing performance but also for sustainability in your polishing routine. Discover the advantages of this innovative polishing pad.",
+      "de": "Dank seiner innovativen Materialmischung bietet das Woll-Cutting-Pad hohe Abtragsraten, ideal für die anspruchsvollen Bedingungen der professionellen Fahrzeugaufbereitung. Sein spezielles Design minimiert zudem Spritzer und sorgt für einen sauberen Arbeitsbereich.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Woll-Cutting-Pad mit hochwertigen, speziell für Poliermaschinen entwickelten Polituren zu kombinieren. Ob als erste Polierstufe eines zweistufigen Prozesses oder als Teil eines One-Step-Systems – unser Woll-Cutting-Pad sorgt für eine deutliche Verbesserung der Oberflächenqualität.\n\nDas Chemicalworkz Woll-Cutting-Pad steht nicht nur für effiziente Polierleistung, sondern auch für Nachhaltigkeit in Ihrer Polierroutine. Entdecken Sie die Vorteile dieses innovativen Polierpads."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-75-wool",
+    "name": {
+      "tr": "Yün Polisaj Pedi",
+      "en": "Wool Cutting Pad",
+      "de": "Woll-Cutting-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Performans Pedi | Doğal Yün",
+      "en": "Performance Pad | Natural Wool",
+      "de": "Performance-Pad | Naturwolle"
+    },
+    "description": {
+      "tr": "Yün Polisaj Pedi, polisaj pedleri kategorisinde performans pedi | doğal yün. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Wool Cutting Pad is a performance pad | natural wool product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Woll-Cutting-Pad ist ein Produkt der Kategorie Polierpads mit Performance-Pad | Naturwolle. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "75mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-75-wool/chemicalworkz-wool-cutting-perfomance-pad-75mm.webp",
+    "gallery": [
+      "/images/products/cw-pp-75-wool/chemicalworkz-wool-cutting-perfomance-pad-75mm.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-75-wool/chemicalworkz-wool-cutting-perfomance-pad-75mm-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-75-wool/cw-pp-125-wool-a1_result.webp",
+      "/images/products/cw-pp-75-wool/cw-pp-125-wool-a2_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Yenilikçi malzeme karışımı sayesinde, Yün Kesme Performans Pedi, profesyonel araç detaylandırmasının zorlu koşulları için ideal olan yüksek malzeme kaldırma oranları sunar. Özel tasarımı ayrıca sıçrama riskini en aza indirir ve temiz bir çalışma ortamı sağlar.\n\nÖneri:\nEn iyi sonuçlar için, chemicalworkz Yün Kesme Performans Pedini, özellikle parlatma makineleriyle kullanım için tasarlanmış yüksek kaliteli parlatma bileşikleriyle birlikte kullanmanızı öneririz. İki aşamalı bir işlemin ilk parlatma aşamasında veya tek aşamalı bir sistemin parçası olarak, Yün Kesme Performans Pedimiz yüzey kalitesinde önemli bir iyileşme sağlar.\n\nChemicalworkz Yün Kesme Performans Pedi, yalnızca verimli parlatma performansı değil, aynı zamanda parlatma rutininizde sürdürülebilirliği de temsil eder. Bu yenilikçi parlatma pedinin avantajlarını keşfedin.",
+      "en": "Thanks to its innovative material blend, the Wool Cutting Performance Pad delivers high material-removal rates, ideal for the demanding conditions of professional vehicle detailing. Its special design also minimizes splatter, keeping the work area clean.\n\nRecommendation:\nFor best results, we recommend using the Chemicalworkz Wool Cutting Performance Pad with high-quality polishing compounds designed specifically for use with polishing machines. Whether as the first polishing stage of a two-step process or as part of a one-step system, our Wool Cutting Performance Pad delivers a significant improvement in surface quality.\n\nThe Chemicalworkz Wool Cutting Performance Pad stands not only for efficient polishing performance but also for sustainability in your polishing routine. Discover the advantages of this innovative polishing pad.",
+      "de": "Dank seiner innovativen Materialmischung bietet das Woll-Cutting-Pad hohe Abtragsraten, ideal für die anspruchsvollen Bedingungen der professionellen Fahrzeugaufbereitung. Sein spezielles Design minimiert zudem Spritzer und sorgt für einen sauberen Arbeitsbereich.\n\nEmpfehlung:\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Woll-Cutting-Pad mit hochwertigen, speziell für Poliermaschinen entwickelten Polituren zu kombinieren. Ob als erste Polierstufe eines zweistufigen Prozesses oder als Teil eines One-Step-Systems – unser Woll-Cutting-Pad sorgt für eine deutliche Verbesserung der Oberflächenqualität.\n\nDas Chemicalworkz Woll-Cutting-Pad steht nicht nur für effiziente Polierleistung, sondern auch für Nachhaltigkeit in Ihrer Polierroutine. Entdecken Sie die Vorteile dieses innovativen Polierpads."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pp-75-gp",
+    "name": {
+      "tr": "Cam Performans Pedi",
+      "en": "Glass Performance Pad",
+      "de": "Glas-Performance-Pad"
+    },
+    "category": "polisaj-pedleri",
+    "tagline": {
+      "tr": "Yüksek Kaliteli Keçe | Aşındırıcı",
+      "en": "High-Quality Felt | Abrasive",
+      "de": "Hochwertiger Filz | Abrasiv"
+    },
+    "description": {
+      "tr": "Cam Performans Pedi, polisaj pedleri kategorisinde yüksek kaliteli keçe | aşındırıcı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Glass Performance Pad is a high-quality felt | abrasive product in our polishing pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Glas-Performance-Pad ist ein Produkt der Kategorie Polierpads mit Hochwertiger Filz | Abrasiv. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": "75mm",
+    "isNew": false,
+    "image": "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm.webp",
+    "gallery": [
+      "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm.webp",
+      "/images/products/cw-pp-75-gp/6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp",
+      "/images/products/cw-pp-75-gp/6830215243bd72bf98ceea29_cw-pp-gp_02.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm-thumb.webp",
+      "/images/products/cw-pp-75-gp/6830214b7ec0959e854f9dc9_cw-pp-gp_01-thumb.webp",
+      "/images/products/cw-pp-75-gp/6830215243bd72bf98ceea29_cw-pp-gp_02-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-pp-75-gp/6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp",
+      "/images/products/cw-pp-75-gp/6830215243bd72bf98ceea29_cw-pp-gp_02.webp"
+    ],
+    "posterDescription": {
+      "tr": "Özel malzeme bileşimi sayesinde, Cam Keçe Performans Pedi, profesyonel araç detaylandırmasının zorlu koşulları için ideal olan yüksek malzeme kaldırma oranları sunar. Sağlam keçe yapısı ayrıca aşırı ısınma riskini en aza indirir ve tutarlı bir parlatma sonucu sağlar.\n\nEn iyi sonuçlar için, chemicalworkz Cam Keçe Performans Pedini, özellikle cam yüzeylerde kullanım için tasarlanmış yüksek kaliteli parlatma bileşikleriyle birlikte kullanmanızı öneririz. İster hafif çizikleri gidermek ister berraklığı geri kazandırmak olsun, Cam Keçe Performans Pedimiz yüzey kalitesinde önemli bir iyileşme sağlar.",
+      "en": "Thanks to its special material composition, the Glass Felt Performance Pad delivers high material-removal rates, ideal for the demanding conditions of professional vehicle detailing. Its firm felt structure also minimizes the risk of overheating and ensures a consistent polishing result.\n\nFor best results, we recommend using the Chemicalworkz Glass Felt Performance Pad with high-quality polishing compounds designed specifically for use on glass surfaces. Whether removing light scratches or restoring clarity, our Glass Felt Performance Pad delivers a significant improvement in surface quality.",
+      "de": "Dank seiner besonderen Materialzusammensetzung bietet das Glas-Filzpad hohe Abtragsraten, ideal für die anspruchsvollen Bedingungen der professionellen Fahrzeugaufbereitung. Seine feste Filzstruktur minimiert zudem das Überhitzungsrisiko und sorgt für ein gleichmäßiges Polierergebnis.\n\nFür beste Ergebnisse empfehlen wir, das Chemicalworkz Glas-Filzpad mit hochwertigen, speziell für Glasflächen entwickelten Polituren zu kombinieren. Ob zur Beseitigung leichter Kratzer oder zur Wiederherstellung der Klarheit – unser Glas-Filzpad sorgt für eine deutliche Verbesserung der Oberflächenqualität."
+    },
+    "video": null
   },
   {
     "id": "cw-db-ws-16",
@@ -387,9 +1051,9 @@ export const products = [
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "16mm",
@@ -401,7 +1065,23 @@ export const products = [
       "/images/products/cw-db-ws-16/CW-DB-WS-16-a3_result.webp",
       "/images/products/cw-db-ws-16/CW-DB-WS-16-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result-thumb.webp",
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-a2_result-thumb.webp",
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-a3_result-thumb.webp",
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-a1_result.webp",
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-a2_result.webp",
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Koyu gri kauçuk saplı sade tasarımı, fırçaya modern ve kaliteli bir görünüm kazandırıyor. Sapın kauçuk ucu, uzun süreli kullanımda ek konfor sağlarken, hassas iç mekan çalışmalarında kaymayı önler.\n\nÖzellikle dikkat çekici olan, tutuş şeklinden bağımsız olarak güvenli ve rahat kullanım sağlayan ergonomik üç parmak dayanağıdır. Beyaz Yumuşak Detay Fırçası, elde mükemmel bir dengeye sahip olup, geleneksel detay fırçalarından ayrışmaktadır. Yüksek kaliteli iç mekan detaylandırması için gerçek bir yenilik.\n\nKullanım Talimatları:\n1. Fırçayı su veya gerekirse uygun bir temizleyici ile nemlendirin.\n2. Temizlenecek yüzeyleri nazikçe fırçalayın.\n3. Kullanımdan sonra fırçayı iyice durulayın ve kurumaya bırakın.",
+      "en": "Its clean design with a dark grey rubber handle gives the brush a modern, premium look. The rubberized tip of the handle adds extra comfort during extended use and prevents slipping during precise interior work.\n\nParticularly notable is the ergonomic three-finger rest, which ensures a secure, comfortable grip regardless of how you hold it. The White Soft Detailing Brush sits perfectly balanced in the hand, setting it apart from conventional detailing brushes — a genuine innovation for high-quality interior detailing.\n\nInstructions for use:\n1. Dampen the brush with water, or a suitable cleaner if needed.\n2. Gently brush the surfaces to be cleaned.\n3. After use, rinse the brush thoroughly and let it air dry.",
+      "de": "Das schlichte Design mit dunkelgrauem Gummigriff verleiht der Bürste ein modernes, hochwertiges Erscheinungsbild. Die gummierte Griffspitze sorgt bei langem Gebrauch für zusätzlichen Komfort und verhindert bei präzisen Innenraumarbeiten ein Abrutschen.\n\nBesonders auffällig ist die ergonomische Drei-Finger-Auflage, die unabhängig von der Griffhaltung eine sichere und komfortable Nutzung ermöglicht. Die Weiße Weiche Detailing-Bürste liegt perfekt ausbalanciert in der Hand und hebt sich damit von herkömmlichen Detailing-Bürsten ab – eine echte Innovation für hochwertiges Innenraum-Detailing.\n\nAnwendungshinweise:\n1. Die Bürste mit Wasser oder bei Bedarf einem geeigneten Reiniger befeuchten.\n2. Die zu reinigenden Flächen sanft abbürsten.\n3. Nach der Anwendung die Bürste gründlich ausspülen und an der Luft trocknen lassen."
+    },
+    "video": null
   },
   {
     "id": "cw-db-ws-20",
@@ -417,9 +1097,9 @@ export const products = [
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
@@ -431,7 +1111,23 @@ export const products = [
       "/images/products/cw-db-ws-20/CW-DB-WS-20-a3_result.webp",
       "/images/products/cw-db-ws-20/CW-DB-WS-20-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result-thumb.webp",
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-a2_result-thumb.webp",
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-a3_result-thumb.webp",
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-a1_result.webp",
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-a2_result.webp",
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Koyu gri kauçuk saplı sade tasarımı, fırçaya modern ve kaliteli bir görünüm kazandırıyor. Sapın kauçuk ucu, uzun süreli kullanımda ek konfor sağlarken, hassas iç mekan çalışmalarında kaymayı önler.\n\nÖzellikle dikkat çekici olan, tutuş şeklinden bağımsız olarak güvenli ve rahat kullanım sağlayan ergonomik üç parmak dayanağıdır. Beyaz Yumuşak Detay Fırçası, elde mükemmel bir dengeye sahip olup, geleneksel detay fırçalarından ayrışmaktadır. Yüksek kaliteli iç mekan detaylandırması için gerçek bir yenilik.\n\nKullanım Talimatları:\n1. Fırçayı su veya gerekirse uygun bir temizleyici ile nemlendirin.\n2. Temizlenecek yüzeyleri nazikçe fırçalayın.\n3. Kullanımdan sonra fırçayı iyice durulayın ve kurumaya bırakın.",
+      "en": "Its clean design with a dark grey rubber handle gives the brush a modern, premium look. The rubberized tip of the handle adds extra comfort during extended use and prevents slipping during precise interior work.\n\nParticularly notable is the ergonomic three-finger rest, which ensures a secure, comfortable grip regardless of how you hold it. The White Soft Detailing Brush sits perfectly balanced in the hand, setting it apart from conventional detailing brushes — a genuine innovation for high-quality interior detailing.\n\nInstructions for use:\n1. Dampen the brush with water, or a suitable cleaner if needed.\n2. Gently brush the surfaces to be cleaned.\n3. After use, rinse the brush thoroughly and let it air dry.",
+      "de": "Das schlichte Design mit dunkelgrauem Gummigriff verleiht der Bürste ein modernes, hochwertiges Erscheinungsbild. Die gummierte Griffspitze sorgt bei langem Gebrauch für zusätzlichen Komfort und verhindert bei präzisen Innenraumarbeiten ein Abrutschen.\n\nBesonders auffällig ist die ergonomische Drei-Finger-Auflage, die unabhängig von der Griffhaltung eine sichere und komfortable Nutzung ermöglicht. Die Weiße Weiche Detailing-Bürste liegt perfekt ausbalanciert in der Hand und hebt sich damit von herkömmlichen Detailing-Bürsten ab – eine echte Innovation für hochwertiges Innenraum-Detailing.\n\nAnwendungshinweise:\n1. Die Bürste mit Wasser oder bei Bedarf einem geeigneten Reiniger befeuchten.\n2. Die zu reinigenden Flächen sanft abbürsten.\n3. Nach der Anwendung die Bürste gründlich ausspülen und an der Luft trocknen lassen."
+    },
+    "video": null
   },
   {
     "id": "cw-db-ws-24",
@@ -447,21 +1143,37 @@ export const products = [
       "de": "Super Weich"
     },
     "description": {
-      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Yumuşak Detay Fırçası, detay fırçaları kategorisinde süper yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Soft Detailing Brush is a super soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Super Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "24mm",
     "isNew": false,
-    "image": "/images/products/cw-db-ws-24/CW-DB-WS-24-a1_result.webp",
+    "image": "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot.webp",
     "gallery": [
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot.webp",
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-a2_result.webp",
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-a3_result.webp",
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-a1_result.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot-thumb.webp",
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-a2_result-thumb.webp",
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-a3_result-thumb.webp",
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-a1_result-thumb.webp"
+    ],
+    "posterImages": [
       "/images/products/cw-db-ws-24/CW-DB-WS-24-a1_result.webp",
-      "/images/products/cw-db-ws-24/CW-DB-WS-24_result.webp",
       "/images/products/cw-db-ws-24/CW-DB-WS-24-a2_result.webp",
       "/images/products/cw-db-ws-24/CW-DB-WS-24-a3_result.webp"
     ],
-    "poster": null
+    "posterDescription": {
+      "tr": "Koyu gri kauçuk saplı sade tasarımı, fırçaya modern ve kaliteli bir görünüm kazandırıyor. Sapın kauçuk ucu, uzun süreli kullanımda ek konfor sağlarken, hassas iç mekan çalışmalarında kaymayı önler.\n\nÖzellikle dikkat çekici olan, tutuş şeklinden bağımsız olarak güvenli ve rahat kullanım sağlayan ergonomik üç parmak dayanağıdır. Beyaz Yumuşak Detay Fırçası, elde mükemmel bir dengeye sahip olup, geleneksel detay fırçalarından ayrışmaktadır. Yüksek kaliteli iç mekan detaylandırması için gerçek bir yenilik.\n\nKullanım Talimatları:\n1. Fırçayı su veya gerekirse uygun bir temizleyici ile nemlendirin.\n2. Temizlenecek yüzeyleri nazikçe fırçalayın.\n3. Kullanımdan sonra fırçayı iyice durulayın ve kurumaya bırakın.",
+      "en": "Its clean design with a dark grey rubber handle gives the brush a modern, premium look. The rubberized tip of the handle adds extra comfort during extended use and prevents slipping during precise interior work.\n\nParticularly notable is the ergonomic three-finger rest, which ensures a secure, comfortable grip regardless of how you hold it. The White Soft Detailing Brush sits perfectly balanced in the hand, setting it apart from conventional detailing brushes — a genuine innovation for high-quality interior detailing.\n\nInstructions for use:\n1. Dampen the brush with water, or a suitable cleaner if needed.\n2. Gently brush the surfaces to be cleaned.\n3. After use, rinse the brush thoroughly and let it air dry.",
+      "de": "Das schlichte Design mit dunkelgrauem Gummigriff verleiht der Bürste ein modernes, hochwertiges Erscheinungsbild. Die gummierte Griffspitze sorgt bei langem Gebrauch für zusätzlichen Komfort und verhindert bei präzisen Innenraumarbeiten ein Abrutschen.\n\nBesonders auffällig ist die ergonomische Drei-Finger-Auflage, die unabhängig von der Griffhaltung eine sichere und komfortable Nutzung ermöglicht. Die Weiße Weiche Detailing-Bürste liegt perfekt ausbalanciert in der Hand und hebt sich damit von herkömmlichen Detailing-Bürsten ab – eine echte Innovation für hochwertiges Innenraum-Detailing.\n\nAnwendungshinweise:\n1. Die Bürste mit Wasser oder bei Bedarf einem geeigneten Reiniger befeuchten.\n2. Die zu reinigenden Flächen sanft abbürsten.\n3. Nach der Anwendung die Bürste gründlich ausspülen und an der Luft trocknen lassen."
+    },
+    "video": null
   },
   {
     "id": "cw-db-us",
@@ -477,9 +1189,9 @@ export const products = [
       "de": "Ultra Weich"
     },
     "description": {
-      "tr": "Ultra Yumuşak Detay Fırçası, detay fırçaları kategorisinde ultra yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft Detailing Brush is a ultra soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Ultra Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak Detay Fırçası, detay fırçaları kategorisinde ultra yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft Detailing Brush is a ultra soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiche Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Ultra Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
@@ -489,7 +1201,19 @@ export const products = [
       "/images/products/cw-db-us/CW-DB-US-packshot_result.webp",
       "/images/products/cw-db-us/CW-DB-US-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-db-us/CW-DB-US-packshot_result-thumb.webp",
+      "/images/products/cw-db-us/CW-DB-US-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-db-us/CW-DB-US-a1_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz Ultra Yumuşak Detay Fırçası, 20 mm fırça ucuna sahip profesyonel bir detay fırçasıdır. Özel olarak tasarlanmış kılları, yüzeylerde çizilme ve hasarı önlerken, agresif kimyasallara da dayanıklıdır. Yüksek kaliteli kauçuk sapı sayesinde\n\nChemicalworkz Ultra Yumuşak Detay Fırçası tamamen kaymaz ve logoları, havalandırma deliklerini, orta konsolları, parlak ve piyano siyahı yüzeyleri, iç köşeleri, kenarları ve girintileri, gösterge panellerini ve iç döşemeleri temizlemek için idealdir.",
+      "en": "The Chemicalworkz Ultra Soft Detailing Brush is a professional detailing brush with a 20 mm brush head. Its specially designed bristles prevent scratching and damage to surfaces while remaining resistant to aggressive chemicals. Thanks to its high-quality rubber handle,\n\nthe Chemicalworkz Ultra Soft Detailing Brush is completely slip-free and ideal for cleaning badges, air vents, center consoles, glossy and piano-black surfaces, interior corners, edges and recesses, dashboards and interior trim.",
+      "de": "Die Chemicalworkz Ultra-Weiche Detailing-Bürste ist eine professionelle Detailing-Bürste mit 20-mm-Bürstenkopf. Die speziell entwickelten Borsten verhindern Kratzer und Schäden an Oberflächen und sind gleichzeitig beständig gegen aggressive Chemikalien. Dank ihres hochwertigen Gummigriffs\n\nist die Chemicalworkz Ultra-Weiche Detailing-Bürste vollständig rutschfest und ideal zur Reinigung von Emblemen, Lüftungsschlitzen, Mittelkonsolen, glänzenden und klavierlackschwarzen Oberflächen, Innenecken, Kanten und Vertiefungen, Armaturenbrettern und Innenverkleidungen."
+    },
+    "video": null
   },
   {
     "id": "cw-db-bb-16",
@@ -505,9 +1229,9 @@ export const products = [
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "16mm",
@@ -520,7 +1244,24 @@ export const products = [
       "/images/products/cw-db-bb-16/CW-DB-BB-16-a3_result.webp",
       "/images/products/cw-db-bb-16/CW-DB-BB-16-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-db-bb-16/CW-DB-BB-16-packshot_result-thumb.webp",
+      "/images/products/cw-db-bb-16/cw-db-bb-group_result-thumb.webp",
+      "/images/products/cw-db-bb-16/CW-DB-BB-16-a2_result-thumb.webp",
+      "/images/products/cw-db-bb-16/CW-DB-BB-16-a3_result-thumb.webp",
+      "/images/products/cw-db-bb-16/CW-DB-BB-16-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-db-bb-16/CW-DB-BB-16-a1_result.webp",
+      "/images/products/cw-db-bb-16/CW-DB-BB-16-a2_result.webp",
+      "/images/products/cw-db-bb-16/CW-DB-BB-16-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Sapından kıllarına kadar tamamen siyah tasarımı, fırçaya zarif bir görünüm kazandırmakla kalmaz, aynı zamanda profesyonel çekiciliğini de vurgular. Sapın kauçuk kaplı ucu, uzun süreli kullanımda ek konfor sağlar ve ıslakken veya köpükle kaplıyken kaymayı önler.\n\nÖzellikle dikkat çekici olan, tutuş şeklinden bağımsız olarak güvenli ve rahat kullanım sağlayan ergonomik üç parmak dayanağıdır. Siyah Kıl Fırçası, elde mükemmel bir dengeye sahip olup, geleneksel detay fırçalarından ayrışmaktadır. Profesyonel araç bakım segmentinde gerçek bir yenilik.\n\nFırça, yüksek kaliteli ve çok şık bir ambalajda geliyor. Sağlam dış kutu, içeriği en iyi şekilde korurken, fırça içeride yumuşak köpüğün içine rahatça yerleştirilmiş durumda.",
+      "en": "Its all-black design, from handle to bristles, doesn't just give the brush an elegant look — it also underscores its professional appeal. The rubber-coated tip of the handle adds extra comfort during extended use and prevents slipping when wet or covered in foam.\n\nParticularly notable is the ergonomic three-finger rest, which ensures a secure, comfortable grip regardless of how you hold it. The Black Bristle Brush sits perfectly balanced in the hand, setting it apart from conventional detailing brushes — a genuine innovation in the professional car care segment.\n\nThe brush comes in premium, elegant packaging. The sturdy outer box protects its contents perfectly, while the brush itself rests comfortably inside on soft foam.",
+      "de": "Das durchgehend schwarze Design – vom Griff bis zu den Borsten – verleiht der Bürste nicht nur eine elegante Optik, sondern unterstreicht auch ihren professionellen Charakter. Die gummierte Griffspitze sorgt bei langem Gebrauch für zusätzlichen Komfort und verhindert ein Abrutschen bei Nässe oder Schaum.\n\nBesonders auffällig ist die ergonomische Drei-Finger-Auflage, die unabhängig von der Griffhaltung eine sichere und komfortable Nutzung ermöglicht. Die Schwarze Borstenbürste liegt perfekt ausbalanciert in der Hand und hebt sich damit von herkömmlichen Detailing-Bürsten ab – eine echte Innovation im professionellen Fahrzeugpflegesegment.\n\nDie Bürste wird in einer hochwertigen, eleganten Verpackung geliefert. Die robuste Außenbox schützt den Inhalt optimal, während die Bürste selbst bequem in weichem Schaumstoff eingebettet liegt."
+    },
+    "video": null
   },
   {
     "id": "cw-db-bb-20",
@@ -536,9 +1277,9 @@ export const products = [
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "20mm",
@@ -551,7 +1292,24 @@ export const products = [
       "/images/products/cw-db-bb-20/CW-DB-BB-20-a3_result.webp",
       "/images/products/cw-db-bb-20/CW-DB-BB-20-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-db-bb-20/CW-DB-BB-20-packshot_result-thumb.webp",
+      "/images/products/cw-db-bb-20/cw-db-bb-group_result-thumb.webp",
+      "/images/products/cw-db-bb-20/CW-DB-BB-20-a2_result-thumb.webp",
+      "/images/products/cw-db-bb-20/CW-DB-BB-20-a3_result-thumb.webp",
+      "/images/products/cw-db-bb-20/CW-DB-BB-20-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-db-bb-20/CW-DB-BB-20-a1_result.webp",
+      "/images/products/cw-db-bb-20/CW-DB-BB-20-a2_result.webp",
+      "/images/products/cw-db-bb-20/CW-DB-BB-20-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Sapından kıllarına kadar tamamen siyah tasarımı, fırçaya zarif bir görünüm kazandırmakla kalmaz, aynı zamanda profesyonel çekiciliğini de vurgular. Sapın kauçuk kaplı ucu, uzun süreli kullanımda ek konfor sağlar ve ıslakken veya köpükle kaplıyken kaymayı önler.\n\nÖzellikle dikkat çekici olan, tutuş şeklinden bağımsız olarak güvenli ve rahat kullanım sağlayan ergonomik üç parmak dayanağıdır. Siyah Kıl Fırçası, elde mükemmel bir dengeye sahip olup, geleneksel detay fırçalarından ayrışmaktadır. Profesyonel araç bakım segmentinde gerçek bir yenilik.\n\nFırça, yüksek kaliteli ve çok şık bir ambalajda geliyor. Sağlam dış kutu, içeriği en iyi şekilde korurken, fırça içeride yumuşak köpüğün içine rahatça yerleştirilmiş durumda.",
+      "en": "Its all-black design, from handle to bristles, doesn't just give the brush an elegant look — it also underscores its professional appeal. The rubber-coated tip of the handle adds extra comfort during extended use and prevents slipping when wet or covered in foam.\n\nParticularly notable is the ergonomic three-finger rest, which ensures a secure, comfortable grip regardless of how you hold it. The Black Bristle Brush sits perfectly balanced in the hand, setting it apart from conventional detailing brushes — a genuine innovation in the professional car care segment.\n\nThe brush comes in premium, elegant packaging. The sturdy outer box protects its contents perfectly, while the brush itself rests comfortably inside on soft foam.",
+      "de": "Das durchgehend schwarze Design – vom Griff bis zu den Borsten – verleiht der Bürste nicht nur eine elegante Optik, sondern unterstreicht auch ihren professionellen Charakter. Die gummierte Griffspitze sorgt bei langem Gebrauch für zusätzlichen Komfort und verhindert ein Abrutschen bei Nässe oder Schaum.\n\nBesonders auffällig ist die ergonomische Drei-Finger-Auflage, die unabhängig von der Griffhaltung eine sichere und komfortable Nutzung ermöglicht. Die Schwarze Borstenbürste liegt perfekt ausbalanciert in der Hand und hebt sich damit von herkömmlichen Detailing-Bürsten ab – eine echte Innovation im professionellen Fahrzeugpflegesegment.\n\nDie Bürste wird in einer hochwertigen, eleganten Verpackung geliefert. Die robuste Außenbox schützt den Inhalt optimal, während die Bürste selbst bequem in weichem Schaumstoff eingebettet liegt."
+    },
+    "video": null
   },
   {
     "id": "cw-db-bb-24",
@@ -567,9 +1325,9 @@ export const products = [
       "de": "Weich"
     },
     "description": {
-      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Siyah Detay Fırçası, detay fırçaları kategorisinde yumuşak. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Black Detailing Brush is a soft product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schwarze Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Weich. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": "24mm",
@@ -582,7 +1340,24 @@ export const products = [
       "/images/products/cw-db-bb-24/CW-DB-BB-24-a2_result.webp",
       "/images/products/cw-db-bb-24/CW-DB-BB-24-a3_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result-thumb.webp",
+      "/images/products/cw-db-bb-24/CW-DB-BB-24_result-thumb.webp",
+      "/images/products/cw-db-bb-24/cw-db-bb-group_result-thumb.webp",
+      "/images/products/cw-db-bb-24/CW-DB-BB-24-a2_result-thumb.webp",
+      "/images/products/cw-db-bb-24/CW-DB-BB-24-a3_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result.webp",
+      "/images/products/cw-db-bb-24/CW-DB-BB-24-a2_result.webp",
+      "/images/products/cw-db-bb-24/CW-DB-BB-24-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Sapından kıllarına kadar tamamen siyah tasarımı, fırçaya zarif bir görünüm kazandırmakla kalmaz, aynı zamanda profesyonel çekiciliğini de vurgular. Sapın kauçuk kaplı ucu, uzun süreli kullanımda ek konfor sağlar ve ıslakken veya köpükle kaplıyken kaymayı önler.\n\nÖzellikle dikkat çekici olan, tutuş şeklinden bağımsız olarak güvenli ve rahat kullanım sağlayan ergonomik üç parmak dayanağıdır. Siyah Kıl Fırçası, elde mükemmel bir dengeye sahip olup, geleneksel detay fırçalarından ayrışmaktadır. Profesyonel araç bakım segmentinde gerçek bir yenilik.\n\nFırça, yüksek kaliteli ve çok şık bir ambalajda geliyor. Sağlam dış kutu, içeriği en iyi şekilde korurken, fırça içeride yumuşak köpüğün içine rahatça yerleştirilmiş durumda.",
+      "en": "Its all-black design, from handle to bristles, doesn't just give the brush an elegant look — it also underscores its professional appeal. The rubber-coated tip of the handle adds extra comfort during extended use and prevents slipping when wet or covered in foam.\n\nParticularly notable is the ergonomic three-finger rest, which ensures a secure, comfortable grip regardless of how you hold it. The Black Bristle Brush sits perfectly balanced in the hand, setting it apart from conventional detailing brushes — a genuine innovation in the professional car care segment.\n\nThe brush comes in premium, elegant packaging. The sturdy outer box protects its contents perfectly, while the brush itself rests comfortably inside on soft foam.",
+      "de": "Das durchgehend schwarze Design – vom Griff bis zu den Borsten – verleiht der Bürste nicht nur eine elegante Optik, sondern unterstreicht auch ihren professionellen Charakter. Die gummierte Griffspitze sorgt bei langem Gebrauch für zusätzlichen Komfort und verhindert ein Abrutschen bei Nässe oder Schaum.\n\nBesonders auffällig ist die ergonomische Drei-Finger-Auflage, die unabhängig von der Griffhaltung eine sichere und komfortable Nutzung ermöglicht. Die Schwarze Borstenbürste liegt perfekt ausbalanciert in der Hand und hebt sich damit von herkömmlichen Detailing-Bürsten ab – eine echte Innovation im professionellen Fahrzeugpflegesegment.\n\nDie Bürste wird in einer hochwertigen, eleganten Verpackung geliefert. Die robuste Außenbox schützt den Inhalt optimal, während die Bürste selbst bequem in weichem Schaumstoff eingebettet liegt."
+    },
+    "video": null
   },
   {
     "id": "cw-usd-purple",
@@ -598,9 +1373,9 @@ export const products = [
       "de": "Detailing-Bürsten-Set | Lila"
     },
     "description": {
-      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | mor. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft 2-Piece Set is a detailing brush set | purple product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Lila. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | mor. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft 2-Piece Set is a detailing brush set | purple product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Lila. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Mor",
@@ -613,7 +1388,16 @@ export const products = [
     "gallery": [
       "/images/products/cw-usd-purple/cw-usd-purple-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-usd-purple/cw-usd-purple-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Kimyasal maddelere dayanıklı, kauçuk kaplı sap, en sevdiğiniz bakım ürünlerini hasar endişesi duymadan kullanabilmeniz için özenle tasarlanmıştır. 275 mm uzunluğundaki uzun fırça, ulaşılması en zor alanlara bile zahmetsizce ulaşmanızı sağlar. Daha kısa olan 170 mm'lik fırça ise en küçük köşelerde ve çatlaklarda bile hassas temizlik imkanı sunar.\n\nİster gösterge panelindeki toz ve kiri temizlemek, ister iç mekanı iyice arındırmak, ister aracınızın boyasını parlak bir görünüme kavuşturmak isteyin, Chemicalworkz Ultra Yumuşak Fırça Seti güvenilir yardımcınızdır. Fırçalar çok yönlüdür ve her seferinde profesyonel sonuçlar garanti eder.",
+      "en": "The chemical-resistant, rubber-coated handle is carefully designed so you can use your favorite care products without worrying about damage. The 275 mm long brush effortlessly reaches even the hardest-to-access areas, while the shorter 170 mm brush offers precise cleaning in the tightest corners and crevices.\n\nWhether you're clearing dust and dirt from the dashboard, giving the interior a thorough clean, or bringing your car's paint to a brilliant shine, the Chemicalworkz Ultra Soft Brush Set is your reliable companion. The brushes are versatile and guarantee professional results every time.",
+      "de": "Der chemikalienbeständige, gummierte Griff wurde sorgfältig entwickelt, damit Sie Ihre Lieblingspflegeprodukte ohne Sorge vor Beschädigung anwenden können. Die 275 mm lange Bürste erreicht mühelos selbst die am schwersten zugänglichen Stellen, während die kürzere 170-mm-Bürste präzise Reinigung in den kleinsten Ecken und Ritzen ermöglicht.\n\nOb Staub und Schmutz vom Armaturenbrett entfernen, den Innenraum gründlich reinigen oder Ihrem Lack zu strahlendem Glanz verhelfen – das Chemicalworkz Ultra-Weiche Bürstenset ist Ihr zuverlässiger Begleiter. Die Bürsten sind vielseitig einsetzbar und garantieren jedes Mal professionelle Ergebnisse."
+    },
+    "video": null
   },
   {
     "id": "cw-usd-turquoise",
@@ -629,9 +1413,9 @@ export const products = [
       "de": "Detailing-Bürsten-Set | Türkis"
     },
     "description": {
-      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | turkuaz. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Ultra Soft 2-Piece Set is a detailing brush set | turquoise product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Türkis. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Ultra Yumuşak 2'li, detay fırçaları kategorisinde detay fırçası seti | turkuaz. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Ultra Soft 2-Piece Set is a detailing brush set | turquoise product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Ultra-Weiches 2er-Set ist ein Produkt der Kategorie Detailing-Bürsten mit Detailing-Bürsten-Set | Türkis. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Turkuaz",
@@ -644,7 +1428,16 @@ export const products = [
     "gallery": [
       "/images/products/cw-usd-turquoise/cw-usd-turquoise-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-usd-turquoise/cw-usd-turquoise-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Kimyasal maddelere dayanıklı, kauçuk kaplı sap, en sevdiğiniz bakım ürünlerini hasar endişesi duymadan kullanabilmeniz için özenle tasarlanmıştır. 275 mm uzunluğundaki uzun fırça, ulaşılması en zor alanlara bile zahmetsizce ulaşmanızı sağlar. Daha kısa olan 170 mm'lik fırça ise en küçük köşelerde ve çatlaklarda bile hassas temizlik imkanı sunar.\n\nİster gösterge panelindeki toz ve kiri temizlemek, ister iç mekanı iyice arındırmak, ister aracınızın boyasını parlak bir görünüme kavuşturmak isteyin, Chemicalworkz Ultra Yumuşak Fırça Seti güvenilir yardımcınızdır. Fırçalar çok yönlüdür ve her seferinde profesyonel sonuçlar garanti eder.",
+      "en": "The chemical-resistant, rubber-coated handle is carefully designed so you can use your favorite care products without worrying about damage. The 275 mm long brush effortlessly reaches even the hardest-to-access areas, while the shorter 170 mm brush offers precise cleaning in the tightest corners and crevices.\n\nWhether you're clearing dust and dirt from the dashboard, giving the interior a thorough clean, or bringing your car's paint to a brilliant shine, the Chemicalworkz Ultra Soft Brush Set is your reliable companion. The brushes are versatile and guarantee professional results every time.",
+      "de": "Der chemikalienbeständige, gummierte Griff wurde sorgfältig entwickelt, damit Sie Ihre Lieblingspflegeprodukte ohne Sorge vor Beschädigung anwenden können. Die 275 mm lange Bürste erreicht mühelos selbst die am schwersten zugänglichen Stellen, während die kürzere 170-mm-Bürste präzise Reinigung in den kleinsten Ecken und Ritzen ermöglicht.\n\nOb Staub und Schmutz vom Armaturenbrett entfernen, den Innenraum gründlich reinigen oder Ihrem Lack zu strahlendem Glanz verhelfen – das Chemicalworkz Ultra-Weiche Bürstenset ist Ihr zuverlässiger Begleiter. Die Bürsten sind vielseitig einsetzbar und garantieren jedes Mal professionelle Ergebnisse."
+    },
+    "video": null
   },
   {
     "id": "cw-tdb",
@@ -660,9 +1453,9 @@ export const products = [
       "de": "Chemikalienbeständig"
     },
     "description": {
-      "tr": "Lastik Parlatıcı Fırça, detay fırçaları kategorisinde kimyasal maddelere dayanıklı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Tire Dressing Brush is a chemical resistant product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Reifenglanz-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Chemikalienbeständig. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Lastik Parlatıcı Fırça, detay fırçaları kategorisinde kimyasal maddelere dayanıklı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Tire Dressing Brush is a chemical resistant product in our detailing brushes range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Reifenglanz-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Chemikalienbeständig. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -674,7 +1467,23 @@ export const products = [
       "/images/products/cw-tdb/cw-tdb-a3_result.webp",
       "/images/products/cw-tdb/cw-tdb-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-tdb/cw-tdb-packshot_result-thumb.webp",
+      "/images/products/cw-tdb/cw-tdb-a2_result-thumb.webp",
+      "/images/products/cw-tdb/cw-tdb-a3_result-thumb.webp",
+      "/images/products/cw-tdb/cw-tdb-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-tdb/cw-tdb-a1_result.webp",
+      "/images/products/cw-tdb/cw-tdb-a2_result.webp",
+      "/images/products/cw-tdb/cw-tdb-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz Lastik Parlatıcı Fırçası, lastiklerinizin ve plastik yüzeylerinizin kapsamlı ve hassas bakımı için mükemmel bir çözümdür. Son derece yumuşak ancak sağlam, kısa kıllı bu fırça, lastik yan duvarlarına lastik parlatıcı uygulamak için idealdir. Yoğun ve esnek naylon kılları sayesinde fırça, lastik üreticisinin tipik marka logosu da dahil olmak üzere lastik üzerindeki en küçük girintilere ve oluklara bile ulaşır.\n\nÜrün özellikleri:\n• Yüksek kaliteli naylon fırça kılları\n• Ergonomik sap\n• Çok yönlü kullanım\n• Hassas uygulama\n• Pratik saklama\n\nChemicalworkz Lastik Parlatıcı Fırçası sadece lastikler için değil, motor bölmesi gibi aracın diğer bölgeleri için de idealdir. Bu fırça ile bakım ürünlerinizi eşit ve temiz bir şekilde uygulayarak mükemmel bir sonuç elde edersiniz.",
+      "en": "The Chemicalworkz Tire Dressing Brush is the perfect solution for thorough, precise care of your tires and plastic surfaces. Extremely soft yet firm, this short-bristled brush is ideal for applying tire dressing to sidewalls. Thanks to its dense, flexible nylon bristles, the brush reaches even the smallest grooves and recesses on a tire, including the manufacturer's brand lettering.\n\nProduct features:\n• High-quality nylon bristles\n• Ergonomic handle\n• Versatile use\n• Precise application\n• Convenient storage\n\nThe Chemicalworkz Tire Dressing Brush isn't just for tires — it's also ideal for other areas of the vehicle, such as the engine bay. With this brush you'll apply your care products evenly and cleanly for a flawless result.",
+      "de": "Die Chemicalworkz Reifenglanz-Bürste ist die perfekte Lösung für die gründliche und präzise Pflege Ihrer Reifen und Kunststoffoberflächen. Diese äußerst weiche, aber feste, kurzborstige Bürste eignet sich ideal zum Auftragen von Reifenglanzmittel auf die Seitenwände. Dank ihrer dichten, flexiblen Nylonborsten erreicht die Bürste selbst die kleinsten Rillen und Vertiefungen am Reifen, einschließlich der typischen Herstellerprägung.\n\nProduktmerkmale:\n• Hochwertige Nylonborsten\n• Ergonomischer Griff\n• Vielseitig einsetzbar\n• Präzise Anwendung\n• Praktische Aufbewahrung\n\nDie Chemicalworkz Reifenglanz-Bürste eignet sich nicht nur für Reifen, sondern auch für andere Fahrzeugbereiche wie den Motorraum. Mit dieser Bürste tragen Sie Ihre Pflegeprodukte gleichmäßig und sauber auf und erzielen ein makelloses Ergebnis."
+    },
+    "video": null
   },
   {
     "id": "cw-sb-L-b",
@@ -690,9 +1499,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Siyah",
@@ -706,7 +1515,17 @@ export const products = [
       "/images/products/cw-sb-L-b/CW-SB-L-B-packshot_result.webp",
       "/images/products/cw-sb-L-b/cw-sb-group_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-sb-L-b/CW-SB-L-B-packshot_result-thumb.webp",
+      "/images/products/cw-sb-L-b/cw-sb-group_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Chemicalworkz sprey şişesi, çok çeşitli temizlik ve bakım ürünleri için mükemmel bir araçtır. 750 ml'lik geniş kapasitesi ve yan tarafında mililitre (ml) ve ons (oz) gösteren pratik ölçeği sayesinde, sıvının tam miktarını kolayca ölçebilirsiniz.\n\nYüksek kaliteli HDPE'den üretilen kimyasal maddelere dayanıklı sprey şişesinin gövdesi, üst ve alt kısımlarında renkli detaylara sahip olup, modern ve çekici bir görünüm sunarak farklı temizlik ürünlerinizi kolayca ayırt etmenizi sağlar.\n\nSprey şişesinin tabanı, dengeyi sağlamak ve şişenin kolayca devrilmesini önlemek için kauçuk kaplamalarla donatılmıştır. Üstün kaliteli sprey başlığı, temizlenecek yüzeylere sıvının hassas ve eşit şekilde dağıtılmasını sağlar.",
+      "en": "The Chemicalworkz spray bottle is the perfect tool for a wide range of cleaning and care products. Its generous 750 ml capacity and handy ml/oz scale on the side let you easily measure out the exact amount of liquid you need.\n\nMade from high-quality, chemical-resistant HDPE, the spray bottle's body features colored accents at the top and bottom, giving it a modern, eye-catching look and making it easy to tell your different cleaning products apart.\n\nThe base of the spray bottle is fitted with rubber pads for stability, preventing the bottle from tipping over easily. The premium spray head ensures precise, even distribution of liquid onto the surfaces being cleaned.",
+      "de": "Die Chemicalworkz Sprühflasche ist das perfekte Werkzeug für eine Vielzahl von Reinigungs- und Pflegeprodukten. Dank ihres großzügigen Fassungsvermögens von 750 ml und der praktischen ml-/oz-Skala an der Seite können Sie die genaue Flüssigkeitsmenge ganz einfach abmessen.\n\nDer aus hochwertigem, chemikalienbeständigem HDPE gefertigte Flaschenkörper besitzt farbige Akzente oben und unten, die für eine moderne, ansprechende Optik sorgen und das Unterscheiden Ihrer verschiedenen Reinigungsprodukte erleichtern.\n\nDer Boden der Sprühflasche ist mit Gummipolstern versehen, die für Stabilität sorgen und ein leichtes Umkippen verhindern. Der hochwertige Sprühkopf sorgt für eine präzise und gleichmäßige Verteilung der Flüssigkeit auf den zu reinigenden Oberflächen."
+    },
+    "video": null
   },
   {
     "id": "cw-sb-L-bL",
@@ -722,9 +1541,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Mavi",
@@ -738,7 +1557,17 @@ export const products = [
       "/images/products/cw-sb-L-bL/CW-SB-L-BL-packshot_result.webp",
       "/images/products/cw-sb-L-bL/cw-sb-group_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-sb-L-bL/CW-SB-L-BL-packshot_result-thumb.webp",
+      "/images/products/cw-sb-L-bL/cw-sb-group_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Chemicalworkz sprey şişesi, çok çeşitli temizlik ve bakım ürünleri için mükemmel bir araçtır. 750 ml'lik geniş kapasitesi ve yan tarafında mililitre (ml) ve ons (oz) gösteren pratik ölçeği sayesinde, sıvının tam miktarını kolayca ölçebilirsiniz.\n\nYüksek kaliteli HDPE'den üretilen kimyasal maddelere dayanıklı sprey şişesinin gövdesi, üst ve alt kısımlarında renkli detaylara sahip olup, modern ve çekici bir görünüm sunarak farklı temizlik ürünlerinizi kolayca ayırt etmenizi sağlar.\n\nSprey şişesinin tabanı, dengeyi sağlamak ve şişenin kolayca devrilmesini önlemek için kauçuk kaplamalarla donatılmıştır. Üstün kaliteli sprey başlığı, temizlenecek yüzeylere sıvının hassas ve eşit şekilde dağıtılmasını sağlar.",
+      "en": "The Chemicalworkz spray bottle is the perfect tool for a wide range of cleaning and care products. Its generous 750 ml capacity and handy ml/oz scale on the side let you easily measure out the exact amount of liquid you need.\n\nMade from high-quality, chemical-resistant HDPE, the spray bottle's body features colored accents at the top and bottom, giving it a modern, eye-catching look and making it easy to tell your different cleaning products apart.\n\nThe base of the spray bottle is fitted with rubber pads for stability, preventing the bottle from tipping over easily. The premium spray head ensures precise, even distribution of liquid onto the surfaces being cleaned.",
+      "de": "Die Chemicalworkz Sprühflasche ist das perfekte Werkzeug für eine Vielzahl von Reinigungs- und Pflegeprodukten. Dank ihres großzügigen Fassungsvermögens von 750 ml und der praktischen ml-/oz-Skala an der Seite können Sie die genaue Flüssigkeitsmenge ganz einfach abmessen.\n\nDer aus hochwertigem, chemikalienbeständigem HDPE gefertigte Flaschenkörper besitzt farbige Akzente oben und unten, die für eine moderne, ansprechende Optik sorgen und das Unterscheiden Ihrer verschiedenen Reinigungsprodukte erleichtern.\n\nDer Boden der Sprühflasche ist mit Gummipolstern versehen, die für Stabilität sorgen und ein leichtes Umkippen verhindern. Der hochwertige Sprühkopf sorgt für eine präzise und gleichmäßige Verteilung der Flüssigkeit auf den zu reinigenden Oberflächen."
+    },
+    "video": null
   },
   {
     "id": "cw-sb-L-gr",
@@ -754,9 +1583,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Yeşil",
@@ -770,7 +1599,17 @@ export const products = [
       "/images/products/cw-sb-L-gr/CW-SB-L-GR-packshot_result.webp",
       "/images/products/cw-sb-L-gr/cw-sb-group_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-sb-L-gr/CW-SB-L-GR-packshot_result-thumb.webp",
+      "/images/products/cw-sb-L-gr/cw-sb-group_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Chemicalworkz sprey şişesi, çok çeşitli temizlik ve bakım ürünleri için mükemmel bir araçtır. 750 ml'lik geniş kapasitesi ve yan tarafında mililitre (ml) ve ons (oz) gösteren pratik ölçeği sayesinde, sıvının tam miktarını kolayca ölçebilirsiniz.\n\nYüksek kaliteli HDPE'den üretilen kimyasal maddelere dayanıklı sprey şişesinin gövdesi, üst ve alt kısımlarında renkli detaylara sahip olup, modern ve çekici bir görünüm sunarak farklı temizlik ürünlerinizi kolayca ayırt etmenizi sağlar.\n\nSprey şişesinin tabanı, dengeyi sağlamak ve şişenin kolayca devrilmesini önlemek için kauçuk kaplamalarla donatılmıştır. Üstün kaliteli sprey başlığı, temizlenecek yüzeylere sıvının hassas ve eşit şekilde dağıtılmasını sağlar.",
+      "en": "The Chemicalworkz spray bottle is the perfect tool for a wide range of cleaning and care products. Its generous 750 ml capacity and handy ml/oz scale on the side let you easily measure out the exact amount of liquid you need.\n\nMade from high-quality, chemical-resistant HDPE, the spray bottle's body features colored accents at the top and bottom, giving it a modern, eye-catching look and making it easy to tell your different cleaning products apart.\n\nThe base of the spray bottle is fitted with rubber pads for stability, preventing the bottle from tipping over easily. The premium spray head ensures precise, even distribution of liquid onto the surfaces being cleaned.",
+      "de": "Die Chemicalworkz Sprühflasche ist das perfekte Werkzeug für eine Vielzahl von Reinigungs- und Pflegeprodukten. Dank ihres großzügigen Fassungsvermögens von 750 ml und der praktischen ml-/oz-Skala an der Seite können Sie die genaue Flüssigkeitsmenge ganz einfach abmessen.\n\nDer aus hochwertigem, chemikalienbeständigem HDPE gefertigte Flaschenkörper besitzt farbige Akzente oben und unten, die für eine moderne, ansprechende Optik sorgen und das Unterscheiden Ihrer verschiedenen Reinigungsprodukte erleichtern.\n\nDer Boden der Sprühflasche ist mit Gummipolstern versehen, die für Stabilität sorgen und ein leichtes Umkippen verhindern. Der hochwertige Sprühkopf sorgt für eine präzise und gleichmäßige Verteilung der Flüssigkeit auf den zu reinigenden Oberflächen."
+    },
+    "video": null
   },
   {
     "id": "cw-sb-L-re",
@@ -786,9 +1625,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Kırmızı",
@@ -802,7 +1641,17 @@ export const products = [
       "/images/products/cw-sb-L-re/CW-SB-L-RE-packshot_result.webp",
       "/images/products/cw-sb-L-re/cw-sb-group_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-sb-L-re/CW-SB-L-RE-packshot_result-thumb.webp",
+      "/images/products/cw-sb-L-re/cw-sb-group_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Chemicalworkz sprey şişesi, çok çeşitli temizlik ve bakım ürünleri için mükemmel bir araçtır. 750 ml'lik geniş kapasitesi ve yan tarafında mililitre (ml) ve ons (oz) gösteren pratik ölçeği sayesinde, sıvının tam miktarını kolayca ölçebilirsiniz.\n\nYüksek kaliteli HDPE'den üretilen kimyasal maddelere dayanıklı sprey şişesinin gövdesi, üst ve alt kısımlarında renkli detaylara sahip olup, modern ve çekici bir görünüm sunarak farklı temizlik ürünlerinizi kolayca ayırt etmenizi sağlar.\n\nSprey şişesinin tabanı, dengeyi sağlamak ve şişenin kolayca devrilmesini önlemek için kauçuk kaplamalarla donatılmıştır. Üstün kaliteli sprey başlığı, temizlenecek yüzeylere sıvının hassas ve eşit şekilde dağıtılmasını sağlar.",
+      "en": "The Chemicalworkz spray bottle is the perfect tool for a wide range of cleaning and care products. Its generous 750 ml capacity and handy ml/oz scale on the side let you easily measure out the exact amount of liquid you need.\n\nMade from high-quality, chemical-resistant HDPE, the spray bottle's body features colored accents at the top and bottom, giving it a modern, eye-catching look and making it easy to tell your different cleaning products apart.\n\nThe base of the spray bottle is fitted with rubber pads for stability, preventing the bottle from tipping over easily. The premium spray head ensures precise, even distribution of liquid onto the surfaces being cleaned.",
+      "de": "Die Chemicalworkz Sprühflasche ist das perfekte Werkzeug für eine Vielzahl von Reinigungs- und Pflegeprodukten. Dank ihres großzügigen Fassungsvermögens von 750 ml und der praktischen ml-/oz-Skala an der Seite können Sie die genaue Flüssigkeitsmenge ganz einfach abmessen.\n\nDer aus hochwertigem, chemikalienbeständigem HDPE gefertigte Flaschenkörper besitzt farbige Akzente oben und unten, die für eine moderne, ansprechende Optik sorgen und das Unterscheiden Ihrer verschiedenen Reinigungsprodukte erleichtern.\n\nDer Boden der Sprühflasche ist mit Gummipolstern versehen, die für Stabilität sorgen und ein leichtes Umkippen verhindern. Der hochwertige Sprühkopf sorgt für eine präzise und gleichmäßige Verteilung der Flüssigkeit auf den zu reinigenden Oberflächen."
+    },
+    "video": null
   },
   {
     "id": "cw-sb-L-ye",
@@ -818,9 +1667,9 @@ export const products = [
       "de": "360°-Sprühkopf | 5 Farboptionen"
     },
     "description": {
-      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sprey Şişesi, sprey şişeleri kategorisinde 360° tetikli | 5 renk seçeneği. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Spray Bottle is a 360° trigger | 5 color options product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit 360°-Sprühkopf | 5 Farboptionen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": {
       "tr": "Sarı",
@@ -834,7 +1683,17 @@ export const products = [
       "/images/products/cw-sb-L-ye/CW-SB-L-YE-packshot_result.webp",
       "/images/products/cw-sb-L-ye/cw-sb-group_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-sb-L-ye/CW-SB-L-YE-packshot_result-thumb.webp",
+      "/images/products/cw-sb-L-ye/cw-sb-group_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Chemicalworkz sprey şişesi, çok çeşitli temizlik ve bakım ürünleri için mükemmel bir araçtır. 750 ml'lik geniş kapasitesi ve yan tarafında mililitre (ml) ve ons (oz) gösteren pratik ölçeği sayesinde, sıvının tam miktarını kolayca ölçebilirsiniz.\n\nYüksek kaliteli HDPE'den üretilen kimyasal maddelere dayanıklı sprey şişesinin gövdesi, üst ve alt kısımlarında renkli detaylara sahip olup, modern ve çekici bir görünüm sunarak farklı temizlik ürünlerinizi kolayca ayırt etmenizi sağlar.\n\nSprey şişesinin tabanı, dengeyi sağlamak ve şişenin kolayca devrilmesini önlemek için kauçuk kaplamalarla donatılmıştır. Üstün kaliteli sprey başlığı, temizlenecek yüzeylere sıvının hassas ve eşit şekilde dağıtılmasını sağlar.",
+      "en": "The Chemicalworkz spray bottle is the perfect tool for a wide range of cleaning and care products. Its generous 750 ml capacity and handy ml/oz scale on the side let you easily measure out the exact amount of liquid you need.\n\nMade from high-quality, chemical-resistant HDPE, the spray bottle's body features colored accents at the top and bottom, giving it a modern, eye-catching look and making it easy to tell your different cleaning products apart.\n\nThe base of the spray bottle is fitted with rubber pads for stability, preventing the bottle from tipping over easily. The premium spray head ensures precise, even distribution of liquid onto the surfaces being cleaned.",
+      "de": "Die Chemicalworkz Sprühflasche ist das perfekte Werkzeug für eine Vielzahl von Reinigungs- und Pflegeprodukten. Dank ihres großzügigen Fassungsvermögens von 750 ml und der praktischen ml-/oz-Skala an der Seite können Sie die genaue Flüssigkeitsmenge ganz einfach abmessen.\n\nDer aus hochwertigem, chemikalienbeständigem HDPE gefertigte Flaschenkörper besitzt farbige Akzente oben und unten, die für eine moderne, ansprechende Optik sorgen und das Unterscheiden Ihrer verschiedenen Reinigungsprodukte erleichtern.\n\nDer Boden der Sprühflasche ist mit Gummipolstern versehen, die für Stabilität sorgen und ein leichtes Umkippen verhindern. Der hochwertige Sprühkopf sorgt für eine präzise und gleichmäßige Verteilung der Flüssigkeit auf den zu reinigenden Oberflächen."
+    },
+    "video": null
   },
   {
     "id": "cw-rps",
@@ -850,9 +1709,9 @@ export const products = [
       "de": "5-8 bar"
     },
     "description": {
-      "tr": "Doldurulabilir Basınçlı Sprey, sprey şişeleri kategorisinde 5-8 bar. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Refillable Pressure Sprayer is a 5-8 bar product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Nachfüllbarer Drucksprüher ist ein Produkt der Kategorie Sprühflaschen mit 5-8 bar. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Doldurulabilir Basınçlı Sprey, sprey şişeleri kategorisinde 5-8 bar. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Refillable Pressure Sprayer is a 5-8 bar product in our spray bottles range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Nachfüllbarer Drucksprüher ist ein Produkt der Kategorie Sprühflaschen mit 5-8 bar. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -864,7 +1723,23 @@ export const products = [
       "/images/products/cw-rps/cw-rps-a3_result.webp",
       "/images/products/cw-rps/cw-rps-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-rps/cw-rps-packshot_result-thumb.webp",
+      "/images/products/cw-rps/cw-rps-a2_result-thumb.webp",
+      "/images/products/cw-rps/cw-rps-a3_result-thumb.webp",
+      "/images/products/cw-rps/cw-rps-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-rps/cw-rps-a1_result.webp",
+      "/images/products/cw-rps/cw-rps-a2_result.webp",
+      "/images/products/cw-rps/cw-rps-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz Doldurulabilir Basınçlı Sprey, boya temizleyici, fren temizleyici, pas sökücü veya nüfuz edici yağ gibi kimyasalların hassas veya geniş çaplı uygulanması söz konusu olduğunda profesyonel yardımcınızdır. Sürekli yeni sprey kutuları satın almak yerine, mevcut daha büyük kaplarınızı bu yeniden doldurulabilir şişeyle kullanabilirsiniz – sürdürülebilir, verimli ve uygun maliyetli.",
+      "en": "The Chemicalworkz Refillable Pressure Sprayer is your professional companion whenever chemicals like paint cleaner, brake cleaner, rust remover or penetrating oil need to be applied precisely or over a large area. Instead of constantly buying new spray cans, you can use your existing larger containers with this refillable bottle — sustainable, efficient and cost-effective.",
+      "de": "Der Chemicalworkz Nachfüllbare Drucksprüher ist Ihr professioneller Begleiter, wann immer Chemikalien wie Lackreiniger, Bremsenreiniger, Rostlöser oder Kriechöl präzise oder großflächig aufgetragen werden müssen. Statt ständig neue Sprühdosen zu kaufen, nutzen Sie Ihre vorhandenen größeren Gebinde mit dieser nachfüllbaren Flasche – nachhaltig, effizient und kostengünstig."
+    },
+    "video": null
   },
   {
     "id": "cw-cs",
@@ -880,9 +1755,9 @@ export const products = [
       "de": "Polymer-Technologie | 11x7x4,5cm"
     },
     "description": {
-      "tr": "Sihirli Kil Süngeri, yardımcılar kategorisinde polimer teknolojisi | 11x7x4.5cm. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Magic Clay Sponge is a polymer technology | 11x7x4.5cm product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Magic-Clay-Schwamm ist ein Produkt der Kategorie Zubehör mit Polymer-Technologie | 11x7x4,5cm. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Sihirli Kil Süngeri, yardımcılar kategorisinde polimer teknolojisi | 11x7x4.5cm. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Magic Clay Sponge is a polymer technology | 11x7x4.5cm product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Magic-Clay-Schwamm ist ein Produkt der Kategorie Zubehör mit Polymer-Technologie | 11x7x4,5cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -891,7 +1766,16 @@ export const products = [
     "gallery": [
       "/images/products/cw-cs/cw-cs-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-cs/cw-cs-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "ChemicalWorkz Kil Süngeri, geleneksel detaylandırma kilinin (kil çubuğu) yerine kullanılmak üzere tasarlanmış, yüksek teknolojili polimer kaplamalı, siyah renkli özel bir temizleme süngeridir. Katran, reçine, asfalt, böcek kalıntıları ve diğer inatçı kalıntıları kolayca temizler.\nGeleneksel detaylandırma kiline göre avantajı, zahmetsiz ve zaman kazandıran uygulamasıdır. Bu temizleme süngeri ayrıca detaylandırma kil çubuğuna göre çok daha uzun ömürlüdür.",
+      "en": "The ChemicalWorkz Clay Sponge is a special black cleaning sponge with a high-tech polymer coating, designed to replace traditional detailing clay (clay bars). It easily removes tar, resin, tarmac, insect residue and other stubborn contaminants.\nIts advantage over traditional detailing clay is an effortless, time-saving application. This cleaning sponge is also considerably longer-lasting than a detailing clay bar.",
+      "de": "Der ChemicalWorkz Clay-Schwamm ist ein spezieller schwarzer Reinigungsschwamm mit hochtechnologischer Polymerbeschichtung, der als Ersatz für herkömmliches Detailing-Clay (Clay-Bar) konzipiert wurde. Er entfernt mühelos Teer, Harz, Straßenbelagreste, Insektenreste und andere hartnäckige Verunreinigungen.\nSein Vorteil gegenüber herkömmlichem Detailing-Clay ist die mühelose, zeitsparende Anwendung. Dieser Reinigungsschwamm ist zudem deutlich langlebiger als eine Clay-Bar."
+    },
+    "video": null
   },
   {
     "id": "cw-amm-gray",
@@ -907,9 +1791,9 @@ export const products = [
       "de": "Vielseitig"
     },
     "description": {
-      "tr": "Mikrofiber Eldiven, yardımcılar kategorisinde çok amaçlı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Wash Mitt is a multi-purpose product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Waschhandschuh ist ein Produkt der Kategorie Zubehör mit Vielseitig. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Mikrofiber Eldiven, yardımcılar kategorisinde çok amaçlı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Microfiber Wash Mitt is a multi-purpose product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Mikrofaser-Waschhandschuh ist ein Produkt der Kategorie Zubehör mit Vielseitig. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -918,7 +1802,16 @@ export const products = [
     "gallery": [
       "/images/products/cw-amm-gray/cw-amm-gray-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-amm-gray/cw-amm-gray-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Gri Çok Amaçlı Mikrofiber Eldiven, son derece çok yönlüdür ve çeşitli araç bakım işleri için idealdir. Boya kontrolü, ulaşılması zor yerlerdeki jantların (tellerin) yıkanması ve iç mekan temizliği için mükemmeldir. Bu eldiven, parmak izi bırakmadığı için hassas yüzeyleri güvenle temizlemenizi sağlar ve mümkün olan en iyi korumayı sunar.\n\nTek beden olarak tasarlanmış olmaları sayesinde bu eldivenler elinizin boyutuna mükemmel şekilde uyum sağlar. Bu da temizlik yaparken rahat bir kullanım ve hoş bir his sağlar. Set, bir çift yüksek kaliteli Gri Çok Amaçlı Mikrofiber Eldiven içerir, böylece hemen temizliğe başlayabilirsiniz.",
+      "en": "The Grey Multi-Purpose Microfiber Glove is remarkably versatile and ideal for a wide range of vehicle care tasks. It's perfect for paint inspection, washing hard-to-reach wheel spokes, and interior cleaning. Since it leaves no fingerprints, this glove lets you safely clean delicate surfaces while providing the best possible protection.\n\nDesigned as one-size-fits-all, these gloves adapt perfectly to the size of your hand, making for comfortable, pleasant use while cleaning. The set includes a pair of high-quality Grey Multi-Purpose Microfiber Gloves, so you can start cleaning right away.",
+      "de": "Der Graue Multifunktions-Mikrofaserhandschuh ist äußerst vielseitig und ideal für verschiedenste Fahrzeugpflegearbeiten. Er eignet sich perfekt zur Lackkontrolle, zum Waschen schwer zugänglicher Felgenspeichen und zur Innenraumreinigung. Da er keine Fingerabdrücke hinterlässt, können Sie mit diesem Handschuh empfindliche Oberflächen sicher reinigen und erhalten den bestmöglichen Schutz.\n\nAls Einheitsgröße konzipiert, passen sich diese Handschuhe perfekt an Ihre Handgröße an. Das sorgt für eine komfortable und angenehme Anwendung beim Reinigen. Das Set enthält ein Paar hochwertiger Grauer Multifunktions-Mikrofaserhandschuhe, sodass Sie sofort mit der Reinigung beginnen können."
+    },
+    "video": null
   },
   {
     "id": "cw-pc-s",
@@ -934,9 +1827,9 @@ export const products = [
       "de": "Für enge Stellen"
     },
     "description": {
-      "tr": "Parlatma Konileri, yardımcılar kategorisinde dar alanlar için. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Polishing Cones is a for tight spaces product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Polierkegel ist ein Produkt der Kategorie Zubehör mit Für enge Stellen. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Parlatma Konileri, yardımcılar kategorisinde dar alanlar için. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Polishing Cones is a for tight spaces product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Polierkegel ist ein Produkt der Kategorie Zubehör mit Für enge Stellen. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -946,7 +1839,17 @@ export const products = [
       "/images/products/cw-pc-s/CW-PC-S-packshot_result.webp",
       "/images/products/cw-pc-s/CW-PC-S-u1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-pc-s/CW-PC-S-packshot_result-thumb.webp",
+      "/images/products/cw-pc-s/CW-PC-S-u1_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Yuvarlak şekli sayesinde, radyatör ızgaraları, çıtalar, kapı eşikleri veya dar kenarlar gibi karmaşık alanlara bile kolayca ve hassas bir şekilde ulaşabilirsiniz. 6 kenarlı alüminyum uç tutucu, standart akülü matkaplara mükemmel şekilde uyar ve ayrıca nano parlatma makineleri veya parlatma tamburları için uygun adaptörlerle de uyumludur.\n\nİster hafif çizikleri gidermek, ister ince kusurları parlatmak veya hassas yüzeylere yüksek parlaklık kazandırmak isteyin, bu parlatma konileri her adım için mükemmel bir kombinasyon sunar. Özenle tasarlanmış yapısı, özellikle zorlu alanlarda bile sorunsuz çalışma, kolay kullanım ve temiz bir sonuç sağlar.",
+      "en": "Thanks to their round shape, you can easily and precisely reach even complex areas like radiator grilles, trim strips, door sills or narrow edges. The 6-sided aluminum shaft fits standard cordless drills perfectly and is also compatible with suitable adapters for nano polishers or polishing drums.\n\nWhether removing light scratches, polishing out fine defects, or bringing delicate surfaces to a high shine, these polishing cones offer the perfect combination for every step. Their carefully engineered design ensures smooth operation, easy handling and a clean result, even in the most demanding spots.",
+      "de": "Dank ihrer runden Form erreichen Sie auch komplexe Bereiche wie Kühlergrills, Zierleisten, Türschweller oder schmale Kanten einfach und präzise. Der sechskantige Aluminiumschaft passt perfekt in gängige Akkubohrer und ist zudem mit geeigneten Adaptern für Nano-Poliermaschinen oder Poliertrommeln kompatibel.\n\nOb zum Entfernen leichter Kratzer, zum Auspolieren feiner Fehler oder um empfindlichen Oberflächen zu Hochglanz zu verhelfen – diese Polierkegel bieten die perfekte Kombination für jeden Arbeitsschritt. Die sorgfältig konstruierte Bauweise sorgt für reibungsloses Arbeiten, einfache Handhabung und ein sauberes Ergebnis, selbst an den anspruchsvollsten Stellen."
+    },
+    "video": null
   },
   {
     "id": "cw-hg",
@@ -962,9 +1865,9 @@ export const products = [
       "de": "Hochwertiger Kunststoff | 10x15cm"
     },
     "description": {
-      "tr": "Kablo Kaydırıcı, yardımcılar kategorisinde yüksek kaliteli plastik | 10x15cm. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Hose Guide is a high-quality plastic | 10x15cm product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Schlauchführung ist ein Produkt der Kategorie Zubehör mit Hochwertiger Kunststoff | 10x15cm. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Kablo Kaydırıcı, yardımcılar kategorisinde yüksek kaliteli plastik | 10x15cm. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Hose Guide is a high-quality plastic | 10x15cm product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Schlauchführung ist ein Produkt der Kategorie Zubehör mit Hochwertiger Kunststoff | 10x15cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -973,7 +1876,16 @@ export const products = [
     "gallery": [
       "/images/products/cw-hg/cw-hg-1pc-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-hg/cw-hg-1pc-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Chemicalworkz kablo kaydırıcıları – hortumlarınız ve kablolarınız için ideal koruma! İster garajda, ister oto yıkamada, ister atölyede olun, bu kullanışlı yardımcı, hiçbir şeyin lastiklerin altında sıkışmamasını sağlar. Sağlam tasarımı ve akıllı makara sistemi sayesinde hortumlarınızın ve kablolarınızın sorunsuz bir şekilde hareket etmesini sağlar.\n\nArtık hortumları veya kabloları çözmek veya ayırmakla uğraşmanıza gerek yok! Chemicalworkz kablo kaydırıcısı, sorunsuz çalışma için basit bir çözüm sunuyor. Dayanıklı, güvenilir ve günlük iş akışınızı kolaylaştırıyor. Kompakt boyutu sayesinde, ihtiyaç duyulan her yere esnek bir şekilde konumlandırabilir ve koruyucu etkisinden faydalanabilirsiniz.",
+      "en": "The Chemicalworkz Hose Guide — ideal protection for your hoses and cables! Whether in the garage, at the car wash, or in the workshop, this handy helper makes sure nothing gets caught under the tires. Its sturdy design and clever roller system keep your hoses and cables moving smoothly.\n\nNo more untangling or separating hoses and cables! The Chemicalworkz Hose Guide offers a simple solution for smooth, uninterrupted work. Durable, reliable, and it streamlines your daily workflow. Thanks to its compact size, you can flexibly position it wherever it's needed and benefit from its protective effect.",
+      "de": "Die Chemicalworkz Schlauchführung – idealer Schutz für Ihre Schläuche und Kabel! Ob in der Garage, an der Waschanlage oder in der Werkstatt – dieser praktische Helfer sorgt dafür, dass nichts unter die Reifen gerät. Dank seiner robusten Bauweise und dem cleveren Rollensystem bewegen sich Ihre Schläuche und Kabel reibungslos.\n\nKein lästiges Entwirren oder Trennen von Schläuchen und Kabeln mehr! Die Chemicalworkz Schlauchführung bietet eine einfache Lösung für reibungsloses Arbeiten. Robust, zuverlässig und eine echte Erleichterung für Ihren Arbeitsalltag. Dank ihrer kompakten Größe lässt sie sich flexibel dort positionieren, wo sie gebraucht wird, und entfaltet dort ihre schützende Wirkung."
+    },
+    "video": null
   },
   {
     "id": "cw-mw",
@@ -989,9 +1901,9 @@ export const products = [
       "de": "Montageset | 12 Teile"
     },
     "description": {
-      "tr": "Alet Takımı, yardımcılar kategorisinde montaj aparatı | 12 parça. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Tool Kit is a assembly kit | 12 pieces product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Werkzeugset ist ein Produkt der Kategorie Zubehör mit Montageset | 12 Teile. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Alet Takımı, yardımcılar kategorisinde montaj aparatı | 12 parça. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Tool Kit is a assembly kit | 12 pieces product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Werkzeugset ist ein Produkt der Kategorie Zubehör mit Montageset | 12 Teile. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1000,7 +1912,16 @@ export const products = [
     "gallery": [
       "/images/products/cw-mw/CW-MW-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-mw/CW-MW-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Chemicalworkz Montaj alet seti, iç döşeme, çıta, klips ve kapı panellerinin hasarsız bir şekilde sökülüp takılmasını isteyen profesyonel ve amatör kullanıcılar için mükemmel bir çözümdür. Toplam 12 adet yüksek kaliteli alet içeren bu set, neredeyse her araç modelinde iç mekan çalışmaları için ihtiyacınız olan her şeyi sunar.\n\nSet, 11 farklı plastik sökme aleti ve sağlam bir klips sökme aletinden oluşmaktadır. Aletler, dayanıklı PP ve PA+ malzemeden üretilmiştir; sıkıca takılmış klipsleri bile çıkaracak kadar güçlü, ancak boya, deri veya krom gibi hassas yüzeylere zarar vermeyecek kadar yumuşaktır.\n\nErgonomik tasarıma sahip bu kollu aletler, ulaşılması zor yerlerde bile hassas çalışma imkanı sunar. Yüksek kaliteli yapıları sayesinde, aletler sık kullanımdan sonra bile boyut olarak stabil kalır ve kullanıma hazır durumda olur. Set, duvara monte etmek için halkaları bulunan, pratik ve silinebilir rulo şeklinde bir çantada gelir; atölyeler ve mobil uygulamalar için idealdir.",
+      "en": "The Chemicalworkz Assembly Tool Set is the perfect solution for professionals and hobbyists alike who want to remove and refit interior trim, moldings, clips and door panels without causing damage. With a total of 12 high-quality tools, this set offers everything you need for interior work on almost any vehicle model.\n\nThe set consists of 11 different plastic trim removal tools and one sturdy clip removal tool. The tools are made from durable PP and PA+ material — strong enough to remove even tightly fitted clips, yet soft enough not to damage delicate surfaces like paint, leather or chrome.\n\nThese ergonomically designed handled tools enable precise work even in hard-to-reach places. Thanks to their high-quality construction, the tools remain dimensionally stable and ready for use even after frequent use. The set comes in a practical, wipeable roll-up case with hanging loops for wall mounting — ideal for workshops and mobile use.",
+      "de": "Das Chemicalworkz Montagewerkzeug-Set ist die perfekte Lösung für Profis und Hobbyanwender, die Innenverkleidungen, Zierleisten, Clips und Türverkleidungen beschädigungsfrei ausbauen und wieder anbringen möchten. Mit insgesamt 12 hochwertigen Werkzeugen bietet dieses Set alles, was Sie für Innenraumarbeiten an nahezu jedem Fahrzeugmodell benötigen.\n\nDas Set besteht aus 11 verschiedenen Kunststoff-Ausbauwerkzeugen und einem robusten Clip-Löser. Die Werkzeuge bestehen aus langlebigem PP- und PA+-Material – stark genug, um selbst fest sitzende Clips zu lösen, aber weich genug, um empfindliche Oberflächen wie Lack, Leder oder Chrom nicht zu beschädigen.\n\nDiese ergonomisch geformten Griffwerkzeuge ermöglichen präzises Arbeiten selbst an schwer zugänglichen Stellen. Dank ihrer hochwertigen Verarbeitung bleiben die Werkzeuge auch nach häufigem Gebrauch formstabil und einsatzbereit. Das Set wird in einer praktischen, abwischbaren Rolltasche mit Aufhängeschlaufen zur Wandmontage geliefert – ideal für Werkstätten und den mobilen Einsatz."
+    },
+    "video": null
   },
   {
     "id": "cw-ms",
@@ -1016,9 +1937,9 @@ export const products = [
       "de": "Magnetisches Trockentuch"
     },
     "description": {
-      "tr": "Manyetik Havlu, manyetik bez kategorisinde manyetik kurulama havlusu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Magnetic Drying Towel is a magnetic drying towel product in our magnetic cloth range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Magnet-Trockentuch ist ein Produkt der Kategorie Magnettuch mit Magnetisches Trockentuch. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Manyetik Havlu, manyetik bez kategorisinde manyetik kurulama havlusu. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Magnetic Drying Towel is a magnetic drying towel product in our magnetic cloth range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Magnet-Trockentuch ist ein Produkt der Kategorie Magnettuch mit Magnetisches Trockentuch. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1028,7 +1949,20 @@ export const products = [
       "/images/products/cw-ms/cw-ms-packshot_result.webp",
       "/images/products/cw-ms/cw-ms-u1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-ms/cw-ms-packshot_result-thumb.webp",
+      "/images/products/cw-ms/cw-ms-u1_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Dahili mıknatıslara sahip, küçük şeritler halinde yenilikçi bir kurutma havlusu. Manyetik Şeritler, Shark Twisted Loop Havlu ile aynı yüksek kaliteli mikrofiberden üretilmiştir ve bu nedenle 1400 GSM yoğunluğa sahiptir, bu da onları olağanüstü emici kılar. Bu, aracınızı kuruttuktan sonra kapılardan aşağıya, genellikle yan aynalara akan su lekelerini etkili ve kolay bir şekilde önler. Entegre mıknatıslar, Manyetik Şeritlerin herhangi bir kalıntı bırakmadan kapıya mükemmel bir şekilde yapışmasını sağlar.\n\nManyetik şeritleri şu şekilde kullanabilirsiniz:\nBezi aynanızın altına veya başka bir sorunlu bölgeye yerleştirmeniz yeterlidir. Su, boyanıza değil, doğrudan mikrofiber bezine akar. Özel mıknatıslar sayesinde bezi yatay veya dikey olarak konumlandırabilirsiniz. Her pakette bu pratik manyetik şeritlerden iki adet bulunur. Kenardan kenara dikilmiş ve kenarları işlenmiş oldukları için boyanıza karşı özellikle yumuşak ve naziktirler.",
+      "en": "An innovative drying towel in small magnetic strips. The Magnetic Strips are made from the same high-quality microfiber as the Shark Twisted Loop Towel, giving them a density of 1,400 GSM and making them exceptionally absorbent. This effectively and easily prevents the water streaks that typically run down doors and onto side mirrors after drying your vehicle. The integrated magnets let the Magnetic Strips cling perfectly to the door without leaving any residue.\n\nHow to use the magnetic strips:\nSimply place the cloth under your mirror or another problem spot. Water flows straight into the microfiber cloth instead of onto your paint. Thanks to the special magnets, you can position the cloth horizontally or vertically. Each pack includes two of these handy magnetic strips. Edge-to-edge stitched with finished borders, they're especially soft and gentle on your paint.",
+      "de": "Ein innovatives Trockentuch in Form kleiner Magnetstreifen. Die Magnetstreifen bestehen aus derselben hochwertigen Mikrofaser wie das Shark-Twisted-Loop-Handtuch und bringen es damit auf eine Dichte von 1.400 GSM, was sie außergewöhnlich saugfähig macht. Das verhindert wirksam und mühelos die Wasserstreifen, die nach dem Trocknen des Fahrzeugs typischerweise an Türen herablaufen und oft an den Seitenspiegeln enden. Die integrierten Magnete sorgen dafür, dass die Magnetstreifen ohne Rückstände perfekt an der Tür haften.\n\nSo verwenden Sie die Magnetstreifen:\nPlatzieren Sie das Tuch einfach unter Ihrem Spiegel oder an einer anderen Problemstelle. Das Wasser fließt direkt in das Mikrofasertuch statt auf Ihren Lack. Dank der speziellen Magnete können Sie das Tuch horizontal oder vertikal positionieren. Jede Packung enthält zwei dieser praktischen Magnetstreifen. Randgenäht und mit versäuberten Kanten sind sie besonders weich und schonend zu Ihrem Lack."
+    },
+    "video": {
+      "mp4": "/videos/cw-ms-a1.mp4",
+      "webm": "/videos/cw-ms-a1.webm"
+    }
   },
   {
     "id": "cw-pss",
@@ -1044,9 +1978,9 @@ export const products = [
       "de": "Mikrofaser | 20 Stück"
     },
     "description": {
-      "tr": "Boya Rötuş Çubukları, yardımcılar kategorisinde mikrofiber | 20 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Paint Touch-Up Sticks is a microfiber | 20 pieces product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Lack-Ausbesserstifte ist ein Produkt der Kategorie Zubehör mit Mikrofaser | 20 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Boya Rötuş Çubukları, yardımcılar kategorisinde mikrofiber | 20 adet. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Paint Touch-Up Sticks is a microfiber | 20 pieces product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Lack-Ausbesserstifte ist ein Produkt der Kategorie Zubehör mit Mikrofaser | 20 Stück. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
@@ -1059,7 +1993,20 @@ export const products = [
       "/images/products/cw-pss/cw-pss-a4_result.webp",
       "/images/products/cw-pss/cw-pss-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-pss/cw-pss-packshot_result-thumb.webp",
+      "/images/products/cw-pss/cw-pss-a2_result-thumb.webp",
+      "/images/products/cw-pss/cw-pss-a3_result-thumb.webp",
+      "/images/products/cw-pss/cw-pss-a4_result-thumb.webp",
+      "/images/products/cw-pss/cw-pss-a1_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Her yüksek kaliteli fermuarlı pakette bu özel boya temizleme çubuklarından 20 adet bulunur. Bunlar sadece detaylı temizlik için pratik bir araç olmakla kalmaz, aynı zamanda kaliteye ve verimliliğe olan bağlılığınızın da bir göstergesidir.\n\nBu set, seramik kaplamalar, plastik bakım ürünleri veya diğer bakım ürünlerinin ulaşılması zor alanlara uygulanması da dahil olmak üzere geniş bir uygulama yelpazesine sahiptir. Radyatör ızgarası veya yan aynalar gibi dar olukları ve kenarları parlatmak veya küçük alanları temiz tutmak olsun, Chemicalworkz Boya Pamuklu Çubuk Seti her zorluğun üstesinden başarıyla gelir.",
+      "en": "Each premium, resealable pack contains 20 of these special paint cleaning swabs. They're not just a practical tool for detailed cleaning — they're also a sign of your commitment to quality and efficiency.\n\nThis set has a wide range of applications, including applying ceramic coatings, plastic care products or other care products to hard-to-reach areas. Whether polishing narrow grooves and edges like a radiator grille or side mirrors, or keeping small areas clean, the Chemicalworkz Paint Swab Set rises to every challenge.",
+      "de": "Jede hochwertige, wiederverschließbare Packung enthält 20 dieser speziellen Lackreinigungsstäbchen. Sie sind nicht nur ein praktisches Werkzeug für die detaillierte Reinigung, sondern auch ein Zeichen Ihres Anspruchs an Qualität und Effizienz.\n\nDieses Set bietet ein breites Anwendungsspektrum, darunter das Auftragen von Keramikversiegelungen, Kunststoffpflegeprodukten oder anderen Pflegeprodukten auf schwer zugängliche Stellen. Ob beim Polieren schmaler Rillen und Kanten wie am Kühlergrill oder an den Seitenspiegeln oder beim Sauberhalten kleiner Bereiche – das Chemicalworkz Lack-Wattestäbchen-Set meistert jede Herausforderung."
+    },
+    "video": null
   },
   {
     "id": "cw-ga",
@@ -1075,16 +2022,16 @@ export const products = [
       "de": "Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm"
     },
     "description": {
-      "tr": "Cam Keçe, keçeler kategorisinde cam uygulayıcı | cam parlatma için ideal | 6x4x5cm. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Glass Felt Applicator is a glass applicator | ideal for glass polishing | 6x4x5cm product in our felt pads range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Glas-Filzapplikator ist ein Produkt der Kategorie Filzpads mit Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "Cam Keçe, keçeler kategorisinde cam uygulayıcı | cam parlatma için ideal | 6x4x5cm. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Glass Felt Applicator is a glass applicator | ideal for glass polishing | 6x4x5cm product in our felt pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Glas-Filzapplikator ist ein Produkt der Kategorie Filzpads mit Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
-    "image": "/images/products/cw-ga/cw-ga-packshot_result.webp",
+    "image": "/images/products/cw-ga/cw-ga-packshot.webp",
     "gallery": [
-      "/images/products/cw-ga/cw-ga-packshot_result.webp",
+      "/images/products/cw-ga/cw-ga-packshot.webp",
       "/images/products/cw-ga/cw-ga-u1_result.webp",
       "/images/products/cw-ga/cw-ga-u2_result.webp",
       "/images/products/cw-ga/cw-ga-u3_result.webp",
@@ -1092,262 +2039,269 @@ export const products = [
       "/images/products/cw-ga/cw-ga-a3_result.webp",
       "/images/products/cw-ga/cw-ga-a1_result.webp"
     ],
-    "poster": "/images/products/cw-ga/cw-ga-a1_result.webp"
-  },
-  {
-    "id": "cw-ac250-10pcs",
-    "name": {
-      "tr": "Mikrofiber Kurulama Havlusu",
-      "en": "Microfiber Drying Towel",
-      "de": "Mikrofaser-Trockentuch"
-    },
-    "category": "mikrofiber-bezler",
-    "tagline": {
-      "tr": "10'lu Paket",
-      "en": "Pack of 10",
-      "de": "10er-Set"
-    },
-    "description": {
-      "tr": "Mikrofiber Kurulama Havlusu, mikrofiber bezler kategorisinde 10'lu paket. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Drying Towel is a pack of 10 product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Trockentuch ist ein Produkt der Kategorie Mikrofasertücher mit 10er-Set. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": "10'lu",
-    "isNew": false,
-    "image": "/images/products/cw-ac250-10pcs/cw-ac250-10pcs-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-ac250-10pcs/cw-ac250-10pcs-packshot_result.webp",
-      "/images/products/cw-ac250-10pcs/cw-ac250-10pcs-U_result.webp",
-      "/images/products/cw-ac250-10pcs/cw-ac250-10pcs-U-a2_result.webp",
-      "/images/products/cw-ac250-10pcs/cw-ac250-10pcs-a1_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-ga/cw-ga-packshot-thumb.webp",
+      "/images/products/cw-ga/cw-ga-u1_result-thumb.webp",
+      "/images/products/cw-ga/cw-ga-u2_result-thumb.webp",
+      "/images/products/cw-ga/cw-ga-u3_result-thumb.webp",
+      "/images/products/cw-ga/cw-ga-a2_result-thumb.webp",
+      "/images/products/cw-ga/cw-ga-a3_result-thumb.webp",
+      "/images/products/cw-ga/cw-ga-a1_result-thumb.webp"
     ],
-    "poster": null
-  },
-  {
-    "id": "cw-cfgt-1pcs",
-    "name": {
-      "tr": "Cam Mikrofiber Bezi",
-      "en": "Glass Microfiber Cloth",
-      "de": "Glas-Mikrofasertuch"
-    },
-    "category": "mikrofiber-bezler",
-    "tagline": {
-      "tr": "1 Adet",
-      "en": "1 Piece",
-      "de": "1 Stück"
-    },
-    "description": {
-      "tr": "Cam Mikrofiber Bezi, mikrofiber bezler kategorisinde 1 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Glass Microfiber Cloth is a 1 piece product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Glas-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 1 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": "1 adet",
-    "isNew": false,
-    "image": "/images/products/cw-cfgt-1pcs/cw-cfgt-1pc-packshot-a2_result.webp",
-    "gallery": [
-      "/images/products/cw-cfgt-1pcs/cw-cfgt-1pc-packshot-a2_result.webp",
-      "/images/products/cw-cfgt-1pcs/cw-cfgt-1pc-a1_result.webp"
+    "posterImages": [
+      "/images/products/cw-ga/cw-ga-a1_result.webp",
+      "/images/products/cw-ga/cw-ga-a2_result.webp",
+      "/images/products/cw-ga/cw-ga-a3_result.webp"
     ],
-    "poster": null
+    "posterDescription": {
+      "tr": "Optimize edilmiş şekli ve boyutu sayesinde, chemicalworkz Cam Aplikatörü ele rahatça oturur, hassas çalışma imkanı sağlar ve ulaşılması zor alanlara bile zahmetsizce erişir. Bu sayede her cam yüzey kısa sürede pırıl pırıl temiz ve berrak hale gelir.\n\nYeniden kullanılabilir yapısı sayesinde, chemicalworkz Cam Aplikatör sadece pratik değil, aynı zamanda çevre dostudur. Sadece akan su altında durulayın ve havada kurumaya bırakın, bir sonraki kullanım için hazırdır.\n\nİpucu:\nCam parlatma aletinizin kullanım ömrünü uzatmak için, her kullanımdan sonra temizleyip iyice kurutmanızı öneririz. Bu sayede aletiniz en iyi durumda kalacak ve ihtiyaç duyduğunuz her an etkili cam parlatma için hazır olacaktır.",
+      "en": "Thanks to its optimized shape and size, the Chemicalworkz Glass Applicator sits comfortably in the hand, enables precise work and reaches even hard-to-access areas with ease. This leaves every glass surface sparkling clean and clear in no time.\n\nBeing reusable, the Chemicalworkz Glass Applicator isn't just practical — it's environmentally friendly too. Simply rinse it under running water and let it air dry; it's ready for the next use.\n\nTip:\nTo extend the life of your glass polishing tool, we recommend cleaning it and drying it thoroughly after every use. This keeps it in top condition and ready for effective glass polishing whenever you need it.",
+      "de": "Dank seiner optimierten Form und Größe liegt der Chemicalworkz Glas-Applikator angenehm in der Hand, ermöglicht präzises Arbeiten und erreicht mühelos selbst schwer zugängliche Stellen. So wird jede Glasfläche im Handumdrehen strahlend sauber und klar.\n\nDank seiner wiederverwendbaren Bauweise ist der Chemicalworkz Glas-Applikator nicht nur praktisch, sondern auch umweltfreundlich. Einfach unter fließendem Wasser abspülen und an der Luft trocknen lassen – schon ist er bereit für den nächsten Einsatz.\n\nTipp:\nUm die Lebensdauer Ihres Glas-Poliertools zu verlängern, empfehlen wir, es nach jedem Gebrauch zu reinigen und gründlich zu trocknen. So bleibt es in bestem Zustand und ist jederzeit einsatzbereit für effektives Glaspolieren."
+    },
+    "video": null
   },
   {
-    "id": "cw-cfgt-5pcs",
+    "id": "cw-hwa",
     "name": {
-      "tr": "Cam Mikrofiber Bezi",
-      "en": "Glass Microfiber Cloth",
-      "de": "Glas-Mikrofasertuch"
+      "tr": "El Cila Aplikatörü",
+      "en": "Hand Wax Applicator",
+      "de": "Hand-Wachsapplikator"
     },
-    "category": "mikrofiber-bezler",
+    "category": "keceler",
     "tagline": {
-      "tr": "5 Adet",
-      "en": "5 Pieces",
-      "de": "5 Stück"
+      "tr": "Uygulama Aparatı",
+      "en": "Application Tool",
+      "de": "Auftragswerkzeug"
     },
     "description": {
-      "tr": "Cam Mikrofiber Bezi, mikrofiber bezler kategorisinde 5 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Glass Microfiber Cloth is a 5 pieces product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Glas-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": "5 adet",
-    "isNew": false,
-    "image": "/images/products/cw-cfgt-5pcs/cw-cfgt-5pcs-packshot-a3_result.webp",
-    "gallery": [
-      "/images/products/cw-cfgt-5pcs/cw-cfgt-5pcs-packshot-a3_result.webp",
-      "/images/products/cw-cfgt-5pcs/cw-cfgt-5pcs_result.webp",
-      "/images/products/cw-cfgt-5pcs/cw-cfgt-5pcs-a2_result.webp",
-      "/images/products/cw-cfgt-5pcs/cw-cfgt-5pcs-a1_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-ipw-1pcs",
-    "name": {
-      "tr": "İç Mekan Temizlik Bezi",
-      "en": "Interior Cleaning Cloth",
-      "de": "Innenraum-Reinigungstuch"
-    },
-    "category": "mikrofiber-bezler",
-    "tagline": {
-      "tr": "1 Adet",
-      "en": "1 Piece",
-      "de": "1 Stück"
-    },
-    "description": {
-      "tr": "İç Mekan Temizlik Bezi, mikrofiber bezler kategorisinde 1 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Interior Cleaning Cloth is a 1 piece product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Innenraum-Reinigungstuch ist ein Produkt der Kategorie Mikrofasertücher mit 1 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": "1 adet",
-    "isNew": false,
-    "image": "/images/products/cw-ipw-1pcs/cw-ipw-1pc-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-ipw-1pcs/cw-ipw-1pc-packshot_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-ipw-5pcs",
-    "name": {
-      "tr": "İç Mekan Temizlik Bezi",
-      "en": "Interior Cleaning Cloth",
-      "de": "Innenraum-Reinigungstuch"
-    },
-    "category": "mikrofiber-bezler",
-    "tagline": {
-      "tr": "5 Adet",
-      "en": "5 Pieces",
-      "de": "5 Stück"
-    },
-    "description": {
-      "tr": "İç Mekan Temizlik Bezi, mikrofiber bezler kategorisinde 5 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Interior Cleaning Cloth is a 5 pieces product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Innenraum-Reinigungstuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": "5 adet",
-    "isNew": false,
-    "image": "/images/products/cw-ipw-5pcs/cw-ipw-5pcs-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-ipw-5pcs/cw-ipw-5pcs-packshot_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-iup-5pcs",
-    "name": {
-      "tr": "Universal Mikrofiber Bez",
-      "en": "Universal Microfiber Cloth",
-      "de": "Universal-Mikrofasertuch"
-    },
-    "category": "mikrofiber-bezler",
-    "tagline": {
-      "tr": "5 Adet",
-      "en": "5 Pieces",
-      "de": "5 Stück"
-    },
-    "description": {
-      "tr": "Universal Mikrofiber Bez, mikrofiber bezler kategorisinde 5 adet. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Universal Microfiber Cloth is a 5 pieces product in our microfiber cloths range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Universal-Mikrofasertuch ist ein Produkt der Kategorie Mikrofasertücher mit 5 Stück. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": "5 adet",
-    "isNew": false,
-    "image": "/images/products/cw-iup-5pcs/cw-iup-5pcs-packshot-a1_result.webp",
-    "gallery": [
-      "/images/products/cw-iup-5pcs/cw-iup-5pcs-packshot-a1_result.webp",
-      "/images/products/cw-iup-5pcs/cw-iup-5pcs-packshot-a2_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-tcb",
-    "name": {
-      "tr": "Lastik Temizlik Fırçası",
-      "en": "Tire Cleaning Brush",
-      "de": "Reifen-Reinigungsbürste"
-    },
-    "category": "detay-fircalari",
-    "tagline": {
-      "tr": "Dayanıklı Kıllar",
-      "en": "Durable Bristles",
-      "de": "Robuste Borsten"
-    },
-    "description": {
-      "tr": "Lastik Temizlik Fırçası, detay fırçaları kategorisinde dayanıklı kıllar. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Tire Cleaning Brush is a durable bristles product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Reifen-Reinigungsbürste ist ein Produkt der Kategorie Detailing-Bürsten mit Robuste Borsten. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "El Cila Aplikatörü, keçeler kategorisinde uygulama aparatı. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Hand Wax Applicator is a application tool product in our felt pads range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Hand-Wachsapplikator ist ein Produkt der Kategorie Filzpads mit Auftragswerkzeug. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
-    "image": "/images/products/cw-tcb/cw-tcb-packshot_result.webp",
+    "image": "/images/products/cw-hwa/cw-hwa-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-tcb/cw-tcb-packshot_result.webp",
-      "/images/products/cw-tcb/cw-tcb-a1_result.webp"
+      "/images/products/cw-hwa/cw-hwa-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-hwa/cw-hwa-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": null,
+    "video": null
   },
   {
-    "id": "cw-utb-L",
+    "id": "cw-cfgt-1pc",
     "name": {
-      "tr": "Universal Detay Fırçası",
-      "en": "Universal Detailing Brush",
-      "de": "Universal-Detailing-Bürste"
+      "tr": "KarbonFiber Cam Bezi",
+      "en": "Carbon Fiber Glass Cloth",
+      "de": "Karbonfaser-Glastuch"
     },
-    "category": "detay-fircalari",
+    "category": "mikrofiber-bezler",
     "tagline": {
-      "tr": "Büyük Boy",
-      "en": "Large Size",
-      "de": "Große Größe"
+      "tr": "Karbon Mikrofiber | 40x40cm",
+      "en": "Carbon Microfiber | 40x40cm",
+      "de": "Karbon-Mikrofaser | 40x40cm"
     },
     "description": {
-      "tr": "Universal Detay Fırçası, detay fırçaları kategorisinde büyük boy. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Universal Detailing Brush is a large size product in our detailing brushes range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Universal-Detailing-Bürste ist ein Produkt der Kategorie Detailing-Bürsten mit Große Größe. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": "Büyük",
-    "isNew": false,
-    "image": "/images/products/cw-utb-L/cw-utb-L-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-utb-L/cw-utb-L-packshot_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-dryer",
-    "name": {
-      "tr": "Kurutma Makinesi",
-      "en": "Blower Dryer",
-      "de": "Trockner"
-    },
-    "category": "kurutucu",
-    "tagline": {
-      "tr": "Yüksek Hızlı Kurutma",
-      "en": "High-Speed Drying",
-      "de": "Schnelltrocknung"
-    },
-    "description": {
-      "tr": "Kurutma Makinesi, kurutucu kategorisinde yüksek hızlı kurutma. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Blower Dryer is a high-speed drying product in our blower dryer range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Trockner ist ein Produkt der Kategorie Trockner mit Schnelltrocknung. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "KarbonFiber Cam Bezi, mikrofiber bezler kategorisinde karbon mikrofiber | 40x40cm. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Carbon Fiber Glass Cloth is a carbon microfiber | 40x40cm product in our microfiber cloths range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Karbonfaser-Glastuch ist ein Produkt der Kategorie Mikrofasertücher mit Karbon-Mikrofaser | 40x40cm. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
-    "image": "/images/products/cw-dryer/cw-dryer-packshot_result.webp",
+    "image": "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-dryer/cw-dryer-packshot_result.webp",
-      "/images/products/cw-dryer/cw-dryer-u1_result.webp",
-      "/images/products/cw-dryer/cw-dryer-u2_result.webp",
-      "/images/products/cw-dryer/cw-dryer-u3_result.webp"
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a2_result.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a3_result.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a1_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result-thumb.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a2_result-thumb.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a3_result-thumb.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a1_result-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a1_result.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a2_result.webp",
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a3_result.webp"
+    ],
+    "posterDescription": {
+      "tr": "Süper yoğun dokuma, düşük hav yüksekliği ve birinci sınıf mikrofiberler ile karbon fiberlerin eşsiz karışımı, yağları, tozu, böcekleri ve diğer kirleticileri gidermek için önemli bir basınç uygulamanıza olanak tanır. Karbon fiber içeriği, bezin sürtünmesini artırarak aşındırıcı hale getirir ve böylece pırıl pırıl temiz bir yüzey elde etmenizi sağlar!\nChemicalWorkz sürdürülebilirliğe bağlıdır!",
+      "en": "A super-dense weave, low pile height, and a unique blend of premium microfiber and carbon fiber let you apply real pressure to remove oil, dust, insects and other contaminants. The carbon fiber content increases the cloth's friction, making it more abrasive and giving you a sparkling clean surface!\nChemicalWorkz is committed to sustainability!",
+      "de": "Eine superdichte Webart, geringe Florhöhe und eine einzigartige Mischung aus erstklassiger Mikrofaser und Carbonfaser ermöglichen es Ihnen, mit echtem Druck Öl, Staub, Insekten und andere Verunreinigungen zu entfernen. Der Carbonfaseranteil erhöht die Reibung des Tuchs und macht es dadurch abrasiver – für eine strahlend saubere Oberfläche!\nChemicalWorkz setzt sich für Nachhaltigkeit ein!"
+    },
+    "video": null
+  },
+  {
+    "id": "cw-pbk",
+    "name": {
+      "tr": "Ped Fırçası & Bıçağı",
+      "en": "Pad Brush & Knife",
+      "de": "Pad-Bürste & Messer"
+    },
+    "category": "yardimcilar",
+    "tagline": {
+      "tr": "Polisaj pedleri için ideal",
+      "en": "Ideal for polishing pads",
+      "de": "Ideal für Polierpads"
+    },
+    "description": {
+      "tr": "Ped Fırçası & Bıçağı, yardımcılar kategorisinde polisaj pedleri için ideal. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Pad Brush & Knife is a ideal for polishing pads product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Pad-Bürste & Messer ist ein Produkt der Kategorie Zubehör mit Ideal für Polierpads. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": null,
+    "isNew": false,
+    "image": "/images/products/cw-pbk/cw-pbk-packshot.webp",
+    "gallery": [
+      "/images/products/cw-pbk/cw-pbk-packshot.webp",
+      "/images/products/cw-pbk/cw-pbk-u1.webp",
+      "/images/products/cw-pbk/cw-pbk-u2.webp",
+      "/images/products/cw-pbk/cw-pbk-u3.webp",
+      "/images/products/cw-pbk/cw-pbk-u4.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-pbk/cw-pbk-packshot-thumb.webp",
+      "/images/products/cw-pbk/cw-pbk-u1-thumb.webp",
+      "/images/products/cw-pbk/cw-pbk-u2-thumb.webp",
+      "/images/products/cw-pbk/cw-pbk-u3-thumb.webp",
+      "/images/products/cw-pbk/cw-pbk-u4-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "ChemicalWorkz Ped Fırçası ve Bıçağı, sadece parlatma pedlerinizin ömrünü uzatmak için değil. Bu yenilikçi çift taraflı aletin bir ucunda, pedlerinizdeki topaklanmış cila kalıntılarını temizlemek için bir fırça bulunur ve bu da tutarlı parlatma performansı sağlamanıza yardımcı olur.\nDiğer ucunda ise, pedin destek plakasından güvenli ve kolay bir şekilde ayrılmasını sağlayan ve kazara çatlamayı önleyen bir kama bulunur.\n\nChemicalWorkz aletleri, ihtiyaç duyduğunuz her seferinde yüksek parlaklıkta sonuçlar sunar. Bir sonraki boya detaylandırma projeniz için mükemmeldir. Alet, tekrar kapatılabilir, çevre dostu fermuarlı bir poşet içinde gelir ve ChemicalWorkz Ped Fırçası ve Bıçağınızı kir, nem, toz ve hatta güçlü UV ışınları gibi dış etkenlerden korur.",
+      "en": "The ChemicalWorkz Pad Brush & Pick isn't just for extending the life of your polishing pads. At one end of this innovative two-sided tool sits a brush for clearing caked-on polish residue from your pads, helping you maintain consistent polishing performance.\nAt the other end is a pick that lets you separate the pad from its backing plate safely and easily, preventing accidental tearing.\n\nChemicalWorkz tools deliver high-gloss results every time you need them — perfect for your next paint detailing project. The tool comes in a resealable, eco-friendly zip pouch that protects your ChemicalWorkz Pad Brush & Pick from dirt, moisture, dust and even strong UV rays.",
+      "de": "Die ChemicalWorkz Pad-Bürste & Trennwerkzeug dient nicht nur der Verlängerung der Lebensdauer Ihrer Polierpads. An einem Ende dieses innovativen zweiseitigen Werkzeugs befindet sich eine Bürste zum Entfernen verklumpter Polierrückstände aus Ihren Pads, was Ihnen zu gleichbleibender Polierleistung verhilft.\nAm anderen Ende befindet sich ein Keil, mit dem sich das Pad sicher und einfach von der Stützteller lösen lässt, ohne dass es versehentlich reißt.\n\nChemicalWorkz Werkzeuge liefern jedes Mal Hochglanzergebnisse, wenn Sie sie brauchen – perfekt für Ihr nächstes Lack-Detailing-Projekt. Das Werkzeug wird in einem wiederverschließbaren, umweltfreundlichen Zip-Beutel geliefert, der Ihre ChemicalWorkz Pad-Bürste & Trennwerkzeug vor Schmutz, Feuchtigkeit, Staub und sogar starker UV-Strahlung schützt."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-fe",
+    "name": {
+      "tr": "Folyo Sökme Diski",
+      "en": "Foil Removal Disc",
+      "de": "Folienentfernungsscheibe"
+    },
+    "category": "yardimcilar",
+    "tagline": {
+      "tr": "Folyo ve yapışkan kalıntıları için ideal",
+      "en": "Ideal for foil and adhesive residue",
+      "de": "Ideal für Folien- und Kleberückstände"
+    },
+    "description": {
+      "tr": "Folyo Sökme Diski, yardımcılar kategorisinde folyo ve yapışkan kalıntıları için ideal. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Foil Removal Disc is a ideal for foil and adhesive residue product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Folienentfernungsscheibe ist ein Produkt der Kategorie Zubehör mit Ideal für Folien- und Kleberückstände. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": null,
+    "isNew": false,
+    "image": "/images/products/cw-fe/cw-fe-packshot.webp",
+    "gallery": [
+      "/images/products/cw-fe/cw-fe-packshot.webp",
+      "/images/products/cw-fe/cw-fe-u1.webp",
+      "/images/products/cw-fe/cw-fe-u2.webp",
+      "/images/products/cw-fe/cw-fe-u3.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-fe/cw-fe-packshot-thumb.webp",
+      "/images/products/cw-fe/cw-fe-u1-thumb.webp",
+      "/images/products/cw-fe/cw-fe-u2-thumb.webp",
+      "/images/products/cw-fe/cw-fe-u3-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "Turkuaz renkli Chemicalworkz Folyo Silgisi, uygun yüzeylerden folyo kalıntılarını, yapıştırıcı kalıntılarını, dekoratif şeritleri ve etiket kalıntılarını temizlemek için pratik bir araçtır. Profilli kauçuk malzeme kontrollü temizleme sağlarken, esnek yapısı yüzeyin eşit şekilde işlenmesine olanak tanır.\n\n100 mm çapında ve 25 mm kalınlığındaki bu folyo silgi, boyalı, krom ve metal yüzeylerde nokta ve alan uygulamaları için uygundur. Birlikte verilen adaptör, uygun bir matkap veya açılı taşlama makinesiyle kullanılmasını sağlar. Temiz bir sonuç için uygun hız, hafif basınç kullanın ve ilerlemeyi düzenli olarak kontrol edin.\nNot: Plastik yüzeyler veya boyalı alüminyum için uygun değildir. Sadece uygun yüzeylerde ve göze çarpmayan bir alanda önceden test ettikten sonra kullanın.",
+      "en": "The turquoise Chemicalworkz Foil Eraser is a handy tool for removing foil residue, adhesive residue, decorative stripes and label remnants from suitable surfaces. The profiled rubber material provides controlled cleaning, while its flexible structure allows even coverage of the surface.\n\nAt 100 mm in diameter and 25 mm thick, this foil eraser is suited to spot and area applications on painted, chrome and metal surfaces. The included adapter lets it be used with a suitable drill or angle grinder. For a clean result, use a moderate speed and light pressure, and check your progress regularly.\nNote: not suitable for plastic surfaces or painted aluminum. Use only on suitable surfaces, and always test beforehand in an inconspicuous area.",
+      "de": "Der türkisfarbene Chemicalworkz Folienradierer ist ein praktisches Werkzeug zum Entfernen von Folienresten, Kleberückständen, Zierstreifen und Aufkleberresten von geeigneten Oberflächen. Das profilierte Gummimaterial sorgt für kontrollierte Reinigung, während die flexible Struktur eine gleichmäßige Bearbeitung der Oberfläche ermöglicht.\n\nMit einem Durchmesser von 100 mm und einer Dicke von 25 mm eignet sich dieser Folienradierer für punktuelle und flächige Anwendungen auf lackierten, verchromten und metallischen Oberflächen. Der mitgelieferte Adapter ermöglicht die Nutzung mit einer geeigneten Bohrmaschine oder einem Winkelschleifer. Für ein sauberes Ergebnis mit angemessener Drehzahl und leichtem Druck arbeiten und den Fortschritt regelmäßig kontrollieren.\nHinweis: Nicht geeignet für Kunststoffoberflächen oder lackiertes Aluminium. Nur auf geeigneten Oberflächen und nach vorherigem Test an einer unauffälligen Stelle verwenden."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-dss-10",
+    "name": {
+      "tr": "Detay Temizlik Çubukları",
+      "en": "Detailing Cleaning Sticks",
+      "de": "Detailing-Reinigungsstäbchen"
+    },
+    "category": "yardimcilar",
+    "tagline": {
+      "tr": "Temizlik ve Bakım Çubukları | Köpük veya mikrofiber uçlu",
+      "en": "Cleaning & Care Sticks | Foam or microfiber tip",
+      "de": "Reinigungs- und Pflegestäbchen | Schaum- oder Mikrofaserspitze"
+    },
+    "description": {
+      "tr": "Detay Temizlik Çubukları, yardımcılar kategorisinde temizlik ve bakım çubukları | köpük veya mikrofiber uçlu. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Detailing Cleaning Sticks is a cleaning & care sticks | foam or microfiber tip product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Detailing-Reinigungsstäbchen ist ein Produkt der Kategorie Zubehör mit Reinigungs- und Pflegestäbchen | Schaum- oder Mikrofaserspitze. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": null,
+    "isNew": false,
+    "image": "/images/products/cw-dss-10/cw-dss-10-packshot.webp",
+    "gallery": [
+      "/images/products/cw-dss-10/cw-dss-10-packshot.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-dss-10/cw-dss-10-packshot-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": {
+      "tr": "İster detaylandırma ürünleri uyguluyor olun ister kir kalıntılarını temizliyor olun, ChemicalWorkz Detaylandırma Pamuklu Çubukları size yardımcı olmak için burada. Kaporta ve trim aralıklarında yapışkan kalıntı ve fazla ürün birikimi artık geçmişte kaldı. ChemicalWorkz sürdürülebilirliğe önem veriyor!\n\nChemicalWorkz Detaylandırma Pamuklu Çubukları her seferinde yüksek parlaklıkta sonuçlar sunar. Yeniden kullanılabilir, yıkanabilir ve çevre dostu olan bu çubuklar, toz, nem ve hatta güçlü UV radyasyonu gibi dış etkenlerden koruyan, tekrar kapatılabilir, çevre dostu fermuarlı bir poşet içinde gelir.",
+      "en": "Whether you're applying detailing products or cleaning up grime, ChemicalWorkz Detailing Swabs are here to help. Sticky residue and excess product buildup in body panel gaps and trim are now a thing of the past. ChemicalWorkz cares about sustainability!\n\nChemicalWorkz Detailing Swabs deliver high-gloss results every time. Reusable, washable and eco-friendly, these swabs come in a resealable, eco-friendly zip pouch that protects them from dust, moisture and even strong UV radiation.",
+      "de": "Ob beim Auftragen von Pflegeprodukten oder beim Entfernen von Schmutzresten – die ChemicalWorkz Detailing-Wattestäbchen sind zur Stelle. Klebrige Rückstände und überschüssige Produktansammlungen in Karosserie- und Zierleistenspalten gehören damit der Vergangenheit an. ChemicalWorkz legt Wert auf Nachhaltigkeit!\n\nDie ChemicalWorkz Detailing-Wattestäbchen liefern jedes Mal Hochglanzergebnisse. Wiederverwendbar, waschbar und umweltfreundlich – diese Stäbchen werden in einem wiederverschließbaren, umweltfreundlichen Zip-Beutel geliefert, der sie vor Staub, Feuchtigkeit und sogar starker UV-Strahlung schützt."
+    },
+    "video": null
+  },
+  {
+    "id": "cw-icpe-1",
+    "name": {
+      "tr": "İç Mekan Temizlik Pedi",
+      "en": "Interior Cleaning Pad",
+      "de": "Innenraum-Reinigungspad"
+    },
+    "category": "yardimcilar",
+    "tagline": {
+      "tr": "Temizlik Pedi | İç mekanlar için",
+      "en": "Cleaning Pad | For interiors",
+      "de": "Reinigungspad | Für Innenräume"
+    },
+    "description": {
+      "tr": "İç Mekan Temizlik Pedi, yardımcılar kategorisinde temizlik pedi | iç mekanlar için. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "Interior Cleaning Pad is a cleaning pad | for interiors product in our accessories range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "Innenraum-Reinigungspad ist ein Produkt der Kategorie Zubehör mit Reinigungspad | Für Innenräume. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
+    },
+    "color": null,
+    "size": null,
+    "isNew": false,
+    "image": "/images/products/cw-icpe-1/cw-icpe-1-packshot.webp",
+    "gallery": [
+      "/images/products/cw-icpe-1/cw-icpe-1-packshot.webp",
+      "/images/products/cw-icpe-1/cw-icpe-1-a2.webp",
+      "/images/products/cw-icpe-1/cw-icpe-1-a1.webp"
+    ],
+    "galleryThumbs": [
+      "/images/products/cw-icpe-1/cw-icpe-1-packshot-thumb.webp",
+      "/images/products/cw-icpe-1/cw-icpe-1-a2-thumb.webp",
+      "/images/products/cw-icpe-1/cw-icpe-1-a1-thumb.webp"
+    ],
+    "posterImages": [
+      "/images/products/cw-icpe-1/cw-icpe-1-a1.webp",
+      "/images/products/cw-icpe-1/cw-icpe-1-a2.webp"
+    ],
+    "posterDescription": {
+      "tr": "Chemicalworkz İç Mekan Temizlik Pedi Ergo, iç mekan temizliğinde yeni standartlar belirliyor. Popüler temizlik pedinin bu ergonomik versiyonu, daha rahat ve etkili kullanım için özel olarak geliştirilmiştir. Yuvarlak köşeleri ve ortadaki dikişiyle ped, elinize mükemmel bir şekilde oturur ve ulaşılması zor alanlarda, özellikle kıvrımlı yerlerde bile hassas temizlik sağlar.\n\nGeliştirilmiş ergonomi ve işlevsellik:\n\nErgonomik tasarım: Optimum kullanım için yuvarlak köşeler ve ortada bir dikiş çizgisi.\nOptimize edilmiş boyutlar: 15 × 12 × 3,5 cm boyutlarıyla, tablet ele mükemmel şekilde oturur.\nÇift taraflı: Pedin her iki yüzü de maksimum temizleme performansı ve esneklik için yüksek kaliteli beyaz mikrofiberden üretilmiştir.",
+      "en": "The Chemicalworkz Interior Cleaning Pad Ergo sets a new standard for interior cleaning. This ergonomic version of the popular cleaning pad was developed specifically for more comfortable and effective use. With its rounded corners and center seam, the pad sits perfectly in your hand and delivers precise cleaning even in hard-to-reach, contoured areas.\n\nImproved ergonomics and functionality:\n\nErgonomic design: rounded corners and a center seam for optimal handling.\nOptimized dimensions: at 15 × 12 × 3.5 cm, it sits perfectly in the hand.\nDouble-sided: both faces of the pad are made from high-quality white microfiber for maximum cleaning performance and flexibility.",
+      "de": "Das Chemicalworkz Innenraum-Reinigungspad Ergo setzt neue Maßstäbe für die Innenraumreinigung. Diese ergonomische Version des beliebten Reinigungspads wurde speziell für eine komfortablere und effektivere Anwendung entwickelt. Mit seinen abgerundeten Ecken und der mittigen Naht liegt das Pad perfekt in der Hand und ermöglicht eine präzise Reinigung selbst in schwer zugänglichen, konturierten Bereichen.\n\nVerbesserte Ergonomie und Funktionalität:\n\nErgonomisches Design: abgerundete Ecken und eine mittige Nahtlinie für optimale Handhabung.\nOptimierte Maße: Mit 15 × 12 × 3,5 cm liegt es perfekt in der Hand.\nZweiseitig: Beide Seiten des Pads bestehen aus hochwertiger weißer Mikrofaser für maximale Reinigungsleistung und Flexibilität."
+    },
+    "video": null
   },
   {
     "id": "cw-da12",
@@ -1363,23 +2317,23 @@ export const products = [
       "de": "Dual-Action-Polieren"
     },
     "description": {
-      "tr": "DA12 Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "DA12 Polisher is a dual action polishing product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "DA12 Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "DA12 Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "DA12 Polisher is a dual action polishing product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "DA12 Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
     "image": "/images/products/cw-da12/cw-da12-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-da12/cw-da12-packshot_result.webp",
-      "/images/products/cw-da12/cw-da12-u1_result.webp",
-      "/images/products/cw-da12/cw-da12-u2_result.webp",
-      "/images/products/cw-da12/cw-da12-a2_result.webp",
-      "/images/products/cw-da12/cw-da12-a3_result.webp",
-      "/images/products/cw-da12/cw-da12-a1_result.webp"
+      "/images/products/cw-da12/cw-da12-packshot_result.webp"
     ],
-    "poster": null
+    "galleryThumbs": [
+      "/images/products/cw-da12/cw-da12-packshot_result-thumb.webp"
+    ],
+    "posterImages": [],
+    "posterDescription": null,
+    "video": null
   },
   {
     "id": "cw-da9-pro-max",
@@ -1395,349 +2349,22 @@ export const products = [
       "de": "Dual-Action-Polieren"
     },
     "description": {
-      "tr": "DA9 Pro Max Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "DA9 Pro Max Polisher is a dual action polishing product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "DA9 Pro Max Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
+      "tr": "DA9 Pro Max Polisaj Makinesi, polisaj makinesi kategorisinde dual action polisaj. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
+      "en": "DA9 Pro Max Polisher is a dual action polishing product in our polishers range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.",
+      "de": "DA9 Pro Max Poliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Dual-Action-Polieren. Entwickelt nach den deutschen Ingenieursstandards von ChemicalWorkz, für den professionellen Detailing-Einsatz."
     },
     "color": null,
     "size": null,
     "isNew": false,
     "image": "/images/products/cw-da9-pro-max/cw-da9-pro-max-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-da9-pro-max/cw-da9-pro-max-packshot_result.webp",
-      "/images/products/cw-da9-pro-max/cw-da9-pro-max-u1_result.webp",
-      "/images/products/cw-da9-pro-max/cw-da9-pro-max-u2_result.webp",
-      "/images/products/cw-da9-pro-max/cw-da9-pro-max-u3_result.webp",
-      "/images/products/cw-da9-pro-max/cw-da9-pro-max-u4_result.webp"
+      "/images/products/cw-da9-pro-max/cw-da9-pro-max-packshot_result.webp"
     ],
-    "poster": null
-  },
-  {
-    "id": "cw-rotary",
-    "name": {
-      "tr": "Rotary Polisaj Makinesi",
-      "en": "Rotary Polisher",
-      "de": "Rotationspoliermaschine"
-    },
-    "category": "polisaj-makinesi",
-    "tagline": {
-      "tr": "Yüksek Performans",
-      "en": "High Performance",
-      "de": "Hohe Leistung"
-    },
-    "description": {
-      "tr": "Rotary Polisaj Makinesi, polisaj makinesi kategorisinde yüksek performans. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Rotary Polisher is a high performance product in our polishers range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Rotationspoliermaschine ist ein Produkt der Kategorie Poliermaschinen mit Hohe Leistung. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-rotary/cw-rotary-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-rotary/cw-rotary-packshot_result.webp",
-      "/images/products/cw-rotary/cw-rotary-gallery-u1_result.webp",
-      "/images/products/cw-rotary/cw-rotary-gallery-u2_result.webp",
-      "/images/products/cw-rotary/cw-rotary-gallery-u3_result.webp"
+    "galleryThumbs": [
+      "/images/products/cw-da9-pro-max/cw-da9-pro-max-packshot_result-thumb.webp"
     ],
-    "poster": null
-  },
-  {
-    "id": "cw-pcg",
-    "name": {
-      "tr": "Basınçlı Sprey Şişesi",
-      "en": "Pressure Spray Bottle",
-      "de": "Druck-Sprühflasche"
-    },
-    "category": "sprey-siseleri",
-    "tagline": {
-      "tr": "Geniş Kapasiteli",
-      "en": "Large Capacity",
-      "de": "Große Kapazität"
-    },
-    "description": {
-      "tr": "Basınçlı Sprey Şişesi, sprey şişeleri kategorisinde geniş kapasiteli. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Pressure Spray Bottle is a large capacity product in our spray bottles range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Druck-Sprühflasche ist ein Produkt der Kategorie Sprühflaschen mit Große Kapazität. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-pcg/cw-pcg-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-pcg/cw-pcg-packshot_result.webp",
-      "/images/products/cw-pcg/cw-pcg-u1_result.webp",
-      "/images/products/cw-pcg/cw-pcg-a2_result.webp",
-      "/images/products/cw-pcg/cw-pcg-a3_result.webp",
-      "/images/products/cw-pcg/cw-pcg-a1_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-hwa",
-    "name": {
-      "tr": "El Yıkama Aplikatörü",
-      "en": "Hand Wash Applicator",
-      "de": "Handwasch-Applikator"
-    },
-    "category": "uygulayicilar",
-    "tagline": {
-      "tr": "Uygulama Aparatı",
-      "en": "Application Tool",
-      "de": "Auftragswerkzeug"
-    },
-    "description": {
-      "tr": "El Yıkama Aplikatörü, uygulayıcılar kategorisinde uygulama aparatı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Hand Wash Applicator is a application tool product in our applicators range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Handwasch-Applikator ist ein Produkt der Kategorie Applikatoren mit Auftragswerkzeug. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-hwa/cw-hwa-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-hwa/cw-hwa-packshot_result.webp",
-      "/images/products/cw-hwa/cw-hwa-u1_result.webp",
-      "/images/products/cw-hwa/cw-hwa-u2_result.webp",
-      "/images/products/cw-hwa/cw-hwa-u3_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-ma",
-    "name": {
-      "tr": "Mikrofiber Aplikatör",
-      "en": "Microfiber Applicator",
-      "de": "Mikrofaser-Applikator"
-    },
-    "category": "uygulayicilar",
-    "tagline": {
-      "tr": "Uygulama Aparatı",
-      "en": "Application Tool",
-      "de": "Auftragswerkzeug"
-    },
-    "description": {
-      "tr": "Mikrofiber Aplikatör, uygulayıcılar kategorisinde uygulama aparatı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Microfiber Applicator is a application tool product in our applicators range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Mikrofaser-Applikator ist ein Produkt der Kategorie Applikatoren mit Auftragswerkzeug. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-ma/cw-ma-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-ma/cw-ma-packshot_result.webp",
-      "/images/products/cw-ma/cw-ma-a2_result.webp",
-      "/images/products/cw-ma/cw-ma-a3_result.webp",
-      "/images/products/cw-ma/cw-ma-a1_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-swb-L",
-    "name": {
-      "tr": "Yıkama Süngeri",
-      "en": "Wash Sponge",
-      "de": "Waschschwamm"
-    },
-    "category": "yardimcilar",
-    "tagline": {
-      "tr": "Yumuşak Dokulu",
-      "en": "Soft Texture",
-      "de": "Weiche Textur"
-    },
-    "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-swb-L/cw-swb-L-T_result.webp",
-    "gallery": [
-      "/images/products/cw-swb-L/cw-swb-L-T_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-swb-L-blue",
-    "name": {
-      "tr": "Yıkama Süngeri",
-      "en": "Wash Sponge",
-      "de": "Waschschwamm"
-    },
-    "category": "yardimcilar",
-    "tagline": {
-      "tr": "Yumuşak Dokulu",
-      "en": "Soft Texture",
-      "de": "Weiche Textur"
-    },
-    "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": {
-      "tr": "Mavi",
-      "en": "Blue",
-      "de": "Blau"
-    },
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-swb-L-blue/cw-swb-L-B-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-swb-L-blue/cw-swb-L-B-packshot_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-swb-L-green",
-    "name": {
-      "tr": "Yıkama Süngeri",
-      "en": "Wash Sponge",
-      "de": "Waschschwamm"
-    },
-    "category": "yardimcilar",
-    "tagline": {
-      "tr": "Yumuşak Dokulu",
-      "en": "Soft Texture",
-      "de": "Weiche Textur"
-    },
-    "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": {
-      "tr": "Yeşil",
-      "en": "Green",
-      "de": "Grün"
-    },
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-swb-L-green/cw-swb-L-G-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-swb-L-green/cw-swb-L-G-packshot_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-swb-L-red",
-    "name": {
-      "tr": "Yıkama Süngeri",
-      "en": "Wash Sponge",
-      "de": "Waschschwamm"
-    },
-    "category": "yardimcilar",
-    "tagline": {
-      "tr": "Yumuşak Dokulu",
-      "en": "Soft Texture",
-      "de": "Weiche Textur"
-    },
-    "description": {
-      "tr": "Yıkama Süngeri, yardımcılar kategorisinde yumuşak dokulu. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Wash Sponge is a soft texture product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Waschschwamm ist ein Produkt der Kategorie Zubehör mit Weiche Textur. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": {
-      "tr": "Kırmızı",
-      "en": "Red",
-      "de": "Rot"
-    },
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-swb-L-red/cw-swb-L-R-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-swb-L-red/cw-swb-L-R-packshot_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-cL",
-    "name": {
-      "tr": "Detailing Aksesuarı",
-      "en": "Detailing Accessory",
-      "de": "Detailing-Zubehör"
-    },
-    "category": "yardimcilar",
-    "tagline": {
-      "tr": "chemicalworkz Aksesuarı",
-      "en": "chemicalworkz Accessory",
-      "de": "chemicalworkz-Zubehör"
-    },
-    "description": {
-      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit chemicalworkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-cL/CW-CL-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-cL/CW-CL-packshot_result.webp",
-      "/images/products/cw-cL/cw-CL-a2_result.webp",
-      "/images/products/cw-cL/cw-CL-a3_result.webp",
-      "/images/products/cw-cL/cw-CL-a1_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-cm",
-    "name": {
-      "tr": "Detailing Aksesuarı",
-      "en": "Detailing Accessory",
-      "de": "Detailing-Zubehör"
-    },
-    "category": "yardimcilar",
-    "tagline": {
-      "tr": "chemicalworkz Aksesuarı",
-      "en": "chemicalworkz Accessory",
-      "de": "chemicalworkz-Zubehör"
-    },
-    "description": {
-      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit chemicalworkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-cm/cw-cm-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-cm/cw-cm-packshot_result.webp"
-    ],
-    "poster": null
-  },
-  {
-    "id": "cw-hL",
-    "name": {
-      "tr": "Detailing Aksesuarı",
-      "en": "Detailing Accessory",
-      "de": "Detailing-Zubehör"
-    },
-    "category": "yardimcilar",
-    "tagline": {
-      "tr": "chemicalworkz Aksesuarı",
-      "en": "chemicalworkz Accessory",
-      "de": "chemicalworkz-Zubehör"
-    },
-    "description": {
-      "tr": "Detailing Aksesuarı, yardımcılar kategorisinde chemicalworkz aksesuarı. chemicalworkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.",
-      "en": "Detailing Accessory is a chemicalworkz accessory product in our accessories range. Engineered with chemicalworkz's German engineering standards, it's built for professional detailing needs.",
-      "de": "Detailing-Zubehör ist ein Produkt der Kategorie Zubehör mit chemicalworkz-Zubehör. Entwickelt nach den deutschen Ingenieursstandards von chemicalworkz, für den professionellen Detailing-Einsatz."
-    },
-    "color": null,
-    "size": null,
-    "isNew": false,
-    "image": "/images/products/cw-hL/cw-hL-packshot_result.webp",
-    "gallery": [
-      "/images/products/cw-hL/cw-hL-packshot_result.webp",
-      "/images/products/cw-hL/cw-hL-u1_result.webp",
-      "/images/products/cw-hL/cw-hL-u2_result.webp",
-      "/images/products/cw-hL/cw-hL-u3_result.webp"
-    ],
-    "poster": null
+    "posterImages": [],
+    "posterDescription": null,
+    "video": null
   }
 ];

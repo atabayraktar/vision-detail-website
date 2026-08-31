@@ -7,6 +7,7 @@ import ScrollTopButton from '@/components/ScrollTopButton';
 import ProductGallery from '@/components/ProductGallery';
 import ProductInfo from '@/components/ProductInfo';
 import ProductPoster from '@/components/ProductPoster';
+import RelatedProducts from '@/components/RelatedProducts';
 import { useLanguage } from '@/context/LanguageContext';
 import { products, PRODUCT_CATEGORIES } from '@/data/products';
 import useScrollReveal from '@/hooks/useScrollReveal';
@@ -31,10 +32,30 @@ export async function getStaticProps({ params }) {
   const siblings = products.filter(
     (p) => p.id !== product.id && p.category === product.category && p.name.tr === product.name.tr
   );
-  return { props: { product, siblings, categories: PRODUCT_CATEGORIES } };
+  // Everything else from the same category, for the D2-adjacent "more from this category"
+  // rail — siblings (same product, different color/size) are excluded, they're already
+  // surfaced via VariantPicker right above the fold.
+  const siblingIds = new Set(siblings.map((p) => p.id));
+  const related = products.filter(
+    (p) => p.id !== product.id && p.category === product.category && !siblingIds.has(p.id)
+  );
+  // Both lists only ever feed VariantPicker/ProductCard — trim to what those actually read
+  // (same reasoning as /urunler's getStaticProps) instead of re-serializing each matched
+  // product's full gallery/posterDescription/video payload again on every detail page.
+  const leanProduct = ({ id, name, tagline, category, color, size, isNew, image }) => ({
+    id, name, tagline, category, color, size, isNew, image,
+  });
+  return {
+    props: {
+      product,
+      siblings: siblings.map(leanProduct),
+      related: related.map(leanProduct),
+      categories: PRODUCT_CATEGORIES,
+    },
+  };
 }
 
-export default function ProductDetailPage({ product, siblings, categories }) {
+export default function ProductDetailPage({ product, siblings, related, categories }) {
   useScrollReveal();
   const { t } = useLanguage();
   const router = useRouter();
@@ -43,10 +64,10 @@ export default function ProductDetailPage({ product, siblings, categories }) {
   // "Almost back to where you were" (the user's own framing) rather than a plain link to
   // /urunler: router.back() replays the actual browser history entry, which — since
   // /urunler already syncs search/category/sort/page into the URL and reads them back on
-  // load — restores the filtered list AND (natively, via the browser's own scroll
-  // restoration) the scroll position, not just an unfiltered page 1. Only safe when the
-  // previous entry is actually this site's listing page; a bookmarked/shared product link
-  // has no useful "back" to return to, so it falls back to a plain /urunler navigation.
+  // load — restores the filtered list, and (see _app.jsx's scroll-restore/page-reveal
+  // effect) the exact scroll position too. Only safe when the previous entry is actually
+  // this site's listing page; a bookmarked/shared product link has no useful "back" to
+  // return to, so it falls back to a plain /urunler navigation.
   const goBack = () => {
     const cameFromListing =
       typeof window !== 'undefined' &&
@@ -58,7 +79,7 @@ export default function ProductDetailPage({ product, siblings, categories }) {
   };
   const name = t(product.name);
   const url = `${SITE_URL}/urunler/${product.id}`;
-  const title = `${name} | Vision Detail | chemicalworkz`;
+  const title = `${name} | Vision Detail | ChemicalWorkz`;
   const description = t(product.description);
 
   const productJsonLd = {
@@ -137,14 +158,16 @@ export default function ProductDetailPage({ product, siblings, categories }) {
           </button>
 
           <div className="product-detail__gallery-info" data-reveal>
-            <ProductGallery images={product.gallery} alt={name} />
+            <ProductGallery images={product.gallery} thumbs={product.galleryThumbs} video={product.video} alt={name} />
             <ProductInfo product={product} siblings={siblings} />
           </div>
 
-          {/* Only 10 SKUs actually had a poster image specified in the source Excel — see
-              scripts/build-products.mjs's POSTER_SKUS. Everyone else gets `poster: null`,
-              and D2 just doesn't render rather than showing an unrequested image. */}
-          {product.poster && <ProductPoster src={product.poster} alt={`${name} — ${t(product.tagline)}`} />}
+          {/* Poster images/description come straight from the source Excel's ÜRÜN POSTERİ
+              GÖRSELİ / ÜRÜN POSTERİ AÇIKLAMASI columns (see scripts/build-products.mjs) —
+              not every SKU has them, ProductPoster itself no-ops when posterImages is empty. */}
+          <ProductPoster images={product.posterImages} description={product.posterDescription} alt={`${name} — ${t(product.tagline)}`} />
+
+          <RelatedProducts products={related} />
         </section>
       </main>
 

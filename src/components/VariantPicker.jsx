@@ -26,7 +26,12 @@ export default function VariantPicker({ current, siblings }) {
                 {item.color ? t(item.color) : item.size}
               </span>
             ) : (
-              <Link href={`/urunler/${item.id}`} className="variant-picker__option">
+              // replace, not push: switching color/size feels like updating the same
+              // product page in place, not visiting a new one — pushing here was stacking
+              // one history entry per variant hop, so "Ürünlere geri dön" (router.back(),
+              // see [id].jsx) walked back through each previously-viewed color one click at
+              // a time instead of returning straight to the listing.
+              <Link href={`/urunler/${item.id}`} replace className="variant-picker__option">
                 {item.color ? t(item.color) : item.size}
               </Link>
             )}

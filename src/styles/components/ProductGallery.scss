@@ -41,6 +41,11 @@
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  // object-fit:contain (set on the <Image> in ProductGallery.jsx) — the real gallery shots
+  // range from landscape action photos to portrait usage photos (see src/data/products.js),
+  // and forcing them into this square box with object-fit:cover cropped real product
+  // content off the top/bottom or sides depending on each shot's own aspect ratio (matches
+  // the lightbox's own contain treatment one click away, which never had this problem).
   background: var(--hair);
   cursor: zoom-in;
 
@@ -51,6 +56,34 @@
   &:focus-visible {
     border-radius: var(--radius-lg);
   }
+}
+
+// A "feature" that's genuinely a video (see ProductGallery.jsx's `video` prop) — same box
+// as the image slide so it doesn't jump the layout when arrows/thumbs land on it, but with
+// real native controls instead of the zoom-to-lightbox affordance images get.
+.product-gallery__video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.product-gallery__video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-gallery__thumb-video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--bg);
 }
 
 .product-gallery__zoom-hint {
@@ -120,6 +153,17 @@
   display: flex;
   gap: var(--space-2);
   overflow-x: auto;
+  // .product-gallery is display:flex/flex-direction:column — as a flex child in that
+  // column layout, this element's default cross-axis (horizontal) automatic minimum size
+  // is its content's own min-content width, i.e. every 68px thumbnail laid end to end
+  // (5+ products now regularly ship that many gallery shots). Without min-width:0 that
+  // forces the whole element wider than its container instead of actually scrolling
+  // internally — real-device-confirmed page-level horizontal overflow on narrow phones
+  // (verified: hiding this element was the only thing that brought scrollWidth back to
+  // clientWidth in a bisection across every other suspect on the page), which then
+  // cascades further: any position:fixed element sized via left:0/right:0 (the header)
+  // resolves its own width against that now-widened layout viewport too.
+  min-width: 0;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -148,7 +192,8 @@
   }
 }
 
-// Full-screen zoom — same fade/pop language as QuizModal.scss's backdrop/panel.
+// Full-screen zoom — same fade/pop language as the mobile filter sheet's backdrop/panel
+// (FilterPanel.scss).
 .product-lightbox__backdrop {
   position: fixed;
   inset: 0;

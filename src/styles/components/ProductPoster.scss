@@ -1,13 +1,66 @@
 .product-poster {
+  margin-top: var(--space-8);
+}
+
+// Intro copy for the 2-3 image "spread" variant (see ProductPoster.jsx) — real written
+// poster description, so it reads like editorial copy, not a caption.
+.product-poster__text {
+  max-width: 640px;
+  margin-bottom: var(--space-6);
+
+  p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink-strong);
+
+    & + p {
+      margin-top: var(--space-4);
+    }
+  }
+}
+
+// Original D2 treatment — one full-bleed shot. Still used whenever a product has exactly
+// one poster photo (or none of the 2-3 image "spread" applies).
+.product-poster__single {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--hair);
-  margin-top: var(--space-8);
 
   @media (max-width: 640px) {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+// 2-3 photos: an equal-width row, stacked on mobile — same "simple grid, no slider
+// machinery" language as ProductGrid/RelatedProducts rather than a fresh pattern.
+.product-poster__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+
+  @media (min-width: 700px) {
+    &.product-poster__row--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.product-poster__row--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.product-poster__row-image {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+
+  @media (max-width: 699px) {
     aspect-ratio: 4 / 3;
   }
 }

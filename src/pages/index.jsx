@@ -14,7 +14,7 @@ const SITE_URL = 'https://visiondetail.com.tr';
 const TITLE = 'Vision Detail';
 // Browser-tab title only (the user's explicit call) — og:title/twitter:title below still
 // use TITLE, unchanged, since those are for link-preview cards, not "the tab".
-const TAB_TITLE = 'Vision Detail | chemicalworkz Türkiye';
+const TAB_TITLE = 'Vision Detail | ChemicalWorkz Türkiye';
 const DESCRIPTION =
   "Vision Detail, Almanya merkezli ChemicalWorkz'ün Türkiye distribütörüdür. Profesyonel detailing ekipmanları, polisaj makineleri ve bakım aksesuarlarını keşfedin.";
 

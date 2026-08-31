@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import GlassSurface from './GlassSurface';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, priority = false }) {
   const { t } = useLanguage();
 
   return (
@@ -21,7 +21,8 @@ export default function ProductCard({ product }) {
           alt={t(product.name)}
           fill
           sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'contain' }}
+          priority={priority}
         />
         {product.isNew && <span className="product-card__badge">Yeni</span>}
       </span>

@@ -127,14 +127,70 @@ export default function CategorySlider() {
     track.scrollBy({ left: dir * getStep(track), behavior: 'smooth' });
   };
 
+  // Mouse-drag-to-swipe: native overflow-x scrolling already handles touch/trackpad, but a
+  // mouse can't drag a scroll container by default — the design blueprint calls for the
+  // slider to be drag-controllable, not just arrow/touch-controllable, so this fills that in.
+  const dragRef = useRef({ active: false, startX: 0, startScroll: 0, moved: false });
+
+  const onTrackMouseDown = (e) => {
+    if (e.button !== 0) return;
+    const track = trackRef.current;
+    if (!track) return;
+    dragRef.current = { active: true, startX: e.clientX, startScroll: track.scrollLeft, moved: false };
+    track.classList.add('is-dragging');
+    pause();
+    // Stops the browser's native image/link drag-ghost from starting, which otherwise
+    // hijacks the gesture instead of scrolling the track.
+    e.preventDefault();
+  };
+
+  // Listens on window (not the track) so the drag keeps tracking even if the cursor
+  // slips outside the track's bounds mid-swipe.
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return undefined;
+
+    const onMouseMove = (e) => {
+      const state = dragRef.current;
+      if (!state.active) return;
+      const dx = e.clientX - state.startX;
+      if (Math.abs(dx) > 4) state.moved = true;
+      track.scrollLeft = state.startScroll - dx;
+    };
+
+    const onMouseUp = () => {
+      const state = dragRef.current;
+      if (!state.active) return;
+      state.active = false;
+      track.classList.remove('is-dragging');
+      resume();
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+  }, []);
+
+  // Swallows the click a card's Link would otherwise fire right after a drag — without
+  // this, releasing the mouse over a card you swiped past navigates there.
+  const onTrackClickCapture = (e) => {
+    if (dragRef.current.moved) e.preventDefault();
+  };
+
   return (
     <section className="category-slider" aria-label={t(title).join(' ')}>
       <div className="container category-slider__head" data-reveal>
         <h2 className="category-slider__title">
-          {t(title).map((line, i) => (
-            <span key={i}>
+          {t(title).map((line, i, arr) => (
+            <span
+              key={i}
+              className={arr.length > 1 && i === arr.length - 1 ? 'category-slider__title-line--bold' : undefined}
+            >
               {line}
-              {i === 0 && <br />}
+              {i < arr.length - 1 && <br />}
             </span>
           ))}
         </h2>
@@ -178,6 +234,8 @@ export default function CategorySlider() {
           onMouseLeave={resume}
           onTouchStart={pause}
           onTouchEnd={resume}
+          onMouseDown={onTrackMouseDown}
+          onClickCapture={onTrackClickCapture}
         >
           {loopCards.map(({ cat, key, clone }) => (
             <Link

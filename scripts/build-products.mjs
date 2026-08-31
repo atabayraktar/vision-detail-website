@@ -14,26 +14,25 @@ const OUT_IMG_ROOT = path.join(ROOT, 'public', 'images', 'products');
 
 const CARD_MAX_WIDTH = 640;
 const DETAIL_MAX_WIDTH = 1400;
+// Gallery thumbnail rail (ProductGallery.jsx) displays each image at 68x68 CSS px — under
+// `output: 'export'`, next/image runs with `unoptimized: true` (required for a static
+// export, no image-optimization server available), which means it never generates a
+// responsive srcset and just ships the <img>'s `src` file at full size regardless of the
+// `sizes` hint. Every thumbnail was serving the same ~1400px DETAIL_MAX_WIDTH file as the
+// main viewer — a real, measured Lighthouse finding (~99% wasted bytes per thumbnail,
+// dragging down LCP by adding bandwidth contention). A dedicated small file per gallery
+// image is the only way to actually shrink what the thumbnail rail downloads.
+const THUMB_MAX_WIDTH = 160;
 const QUALITY = 80;
 
-// Only these 10 SKUs actually had a value in Excel's ÜRÜN POSTERİ GÖRSELİ column — every
-// other row (including all 5 spray bottle colors) left it empty, meaning "no D2 poster
-// section for this product," not "figure one out yourself." classify() below still finds
-// an action-shot candidate for every SKU that has one (folders often contain "-a*" files
-// regardless of what Excel specified), but that candidate is only used as the actual
-// `poster` field for ids in this set — see the products.push() call.
-const POSTER_SKUS = new Set([
-  'cw-mag',
-  'cw-evo-mini',
-  'cw-evo-mini-pro',
-  'cw-pp-125-heavy',
-  'cw-pp-125-medium',
-  'cw-pp-125-mf',
-  'cw-pp-125-os',
-  'cw-pp-125-soft',
-  'cw-pp-125-wool',
-  'cw-ga',
-]);
+// Poster images (0-3 per SKU) + real poster copy, extracted from the Excel's ÜRÜN POSTERİ
+// GÖRSELİ / ÜRÜN POSTERİ AÇIKLAMASI columns (TR source, EN/DE hand-translated to match the
+// site's tone) — see scripts/poster-data.json. `video` covers the one SKU (cw-ms) whose
+// "feature" shot is genuinely a clip, not a photo. Both replace the old single-image
+// `poster`/POSTER_SKUS allow-list D2 used to be gated behind.
+const posterDataFile = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'poster-data.json'), 'utf8'));
+const POSTER_DATA = posterDataFile.POSTER_DATA;
+const VIDEO_DATA = posterDataFile.VIDEO_DATA;
 
 const CATEGORIES = [
   { slug: 'detay-fircalari', label: { tr: 'Detay Fırçaları', en: 'Detailing Brushes', de: 'Detailing-Bürsten' } },
@@ -76,24 +75,96 @@ const SEEDS = [
   { id: 'cw-evo-mini-pro', dir: 'Polisaj Makinesi/cw-evo-mini-pro', category: 'polisaj-makinesi',
     name: { tr: 'EVO Mini Pro', en: 'EVO Mini Pro', de: 'EVO Mini Pro' },
     tagline: { tr: 'Hibrit Polisaj Makinesi', en: 'Hybrid Polisher', de: 'Hybrid-Poliermaschine' } },
-  { id: 'cw-pp-125-heavy', dir: 'Polisaj Pedleri/cw-pp-125-heavy', category: 'polisaj-pedleri', size: '125mm',
+  // Polisaj Pedleri: the source photo folders are now shared per PAD TYPE across every size
+  // variant (30/50/75/125mm all live in one "cw-pp-<type>" folder together) instead of one
+  // folder per exact SKU — `images`/`posterFile` pin each SKU's own specific file(s) out of
+  // that shared folder instead of relying on classify()'s single-folder heuristic, which
+  // can't otherwise tell a 30mm packshot from a 125mm one. Sizes/filenames per
+  // c:\Users\ataba\Downloads\vision-detail-ürün-listesi.xlsx (2026-08 catalog refresh).
+  { id: 'cw-pp-125-heavy', dir: 'Polisaj Pedleri/cw-pp-heavy', category: 'polisaj-pedleri', size: '125mm',
+    images: ['cw-pp-125-heavy-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-heavy-a1_result.webp', 'cw-pp-125-heavy-a2_result.webp'],
+    posterFile: 'cw-pp-125-heavy-a1_result.webp',
     name: { tr: 'Ağır Polisaj Pedi', en: 'Heavy Cutting Pad', de: 'Heavy-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Ağır Kesim', en: 'Performance Pad | Heavy Cutting', de: 'Performance-Pad | Starker Schnitt' } },
-  { id: 'cw-pp-125-medium', dir: 'Polisaj Pedleri/cw-pp-125-medium', category: 'polisaj-pedleri', size: '125mm',
+  { id: 'cw-pp-30-heavy', dir: 'Polisaj Pedleri/cw-pp-heavy', category: 'polisaj-pedleri', size: '30mm',
+    images: ['chemicalworkz-heavy-cutting-performance-pad-30mm-grau.webp'],
+    name: { tr: 'Ağır Polisaj Pedi', en: 'Heavy Cutting Pad', de: 'Heavy-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Ağır Kesim', en: 'Performance Pad | Heavy Cutting', de: 'Performance-Pad | Starker Schnitt' } },
+  { id: 'cw-pp-50-heavy', dir: 'Polisaj Pedleri/cw-pp-heavy', category: 'polisaj-pedleri', size: '50mm',
+    images: ['chemicalworkz-heavy-cutting-performance-pad-50mm-grau.webp'],
+    name: { tr: 'Ağır Polisaj Pedi', en: 'Heavy Cutting Pad', de: 'Heavy-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Ağır Kesim', en: 'Performance Pad | Heavy Cutting', de: 'Performance-Pad | Starker Schnitt' } },
+  { id: 'cw-pp-75-heavy', dir: 'Polisaj Pedleri/cw-pp-heavy', category: 'polisaj-pedleri', size: '75mm',
+    images: ['chemicalworkz-heavy-cutting-performance-pad-75mm-grau.webp'],
+    name: { tr: 'Ağır Polisaj Pedi', en: 'Heavy Cutting Pad', de: 'Heavy-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Ağır Kesim', en: 'Performance Pad | Heavy Cutting', de: 'Performance-Pad | Starker Schnitt' } },
+  { id: 'cw-pp-125-medium', dir: 'Polisaj Pedleri/cw-pp-medium', category: 'polisaj-pedleri', size: '125mm',
+    images: ['cw-pp-125-medium-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-medium-a1_result.webp', 'cw-pp-125-medium-a2_result.webp'],
+    posterFile: 'cw-pp-125-medium-a1_result.webp',
+    name: { tr: 'Orta Polisaj Pedi', en: 'Medium Cutting Pad', de: 'Medium-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Orta-Zor', en: 'Performance Pad | Medium-Heavy', de: 'Performance-Pad | Mittel-Stark' } },
+  { id: 'cw-pp-30-medium', dir: 'Polisaj Pedleri/cw-pp-medium', category: 'polisaj-pedleri', size: '30mm',
+    images: ['chemicalworkz-medium-polishing-performance-pad-30mm-blau.webp'],
+    name: { tr: 'Orta Polisaj Pedi', en: 'Medium Cutting Pad', de: 'Medium-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Orta-Zor', en: 'Performance Pad | Medium-Heavy', de: 'Performance-Pad | Mittel-Stark' } },
+  { id: 'cw-pp-50-medium', dir: 'Polisaj Pedleri/cw-pp-medium', category: 'polisaj-pedleri', size: '50mm',
+    images: ['chemicalworkz-medium-polishing-performance-pad-50mm-blau.webp'],
+    name: { tr: 'Orta Polisaj Pedi', en: 'Medium Cutting Pad', de: 'Medium-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Orta-Zor', en: 'Performance Pad | Medium-Heavy', de: 'Performance-Pad | Mittel-Stark' } },
+  { id: 'cw-pp-75-medium', dir: 'Polisaj Pedleri/cw-pp-medium', category: 'polisaj-pedleri', size: '75mm',
+    images: ['chemicalworkz-medium-polishing-performance-pad-75mm-blau.webp'],
     name: { tr: 'Orta Polisaj Pedi', en: 'Medium Cutting Pad', de: 'Medium-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Orta-Zor', en: 'Performance Pad | Medium-Heavy', de: 'Performance-Pad | Mittel-Stark' } },
   { id: 'cw-pp-125-mf', dir: 'Polisaj Pedleri/cw-pp-125-mf', category: 'polisaj-pedleri', size: '125mm',
+    images: ['cw-pp-125-mf-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-mf-a1_result.webp'],
+    posterFile: 'cw-pp-125-mf-a1_result.webp',
     name: { tr: 'MikroFiber Polisaj Pedi', en: 'Microfiber Polishing Pad', de: 'Mikrofaser-Polierpad' },
     tagline: { tr: 'Mikrofiber Ped | Yüksek Aşındırıcı', en: 'Microfiber Pad | High Cut', de: 'Mikrofaser-Pad | Starker Abtrag' } },
-  { id: 'cw-pp-125-os', dir: 'Polisaj Pedleri/cw-pp-125-os', category: 'polisaj-pedleri', size: '125mm',
+  { id: 'cw-pp-75-mf', dir: 'Polisaj Pedleri/cw-pp-125-mf', category: 'polisaj-pedleri', size: '75mm',
+    images: ['chemicalworkz-microfiber-performance-pad-75mm.webp'],
+    name: { tr: 'MikroFiber Polisaj Pedi', en: 'Microfiber Polishing Pad', de: 'Mikrofaser-Polierpad' },
+    tagline: { tr: 'Mikrofiber Ped | Yüksek Aşındırıcı', en: 'Microfiber Pad | High Cut', de: 'Mikrofaser-Pad | Starker Abtrag' } },
+  { id: 'cw-pp-125-os', dir: 'Polisaj Pedleri/cw-pp-os', category: 'polisaj-pedleri', size: '125mm',
+    images: ['cw-pp-125-os-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-os-a1_result.webp', 'cw-pp-125-os-a2_result.webp'],
+    posterFile: 'cw-pp-125-os-a1_result.webp',
     name: { tr: 'Tek Adım Polisaj Pedi', en: 'One-Step Polishing Pad', de: 'One-Step-Polierpad' },
     tagline: { tr: 'Performans Pedi | Orta-Yumuşak', en: 'Performance Pad | Medium-Soft', de: 'Performance-Pad | Mittel-Weich' } },
-  { id: 'cw-pp-125-soft', dir: 'Polisaj Pedleri/cw-pp-125-soft', category: 'polisaj-pedleri', size: '125mm',
+  { id: 'cw-pp-125-soft', dir: 'Polisaj Pedleri/cw-pp-soft', category: 'polisaj-pedleri', size: '125mm',
+    images: ['cw-pp-125-soft-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-soft-a1_result.webp', 'cw-pp-125-soft-a2_result.webp'],
+    posterFile: 'cw-pp-125-soft-a1_result.webp',
     name: { tr: 'Yumuşak Polisaj Pedi', en: 'Soft Finishing Pad', de: 'Soft-Finishing-Pad' },
     tagline: { tr: 'Performans Pedi | Yumuşak', en: 'Performance Pad | Soft', de: 'Performance-Pad | Weich' } },
-  { id: 'cw-pp-125-wool', dir: 'Polisaj Pedleri/cw-pp-125-wool', category: 'polisaj-pedleri', size: '125mm',
+  { id: 'cw-pp-30-soft', dir: 'Polisaj Pedleri/cw-pp-soft', category: 'polisaj-pedleri', size: '30mm',
+    images: ['chemicalworkz-fine-finishing-performance-pad-30mm-schwarz.webp'],
+    name: { tr: 'Yumuşak Polisaj Pedi', en: 'Soft Finishing Pad', de: 'Soft-Finishing-Pad' },
+    tagline: { tr: 'Performans Pedi | Yumuşak', en: 'Performance Pad | Soft', de: 'Performance-Pad | Weich' } },
+  { id: 'cw-pp-50-soft', dir: 'Polisaj Pedleri/cw-pp-soft', category: 'polisaj-pedleri', size: '50mm',
+    images: ['chemicalworkz-fine-finishing-performance-pad-50mm-schwarz.webp'],
+    name: { tr: 'Yumuşak Polisaj Pedi', en: 'Soft Finishing Pad', de: 'Soft-Finishing-Pad' },
+    tagline: { tr: 'Performans Pedi | Yumuşak', en: 'Performance Pad | Soft', de: 'Performance-Pad | Weich' } },
+  { id: 'cw-pp-75-soft', dir: 'Polisaj Pedleri/cw-pp-soft', category: 'polisaj-pedleri', size: '75mm',
+    images: ['chemicalworkz-fine-finishing-performance-pad-75mm-schwarz.webp'],
+    name: { tr: 'Yumuşak Polisaj Pedi', en: 'Soft Finishing Pad', de: 'Soft-Finishing-Pad' },
+    tagline: { tr: 'Performans Pedi | Yumuşak', en: 'Performance Pad | Soft', de: 'Performance-Pad | Weich' } },
+  { id: 'cw-pp-125-wool', dir: 'Polisaj Pedleri/cw-pp-wool', category: 'polisaj-pedleri', size: '125mm',
+    images: ['cw-pp-125-wool-packshot_result.webp', 'cw-pp-125-wool-a1_result.webp', 'cw-pp-125-wool-a2_result.webp'],
+    posterFile: 'cw-pp-125-wool-a1_result.webp',
     name: { tr: 'Yün Polisaj Pedi', en: 'Wool Cutting Pad', de: 'Woll-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Doğal Yün', en: 'Performance Pad | Natural Wool', de: 'Performance-Pad | Naturwolle' } },
+  { id: 'cw-pp-50-wool', dir: 'Polisaj Pedleri/cw-pp-wool', category: 'polisaj-pedleri', size: '50mm',
+    images: ['chemicalworkz-wool-cutting-perfomance-pad-50mm.webp'],
+    name: { tr: 'Yün Polisaj Pedi', en: 'Wool Cutting Pad', de: 'Woll-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Doğal Yün', en: 'Performance Pad | Natural Wool', de: 'Performance-Pad | Naturwolle' } },
+  { id: 'cw-pp-75-wool', dir: 'Polisaj Pedleri/cw-pp-wool', category: 'polisaj-pedleri', size: '75mm',
+    images: ['chemicalworkz-wool-cutting-perfomance-pad-75mm.webp'],
+    name: { tr: 'Yün Polisaj Pedi', en: 'Wool Cutting Pad', de: 'Woll-Cutting-Pad' },
+    tagline: { tr: 'Performans Pedi | Doğal Yün', en: 'Performance Pad | Natural Wool', de: 'Performance-Pad | Naturwolle' } },
+  // New pad type this catalog refresh — a felt (not foam) pad specifically for glass.
+  { id: 'cw-pp-75-gp', dir: 'Polisaj Pedleri/cw-pp-75-gp', category: 'polisaj-pedleri', size: '75mm',
+    images: ['chemicalworkz-glass-felt-perfomance-pad-75mm.webp', '6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp', '6830215243bd72bf98ceea29_cw-pp-gp_02.webp'],
+    posterFile: '6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp',
+    name: { tr: 'Cam Performans Pedi', en: 'Glass Performance Pad', de: 'Glas-Performance-Pad' },
+    tagline: { tr: 'Yüksek Kaliteli Keçe | Aşındırıcı', en: 'High-Quality Felt | Abrasive', de: 'Hochwertiger Filz | Abrasiv' } },
   { id: 'cw-db-ws-16', dir: 'Fırçalar/cw-db-ws-16', category: 'detay-fircalari', size: '16mm',
     name: { tr: 'Yumuşak Detay Fırçası', en: 'Soft Detailing Brush', de: 'Weiche Detailing-Bürste' },
     tagline: { tr: 'Süper Yumuşak', en: 'Super Soft', de: 'Super Weich' } },
@@ -163,82 +234,54 @@ const SEEDS = [
   { id: 'cw-pss', dir: 'Yardımcılar/cw-pss', category: 'yardimcilar',
     name: { tr: 'Boya Rötuş Çubukları', en: 'Paint Touch-Up Sticks', de: 'Lack-Ausbesserstifte' },
     tagline: { tr: 'Mikrofiber | 20 adet', en: 'Microfiber | 20 pieces', de: 'Mikrofaser | 20 Stück' } },
-  { id: 'cw-ga', dir: 'Uygulayıcılar/cw-ga', category: 'keceler',
+  { id: 'cw-ga', dir: 'Keçeler/cw-ga', category: 'keceler',
     name: { tr: 'Cam Keçe', en: 'Glass Felt Applicator', de: 'Glas-Filzapplikator' },
     tagline: { tr: 'Cam Uygulayıcı | Cam parlatma için ideal | 6x4x5cm', en: 'Glass Applicator | Ideal for glass polishing | 6x4x5cm', de: 'Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm' } },
-  // No Excel row — inferred from SKU + category context.
-  { id: 'cw-ac250-10pcs', dir: 'Bezler/cw-ac250-10pcs', category: 'mikrofiber-bezler', size: "10'lu",
-    name: { tr: 'Mikrofiber Kurulama Havlusu', en: 'Microfiber Drying Towel', de: 'Mikrofaser-Trockentuch' },
-    tagline: { tr: "10'lu Paket", en: 'Pack of 10', de: '10er-Set' } },
-  { id: 'cw-cfgt-1pcs', dir: 'Bezler/cw-cfgt-1pcs', category: 'mikrofiber-bezler', size: '1 adet',
-    name: { tr: 'Cam Mikrofiber Bezi', en: 'Glass Microfiber Cloth', de: 'Glas-Mikrofasertuch' },
-    tagline: { tr: '1 Adet', en: '1 Piece', de: '1 Stück' } },
-  { id: 'cw-cfgt-5pcs', dir: 'Bezler/cw-cfgt-5pcs', category: 'mikrofiber-bezler', size: '5 adet',
-    name: { tr: 'Cam Mikrofiber Bezi', en: 'Glass Microfiber Cloth', de: 'Glas-Mikrofasertuch' },
-    tagline: { tr: '5 Adet', en: '5 Pieces', de: '5 Stück' } },
-  { id: 'cw-ipw-1pcs', dir: 'Bezler/cw-ipw-1pcs', category: 'mikrofiber-bezler', size: '1 adet',
-    name: { tr: 'İç Mekan Temizlik Bezi', en: 'Interior Cleaning Cloth', de: 'Innenraum-Reinigungstuch' },
-    tagline: { tr: '1 Adet', en: '1 Piece', de: '1 Stück' } },
-  { id: 'cw-ipw-5pcs', dir: 'Bezler/cw-ipw-5pcs', category: 'mikrofiber-bezler', size: '5 adet',
-    name: { tr: 'İç Mekan Temizlik Bezi', en: 'Interior Cleaning Cloth', de: 'Innenraum-Reinigungstuch' },
-    tagline: { tr: '5 Adet', en: '5 Pieces', de: '5 Stück' } },
-  { id: 'cw-iup-5pcs', dir: 'Bezler/cw-iup-5pcs', category: 'mikrofiber-bezler', size: '5 adet',
-    name: { tr: 'Universal Mikrofiber Bez', en: 'Universal Microfiber Cloth', de: 'Universal-Mikrofasertuch' },
-    tagline: { tr: '5 Adet', en: '5 Pieces', de: '5 Stück' } },
-  { id: 'cw-tcb', dir: 'Fırçalar/cw-tcb', category: 'detay-fircalari',
-    name: { tr: 'Lastik Temizlik Fırçası', en: 'Tire Cleaning Brush', de: 'Reifen-Reinigungsbürste' },
-    tagline: { tr: 'Dayanıklı Kıllar', en: 'Durable Bristles', de: 'Robuste Borsten' } },
-  { id: 'cw-utb-L', dir: 'Fırçalar/cw-utb-L', category: 'detay-fircalari', size: 'Büyük',
-    name: { tr: 'Universal Detay Fırçası', en: 'Universal Detailing Brush', de: 'Universal-Detailing-Bürste' },
-    tagline: { tr: 'Büyük Boy', en: 'Large Size', de: 'Große Größe' } },
-  { id: 'cw-dryer', dir: 'Kurutma Makinesi', category: 'kurutucu',
-    name: { tr: 'Kurutma Makinesi', en: 'Blower Dryer', de: 'Trockner' },
-    tagline: { tr: 'Yüksek Hızlı Kurutma', en: 'High-Speed Drying', de: 'Schnelltrocknung' } },
+  // Moved from "Uygulayıcılar" to "Keçeler" in the 2026-08 catalog refresh (both folder and
+  // the Excel's own KATEGORİ column agree); name corrected too — the old "El Yıkama
+  // Aplikatörü" (Hand WASH Applicator) was a misread, the Excel's ÜRÜN ADI is "Hand Wax
+  // Applicator" (a wax, not wash, applicator — consistent with it being a felt/Keçeler item).
+  { id: 'cw-hwa', dir: 'Keçeler/cw-hwa', category: 'keceler',
+    name: { tr: 'El Cila Aplikatörü', en: 'Hand Wax Applicator', de: 'Hand-Wachsapplikator' },
+    tagline: { tr: 'Uygulama Aparatı', en: 'Application Tool', de: 'Auftragswerkzeug' } },
+  // Renamed from cw-cfgt-1pcs; Excel gives it a real product name instead of the previously
+  // inferred "Cam Mikrofiber Bezi".
+  { id: 'cw-cfgt-1pc', dir: 'Bezler/cw-cfgt-1pc', category: 'mikrofiber-bezler',
+    name: { tr: 'KarbonFiber Cam Bezi', en: 'Carbon Fiber Glass Cloth', de: 'Karbonfaser-Glastuch' },
+    tagline: { tr: 'Karbon Mikrofiber | 40x40cm', en: 'Carbon Microfiber | 40x40cm', de: 'Karbon-Mikrofaser | 40x40cm' } },
+  // New this catalog refresh — real Excel rows + photographed folders.
+  { id: 'cw-pbk', dir: 'Yardımcılar/cw-pbk', category: 'yardimcilar',
+    name: { tr: 'Ped Fırçası & Bıçağı', en: 'Pad Brush & Knife', de: 'Pad-Bürste & Messer' },
+    tagline: { tr: 'Polisaj pedleri için ideal', en: 'Ideal for polishing pads', de: 'Ideal für Polierpads' } },
+  { id: 'cw-fe', dir: 'Yardımcılar/cw-fe', category: 'yardimcilar',
+    name: { tr: 'Folyo Sökme Diski', en: 'Foil Removal Disc', de: 'Folienentfernungsscheibe' },
+    tagline: { tr: 'Folyo ve yapışkan kalıntıları için ideal', en: 'Ideal for foil and adhesive residue', de: 'Ideal für Folien- und Kleberückstände' } },
+  { id: 'cw-dss-10', dir: 'Yardımcılar/cw-dss-10', category: 'yardimcilar',
+    name: { tr: 'Detay Temizlik Çubukları', en: 'Detailing Cleaning Sticks', de: 'Detailing-Reinigungsstäbchen' },
+    tagline: { tr: 'Temizlik ve Bakım Çubukları | Köpük veya mikrofiber uçlu', en: 'Cleaning & Care Sticks | Foam or microfiber tip', de: 'Reinigungs- und Pflegestäbchen | Schaum- oder Mikrofaserspitze' } },
+  { id: 'cw-icpe-1', dir: 'Yardımcılar/cw-icpe-1', category: 'yardimcilar',
+    name: { tr: 'İç Mekan Temizlik Pedi', en: 'Interior Cleaning Pad', de: 'Innenraum-Reinigungspad' },
+    tagline: { tr: 'Temizlik Pedi | İç mekanlar için', en: 'Cleaning Pad | For interiors', de: 'Reinigungspad | Für Innenräume' } },
   { id: 'cw-da12', dir: 'Polisaj Makinesi/cw-da12', category: 'polisaj-makinesi',
     name: { tr: 'DA12 Polisaj Makinesi', en: 'DA12 Polisher', de: 'DA12 Poliermaschine' },
     tagline: { tr: 'Dual Action Polisaj', en: 'Dual Action Polishing', de: 'Dual-Action-Polieren' } },
   { id: 'cw-da9-pro-max', dir: 'Polisaj Makinesi/cw-da9-pro-max', category: 'polisaj-makinesi',
     name: { tr: 'DA9 Pro Max Polisaj Makinesi', en: 'DA9 Pro Max Polisher', de: 'DA9 Pro Max Poliermaschine' },
     tagline: { tr: 'Dual Action Polisaj', en: 'Dual Action Polishing', de: 'Dual-Action-Polieren' } },
-  { id: 'cw-rotary', dir: 'Polisaj Makinesi/cw-rotary', category: 'polisaj-makinesi',
-    name: { tr: 'Rotary Polisaj Makinesi', en: 'Rotary Polisher', de: 'Rotationspoliermaschine' },
-    tagline: { tr: 'Yüksek Performans', en: 'High Performance', de: 'Hohe Leistung' } },
-  { id: 'cw-pcg', dir: 'Sprey Şişeleri/cw-pcg', category: 'sprey-siseleri',
-    name: { tr: 'Basınçlı Sprey Şişesi', en: 'Pressure Spray Bottle', de: 'Druck-Sprühflasche' },
-    tagline: { tr: 'Geniş Kapasiteli', en: 'Large Capacity', de: 'Große Kapazität' } },
-  { id: 'cw-hwa', dir: 'Uygulayıcılar/cw-hwa', category: 'uygulayicilar',
-    name: { tr: 'El Yıkama Aplikatörü', en: 'Hand Wash Applicator', de: 'Handwasch-Applikator' },
-    tagline: { tr: 'Uygulama Aparatı', en: 'Application Tool', de: 'Auftragswerkzeug' } },
-  { id: 'cw-ma', dir: 'Uygulayıcılar/cw-ma', category: 'uygulayicilar',
-    name: { tr: 'Mikrofiber Aplikatör', en: 'Microfiber Applicator', de: 'Mikrofaser-Applikator' },
-    tagline: { tr: 'Uygulama Aparatı', en: 'Application Tool', de: 'Auftragswerkzeug' } },
-  { id: 'cw-swb-L', dir: 'Yardımcılar/cw-swb-L', category: 'yardimcilar',
-    name: { tr: 'Yıkama Süngeri', en: 'Wash Sponge', de: 'Waschschwamm' },
-    tagline: { tr: 'Yumuşak Dokulu', en: 'Soft Texture', de: 'Weiche Textur' } },
-  { id: 'cw-swb-L-blue', dir: 'Yardımcılar/cw-swb-L-blue', category: 'yardimcilar', color: 'Mavi',
-    name: { tr: 'Yıkama Süngeri', en: 'Wash Sponge', de: 'Waschschwamm' },
-    tagline: { tr: 'Yumuşak Dokulu', en: 'Soft Texture', de: 'Weiche Textur' } },
-  { id: 'cw-swb-L-green', dir: 'Yardımcılar/cw-swb-L-green', category: 'yardimcilar', color: 'Yeşil',
-    name: { tr: 'Yıkama Süngeri', en: 'Wash Sponge', de: 'Waschschwamm' },
-    tagline: { tr: 'Yumuşak Dokulu', en: 'Soft Texture', de: 'Weiche Textur' } },
-  { id: 'cw-swb-L-red', dir: 'Yardımcılar/cw-swb-L-red', category: 'yardimcilar', color: 'Kırmızı',
-    name: { tr: 'Yıkama Süngeri', en: 'Wash Sponge', de: 'Waschschwamm' },
-    tagline: { tr: 'Yumuşak Dokulu', en: 'Soft Texture', de: 'Weiche Textur' } },
-  // Low confidence — SKU alone doesn't give enough signal for a specific name.
-  // TODO: unclear from SKU alone, confirm real name with user.
-  { id: 'cw-cL', dir: 'Yardımcılar/cw-cL', category: 'yardimcilar',
-    name: { tr: 'Detailing Aksesuarı', en: 'Detailing Accessory', de: 'Detailing-Zubehör' },
-    tagline: { tr: 'ChemicalWorkz Aksesuarı', en: 'ChemicalWorkz Accessory', de: 'ChemicalWorkz-Zubehör' } },
-  { id: 'cw-cm', dir: 'Yardımcılar/cw-cm', category: 'yardimcilar',
-    name: { tr: 'Detailing Aksesuarı', en: 'Detailing Accessory', de: 'Detailing-Zubehör' },
-    tagline: { tr: 'ChemicalWorkz Aksesuarı', en: 'ChemicalWorkz Accessory', de: 'ChemicalWorkz-Zubehör' } },
-  { id: 'cw-hL', dir: 'Yardımcılar/cw-hL', category: 'yardimcilar',
-    name: { tr: 'Detailing Aksesuarı', en: 'Detailing Accessory', de: 'Detailing-Zubehör' },
-    tagline: { tr: 'ChemicalWorkz Aksesuarı', en: 'ChemicalWorkz Accessory', de: 'ChemicalWorkz-Zubehör' } },
+  // Dropped in the 2026-08 catalog refresh — no folder anywhere in the reorganized
+  // .claude/product-list/ tree AND no row in the new Excel (vision-detail-ürün-listesi.xlsx):
+  // cw-ac250-10pcs, cw-cfgt-5pcs, cw-ipw-1pcs, cw-ipw-5pcs, cw-iup-5pcs, cw-tcb, cw-utb-L,
+  // cw-dryer, cw-rotary, cw-pcg, cw-ma, cw-swb-L(+blue/green/red), cw-cL, cw-cm, cw-hL.
+  // cw-evo-mini-es also has a folder now but it's empty (no photos) and has no Excel row —
+  // left out rather than guessing at a product with zero source material.
 ];
 
 function fmtKB(bytes) {
   return `${(bytes / 1024).toFixed(1)}KB`;
+}
+
+function thumbName(file) {
+  return file.replace(/(\.\w+)$/, '-thumb$1');
 }
 
 // Classifies a SKU folder's files into (primary/card image, poster/action shot, full gallery).
@@ -275,11 +318,29 @@ async function main() {
       continue;
     }
     const files = fs.readdirSync(srcDir).filter((f) => /\.webp$/i.test(f));
-    if (files.length === 0) {
-      skipped.push(`${seed.id}: no webp files in ${seed.dir}`);
-      continue;
+
+    // Several Polisaj Pedleri SKUs now share ONE source folder across size variants (the
+    // 30/50/75mm color-coded packshots live alongside the original 125mm set) — classify()'s
+    // packshot/action-shot heuristic can't tell which files belong to which exact SKU in that
+    // case, so `seed.images` (+ optional `seed.posterFile`) lets a seed pin its own explicit
+    // file list instead of auto-classifying the whole folder.
+    let primary, poster, gallery;
+    if (seed.images) {
+      const missing = seed.images.filter((f) => !files.includes(f));
+      if (missing.length) {
+        skipped.push(`${seed.id}: listed image(s) missing in ${seed.dir}: ${missing.join(', ')}`);
+        continue;
+      }
+      gallery = seed.images;
+      primary = gallery[0];
+      poster = seed.posterFile || null;
+    } else {
+      if (files.length === 0) {
+        skipped.push(`${seed.id}: no webp files in ${seed.dir}`);
+        continue;
+      }
+      ({ primary, poster, gallery } = classify(files));
     }
-    const { primary, poster, gallery } = classify(files);
 
     const outDir = path.join(OUT_IMG_ROOT, seed.id);
     fs.mkdirSync(outDir, { recursive: true });
@@ -293,13 +354,17 @@ async function main() {
       );
       totalBefore += before;
       totalAfter += after;
+      // See THUMB_MAX_WIDTH's comment — a real small file for the thumbnail rail, not just
+      // a `sizes` hint next/image can't act on under `unoptimized: true`.
+      const { after: thumbAfter } = await optimizeOne(path.join(srcDir, file), path.join(outDir, thumbName(file)), THUMB_MAX_WIDTH);
+      totalAfter += thumbAfter;
     }
 
     const category = catLabel(seed.category);
     const name = seed.name;
     const tagline = seed.tagline;
     const description = {
-      tr: `${name.tr}, ${category.tr.toLocaleLowerCase('tr')} kategorisinde ${tagline.tr.toLocaleLowerCase('tr')}. ChemicalWorkz'in Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.`,
+      tr: `${name.tr}, ${category.tr.toLocaleLowerCase('tr')} kategorisinde ${tagline.tr.toLocaleLowerCase('tr')}. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.`,
       en: `${name.en} is a ${tagline.en.toLowerCase()} product in our ${category.en.toLowerCase()} range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.`,
       // German capitalizes every noun regardless of sentence position — unlike the TR/EN
       // templates above, category/tagline are NOT lowercased here.
@@ -317,8 +382,23 @@ async function main() {
       isNew: false,
       image: `/images/products/${seed.id}/${primary}`,
       gallery: gallery.map((f) => `/images/products/${seed.id}/${f}`),
-      poster: POSTER_SKUS.has(seed.id) ? `/images/products/${seed.id}/${poster}` : null,
+      galleryThumbs: gallery.map((f) => `/images/products/${seed.id}/${thumbName(f)}`),
+      posterImages: (POSTER_DATA[seed.id]?.images ?? []).map((f) => `/images/products/${seed.id}/${f}`),
+      posterDescription: POSTER_DATA[seed.id]?.description ?? null,
+      video: VIDEO_DATA[seed.id] ?? null,
     });
+
+    // Poster image files aren't necessarily a subset of `gallery` (classify() only pulls
+    // "-a" files it happens to find; POSTER_DATA is authoritative per the Excel and can name
+    // files gallery skipped) — optimize any not already written above.
+    const posterFiles = POSTER_DATA[seed.id]?.images ?? [];
+    for (const file of posterFiles) {
+      const outPath = path.join(outDir, file);
+      if (fs.existsSync(outPath)) continue;
+      const { before, after } = await optimizeOne(path.join(srcDir, file), outPath, DETAIL_MAX_WIDTH);
+      totalBefore += before;
+      totalAfter += after;
+    }
   }
 
   const fileContent = `// Auto-generated by scripts/build-products.mjs from .claude/product-list/ (real product

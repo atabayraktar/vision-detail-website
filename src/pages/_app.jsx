@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Archivo, Hanken_Grotesk } from 'next/font/google';
 import Lenis from 'lenis';
@@ -29,16 +29,90 @@ const hankenGrotesk = Hanken_Grotesk({
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
-  // False on the very first render (server-rendered markup and the client's initial
-  // hydration pass agree, so no mismatch) and flips true only after that first paint has
-  // already happened. Gates the fade-in below to real client-side navigations — without
-  // this, the wrapper animated from opacity:0 on the FIRST load too, delaying the hero's
-  // LCP paint by the animation's own duration for no reason (there's nothing to transition
-  // *from* on a hard navigation; the static HTML should just be there immediately).
-  const hasMountedRef = useRef(false);
+  // Page-reveal + scroll restoration, coordinated so a "blink" never happens: the incoming
+  // page stays invisible (opacity:0, see .page-transition/.is-visible in globals.scss)
+  // until we've positioned its scroll correctly, THEN it fades in already-settled. Without
+  // this ordering, Next's own automatic POP-navigation scroll restore fires the instant the
+  // new page mounts — before client-hydrated state (e.g. /urunler's URL-synced filters) has
+  // grown the page to its real height — so it restores against a still-short page and lands
+  // near the top; our own correction then arrives a beat later and visibly snaps the
+  // content into place. Hiding the page for that whole window makes the wrong intermediate
+  // position invisible — the user only ever sees the final, correctly-scrolled state fade in.
+  //
+  // `ready` starts true (covers the very first load: server-rendered markup and the
+  // client's initial hydration pass agree, so there's nothing to hide or restore — the
+  // static HTML should just be there immediately, not delayed by an animation with nothing
+  // to transition *from*). `isFirstPathRef` skips the hide/restore dance on that same first
+  // run of the effect below (which fires once per pathname, including the initial one).
+  const [ready, setReady] = useState(true);
+  const isFirstPathRef = useRef(true);
+
+  // Keyed to router.pathname (not asPath) so shallow query-only updates on the same page
+  // (/urunler's filter/sort/page syncing, a product's variant swap) never trigger this —
+  // only a real navigation to a different page does, matching the wrapper's own remount key
+  // below.
   useEffect(() => {
-    hasMountedRef.current = true;
-  }, []);
+    if (isFirstPathRef.current) {
+      isFirstPathRef.current = false;
+      return undefined;
+    }
+
+    setReady(false);
+    const key = `scrollpos:${router.asPath}`;
+    const saved = sessionStorage.getItem(key);
+
+    let raf = 0;
+    let cancelled = false;
+
+    if (saved !== null) {
+      const target = Number(saved);
+      // A fixed frame count guessed wrong for anything further down the page (a product
+      // near the bottom of the grid) — the destination page's own client-hydrated content
+      // (e.g. /urunler's URL-synced filters) hadn't grown tall enough to actually contain
+      // that scroll position yet, so we'd land short and then visibly correct once it did.
+      // Poll instead: wait until the document is actually tall enough for `target`, one rAF
+      // at a time. The cap is wall-clock time (Date.now()), not a frame count — a page in a
+      // backgrounded/throttled tab can go many real seconds between rAF ticks, so a frame
+      // count alone could leave the page invisible far longer than intended; this guarantees
+      // a reveal within ~1.5s of real time either way (a page genuinely shorter than the
+      // saved position, its content having changed, just reveals at whatever height it
+      // settled at).
+      const deadline = Date.now() + 1500;
+      const waitForHeight = () => {
+        if (cancelled) return;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (maxScroll >= target || Date.now() >= deadline) {
+          sessionStorage.removeItem(key);
+          window.scrollTo(0, target);
+          setReady(true);
+        } else {
+          raf = requestAnimationFrame(waitForHeight);
+        }
+      };
+      raf = requestAnimationFrame(waitForHeight);
+    } else {
+      raf = requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        setReady(true);
+      });
+    }
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(raf);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router.pathname]);
+
+  // Saved on every real navigation-away (routeChangeStart), keyed to the exact URL being
+  // left (query included) so distinct filtered/variant views each restore correctly.
+  useEffect(() => {
+    const saveScroll = () => {
+      sessionStorage.setItem(`scrollpos:${router.asPath}`, String(window.scrollY));
+    };
+    router.events.on('routeChangeStart', saveScroll);
+    return () => router.events.off('routeChangeStart', saveScroll);
+  }, [router.asPath, router.events]);
 
   // Real inertia smooth-scroll (the reference the user pointed at only used native CSS
   // scroll-behavior:smooth, which does nothing for mouse-wheel input — this is what
@@ -116,11 +190,13 @@ export default function App({ Component, pageProps }) {
               transition at all (the new page just appears), which is what made "Ürünlere
               geri dön" (router.back() from a product page to /urunler) read as an abrupt
               snap instead of the "no hard cuts" motion language the rest of the site uses.
-              Opacity-only, deliberately no transform: Header/WhatsAppFab/ScrollTopButton are
-              all position:fixed *inside* Component, and animating `transform` on an ancestor
-              would create a new containing block for them for the animation's duration,
-              breaking their fixed positioning against the viewport mid-transition. */}
-          <div key={router.pathname} className={hasMountedRef.current ? 'page-transition' : undefined}>
+              `ready` (see above) gates the actual fade — see .page-transition/.is-visible in
+              globals.scss. Opacity-only, deliberately no transform: Header/WhatsAppFab/
+              ScrollTopButton are all position:fixed *inside* Component, and animating
+              `transform` on an ancestor would create a new containing block for them for the
+              animation's duration, breaking their fixed positioning against the viewport
+              mid-transition. */}
+          <div key={router.pathname} className={`page-transition${ready ? ' is-visible' : ''}`}>
             <Component {...pageProps} />
           </div>
         </LanguageProvider>

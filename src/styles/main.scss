@@ -13,7 +13,6 @@
 @use './components/CategorySlider';
 @use './components/AboutChemicalWorkz';
 @use './components/PolishingBanner';
-@use './components/QuizModal';
 @use './components/ContactSection';
 @use './components/WhatsAppFab';
 @use './components/ScrollTopButton';
@@ -29,6 +28,7 @@
 @use './components/ProductInfo';
 @use './components/VariantPicker';
 @use './components/ProductPoster';
+@use './components/RelatedProducts';
 
 @use './pages/index';
 @use './pages/urunler';

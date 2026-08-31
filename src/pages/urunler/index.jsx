@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Header from '@/components/Header';
@@ -16,9 +16,9 @@ import { products, PRODUCT_CATEGORIES } from '@/data/products';
 import useScrollReveal from '@/hooks/useScrollReveal';
 
 const SITE_URL = 'https://visiondetail.com.tr';
-const TITLE = 'Ürünler | Vision Detail | chemicalworkz';
+const TITLE = 'Ürünler | Vision Detail | ChemicalWorkz';
 const DESCRIPTION =
-  "chemicalworkz'in Türkiye distribütörü Vision Detail üzerinden polisaj makineleri, detay fırçaları, mikrofiber bezler ve daha fazla profesyonel detailing ekipmanını keşfedin.";
+  "ChemicalWorkz'ün Türkiye distribütörü Vision Detail üzerinden polisaj makineleri, detay fırçaları, mikrofiber bezler ve daha fazla profesyonel detailing ekipmanını keşfedin.";
 const PAGE_SIZE = 12;
 
 const BREADCRUMB_JSON_LD = {
@@ -33,8 +33,26 @@ const BREADCRUMB_JSON_LD = {
 // Products/categories are a local, build-time-only source (CLAUDE.md's Static Site
 // Generation rule) — getStaticProps is what makes that explicit, even though the data is
 // already static-imported (no server/API involved either way).
+//
+// Trimmed to only the fields the grid/search/sort/filter/card actually read — the full
+// product record now also carries gallery arrays, video, and (since the poster rework)
+// multi-paragraph posterDescription text in three languages, none of which this page uses.
+// Serializing all of that per product pushed this page over Next's 128kB page-data
+// warning threshold once the catalog grew to 54 products; each of those unused fields
+// still has to ship in the static HTML and get parsed/hydrated client-side, which is
+// exactly what CLAUDE.md's Lighthouse performance target keeps flagging as the risk here.
 export async function getStaticProps() {
-  return { props: { products, categories: PRODUCT_CATEGORIES } };
+  const listProducts = products.map(({ id, name, tagline, category, color, size, isNew, image }) => ({
+    id,
+    name,
+    tagline,
+    category,
+    color,
+    size,
+    isNew,
+    image,
+  }));
+  return { props: { products: listProducts, categories: PRODUCT_CATEGORIES } };
 }
 
 export default function ProductsPage({ products: allProducts, categories }) {
@@ -71,37 +89,6 @@ export default function ProductsPage({ products: allProducts, categories }) {
     if (typeof sayfa === 'string' && !Number.isNaN(Number(sayfa))) setPage(Math.max(1, Number(sayfa)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
-
-  // "Ürünlere geri dön" on the product detail page uses router.back() to land on roughly
-  // the same view — the URL-synced filters/sort/page above already handle that half, this
-  // handles the scroll position half, which the browser's own scroll restoration doesn't
-  // reliably reproduce here (this page's content height depends on client-side state that
-  // hydrates from the URL a render AFTER first paint, so Next's automatic restore fires
-  // against the wrong — pre-hydration — page height and lands at the top).
-  //
-  // Saved once per navigation-away (routeChangeStart fires as soon as a product card is
-  // clicked, before this page unmounts), restored once after the query-hydration effect
-  // above has actually applied (same deps, so this re-fires in the render right after
-  // hydration commits) — a double rAF waits for that render's layout to actually paint
-  // before scrolling, since the grid's final height isn't there yet on the same frame the
-  // state updates.
-  const scrollRestoredRef = useRef(false);
-  useEffect(() => {
-    const saveScroll = () => sessionStorage.setItem('urunler-scroll-y', String(window.scrollY));
-    router.events.on('routeChangeStart', saveScroll);
-    return () => router.events.off('routeChangeStart', saveScroll);
-  }, [router.events]);
-
-  useEffect(() => {
-    if (!router.isReady || scrollRestoredRef.current) return;
-    scrollRestoredRef.current = true;
-    const saved = sessionStorage.getItem('urunler-scroll-y');
-    if (!saved) return;
-    sessionStorage.removeItem('urunler-scroll-y');
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => window.scrollTo(0, Number(saved)));
-    });
-  }, [router.isReady, category, query, sort, page]);
 
   // Keep the URL in sync (shareable filtered view) without a full navigation/reload.
   useEffect(() => {
@@ -185,7 +172,7 @@ export default function ProductsPage({ products: allProducts, categories }) {
         <section className="products-page container">
           <h1 className="products-page__title" data-reveal>Ürünler</h1>
           <p className="products-page__intro" data-reveal>
-            chemicalworkz&apos;in Türkiye distribütörü Vision Detail üzerinden profesyonel detailing ekipmanlarını ve
+            ChemicalWorkz&apos;ün Türkiye distribütörü Vision Detail üzerinden profesyonel detailing ekipmanlarını ve
             bakım aksesuarlarını keşfedin.
           </p>
 

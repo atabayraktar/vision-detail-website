@@ -8,6 +8,12 @@
   position: relative;
   display: block;
   aspect-ratio: 1 / 1;
+  // Real product photos aren't all square (some packshots came back landscape/portrait,
+  // see src/data/products.js) — object-fit:cover on a forced square box cropped real
+  // product content off the top/bottom or sides depending on the source shot's own aspect
+  // ratio (the user-reported "kırpma" bug, on desktop as well as mobile). contain (set on
+  // the <Image> in ProductCard.jsx) always shows the whole packshot instead, letterboxed on
+  // the neutral --hair background for any shot that isn't already square.
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--hair);
