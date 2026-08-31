@@ -1,0 +1,82 @@
+// Mirrors SortMenu.scss's glass dropdown exactly — the two sit side by side in the
+// toolbar and must read as one matched pair, not two differently-built controls.
+.stock-filter {
+  position: relative;
+  display: inline-block;
+}
+
+.stock-filter__trigger {
+  border-radius: var(--radius-pill);
+}
+
+.stock-filter__trigger-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  font-family: var(--font-body);
+  font-variation-settings: 'wght' 450, 'wdth' 95;
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.stock-filter__chevron {
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.stock-filter__trigger[aria-expanded='true'] .stock-filter__chevron {
+  transform: rotate(180deg);
+}
+
+.stock-filter__list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: var(--z-glass);
+  border-radius: var(--radius-md);
+  min-width: 160px;
+  animation: dropdown-peel 0.5s var(--ease-spring);
+
+  &.is-closing {
+    animation: dropdown-peel-close 0.35s var(--ease-out) forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.stock-filter__list-content {
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stock-filter__option {
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  text-align: left;
+  color: var(--mute);
+  font-size: 14px;
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--glass-row-hover-bg);
+    box-shadow: var(--glass-row-hover-shadow);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: var(--ink);
+  }
+
+  &--active {
+    color: var(--ink);
+    font-variation-settings: 'wght' 500, 'wdth' 95;
+  }
+}

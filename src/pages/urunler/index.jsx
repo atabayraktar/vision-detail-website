@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import SearchBar from '@/components/SearchBar';
 import SortMenu, { SORT_OPTIONS } from '@/components/SortMenu';
+import StockFilter from '@/components/StockFilter';
 import FilterPanel, { FilterPanelSheet } from '@/components/FilterPanel';
 import ProductGrid from '@/components/ProductGrid';
 import Pagination from '@/components/Pagination';
@@ -71,6 +72,7 @@ export default function ProductsPage({ products: allProducts, categories }) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState(null);
   const [sort, setSort] = useState(SORT_OPTIONS[0].value);
+  const [stock, setStock] = useState(null);
   const [page, setPage] = useState(1);
   const [filterSheetOpen, setFilterSheetOpen] = useState(false);
 
@@ -79,10 +81,11 @@ export default function ProductsPage({ products: allProducts, categories }) {
   // ready, so the first paint is an unfiltered-but-correct list, not a flash of empty.
   useEffect(() => {
     if (!router.isReady) return;
-    const { kategori, q, sirala, sayfa } = router.query;
+    const { kategori, q, sirala, stok, sayfa } = router.query;
     if (typeof kategori === 'string') setCategory(kategori);
     if (typeof q === 'string') setQuery(q);
     if (typeof sirala === 'string' && SORT_OPTIONS.some((o) => o.value === sirala)) setSort(sirala);
+    if (stok === 'in' || stok === 'out') setStock(stok);
     if (typeof sayfa === 'string' && !Number.isNaN(Number(sayfa))) setPage(Math.max(1, Number(sayfa)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
@@ -94,20 +97,23 @@ export default function ProductsPage({ products: allProducts, categories }) {
     if (category) nextQuery.kategori = category;
     if (query) nextQuery.q = query;
     if (sort !== SORT_OPTIONS[0].value) nextQuery.sirala = sort;
+    if (stock) nextQuery.stok = stock;
     if (page > 1) nextQuery.sayfa = String(page);
     router.replace({ pathname: '/urunler', query: nextQuery }, undefined, { shallow: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, query, sort, page, router.isReady]);
+  }, [category, query, sort, stock, page, router.isReady]);
 
   // Any filter/search/sort change resets pagination — staying on page 4 of a 1-result
   // search would just show an empty page instead of the actual results.
   useEffect(() => {
     setPage(1);
-  }, [category, query, sort]);
+  }, [category, query, sort, stock]);
 
   const filtered = useMemo(() => {
     let list = allProducts;
     if (category) list = list.filter((p) => p.category === category);
+    if (stock === 'in') list = list.filter((p) => p.inStock !== false);
+    else if (stock === 'out') list = list.filter((p) => p.inStock === false);
     if (query.trim()) {
       const q = query.trim().toLocaleLowerCase('tr');
       list = list.filter((p) => {
@@ -116,18 +122,14 @@ export default function ProductsPage({ products: allProducts, categories }) {
         return name.includes(q) || tagline.includes(q);
       });
     }
-    // Three sort values (see SortMenu.jsx's SORT_OPTIONS): name A-Z / Z-A, plus "Önce
-    // Stokta Olanlar" — in-stock products first, name A-Z as the tiebreak in each group.
+    // Two sort values (see SortMenu.jsx's SORT_OPTIONS): name A-Z / Z-A. Stock availability
+    // is StockFilter's job now, not a sort order — see StockFilter.jsx.
     const sorted = [...list];
     if (sort === 'name-desc') sorted.sort((a, b) => t(b.name).localeCompare(t(a.name), 'tr'));
-    else if (sort === 'stock')
-      sorted.sort(
-        (a, b) => (b.inStock === false ? 0 : 1) - (a.inStock === false ? 0 : 1) || t(a.name).localeCompare(t(b.name), 'tr')
-      );
     else sorted.sort((a, b) => t(a.name).localeCompare(t(b.name), 'tr'));
     return sorted;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, query, sort, t, allProducts]);
+  }, [category, query, sort, stock, t, allProducts]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageItems = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -136,6 +138,7 @@ export default function ProductsPage({ products: allProducts, categories }) {
     setQuery('');
     setCategory(null);
     setSort(SORT_OPTIONS[0].value);
+    setStock(null);
   };
 
   return (
@@ -185,6 +188,7 @@ export default function ProductsPage({ products: allProducts, categories }) {
                 Filtrele
               </button>
               <SortMenu value={sort} onChange={setSort} />
+              <StockFilter value={stock} onChange={setStock} />
             </div>
           </div>
 

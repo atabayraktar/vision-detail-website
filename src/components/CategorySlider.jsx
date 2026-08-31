@@ -137,7 +137,6 @@ export default function CategorySlider() {
     const track = trackRef.current;
     if (!track) return;
     dragRef.current = { active: true, startX: e.clientX, startScroll: track.scrollLeft, moved: false };
-    track.classList.add('is-dragging');
     pause();
     // Stops the browser's native image/link drag-ghost from starting, which otherwise
     // hijacks the gesture instead of scrolling the track.
@@ -154,7 +153,17 @@ export default function CategorySlider() {
       const state = dragRef.current;
       if (!state.active) return;
       const dx = e.clientX - state.startX;
-      if (Math.abs(dx) > 4) state.moved = true;
+      // .is-dragging (which sets pointer-events:none on the cards, see CategorySlider.scss)
+      // only gets added HERE, once real movement crosses the threshold — not on mousedown.
+      // Adding it eagerly on mousedown made pointer-events:none active on the very card being
+      // pressed for the whole click gesture, which made Chromium drop the click's target
+      // entirely: a plain, stationary click (or a normal tap, which always has a little
+      // finger jitter) never fired the card's navigation at all. Only an actual drag past
+      // the threshold should ever disable the cards' pointer-events.
+      if (Math.abs(dx) > 4 && !state.moved) {
+        state.moved = true;
+        track.classList.add('is-dragging');
+      }
       track.scrollLeft = state.startScroll - dx;
     };
 

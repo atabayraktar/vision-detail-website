@@ -44,12 +44,19 @@
     align-items: center;
     flex-shrink: 0;
 
-    &:hover,
-    &:focus-visible {
-      .site-header__logo-glow {
+    // (hover: hover) keeps this off touch devices — without it, tapping the logo to
+    // navigate leaves it stuck in :hover (touch has no "move away" to clear the state),
+    // which is what read as the mobile logo staying permanently orange.
+    @media (hover: hover) {
+      &:hover .site-header__logo-glow {
         opacity: 1;
         animation: gradient-sweep 2.4s linear infinite;
       }
+    }
+
+    &:focus-visible .site-header__logo-glow {
+      opacity: 1;
+      animation: gradient-sweep 2.4s linear infinite;
     }
   }
 
@@ -165,12 +172,17 @@
     align-items: center;
     flex-shrink: 0;
 
-    &:hover,
-    &:focus-visible {
-      .site-header__logo-glow {
+    // See __logo-link above — same stuck-:hover-on-tap issue applies here.
+    @media (hover: hover) {
+      &:hover .site-header__logo-glow {
         opacity: 1;
         animation: gradient-sweep 2.4s linear infinite;
       }
+    }
+
+    &:focus-visible .site-header__logo-glow {
+      opacity: 1;
+      animation: gradient-sweep 2.4s linear infinite;
     }
   }
 
