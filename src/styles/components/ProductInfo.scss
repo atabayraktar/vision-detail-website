@@ -4,20 +4,6 @@
   align-items: flex-start;
 }
 
-.product-info__eyebrow {
-  font-size: 13px;
-  font-variation-settings: 'wght' 450, 'wdth' 95;
-  // Was var(--g1) — a static (non-hover) use of the brand gradient's accent color, which
-  // both broke CLAUDE.md's "gradient/accent only on hover text" rule and failed WCAG AA at
-  // this size (3.78:1 against --bg, needs 4.5:1 — Lighthouse color-contrast audit). --faint
-  // is the token the rest of the site already uses for eyebrow-style labels (see
-  // _tokens.scss's own note) and clears AA.
-  color: var(--faint);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: var(--space-3);
-}
-
 .product-info__name {
   font-size: clamp(26px, 3.2vw, 38px);
   margin-bottom: var(--space-3);

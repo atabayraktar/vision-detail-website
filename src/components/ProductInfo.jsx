@@ -1,6 +1,5 @@
 import { useLanguage } from '@/context/LanguageContext';
 import { contactSection } from '@/data/homepageContent';
-import { PRODUCT_CATEGORIES } from '@/data/products';
 import GlassSurface from './GlassSurface';
 import VariantPicker from './VariantPicker';
 
@@ -13,14 +12,12 @@ const CTA_LABEL = { tr: 'WhatsApp ile Bilgi Al', en: 'Ask on WhatsApp', de: 'Üb
 
 export default function ProductInfo({ product, siblings }) {
   const { t, lang } = useLanguage();
-  const category = PRODUCT_CATEGORIES.find((c) => c.slug === product.category);
 
   const whatsappMessage = (WHATSAPP_MESSAGE[lang] ?? WHATSAPP_MESSAGE.tr)(t(product.name), product.id);
   const whatsappHref = `${contactSection.whatsappHref}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="product-info">
-      {category && <span className="product-info__eyebrow">{t(category.label)}</span>}
       <h1 className="product-info__name">{t(product.name)}</h1>
       <p className="product-info__tagline">{t(product.tagline)}</p>
 
