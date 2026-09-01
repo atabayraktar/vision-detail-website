@@ -6,7 +6,7 @@ import GlassSurface from './GlassSurface';
 const TEXT = {
   new: { tr: 'Yeni', en: 'New', de: 'Neu' },
   outOfStock: { tr: 'Stokta Yok', en: 'Out of Stock', de: 'Nicht auf Lager' },
-  askPrice: { tr: "Fiyat için WhatsApp'tan sorun", en: 'Ask price on WhatsApp', de: 'Preis über WhatsApp erfragen' },
+  askPrice: { tr: "Sipariş ve detaylı bilgi için WhatsApp'tan ulaşın", en: 'Contact us on WhatsApp for orders and details', de: 'Für Bestellungen und weitere Informationen kontaktieren Sie uns über WhatsApp' },
   unavailable: { tr: 'Şu an temin edilemiyor', en: 'Currently unavailable', de: 'Derzeit nicht verfügbar' },
   view: { tr: 'İncele', en: 'View', de: 'Ansehen' },
 };

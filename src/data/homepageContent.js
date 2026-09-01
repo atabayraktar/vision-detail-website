@@ -81,9 +81,9 @@ export const heroSlides = [
       de: 'Klein, aber stark. Für jedes Detail gemacht.',
     },
     info: {
-      tr: 'Mini Hava Tabancası, bezin ulaşamadığı her yerde, en inatçı kirleri bile hassas, verimli ve maximum control temizler.',
-      en: "The Mini Air Gun reaches everywhere a cloth can't — clearing even the most stubborn dirt with precision, efficiency and maximum control.",
-      de: 'Die Mini-Luftpistole erreicht jede Stelle, an die ein Tuch nicht herankommt, und entfernt selbst hartnäckigsten Schmutz präzise, effizient und mit maximaler Kontrolle.',
+      tr: 'Mini Hava Tabancası, bezin ulaşamadığı her yerde, en inatçı kirleri bile hassas ve maksimum kontrol ile temizler.',
+      en: "The Mini Air Gun reaches everywhere a cloth can't — clearing even the most stubborn dirt with precision and maximum control.",
+      de: 'Die Mini-Luftpistole erreicht jede Stelle, an die ein Tuch nicht herankommt, und entfernt selbst hartnäckigsten Schmutz präzise und mit maximaler Kontrolle.',
     },
     cta: { tr: 'Daha fazla bilgi edin', en: 'Learn more', de: 'Mehr erfahren' },
     href: '/urunler/cw-mag',

@@ -30,12 +30,17 @@
   font-variation-settings: 'wght' 560, 'wdth' 125;
 }
 
-// Both arrows grouped together at the head row's right edge (not flanking the track) —
-// same glass-squircle icon-button system as the WhatsApp FAB (Brand Guidelines · 05).
+// Arrows at the far right of the title row — mobile-only, same glass-squircle
+// icon-button system as the WhatsApp FAB (Brand Guidelines · 05). Hidden from tablet up,
+// where the section becomes a static 4-up grid with nothing to scroll.
 .category-slider__arrows {
   display: flex;
   gap: var(--space-2);
   flex-shrink: 0;
+
+  @media (min-width: 640px) {
+    display: none;
+  }
 }
 
 .category-slider__control {
@@ -55,24 +60,30 @@
   }
 }
 
-// Same box as every other section's .container — same left/right inset as the rest of
-// the page, AND (this is the part that matters) this element's own border-box is what
-// actually clips the scrollable track inside it. Padding does NOT clip an overflowing
-// child in a scroll container — only the element's own box boundary does — so putting the
-// inset here (on a plain, non-scrolling wrapper) instead of as padding on the scrollable
-// track itself is what stops a 5th card from rendering (visibly) inside what used to be
-// the track's own padding-right zone.
+// Non-scrolling wrapper: carries the same left/right inset as every other section's
+// .container, and — because it doesn't scroll — its own border-box is what actually
+// clips the track's peeking cards at rest. Padding placed on the scrollable track
+// itself doesn't reliably clip overflowing content the same way, which is why the
+// padding lives here instead.
 .category-slider__viewport {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-pad);
 }
 
+// Mobile: 4 cards don't fit side by side at a readable width, so this stays a plain
+// scrollable (non-looping) row — native touch/trackpad scrolling plus mouse-drag (see
+// CategorySlider.jsx), no clone cards, no autoplay. From tablet up there's room for all
+// 4 at once, so it becomes a static grid and scrolling turns off entirely.
 .category-slider__track {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  // Without this, iOS/Android rubber-band past the real scroll boundary before settling
+  // back — which is exactly what reads as "needing one more tiny swipe" at the last
+  // card. Containing overscroll here makes the track stop dead at its real edge.
+  overscroll-behavior-x: contain;
   padding-bottom: var(--space-2);
   scrollbar-width: none;
   cursor: grab;
@@ -93,27 +104,38 @@
       pointer-events: none;
     }
   }
+
+  @media (min-width: 640px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+    cursor: auto;
+  }
 }
 
 .category-slider__card {
+  display: block;
   flex: 0 0 auto;
-  width: 65vw;
-  max-width: 300px;
+  width: 45vw;
+  max-width: 220px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  display: block;
 
-  @media (min-width: 640px) {
-    width: 42vw;
-    max-width: 280px;
+  // The last card's ideal "start" snap point (its left edge flush with the viewport)
+  // sits past the track's actual max scroll distance, so a start-aligned snap left a
+  // sliver of extra scroll room the browser could still creep into past the visual end.
+  // Snapping the last card to "end" instead makes its right edge — which already lines
+  // up exactly with the max scrollable position — the snap target, so the scroll simply
+  // stops there with nothing left over.
+  &:last-child {
+    scroll-snap-align: end;
   }
 
-  @media (min-width: 1024px) {
-    // Percentage widths on a flex item resolve against the track's CONTENT box (padding
-    // already excluded), so this sizes exactly 4 cards + 3 gaps to fill the track's inset
-    // content width — no partial 5th card peeking in at rest, and the row's left/right
-    // edges land flush with every other section's .container padding.
-    width: calc((100% - 3 * 20px) / 4);
+  @media (min-width: 640px) {
+    width: auto;
     max-width: none;
   }
 }
