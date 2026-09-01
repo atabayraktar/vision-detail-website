@@ -23,7 +23,15 @@ export default function ProductInfo({ product, siblings }) {
 
       {siblings.length > 0 && <VariantPicker current={product} siblings={siblings} />}
 
-      <p className="product-info__description">{t(product.description)}</p>
+      {/* Real Excel copy is often 2-3 \n\n-separated paragraphs — rendered as separate
+          <p>s instead of one run-on block. */}
+      {t(product.description)
+        .split('\n\n')
+        .map((paragraph, i) => (
+          <p key={i} className="product-info__description">
+            {paragraph}
+          </p>
+        ))}
 
       <GlassSurface
         as="a"

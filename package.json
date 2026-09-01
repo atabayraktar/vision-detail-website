@@ -17,7 +17,8 @@
   },
   "devDependencies": {
     "puppeteer-core": "^23.6.0",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "xlsx": "^0.18.5"
   },
   "browserslist": [
     "chrome >= 100",

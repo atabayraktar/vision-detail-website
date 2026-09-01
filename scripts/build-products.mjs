@@ -34,6 +34,12 @@ const posterDataFile = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'po
 const POSTER_DATA = posterDataFile.POSTER_DATA;
 const VIDEO_DATA = posterDataFile.VIDEO_DATA;
 
+// Real product descriptions from the Excel's ÜRÜN AÇIKLAMASI column (J) — see
+// scripts/build-description-data.mjs, re-run that first if the Excel's column J changes.
+// Empty for the 3 SKUs whose Excel row has no description text (cw-da9-pro-max, cw-da12,
+// cw-hwa) — those fall back to the templated description built from name+category+tagline.
+const DESCRIPTION_DATA = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'description-data.json'), 'utf8'));
+
 // Exactly the 8 top-level categories from the source Excel's ANA KATEGORİLER column
 // (rows 2-9, in the Excel's own order — vision-detail-ürün-listesi.xlsx, 2026-08 refresh).
 // The old finer subcategories were never the user's: detay-fircalari → fircalar,
@@ -79,10 +85,10 @@ const SEEDS = [
     tagline: { tr: 'Basınçlı Hava Temizleme Tabancası', en: 'Compressed Air Cleaning Gun', de: 'Druckluft-Reinigungspistole' } },
   { id: 'cw-evo-mini', dir: 'Polisaj Makinesi/cw-evo-mini', category: 'polisaj-makinesi',
     name: { tr: 'EVO Mini', en: 'EVO Mini', de: 'EVO Mini' },
-    tagline: { tr: 'Hibrit Polisaj Makinesi', en: 'Hybrid Polisher', de: 'Hybrid-Poliermaschine' } },
+    tagline: { tr: 'Hibrit Polisaj Makineleri', en: 'Hybrid Polishing Machine', de: 'Hybrid-Poliermaschine' } },
   { id: 'cw-evo-mini-pro', dir: 'Polisaj Makinesi/cw-evo-mini-pro', category: 'polisaj-makinesi',
     name: { tr: 'EVO Mini Pro', en: 'EVO Mini Pro', de: 'EVO Mini Pro' },
-    tagline: { tr: 'Hibrit Polisaj Makinesi', en: 'Hybrid Polisher', de: 'Hybrid-Poliermaschine' } },
+    tagline: { tr: 'Hibrit Polisaj Makineleri', en: 'Hybrid Polishing Machine', de: 'Hybrid-Poliermaschine' } },
   // Polisaj Pedleri: the source photo folders are now shared per PAD TYPE across every size
   // variant (30/50/75/125mm all live in one "cw-pp-<type>" folder together) instead of one
   // folder per exact SKU — `images`/`posterFile` pin each SKU's own specific file(s) out of
@@ -175,25 +181,25 @@ const SEEDS = [
     tagline: { tr: 'Yüksek Kaliteli Keçe | Aşındırıcı', en: 'High-Quality Felt | Abrasive', de: 'Hochwertiger Filz | Abrasiv' } },
   { id: 'cw-db-ws-16', dir: 'Fırçalar/cw-db-ws-16', category: 'fircalar', size: '16mm',
     name: { tr: 'Yumuşak Detay Fırçası', en: 'Soft Detailing Brush', de: 'Weiche Detailing-Bürste' },
-    tagline: { tr: 'Süper Yumuşak', en: 'Super Soft', de: 'Super Weich' } },
+    tagline: { tr: 'Detay Fırçası | Süper Yumuşak', en: 'Detailing Brush | Super Soft', de: 'Detailing-Bürste | Super Weich' } },
   { id: 'cw-db-ws-20', dir: 'Fırçalar/cw-db-ws-20', category: 'fircalar', size: '20mm',
     name: { tr: 'Yumuşak Detay Fırçası', en: 'Soft Detailing Brush', de: 'Weiche Detailing-Bürste' },
-    tagline: { tr: 'Süper Yumuşak', en: 'Super Soft', de: 'Super Weich' } },
+    tagline: { tr: 'Detay Fırçası | Süper Yumuşak', en: 'Detailing Brush | Super Soft', de: 'Detailing-Bürste | Super Weich' } },
   { id: 'cw-db-ws-24', dir: 'Fırçalar/cw-db-ws-24', category: 'fircalar', size: '24mm',
     name: { tr: 'Yumuşak Detay Fırçası', en: 'Soft Detailing Brush', de: 'Weiche Detailing-Bürste' },
-    tagline: { tr: 'Süper Yumuşak', en: 'Super Soft', de: 'Super Weich' } },
+    tagline: { tr: 'Detay Fırçası | Süper Yumuşak', en: 'Detailing Brush | Super Soft', de: 'Detailing-Bürste | Super Weich' } },
   { id: 'cw-db-us', dir: 'Fırçalar/cw-db-us', category: 'fircalar', size: '20mm',
     name: { tr: 'Ultra Yumuşak Detay Fırçası', en: 'Ultra Soft Detailing Brush', de: 'Ultra-Weiche Detailing-Bürste' },
-    tagline: { tr: 'Ultra Yumuşak', en: 'Ultra Soft', de: 'Ultra Weich' } },
+    tagline: { tr: 'Detay Fırçası | Ultra Yumuşak', en: 'Detailing Brush | Ultra Soft', de: 'Detailing-Bürste | Ultra Weich' } },
   { id: 'cw-db-bb-16', dir: 'Fırçalar/cw-db-bb-16', category: 'fircalar', size: '16mm',
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
-    tagline: { tr: 'Yumuşak', en: 'Soft', de: 'Weich' } },
+    tagline: { tr: 'Detay Fırçası | Yumuşak', en: 'Detailing Brush | Soft', de: 'Detailing-Bürste | Weich' } },
   { id: 'cw-db-bb-20', dir: 'Fırçalar/cw-db-bb-20', category: 'fircalar', size: '20mm',
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
-    tagline: { tr: 'Yumuşak', en: 'Soft', de: 'Weich' } },
+    tagline: { tr: 'Detay Fırçası | Yumuşak', en: 'Detailing Brush | Soft', de: 'Detailing-Bürste | Weich' } },
   { id: 'cw-db-bb-24', dir: 'Fırçalar/cw-db-bb-24', category: 'fircalar', size: '24mm',
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
-    tagline: { tr: 'Yumuşak', en: 'Soft', de: 'Weich' } },
+    tagline: { tr: 'Detay Fırçası | Yumuşak', en: 'Detailing Brush | Soft', de: 'Detailing-Bürste | Weich' } },
   { id: 'cw-usd-purple', dir: 'Fırçalar/cw-usd-purple', category: 'fircalar', color: 'Mor',
     name: { tr: "Ultra Yumuşak 2'li", en: 'Ultra Soft 2-Piece Set', de: 'Ultra-Weiches 2er-Set' },
     tagline: { tr: 'Detay Fırçası Seti | Mor', en: 'Detailing Brush Set | Purple', de: 'Detailing-Bürsten-Set | Lila' } },
@@ -202,46 +208,46 @@ const SEEDS = [
     tagline: { tr: 'Detay Fırçası Seti | Turkuaz', en: 'Detailing Brush Set | Turquoise', de: 'Detailing-Bürsten-Set | Türkis' } },
   { id: 'cw-tdb', dir: 'Fırçalar/cw-tdb', category: 'fircalar',
     name: { tr: 'Lastik Parlatıcı Fırça', en: 'Tire Dressing Brush', de: 'Reifenglanz-Bürste' },
-    tagline: { tr: 'Kimyasal Maddelere Dayanıklı', en: 'Chemical Resistant', de: 'Chemikalienbeständig' } },
+    tagline: { tr: 'Lastik Fırçası | Yüksek kaliteli | Kimyasal Maddelere Dayanıklı', en: 'Tire Brush | High Quality | Chemical Resistant', de: 'Reifenbürste | Hohe Qualität | Chemikalienbeständig' } },
   { id: 'cw-sb-L-b', dir: 'Sprey Şişeleri/cw-sb-L-b', category: 'sprey-siseleri', color: 'Siyah',
     name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
-    tagline: { tr: "360° Tetikli | 5 Renk Seçeneği", en: '360° Trigger | 5 Color Options', de: '360°-Sprühkopf | 5 Farboptionen' } },
+    tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-bL', dir: 'Sprey Şişeleri/cw-sb-L-bL', category: 'sprey-siseleri', color: 'Mavi',
     name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
-    tagline: { tr: "360° Tetikli | 5 Renk Seçeneği", en: '360° Trigger | 5 Color Options', de: '360°-Sprühkopf | 5 Farboptionen' } },
+    tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-gr', dir: 'Sprey Şişeleri/cw-sb-L-gr', category: 'sprey-siseleri', color: 'Yeşil',
     name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
-    tagline: { tr: "360° Tetikli | 5 Renk Seçeneği", en: '360° Trigger | 5 Color Options', de: '360°-Sprühkopf | 5 Farboptionen' } },
+    tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-re', dir: 'Sprey Şişeleri/cw-sb-L-re', category: 'sprey-siseleri', color: 'Kırmızı',
     name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
-    tagline: { tr: "360° Tetikli | 5 Renk Seçeneği", en: '360° Trigger | 5 Color Options', de: '360°-Sprühkopf | 5 Farboptionen' } },
+    tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-ye', dir: 'Sprey Şişeleri/cw-sb-L-ye', category: 'sprey-siseleri', color: 'Sarı',
     name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
-    tagline: { tr: "360° Tetikli | 5 Renk Seçeneği", en: '360° Trigger | 5 Color Options', de: '360°-Sprühkopf | 5 Farboptionen' } },
+    tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-rps', dir: 'Sprey Şişeleri/cw-rps', category: 'sprey-siseleri',
     name: { tr: 'Doldurulabilir Basınçlı Sprey', en: 'Refillable Pressure Sprayer', de: 'Nachfüllbarer Drucksprüher' },
-    tagline: { tr: '5-8 bar', en: '5-8 bar', de: '5-8 bar' } },
+    tagline: { tr: 'Basınçlı Sprey Şişesi | 5-8 bar', en: 'Pressure Sprayer | 5-8 bar', de: 'Drucksprüher | 5-8 bar' } },
   { id: 'cw-cs', dir: 'Yardımcılar/cw-cs', category: 'yardimcilar',
     name: { tr: 'Sihirli Kil Süngeri', en: 'Magic Clay Sponge', de: 'Magic-Clay-Schwamm' },
-    tagline: { tr: 'Polimer Teknolojisi | 11x7x4.5cm', en: 'Polymer Technology | 11x7x4.5cm', de: 'Polymer-Technologie | 11x7x4,5cm' } },
+    tagline: { tr: 'Temizleme Kili | Polimer Teknolojisi | 11x7x4.5cm', en: 'Cleaning Clay | Polymer Technology | 11x7x4.5cm', de: 'Reinigungsknete | Polymer-Technologie | 11x7x4,5cm' } },
   { id: 'cw-amm-gray', dir: 'Yardımcılar/cw-amm-gray', category: 'yardimcilar',
     name: { tr: 'Mikrofiber Eldiven', en: 'Microfiber Wash Mitt', de: 'Mikrofaser-Waschhandschuh' },
-    tagline: { tr: 'Çok Amaçlı', en: 'Multi-Purpose', de: 'Vielseitig' } },
+    tagline: { tr: 'Çok Amaçlı Mikrofiber Eldiven', en: 'Multi-Purpose Microfiber Mitt', de: 'Vielseitiger Mikrofaser-Waschhandschuh' } },
   { id: 'cw-pc-s', dir: 'Yardımcılar/cw-pc-s', category: 'yardimcilar',
     name: { tr: 'Parlatma Konileri', en: 'Polishing Cones', de: 'Polierkegel' },
-    tagline: { tr: 'Dar alanlar için', en: 'For tight spaces', de: 'Für enge Stellen' } },
+    tagline: { tr: 'Polisaj Koni Seti | Dar alanlar ve detaylı uygulamalar için', en: 'Polishing Cone Set | For tight spaces and detailed work', de: 'Polierkegel-Set | Für enge Stellen und Detailarbeiten' } },
   { id: 'cw-hg', dir: 'Yardımcılar/cw-hg', category: 'yardimcilar',
     name: { tr: 'Kablo Kaydırıcı', en: 'Hose Guide', de: 'Schlauchführung' },
     tagline: { tr: 'Yüksek Kaliteli Plastik | 10x15cm', en: 'High-Quality Plastic | 10x15cm', de: 'Hochwertiger Kunststoff | 10x15cm' } },
   { id: 'cw-mw', dir: 'Yardımcılar/cw-mw', category: 'yardimcilar',
     name: { tr: 'Alet Takımı', en: 'Tool Kit', de: 'Werkzeugset' },
-    tagline: { tr: 'Montaj Aparatı | 12 parça', en: 'Assembly Kit | 12 pieces', de: 'Montageset | 12 Teile' } },
+    tagline: { tr: 'Montaj Aparatı Seti | 12 parça', en: 'Assembly Tool Set | 12 pieces', de: 'Montagewerkzeug-Set | 12 Teile' } },
   { id: 'cw-ms', dir: 'Bezler/cw-ms', category: 'bezler',
     name: { tr: 'Manyetik Havlu', en: 'Magnetic Drying Towel', de: 'Magnet-Trockentuch' },
     tagline: { tr: 'Manyetik Kurulama Havlusu', en: 'Magnetic Drying Towel', de: 'Magnetisches Trockentuch' } },
   { id: 'cw-pss', dir: 'Yardımcılar/cw-pss', category: 'yardimcilar',
     name: { tr: 'Boya Rötuş Çubukları', en: 'Paint Touch-Up Sticks', de: 'Lack-Ausbesserstifte' },
-    tagline: { tr: 'Mikrofiber | 20 adet', en: 'Microfiber | 20 pieces', de: 'Mikrofaser | 20 Stück' } },
+    tagline: { tr: 'Boya Uygulama Çubukları | Mikrofiber | 20 adet', en: 'Paint Application Sticks | Microfiber | 20 pieces', de: 'Lack-Auftragsstäbchen | Mikrofaser | 20 Stück' } },
   { id: 'cw-ga', dir: 'Keçeler/cw-ga', category: 'keceler',
     name: { tr: 'Cam Keçe', en: 'Glass Felt Applicator', de: 'Glas-Filzapplikator' },
     tagline: { tr: 'Cam Uygulayıcı | Cam parlatma için ideal | 6x4x5cm', en: 'Glass Applicator | Ideal for glass polishing | 6x4x5cm', de: 'Glas-Applikator | Ideal zum Glaspolieren | 6x4x5cm' } },
@@ -371,7 +377,9 @@ async function main() {
     const category = catLabel(seed.category);
     const name = seed.name;
     const tagline = seed.tagline;
-    const description = {
+    // Real Excel copy (column J) where available; the 3 SKUs with no Excel description
+    // text (cw-da9-pro-max, cw-da12, cw-hwa) fall back to a templated sentence.
+    const description = DESCRIPTION_DATA[seed.id] ?? {
       tr: `${name.tr}, ${category.tr.toLocaleLowerCase('tr')} kategorisinde ${tagline.tr.toLocaleLowerCase('tr')}. ChemicalWorkz'ün Alman mühendisliğiyle geliştirilen bu ürün, profesyonel detailing ihtiyaçları için tasarlandı.`,
       en: `${name.en} is a ${tagline.en.toLowerCase()} product in our ${category.en.toLowerCase()} range. Engineered with ChemicalWorkz's German engineering standards, it's built for professional detailing needs.`,
       // German capitalizes every noun regardless of sentence position — unlike the TR/EN

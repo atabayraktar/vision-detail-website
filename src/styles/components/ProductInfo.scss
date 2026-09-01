@@ -19,7 +19,14 @@
   font-size: 15.5px;
   line-height: 1.7;
   color: var(--ink-strong);
-  margin-bottom: var(--space-6);
+  // A description can render as several \n\n-separated <p>s (see ProductInfo.jsx) — a
+  // tighter gap between them, with the full space-6 breathing room only after the last
+  // one, before the CTA button.
+  margin-bottom: var(--space-3);
+
+  &:last-of-type {
+    margin-bottom: var(--space-6);
+  }
 }
 
 .product-info__cta {
