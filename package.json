@@ -18,5 +18,12 @@
   "devDependencies": {
     "puppeteer-core": "^23.6.0",
     "sharp": "^0.35.3"
-  }
+  },
+  "browserslist": [
+    "chrome >= 100",
+    "edge >= 100",
+    "firefox >= 100",
+    "safari >= 15",
+    "ios_saf >= 15"
+  ]
 }

@@ -50,7 +50,10 @@ async function logoToWebp(svgName, srcDir, outName) {
   const svgPath = path.join(srcDir, svgName);
   const tmpPng = path.join(ROOT, 'public', 'logos', outName + '.tmp.png');
   const outPath = path.join(ROOT, 'public', 'logos', outName + '.webp');
-  await rasterizeSvgToPng(svgPath, tmpPng, 900);
+  // Both logo files max out at 140px CSS width (Header) — 360px covers >2x retina with
+  // margin, at a fraction of the previous 900px target's bytes (Lighthouse flagged the
+  // 900px version as ~13KiB of pure waste against its ~150-280px real display size).
+  await rasterizeSvgToPng(svgPath, tmpPng, 360);
   const before = fs.statSync(svgPath).size;
   await sharp(tmpPng).webp({ quality: 92, alphaQuality: 100 }).toFile(outPath);
   fs.unlinkSync(tmpPng);
@@ -118,7 +121,10 @@ async function main() {
       console.log(`skip equipment/${slug}.webp: no source photo supplied yet (${file})`);
       continue;
     }
-    await imageToWebp(src, path.join(ROOT, 'public', 'images', 'equipment', `${slug}.webp`), 800, 80);
+    // Cards top out at ~300px CSS width (CategorySlider.scss) — 640px comfortably covers
+    // 2x retina. The previous 800px target was flagged by Lighthouse as oversized relative
+    // to actual display size across breakpoints.
+    await imageToWebp(src, path.join(ROOT, 'public', 'images', 'equipment', `${slug}.webp`), 640, 80);
   }
 
   // 3b. ChemicalWorkz About section image — now has its own dedicated source (previously
@@ -128,7 +134,7 @@ async function main() {
     path.join(DATA, 'chemical-works-about-section', 'chemicalworkz-about-4x3.webp'),
     path.join(ROOT, 'public', 'images', 'about-chemicalworkz.webp'),
     1000,
-    82
+    78
   );
 
   // 4. Polishing banner image — desktop (wide) + a genuinely different art-directed mobile
