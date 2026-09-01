@@ -159,7 +159,8 @@ export default function ProductDetailPage({ product, siblings, related, categori
           {/* Poster images/description come straight from the source Excel's ÜRÜN POSTERİ
               GÖRSELİ / ÜRÜN POSTERİ AÇIKLAMASI columns (see scripts/build-products.mjs);
               cw-ms's poster cell is genuinely a video clip, which ProductPoster renders as
-              a full-width loop. The component no-ops when a SKU has no poster media at all. */}
+              a full-width loop. Several SKUs only have a written description and no photo/
+              video — ProductPoster still renders those; it only no-ops when both are empty. */}
           <ProductPoster
             images={product.posterImages}
             video={product.video}

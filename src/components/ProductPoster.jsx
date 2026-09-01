@@ -13,7 +13,8 @@ import { useLanguage } from '@/context/LanguageContext';
 //     Excel copy's own "Öneri:" / "Önemli not:" convention) become quiet hairline callouts.
 //   - Media adapts to what the SKU actually has: video → full-width cinematic loop;
 //     1 photo → full-bleed; 2 photos → weighted pair; 3 photos → mosaic (one tall, two
-//     stacked). Nothing renders for SKUs with no poster media at all.
+//     stacked). Media is optional — a SKU with only a written description and no
+//     photo/video still renders the text. Nothing renders only when both are empty.
 const EYEBROW = { tr: 'Detaylı Bilgi', en: 'Product Details', de: 'Produktdetails' };
 
 function Paragraph({ text }) {
@@ -53,12 +54,15 @@ export default function ProductPoster({ images, video, description, alt }) {
     }
   }, [video]);
 
-  if (photos.length === 0 && !video) return null;
-
   const paragraphs = description
     ? t(description).split(/\n{2,}/).map((p) => p.trim()).filter(Boolean)
     : [];
   const [lead, ...more] = paragraphs;
+
+  // Media is optional per SKU (some Excel rows only ever had a written poster
+  // description, no photo/video) — only skip the whole section when there's
+  // truly nothing to show.
+  if (photos.length === 0 && !video && !lead) return null;
 
   return (
     <section className="product-poster" data-reveal aria-label={t(EYEBROW)}>
@@ -77,6 +81,7 @@ export default function ProductPoster({ images, video, description, alt }) {
         </div>
       )}
 
+      {(photos.length > 0 || video) && (
       <div className="product-poster__media">
         {video && (
           <div className="product-poster__video">
@@ -139,6 +144,7 @@ export default function ProductPoster({ images, video, description, alt }) {
           </div>
         )}
       </div>
+      )}
     </section>
   );
 }
