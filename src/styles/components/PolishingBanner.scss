@@ -12,20 +12,20 @@
 .polishing-banner__frame {
   position: relative;
   overflow: hidden;
-  // The supplied mobile photo is natively 900x675 (4:3, landscape) — a 4:5 portrait box
-  // forced it into a much taller frame than the photo itself, so object-fit:cover had to
-  // crop heavily off the top/bottom to fill the extra height (the user-reported "mobilde
-  // bannerin heighti fazla" bug). Matching the frame to the photo's own ratio keeps nearly
-  // the whole shot in frame, cropping from the sides (scaling to fit width) instead.
-  aspect-ratio: 4 / 3;
+  // Mobile banner photo is natively 851x1452 (tall portrait, ~0.59:1 — the user trimmed
+  // some height off the top of the original 851x1849 crop since that read too tall) —
+  // matching the frame to the photo's own ratio keeps the whole shot in frame instead of
+  // object-fit:cover cropping it to fill a mismatched box.
+  aspect-ratio: 851 / 1452;
   display: flex;
-  align-items: flex-end;
+  // Panel always anchors top-left of the image, on every breakpoint — it must stay clear
+  // of the product items the photo composition places toward the center/right.
+  align-items: flex-start;
   padding: var(--space-4);
   background: #eceae5;
 
   @media (min-width: 640px) {
     aspect-ratio: 16 / 9;
-    align-items: center;
     padding: var(--space-6) var(--container-pad);
   }
 
@@ -86,6 +86,14 @@
   // Scroll float (see .glass-drift): the card drifts a touch with the scroll, reading as
   // a pane of glass resting ON the photo rather than printed into it.
   --drift-k: 0.5;
+
+  // From desktop down through the tablet range the panel itself shrinks with the
+  // viewport (not just a breakpoint jump) so it keeps reading as a corner accent rather
+  // than crowding the frame at tablet widths — floors out at 260px so the title/button
+  // never get cramped. Mobile keeps the full-width panel above (no vw shrink there).
+  @media (min-width: 640px) {
+    max-width: clamp(260px, 30vw, 380px);
+  }
 }
 
 .polishing-banner__panel-content {
@@ -94,6 +102,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-5);
+
+  @media (min-width: 640px) {
+    padding: clamp(var(--space-4), 2.4vw, var(--space-6));
+    gap: clamp(var(--space-3), 2vw, var(--space-5));
+  }
 }
 
 .polishing-banner__title {
@@ -108,4 +121,10 @@
 .polishing-banner__cta-content {
   padding: 14px 26px;
   font-size: 15px;
+
+  // Horizontal padding only — vertical padding + font-size stay fixed so the button
+  // never drops below the 44px touch-target minimum on tablet (still a touch device).
+  @media (min-width: 640px) {
+    padding-inline: clamp(18px, 2.2vw, 26px);
+  }
 }

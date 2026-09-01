@@ -148,25 +148,25 @@ async function main() {
   // to actually pick the dark asset per theme is a separate follow-up, not an asset-pipeline
   // change.
   await imageToWebp(
-    path.join(DATA, 'polishing-banner-section', 'banner-light.webp'),
+    path.join(DATA, 'polishing-banner-section', 'banner-light.png'),
     path.join(ROOT, 'public', 'images', 'polishing-banner.webp'),
     1920,
     80
   );
   await imageToWebp(
-    path.join(DATA, 'polishing-banner-section', 'mobile-banner-light.webp'),
+    path.join(DATA, 'polishing-banner-section', 'mobile-banner-light.png'),
     path.join(ROOT, 'public', 'images', 'polishing-banner-mobile.webp'),
     900,
     80
   );
   await imageToWebp(
-    path.join(DATA, 'polishing-banner-section', 'banner-dark.webp'),
+    path.join(DATA, 'polishing-banner-section', 'banner-dark.png'),
     path.join(ROOT, 'public', 'images', 'polishing-banner-dark.webp'),
     1920,
     80
   );
   await imageToWebp(
-    path.join(DATA, 'polishing-banner-section', 'mobile-banner-dark.webp'),
+    path.join(DATA, 'polishing-banner-section', 'mobile-banner-dark.png'),
     path.join(ROOT, 'public', 'images', 'polishing-banner-mobile-dark.webp'),
     900,
     80
@@ -180,7 +180,7 @@ async function main() {
     82
   );
   await imageToWebp(
-    path.join(DATA, 'hero-section', 'hero-4', 'pads-hero-mobile.webp'),
+    path.join(DATA, 'hero-section', 'hero-4', 'pads-hero-mobile.png'),
     path.join(ROOT, 'public', 'images', 'hero-4-pads-mobile.webp'),
     900,
     82
