@@ -63,6 +63,10 @@
   font-size: 16.5px;
   line-height: 1.7;
   max-width: 46ch;
+
+  @media (min-width: 1280px) {
+    max-width: 47ch;
+  }
 }
 
 // "Visit the site" — logo + label, brand-gradient on hover (same mask-image technique as
