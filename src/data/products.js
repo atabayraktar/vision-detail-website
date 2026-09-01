@@ -99,19 +99,13 @@ export const products = [
       "/images/products/cw-mag/cw-mag-packshot_result.webp",
       "/images/products/cw-mag/cw-mag-u1_result.webp",
       "/images/products/cw-mag/cw-mag-u2_result.webp",
-      "/images/products/cw-mag/cw-mag-u3_result.webp",
-      "/images/products/cw-mag/cw-mag-a2_result.webp",
-      "/images/products/cw-mag/cw-mag-a3_result.webp",
-      "/images/products/cw-mag/cw-mag-a1_result.webp"
+      "/images/products/cw-mag/cw-mag-u3_result.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-mag/cw-mag-packshot_result-thumb.webp",
       "/images/products/cw-mag/cw-mag-u1_result-thumb.webp",
       "/images/products/cw-mag/cw-mag-u2_result-thumb.webp",
-      "/images/products/cw-mag/cw-mag-u3_result-thumb.webp",
-      "/images/products/cw-mag/cw-mag-a2_result-thumb.webp",
-      "/images/products/cw-mag/cw-mag-a3_result-thumb.webp",
-      "/images/products/cw-mag/cw-mag-a1_result-thumb.webp"
+      "/images/products/cw-mag/cw-mag-u3_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-mag/cw-mag-a1_result.webp",
@@ -150,18 +144,12 @@ export const products = [
     "gallery": [
       "/images/products/cw-evo-mini/cw-evo-mini-packshot_result.webp",
       "/images/products/cw-evo-mini/cw-evo-mini-u1_result.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-u2_result.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-a2_result.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-a3_result.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-a1_result.webp"
+      "/images/products/cw-evo-mini/cw-evo-mini-u2_result.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-evo-mini/cw-evo-mini-packshot_result-thumb.webp",
       "/images/products/cw-evo-mini/cw-evo-mini-u1_result-thumb.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-u2_result-thumb.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-a2_result-thumb.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-a3_result-thumb.webp",
-      "/images/products/cw-evo-mini/cw-evo-mini-a1_result-thumb.webp"
+      "/images/products/cw-evo-mini/cw-evo-mini-u2_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-evo-mini/cw-evo-mini-a1_result.webp",
@@ -201,16 +189,12 @@ export const products = [
     "gallery": [
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-packshot_result.webp",
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u1_result.webp",
-      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u2_result.webp",
-      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a2_result.webp",
-      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a1_result.webp"
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u2_result.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-packshot_result-thumb.webp",
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u1_result-thumb.webp",
-      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u2_result-thumb.webp",
-      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a2_result-thumb.webp",
-      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a1_result-thumb.webp"
+      "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-u2_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-evo-mini-pro/cw-evo-mini-pro-a1_result.webp",
@@ -249,16 +233,12 @@ export const products = [
     "gallery": [
       "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-packshot_result.webp",
       "/images/products/cw-pp-125-heavy/pads_u1.webp",
-      "/images/products/cw-pp-125-heavy/pads_u2.webp",
-      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result.webp",
-      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a2_result.webp"
+      "/images/products/cw-pp-125-heavy/pads_u2.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-packshot_result-thumb.webp",
       "/images/products/cw-pp-125-heavy/pads_u1-thumb.webp",
-      "/images/products/cw-pp-125-heavy/pads_u2-thumb.webp",
-      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result-thumb.webp",
-      "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a2_result-thumb.webp"
+      "/images/products/cw-pp-125-heavy/pads_u2-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-pp-125-heavy/cw-pp-125-heavy-a1_result.webp",
@@ -417,16 +397,12 @@ export const products = [
     "gallery": [
       "/images/products/cw-pp-125-medium/cw-pp-125-medium-packshot_result.webp",
       "/images/products/cw-pp-125-medium/pads_u1.webp",
-      "/images/products/cw-pp-125-medium/pads_u2.webp",
-      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result.webp",
-      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a2_result.webp"
+      "/images/products/cw-pp-125-medium/pads_u2.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-pp-125-medium/cw-pp-125-medium-packshot_result-thumb.webp",
       "/images/products/cw-pp-125-medium/pads_u1-thumb.webp",
-      "/images/products/cw-pp-125-medium/pads_u2-thumb.webp",
-      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result-thumb.webp",
-      "/images/products/cw-pp-125-medium/cw-pp-125-medium-a2_result-thumb.webp"
+      "/images/products/cw-pp-125-medium/pads_u2-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-pp-125-medium/cw-pp-125-medium-a1_result.webp",
@@ -585,14 +561,12 @@ export const products = [
     "gallery": [
       "/images/products/cw-pp-125-mf/cw-pp-125-mf-packshot_result.webp",
       "/images/products/cw-pp-125-mf/pads_u1.webp",
-      "/images/products/cw-pp-125-mf/pads_u2.webp",
-      "/images/products/cw-pp-125-mf/cw-pp-125-mf-a1_result.webp"
+      "/images/products/cw-pp-125-mf/pads_u2.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-pp-125-mf/cw-pp-125-mf-packshot_result-thumb.webp",
       "/images/products/cw-pp-125-mf/pads_u1-thumb.webp",
-      "/images/products/cw-pp-125-mf/pads_u2-thumb.webp",
-      "/images/products/cw-pp-125-mf/cw-pp-125-mf-a1_result-thumb.webp"
+      "/images/products/cw-pp-125-mf/pads_u2-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-pp-125-mf/cw-pp-125-mf-a1_result.webp"
@@ -669,16 +643,12 @@ export const products = [
     "gallery": [
       "/images/products/cw-pp-125-os/cw-pp-125-os-packshot_result.webp",
       "/images/products/cw-pp-125-os/pads_u1.webp",
-      "/images/products/cw-pp-125-os/pads_u2.webp",
-      "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result.webp",
-      "/images/products/cw-pp-125-os/cw-pp-125-os-a2_result.webp"
+      "/images/products/cw-pp-125-os/pads_u2.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-pp-125-os/cw-pp-125-os-packshot_result-thumb.webp",
       "/images/products/cw-pp-125-os/pads_u1-thumb.webp",
-      "/images/products/cw-pp-125-os/pads_u2-thumb.webp",
-      "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result-thumb.webp",
-      "/images/products/cw-pp-125-os/cw-pp-125-os-a2_result-thumb.webp"
+      "/images/products/cw-pp-125-os/pads_u2-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-pp-125-os/cw-pp-125-os-a1_result.webp",
@@ -717,16 +687,12 @@ export const products = [
     "gallery": [
       "/images/products/cw-pp-125-soft/cw-pp-125-soft-packshot_result.webp",
       "/images/products/cw-pp-125-soft/pads_u1.webp",
-      "/images/products/cw-pp-125-soft/pads_u2.webp",
-      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result.webp",
-      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a2_result.webp"
+      "/images/products/cw-pp-125-soft/pads_u2.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-pp-125-soft/cw-pp-125-soft-packshot_result-thumb.webp",
       "/images/products/cw-pp-125-soft/pads_u1-thumb.webp",
-      "/images/products/cw-pp-125-soft/pads_u2-thumb.webp",
-      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result-thumb.webp",
-      "/images/products/cw-pp-125-soft/cw-pp-125-soft-a2_result-thumb.webp"
+      "/images/products/cw-pp-125-soft/pads_u2-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-pp-125-soft/cw-pp-125-soft-a1_result.webp",
@@ -883,14 +849,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result.webp",
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result.webp",
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a2_result.webp"
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result-thumb.webp",
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result-thumb.webp",
-      "/images/products/cw-pp-125-wool/cw-pp-125-wool-a2_result-thumb.webp"
+      "/images/products/cw-pp-125-wool/cw-pp-125-wool-packshot_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-pp-125-wool/cw-pp-125-wool-a1_result.webp",
@@ -1007,14 +969,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm.webp",
     "gallery": [
-      "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm.webp",
-      "/images/products/cw-pp-75-gp/6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp",
-      "/images/products/cw-pp-75-gp/6830215243bd72bf98ceea29_cw-pp-gp_02.webp"
+      "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm-thumb.webp",
-      "/images/products/cw-pp-75-gp/6830214b7ec0959e854f9dc9_cw-pp-gp_01-thumb.webp",
-      "/images/products/cw-pp-75-gp/6830215243bd72bf98ceea29_cw-pp-gp_02-thumb.webp"
+      "/images/products/cw-pp-75-gp/chemicalworkz-glass-felt-perfomance-pad-75mm-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-pp-75-gp/6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp",
@@ -1051,16 +1009,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result.webp",
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-a2_result.webp",
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-a3_result.webp",
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-a1_result.webp"
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result-thumb.webp",
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-a2_result-thumb.webp",
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-a3_result-thumb.webp",
-      "/images/products/cw-db-ws-16/CW-DB-WS-16-a1_result-thumb.webp"
+      "/images/products/cw-db-ws-16/CW-DB-WS-16-packshot_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-db-ws-16/CW-DB-WS-16-a1_result.webp",
@@ -1098,16 +1050,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result.webp",
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-a2_result.webp",
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-a3_result.webp",
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-a1_result.webp"
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result-thumb.webp",
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-a2_result-thumb.webp",
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-a3_result-thumb.webp",
-      "/images/products/cw-db-ws-20/CW-DB-WS-20-a1_result-thumb.webp"
+      "/images/products/cw-db-ws-20/CW-DB-WS-20-packshot_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-db-ws-20/CW-DB-WS-20-a1_result.webp",
@@ -1145,16 +1091,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot.webp",
     "gallery": [
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot.webp",
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-a2_result.webp",
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-a3_result.webp",
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-a1_result.webp"
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot-thumb.webp",
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-a2_result-thumb.webp",
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-a3_result-thumb.webp",
-      "/images/products/cw-db-ws-24/CW-DB-WS-24-a1_result-thumb.webp"
+      "/images/products/cw-db-ws-24/CW-DB-WS-24-packshot-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-db-ws-24/CW-DB-WS-24-a1_result.webp",
@@ -1192,12 +1132,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-db-us/CW-DB-US-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-db-us/CW-DB-US-packshot_result.webp",
-      "/images/products/cw-db-us/CW-DB-US-a1_result.webp"
+      "/images/products/cw-db-us/CW-DB-US-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-db-us/CW-DB-US-packshot_result-thumb.webp",
-      "/images/products/cw-db-us/CW-DB-US-a1_result-thumb.webp"
+      "/images/products/cw-db-us/CW-DB-US-packshot_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-db-us/CW-DB-US-a1_result.webp"
@@ -1234,17 +1172,11 @@ export const products = [
     "image": "/images/products/cw-db-bb-16/CW-DB-BB-16-packshot_result.webp",
     "gallery": [
       "/images/products/cw-db-bb-16/CW-DB-BB-16-packshot_result.webp",
-      "/images/products/cw-db-bb-16/cw-db-bb-group_result.webp",
-      "/images/products/cw-db-bb-16/CW-DB-BB-16-a2_result.webp",
-      "/images/products/cw-db-bb-16/CW-DB-BB-16-a3_result.webp",
-      "/images/products/cw-db-bb-16/CW-DB-BB-16-a1_result.webp"
+      "/images/products/cw-db-bb-16/cw-db-bb-group_result.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-db-bb-16/CW-DB-BB-16-packshot_result-thumb.webp",
-      "/images/products/cw-db-bb-16/cw-db-bb-group_result-thumb.webp",
-      "/images/products/cw-db-bb-16/CW-DB-BB-16-a2_result-thumb.webp",
-      "/images/products/cw-db-bb-16/CW-DB-BB-16-a3_result-thumb.webp",
-      "/images/products/cw-db-bb-16/CW-DB-BB-16-a1_result-thumb.webp"
+      "/images/products/cw-db-bb-16/cw-db-bb-group_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-db-bb-16/CW-DB-BB-16-a1_result.webp",
@@ -1283,17 +1215,11 @@ export const products = [
     "image": "/images/products/cw-db-bb-20/CW-DB-BB-20-packshot_result.webp",
     "gallery": [
       "/images/products/cw-db-bb-20/CW-DB-BB-20-packshot_result.webp",
-      "/images/products/cw-db-bb-20/cw-db-bb-group_result.webp",
-      "/images/products/cw-db-bb-20/CW-DB-BB-20-a2_result.webp",
-      "/images/products/cw-db-bb-20/CW-DB-BB-20-a3_result.webp",
-      "/images/products/cw-db-bb-20/CW-DB-BB-20-a1_result.webp"
+      "/images/products/cw-db-bb-20/cw-db-bb-group_result.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-db-bb-20/CW-DB-BB-20-packshot_result-thumb.webp",
-      "/images/products/cw-db-bb-20/cw-db-bb-group_result-thumb.webp",
-      "/images/products/cw-db-bb-20/CW-DB-BB-20-a2_result-thumb.webp",
-      "/images/products/cw-db-bb-20/CW-DB-BB-20-a3_result-thumb.webp",
-      "/images/products/cw-db-bb-20/CW-DB-BB-20-a1_result-thumb.webp"
+      "/images/products/cw-db-bb-20/cw-db-bb-group_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-db-bb-20/CW-DB-BB-20-a1_result.webp",
@@ -1329,20 +1255,14 @@ export const products = [
     "size": "24mm",
     "isNew": false,
     "inStock": true,
-    "image": "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result.webp",
+    "image": "/images/products/cw-db-bb-24/CW-DB-BB-24_result.webp",
     "gallery": [
-      "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result.webp",
       "/images/products/cw-db-bb-24/CW-DB-BB-24_result.webp",
-      "/images/products/cw-db-bb-24/cw-db-bb-group_result.webp",
-      "/images/products/cw-db-bb-24/CW-DB-BB-24-a2_result.webp",
-      "/images/products/cw-db-bb-24/CW-DB-BB-24-a3_result.webp"
+      "/images/products/cw-db-bb-24/cw-db-bb-group_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result-thumb.webp",
       "/images/products/cw-db-bb-24/CW-DB-BB-24_result-thumb.webp",
-      "/images/products/cw-db-bb-24/cw-db-bb-group_result-thumb.webp",
-      "/images/products/cw-db-bb-24/CW-DB-BB-24-a2_result-thumb.webp",
-      "/images/products/cw-db-bb-24/CW-DB-BB-24-a3_result-thumb.webp"
+      "/images/products/cw-db-bb-24/cw-db-bb-group_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-db-bb-24/CW-DB-BB-24-a1_result.webp",
@@ -1462,16 +1382,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-tdb/cw-tdb-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-tdb/cw-tdb-packshot_result.webp",
-      "/images/products/cw-tdb/cw-tdb-a2_result.webp",
-      "/images/products/cw-tdb/cw-tdb-a3_result.webp",
-      "/images/products/cw-tdb/cw-tdb-a1_result.webp"
+      "/images/products/cw-tdb/cw-tdb-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-tdb/cw-tdb-packshot_result-thumb.webp",
-      "/images/products/cw-tdb/cw-tdb-a2_result-thumb.webp",
-      "/images/products/cw-tdb/cw-tdb-a3_result-thumb.webp",
-      "/images/products/cw-tdb/cw-tdb-a1_result-thumb.webp"
+      "/images/products/cw-tdb/cw-tdb-packshot_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-tdb/cw-tdb-a1_result.webp",
@@ -1488,9 +1402,9 @@ export const products = [
   {
     "id": "cw-sb-L-b",
     "name": {
-      "tr": "Sprey Şişesi",
-      "en": "Spray Bottle",
-      "de": "Sprühflasche"
+      "tr": "Sprey Şişesi - 360°",
+      "en": "Spray Bottle - 360°",
+      "de": "Sprühflasche - 360°"
     },
     "category": "sprey-siseleri",
     "tagline": {
@@ -1531,9 +1445,9 @@ export const products = [
   {
     "id": "cw-sb-L-bL",
     "name": {
-      "tr": "Sprey Şişesi",
-      "en": "Spray Bottle",
-      "de": "Sprühflasche"
+      "tr": "Sprey Şişesi - 360°",
+      "en": "Spray Bottle - 360°",
+      "de": "Sprühflasche - 360°"
     },
     "category": "sprey-siseleri",
     "tagline": {
@@ -1574,9 +1488,9 @@ export const products = [
   {
     "id": "cw-sb-L-gr",
     "name": {
-      "tr": "Sprey Şişesi",
-      "en": "Spray Bottle",
-      "de": "Sprühflasche"
+      "tr": "Sprey Şişesi - 360°",
+      "en": "Spray Bottle - 360°",
+      "de": "Sprühflasche - 360°"
     },
     "category": "sprey-siseleri",
     "tagline": {
@@ -1617,9 +1531,9 @@ export const products = [
   {
     "id": "cw-sb-L-re",
     "name": {
-      "tr": "Sprey Şişesi",
-      "en": "Spray Bottle",
-      "de": "Sprühflasche"
+      "tr": "Sprey Şişesi - 360°",
+      "en": "Spray Bottle - 360°",
+      "de": "Sprühflasche - 360°"
     },
     "category": "sprey-siseleri",
     "tagline": {
@@ -1660,9 +1574,9 @@ export const products = [
   {
     "id": "cw-sb-L-ye",
     "name": {
-      "tr": "Sprey Şişesi",
-      "en": "Spray Bottle",
-      "de": "Sprühflasche"
+      "tr": "Sprey Şişesi - 360°",
+      "en": "Spray Bottle - 360°",
+      "de": "Sprühflasche - 360°"
     },
     "category": "sprey-siseleri",
     "tagline": {
@@ -1724,16 +1638,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-rps/cw-rps-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-rps/cw-rps-packshot_result.webp",
-      "/images/products/cw-rps/cw-rps-a2_result.webp",
-      "/images/products/cw-rps/cw-rps-a3_result.webp",
-      "/images/products/cw-rps/cw-rps-a1_result.webp"
+      "/images/products/cw-rps/cw-rps-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-rps/cw-rps-packshot_result-thumb.webp",
-      "/images/products/cw-rps/cw-rps-a2_result-thumb.webp",
-      "/images/products/cw-rps/cw-rps-a3_result-thumb.webp",
-      "/images/products/cw-rps/cw-rps-a1_result-thumb.webp"
+      "/images/products/cw-rps/cw-rps-packshot_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-rps/cw-rps-a1_result.webp",
@@ -1842,7 +1750,7 @@ export const products = [
     "color": null,
     "size": null,
     "isNew": false,
-    "inStock": true,
+    "inStock": false,
     "image": "/images/products/cw-pc-s/CW-PC-S-packshot_result.webp",
     "gallery": [
       "/images/products/cw-pc-s/CW-PC-S-packshot_result.webp",
@@ -1900,9 +1808,9 @@ export const products = [
   {
     "id": "cw-mw",
     "name": {
-      "tr": "Alet Takımı",
-      "en": "Tool Kit",
-      "de": "Werkzeugset"
+      "tr": "Trim Sökme Seti",
+      "en": "Trim Removal Set",
+      "de": "Verkleidungs-Löse-Set"
     },
     "category": "yardimcilar",
     "tagline": {
@@ -1980,9 +1888,9 @@ export const products = [
   {
     "id": "cw-pss",
     "name": {
-      "tr": "Boya Rötuş Çubukları",
-      "en": "Paint Touch-Up Sticks",
-      "de": "Lack-Ausbesserstifte"
+      "tr": "Kaporta Temizleme Çubukları",
+      "en": "Body Cleaning Sticks",
+      "de": "Karosserie-Reinigungsstäbchen"
     },
     "category": "yardimcilar",
     "tagline": {
@@ -2001,18 +1909,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-pss/cw-pss-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-pss/cw-pss-packshot_result.webp",
-      "/images/products/cw-pss/cw-pss-a2_result.webp",
-      "/images/products/cw-pss/cw-pss-a3_result.webp",
-      "/images/products/cw-pss/cw-pss-a4_result.webp",
-      "/images/products/cw-pss/cw-pss-a1_result.webp"
+      "/images/products/cw-pss/cw-pss-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-pss/cw-pss-packshot_result-thumb.webp",
-      "/images/products/cw-pss/cw-pss-a2_result-thumb.webp",
-      "/images/products/cw-pss/cw-pss-a3_result-thumb.webp",
-      "/images/products/cw-pss/cw-pss-a4_result-thumb.webp",
-      "/images/products/cw-pss/cw-pss-a1_result-thumb.webp"
+      "/images/products/cw-pss/cw-pss-packshot_result-thumb.webp"
     ],
     "posterImages": [],
     "posterDescription": {
@@ -2049,19 +1949,13 @@ export const products = [
       "/images/products/cw-ga/cw-ga-packshot.webp",
       "/images/products/cw-ga/cw-ga-u1_result.webp",
       "/images/products/cw-ga/cw-ga-u2_result.webp",
-      "/images/products/cw-ga/cw-ga-u3_result.webp",
-      "/images/products/cw-ga/cw-ga-a2_result.webp",
-      "/images/products/cw-ga/cw-ga-a3_result.webp",
-      "/images/products/cw-ga/cw-ga-a1_result.webp"
+      "/images/products/cw-ga/cw-ga-u3_result.webp"
     ],
     "galleryThumbs": [
       "/images/products/cw-ga/cw-ga-packshot-thumb.webp",
       "/images/products/cw-ga/cw-ga-u1_result-thumb.webp",
       "/images/products/cw-ga/cw-ga-u2_result-thumb.webp",
-      "/images/products/cw-ga/cw-ga-u3_result-thumb.webp",
-      "/images/products/cw-ga/cw-ga-a2_result-thumb.webp",
-      "/images/products/cw-ga/cw-ga-a3_result-thumb.webp",
-      "/images/products/cw-ga/cw-ga-a1_result-thumb.webp"
+      "/images/products/cw-ga/cw-ga-u3_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-ga/cw-ga-a1_result.webp",
@@ -2132,16 +2026,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result.webp",
     "gallery": [
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result.webp",
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a2_result.webp",
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a3_result.webp",
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a1_result.webp"
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result-thumb.webp",
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a2_result-thumb.webp",
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a3_result-thumb.webp",
-      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a1_result-thumb.webp"
+      "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-packshot_result-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-cfgt-1pc/cw-cfgt-1pc-a1_result.webp",
@@ -2203,9 +2091,9 @@ export const products = [
   {
     "id": "cw-fe",
     "name": {
-      "tr": "Folyo Sökme Diski",
-      "en": "Foil Removal Disc",
-      "de": "Folienentfernungsscheibe"
+      "tr": "Folyo-Yapışkan Temizleme Diski",
+      "en": "Foil & Adhesive Cleaning Disc",
+      "de": "Folien- & Kleber-Reinigungsscheibe"
     },
     "category": "yardimcilar",
     "tagline": {
@@ -2304,14 +2192,10 @@ export const products = [
     "inStock": true,
     "image": "/images/products/cw-icpe-1/cw-icpe-1-packshot.webp",
     "gallery": [
-      "/images/products/cw-icpe-1/cw-icpe-1-packshot.webp",
-      "/images/products/cw-icpe-1/cw-icpe-1-a2.webp",
-      "/images/products/cw-icpe-1/cw-icpe-1-a1.webp"
+      "/images/products/cw-icpe-1/cw-icpe-1-packshot.webp"
     ],
     "galleryThumbs": [
-      "/images/products/cw-icpe-1/cw-icpe-1-packshot-thumb.webp",
-      "/images/products/cw-icpe-1/cw-icpe-1-a2-thumb.webp",
-      "/images/products/cw-icpe-1/cw-icpe-1-a1-thumb.webp"
+      "/images/products/cw-icpe-1/cw-icpe-1-packshot-thumb.webp"
     ],
     "posterImages": [
       "/images/products/cw-icpe-1/cw-icpe-1-a1.webp",

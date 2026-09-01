@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import xlsx from 'xlsx';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -58,10 +59,16 @@ const CATEGORIES = [
   { slug: 'yardimcilar', label: { tr: 'Yardımcılar', en: 'Accessories', de: 'Zubehör' } },
 ];
 
-// STOK column of the newer Excel (vision-detail-ürün-listesi.xlsx): every product row says
-// "var" except the bottom three (rows 54-56: cw-da9-pro-max, cw-da12, cw-hwa), whose STOK
-// cell is empty — those are the user's "en alttaki 3 üründe stok yok".
-const OUT_OF_STOCK = new Set(['cw-da9-pro-max', 'cw-da12', 'cw-hwa']);
+// STOK column (M) of the source Excel, read live rather than hardcoded — the user has
+// flipped individual rows to "yok" between catalog refreshes (e.g. cw-pc-s), so a frozen
+// SKU list here would silently drift stale. Column C = ÜRÜN KODU, column M = STOK.
+const stockSheet = xlsx.utils.sheet_to_json(
+  xlsx.readFile(path.join(ROOT, '.claude', 'product-list.xlsx')).Sheets.Sayfa1,
+  { header: 1, defval: '' }
+);
+const OUT_OF_STOCK = new Set(
+  stockSheet.slice(1).filter((row) => String(row[12]).trim().toLowerCase() === 'yok').map((row) => String(row[2]).trim())
+);
 const catLabel = (slug) => CATEGORIES.find((c) => c.slug === slug).label;
 
 const COLORS = {
@@ -91,13 +98,14 @@ const SEEDS = [
     tagline: { tr: 'Hibrit Polisaj Makineleri', en: 'Hybrid Polishing Machine', de: 'Hybrid-Poliermaschine' } },
   // Polisaj Pedleri: the source photo folders are now shared per PAD TYPE across every size
   // variant (30/50/75/125mm all live in one "cw-pp-<type>" folder together) instead of one
-  // folder per exact SKU — `images`/`posterFile` pin each SKU's own specific file(s) out of
-  // that shared folder instead of relying on classify()'s single-folder heuristic, which
-  // can't otherwise tell a 30mm packshot from a 125mm one. Sizes/filenames per
+  // folder per exact SKU — `images` pins each SKU's own specific file(s) out of that shared
+  // folder instead of relying on classify()'s single-folder heuristic, which can't otherwise
+  // tell a 30mm packshot from a 125mm one. "-a"-numbered action shots are deliberately left
+  // out of every `images` list below — those are poster-only (see classify()'s comment) and
+  // come from POSTER_DATA (scripts/poster-data.json) instead. Sizes/filenames per
   // c:\Users\ataba\Downloads\vision-detail-ürün-listesi.xlsx (2026-08 catalog refresh).
   { id: 'cw-pp-125-heavy', dir: 'Polisaj Pedleri/cw-pp-heavy', category: 'polisaj-pedleri', size: '125mm',
-    images: ['cw-pp-125-heavy-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-heavy-a1_result.webp', 'cw-pp-125-heavy-a2_result.webp'],
-    posterFile: 'cw-pp-125-heavy-a1_result.webp',
+    images: ['cw-pp-125-heavy-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp'],
     name: { tr: 'Ağır Polisaj Pedi', en: 'Heavy Cutting Pad', de: 'Heavy-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Ağır Kesim', en: 'Performance Pad | Heavy Cutting', de: 'Performance-Pad | Starker Schnitt' } },
   { id: 'cw-pp-30-heavy', dir: 'Polisaj Pedleri/cw-pp-heavy', category: 'polisaj-pedleri', size: '30mm',
@@ -113,8 +121,7 @@ const SEEDS = [
     name: { tr: 'Ağır Polisaj Pedi', en: 'Heavy Cutting Pad', de: 'Heavy-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Ağır Kesim', en: 'Performance Pad | Heavy Cutting', de: 'Performance-Pad | Starker Schnitt' } },
   { id: 'cw-pp-125-medium', dir: 'Polisaj Pedleri/cw-pp-medium', category: 'polisaj-pedleri', size: '125mm',
-    images: ['cw-pp-125-medium-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-medium-a1_result.webp', 'cw-pp-125-medium-a2_result.webp'],
-    posterFile: 'cw-pp-125-medium-a1_result.webp',
+    images: ['cw-pp-125-medium-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp'],
     name: { tr: 'Orta Polisaj Pedi', en: 'Medium Cutting Pad', de: 'Medium-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Orta-Zor', en: 'Performance Pad | Medium-Heavy', de: 'Performance-Pad | Mittel-Stark' } },
   { id: 'cw-pp-30-medium', dir: 'Polisaj Pedleri/cw-pp-medium', category: 'polisaj-pedleri', size: '30mm',
@@ -130,8 +137,7 @@ const SEEDS = [
     name: { tr: 'Orta Polisaj Pedi', en: 'Medium Cutting Pad', de: 'Medium-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Orta-Zor', en: 'Performance Pad | Medium-Heavy', de: 'Performance-Pad | Mittel-Stark' } },
   { id: 'cw-pp-125-mf', dir: 'Polisaj Pedleri/cw-pp-125-mf', category: 'polisaj-pedleri', size: '125mm',
-    images: ['cw-pp-125-mf-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-mf-a1_result.webp'],
-    posterFile: 'cw-pp-125-mf-a1_result.webp',
+    images: ['cw-pp-125-mf-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp'],
     name: { tr: 'MikroFiber Polisaj Pedi', en: 'Microfiber Polishing Pad', de: 'Mikrofaser-Polierpad' },
     tagline: { tr: 'Mikrofiber Ped | Yüksek Aşındırıcı', en: 'Microfiber Pad | High Cut', de: 'Mikrofaser-Pad | Starker Abtrag' } },
   { id: 'cw-pp-75-mf', dir: 'Polisaj Pedleri/cw-pp-125-mf', category: 'polisaj-pedleri', size: '75mm',
@@ -139,13 +145,11 @@ const SEEDS = [
     name: { tr: 'MikroFiber Polisaj Pedi', en: 'Microfiber Polishing Pad', de: 'Mikrofaser-Polierpad' },
     tagline: { tr: 'Mikrofiber Ped | Yüksek Aşındırıcı', en: 'Microfiber Pad | High Cut', de: 'Mikrofaser-Pad | Starker Abtrag' } },
   { id: 'cw-pp-125-os', dir: 'Polisaj Pedleri/cw-pp-os', category: 'polisaj-pedleri', size: '125mm',
-    images: ['cw-pp-125-os-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-os-a1_result.webp', 'cw-pp-125-os-a2_result.webp'],
-    posterFile: 'cw-pp-125-os-a1_result.webp',
+    images: ['cw-pp-125-os-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp'],
     name: { tr: 'Tek Adım Polisaj Pedi', en: 'One-Step Polishing Pad', de: 'One-Step-Polierpad' },
     tagline: { tr: 'Performans Pedi | Orta-Yumuşak', en: 'Performance Pad | Medium-Soft', de: 'Performance-Pad | Mittel-Weich' } },
   { id: 'cw-pp-125-soft', dir: 'Polisaj Pedleri/cw-pp-soft', category: 'polisaj-pedleri', size: '125mm',
-    images: ['cw-pp-125-soft-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp', 'cw-pp-125-soft-a1_result.webp', 'cw-pp-125-soft-a2_result.webp'],
-    posterFile: 'cw-pp-125-soft-a1_result.webp',
+    images: ['cw-pp-125-soft-packshot_result.webp', 'pads_u1.webp', 'pads_u2.webp'],
     name: { tr: 'Yumuşak Polisaj Pedi', en: 'Soft Finishing Pad', de: 'Soft-Finishing-Pad' },
     tagline: { tr: 'Performans Pedi | Yumuşak', en: 'Performance Pad | Soft', de: 'Performance-Pad | Weich' } },
   { id: 'cw-pp-30-soft', dir: 'Polisaj Pedleri/cw-pp-soft', category: 'polisaj-pedleri', size: '30mm',
@@ -161,8 +165,7 @@ const SEEDS = [
     name: { tr: 'Yumuşak Polisaj Pedi', en: 'Soft Finishing Pad', de: 'Soft-Finishing-Pad' },
     tagline: { tr: 'Performans Pedi | Yumuşak', en: 'Performance Pad | Soft', de: 'Performance-Pad | Weich' } },
   { id: 'cw-pp-125-wool', dir: 'Polisaj Pedleri/cw-pp-wool', category: 'polisaj-pedleri', size: '125mm',
-    images: ['cw-pp-125-wool-packshot_result.webp', 'cw-pp-125-wool-a1_result.webp', 'cw-pp-125-wool-a2_result.webp'],
-    posterFile: 'cw-pp-125-wool-a1_result.webp',
+    images: ['cw-pp-125-wool-packshot_result.webp'],
     name: { tr: 'Yün Polisaj Pedi', en: 'Wool Cutting Pad', de: 'Woll-Cutting-Pad' },
     tagline: { tr: 'Performans Pedi | Doğal Yün', en: 'Performance Pad | Natural Wool', de: 'Performance-Pad | Naturwolle' } },
   { id: 'cw-pp-50-wool', dir: 'Polisaj Pedleri/cw-pp-wool', category: 'polisaj-pedleri', size: '50mm',
@@ -175,8 +178,7 @@ const SEEDS = [
     tagline: { tr: 'Performans Pedi | Doğal Yün', en: 'Performance Pad | Natural Wool', de: 'Performance-Pad | Naturwolle' } },
   // New pad type this catalog refresh — a felt (not foam) pad specifically for glass.
   { id: 'cw-pp-75-gp', dir: 'Polisaj Pedleri/cw-pp-75-gp', category: 'polisaj-pedleri', size: '75mm',
-    images: ['chemicalworkz-glass-felt-perfomance-pad-75mm.webp', '6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp', '6830215243bd72bf98ceea29_cw-pp-gp_02.webp'],
-    posterFile: '6830214b7ec0959e854f9dc9_cw-pp-gp_01.webp',
+    images: ['chemicalworkz-glass-felt-perfomance-pad-75mm.webp'],
     name: { tr: 'Cam Performans Pedi', en: 'Glass Performance Pad', de: 'Glas-Performance-Pad' },
     tagline: { tr: 'Yüksek Kaliteli Keçe | Aşındırıcı', en: 'High-Quality Felt | Abrasive', de: 'Hochwertiger Filz | Abrasiv' } },
   { id: 'cw-db-ws-16', dir: 'Fırçalar/cw-db-ws-16', category: 'fircalar', size: '16mm',
@@ -197,7 +199,14 @@ const SEEDS = [
   { id: 'cw-db-bb-20', dir: 'Fırçalar/cw-db-bb-20', category: 'fircalar', size: '20mm',
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
     tagline: { tr: 'Detay Fırçası | Yumuşak', en: 'Detailing Brush | Soft', de: 'Detailing-Bürste | Weich' } },
+  // Unlike its 16mm/20mm siblings, this folder's packshot file is named
+  // "CW-DB-BB-24_result.webp" with no "-packshot" in it, which classify()'s
+  // packshot-detection regex can't catch — left to auto-classify, it picked an action shot
+  // (an "-a1" file) as the card/first-gallery image instead of the white-background
+  // packshot. `images` pins [packshot, group] the way classify() would have (packshot +
+  // rest, action shots excluded) had the file been named consistently with its siblings.
   { id: 'cw-db-bb-24', dir: 'Fırçalar/cw-db-bb-24', category: 'fircalar', size: '24mm',
+    images: ['CW-DB-BB-24_result.webp', 'cw-db-bb-group_result.webp'],
     name: { tr: 'Siyah Detay Fırçası', en: 'Black Detailing Brush', de: 'Schwarze Detailing-Bürste' },
     tagline: { tr: 'Detay Fırçası | Yumuşak', en: 'Detailing Brush | Soft', de: 'Detailing-Bürste | Weich' } },
   { id: 'cw-usd-purple', dir: 'Fırçalar/cw-usd-purple', category: 'fircalar', color: 'Mor',
@@ -210,19 +219,19 @@ const SEEDS = [
     name: { tr: 'Lastik Parlatıcı Fırça', en: 'Tire Dressing Brush', de: 'Reifenglanz-Bürste' },
     tagline: { tr: 'Lastik Fırçası | Yüksek kaliteli | Kimyasal Maddelere Dayanıklı', en: 'Tire Brush | High Quality | Chemical Resistant', de: 'Reifenbürste | Hohe Qualität | Chemikalienbeständig' } },
   { id: 'cw-sb-L-b', dir: 'Sprey Şişeleri/cw-sb-L-b', category: 'sprey-siseleri', color: 'Siyah',
-    name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
+    name: { tr: 'Sprey Şişesi - 360°', en: 'Spray Bottle - 360°', de: 'Sprühflasche - 360°' },
     tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-bL', dir: 'Sprey Şişeleri/cw-sb-L-bL', category: 'sprey-siseleri', color: 'Mavi',
-    name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
+    name: { tr: 'Sprey Şişesi - 360°', en: 'Spray Bottle - 360°', de: 'Sprühflasche - 360°' },
     tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-gr', dir: 'Sprey Şişeleri/cw-sb-L-gr', category: 'sprey-siseleri', color: 'Yeşil',
-    name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
+    name: { tr: 'Sprey Şişesi - 360°', en: 'Spray Bottle - 360°', de: 'Sprühflasche - 360°' },
     tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-re', dir: 'Sprey Şişeleri/cw-sb-L-re', category: 'sprey-siseleri', color: 'Kırmızı',
-    name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
+    name: { tr: 'Sprey Şişesi - 360°', en: 'Spray Bottle - 360°', de: 'Sprühflasche - 360°' },
     tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-sb-L-ye', dir: 'Sprey Şişeleri/cw-sb-L-ye', category: 'sprey-siseleri', color: 'Sarı',
-    name: { tr: 'Sprey Şişesi', en: 'Spray Bottle', de: 'Sprühflasche' },
+    name: { tr: 'Sprey Şişesi - 360°', en: 'Spray Bottle - 360°', de: 'Sprühflasche - 360°' },
     tagline: { tr: '360° Tetikli Sprey Başlığı | 5 Renk Seçeneği', en: '360° Trigger Spray Head | 5 Color Options', de: '360°-Sprühkopf mit Abzug | 5 Farboptionen' } },
   { id: 'cw-rps', dir: 'Sprey Şişeleri/cw-rps', category: 'sprey-siseleri',
     name: { tr: 'Doldurulabilir Basınçlı Sprey', en: 'Refillable Pressure Sprayer', de: 'Nachfüllbarer Drucksprüher' },
@@ -240,13 +249,13 @@ const SEEDS = [
     name: { tr: 'Kablo Kaydırıcı', en: 'Hose Guide', de: 'Schlauchführung' },
     tagline: { tr: 'Yüksek Kaliteli Plastik | 10x15cm', en: 'High-Quality Plastic | 10x15cm', de: 'Hochwertiger Kunststoff | 10x15cm' } },
   { id: 'cw-mw', dir: 'Yardımcılar/cw-mw', category: 'yardimcilar',
-    name: { tr: 'Alet Takımı', en: 'Tool Kit', de: 'Werkzeugset' },
+    name: { tr: 'Trim Sökme Seti', en: 'Trim Removal Set', de: 'Verkleidungs-Löse-Set' },
     tagline: { tr: 'Montaj Aparatı Seti | 12 parça', en: 'Assembly Tool Set | 12 pieces', de: 'Montagewerkzeug-Set | 12 Teile' } },
   { id: 'cw-ms', dir: 'Bezler/cw-ms', category: 'bezler',
     name: { tr: 'Manyetik Havlu', en: 'Magnetic Drying Towel', de: 'Magnet-Trockentuch' },
     tagline: { tr: 'Manyetik Kurulama Havlusu', en: 'Magnetic Drying Towel', de: 'Magnetisches Trockentuch' } },
   { id: 'cw-pss', dir: 'Yardımcılar/cw-pss', category: 'yardimcilar',
-    name: { tr: 'Boya Rötuş Çubukları', en: 'Paint Touch-Up Sticks', de: 'Lack-Ausbesserstifte' },
+    name: { tr: 'Kaporta Temizleme Çubukları', en: 'Body Cleaning Sticks', de: 'Karosserie-Reinigungsstäbchen' },
     tagline: { tr: 'Boya Uygulama Çubukları | Mikrofiber | 20 adet', en: 'Paint Application Sticks | Microfiber | 20 pieces', de: 'Lack-Auftragsstäbchen | Mikrofaser | 20 Stück' } },
   { id: 'cw-ga', dir: 'Keçeler/cw-ga', category: 'keceler',
     name: { tr: 'Cam Keçe', en: 'Glass Felt Applicator', de: 'Glas-Filzapplikator' },
@@ -268,7 +277,7 @@ const SEEDS = [
     name: { tr: 'Ped Fırçası & Bıçağı', en: 'Pad Brush & Knife', de: 'Pad-Bürste & Messer' },
     tagline: { tr: 'Polisaj pedleri için ideal', en: 'Ideal for polishing pads', de: 'Ideal für Polierpads' } },
   { id: 'cw-fe', dir: 'Yardımcılar/cw-fe', category: 'yardimcilar',
-    name: { tr: 'Folyo Sökme Diski', en: 'Foil Removal Disc', de: 'Folienentfernungsscheibe' },
+    name: { tr: 'Folyo-Yapışkan Temizleme Diski', en: 'Foil & Adhesive Cleaning Disc', de: 'Folien- & Kleber-Reinigungsscheibe' },
     tagline: { tr: 'Folyo ve yapışkan kalıntıları için ideal', en: 'Ideal for foil and adhesive residue', de: 'Ideal für Folien- und Kleberückstände' } },
   { id: 'cw-dss-10', dir: 'Yardımcılar/cw-dss-10', category: 'yardimcilar',
     name: { tr: 'Detay Temizlik Çubukları', en: 'Detailing Cleaning Sticks', de: 'Detailing-Reinigungsstäbchen' },
@@ -298,16 +307,18 @@ function thumbName(file) {
   return file.replace(/(\.\w+)$/, '-thumb$1');
 }
 
-// Classifies a SKU folder's files into (primary/card image, poster/action shot, full gallery).
+// Classifies a SKU folder's files into (primary/card image, product gallery). The gallery
+// (the top swiper) is white-background packshots + "u1/u2/u3"-style studio shots only —
+// "-a"-numbered action/lifestyle shots are deliberately excluded here even when they exist
+// in this same folder: those belong solely in the ProductPoster section below, sourced
+// independently from POSTER_DATA (the Excel's ÜRÜN POSTERİ GÖRSELİ column, K).
 function classify(files) {
   const packshots = files.filter((f) => /packshot/i.test(f));
   const actionShots = files.filter((f) => /-a\d/i.test(f) && !packshots.includes(f));
   const rest = files.filter((f) => !packshots.includes(f) && !actionShots.includes(f));
   const primary = packshots[0] || files[0];
-  const poster = actionShots[0] || packshots.find((f) => f !== primary) || primary;
-  const gallery = [primary, ...rest, ...actionShots.filter((f) => f !== poster)];
-  if (!gallery.includes(poster)) gallery.push(poster);
-  return { primary, poster, gallery: [...new Set(gallery)] };
+  const gallery = [primary, ...rest];
+  return { primary, gallery: [...new Set(gallery)] };
 }
 
 async function optimizeOne(srcPath, outPath, maxWidth) {
@@ -336,9 +347,10 @@ async function main() {
     // Several Polisaj Pedleri SKUs now share ONE source folder across size variants (the
     // 30/50/75mm color-coded packshots live alongside the original 125mm set) — classify()'s
     // packshot/action-shot heuristic can't tell which files belong to which exact SKU in that
-    // case, so `seed.images` (+ optional `seed.posterFile`) lets a seed pin its own explicit
-    // file list instead of auto-classifying the whole folder.
-    let primary, poster, gallery;
+    // case, so `seed.images` lets a seed pin its own explicit file list instead of
+    // auto-classifying the whole folder. Action shots are left out of every such list (see
+    // classify()'s comment) — the gallery is packshots/studio shots only.
+    let primary, gallery;
     if (seed.images) {
       const missing = seed.images.filter((f) => !files.includes(f));
       if (missing.length) {
@@ -347,13 +359,12 @@ async function main() {
       }
       gallery = seed.images;
       primary = gallery[0];
-      poster = seed.posterFile || null;
     } else {
       if (files.length === 0) {
         skipped.push(`${seed.id}: no webp files in ${seed.dir}`);
         continue;
       }
-      ({ primary, poster, gallery } = classify(files));
+      ({ primary, gallery } = classify(files));
     }
 
     const outDir = path.join(OUT_IMG_ROOT, seed.id);
@@ -441,7 +452,7 @@ export const products = ${JSON.stringify(products, null, 2)};
   // Verify every referenced image path actually exists on disk.
   let missing = 0;
   for (const p of products) {
-    for (const imgPath of [p.image, p.poster, ...p.gallery].filter(Boolean)) {
+    for (const imgPath of [p.image, ...p.gallery, ...p.posterImages].filter(Boolean)) {
       const fsPath = path.join(ROOT, 'public', imgPath.replace(/^\//, ''));
       if (!fs.existsSync(fsPath)) {
         console.log(`MISSING FILE: ${p.id} -> ${imgPath}`);
