@@ -1,17 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import usePresence from '@/hooks/usePresence';
+import { useLanguage } from '@/context/LanguageContext';
 import GlassSurface from './GlassSurface';
 
 // Separate from SortMenu on purpose (see SortMenu.jsx) — stock availability is a filter
 // (narrows the list), not a sort order, so it gets its own small glass dropdown sitting
 // right next to "İsim A-Z" instead of living inside the sort options.
 export const STOCK_OPTIONS = [
-  { value: null, label: 'Tümü' },
-  { value: 'in', label: 'Stokta Var' },
-  { value: 'out', label: 'Stokta Yok' },
+  { value: null, label: { tr: 'Tümü', en: 'All', de: 'Alle' } },
+  { value: 'in', label: { tr: 'Stokta Var', en: 'In Stock', de: 'Auf Lager' } },
+  { value: 'out', label: { tr: 'Stokta Yok', en: 'Out of Stock', de: 'Nicht auf Lager' } },
 ];
+const STOCK_ARIA_LABEL = { tr: 'Stok durumu', en: 'Stock status', de: 'Lagerstatus' };
 
 export default function StockFilter({ value, onChange }) {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const { mounted, closing } = usePresence(open, 350);
   const rootRef = useRef(null);
@@ -44,7 +47,7 @@ export default function StockFilter({ value, onChange }) {
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
       >
-        <span>{current.label}</span>
+        <span>{t(current.label)}</span>
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="stock-filter__chevron">
           <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
@@ -56,10 +59,10 @@ export default function StockFilter({ value, onChange }) {
           className={`stock-filter__list glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
           contentClassName="stock-filter__list-content"
           role="listbox"
-          aria-label="Stok durumu"
+          aria-label={t(STOCK_ARIA_LABEL)}
         >
           {STOCK_OPTIONS.map((opt) => (
-            <li key={opt.label} role="option" aria-selected={opt.value === value}>
+            <li key={opt.label.tr} role="option" aria-selected={opt.value === value}>
               <button
                 type="button"
                 className={`stock-filter__option${opt.value === value ? ' stock-filter__option--active' : ''}`}
@@ -68,7 +71,7 @@ export default function StockFilter({ value, onChange }) {
                   setOpen(false);
                 }}
               >
-                {opt.label}
+                {t(opt.label)}
               </button>
             </li>
           ))}

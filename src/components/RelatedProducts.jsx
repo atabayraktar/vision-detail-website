@@ -8,6 +8,8 @@ const TITLE = {
   en: 'More from this category',
   de: 'Mehr aus dieser Kategorie',
 };
+const PREV_LABEL = { tr: 'Önceki ürünler', en: 'Previous products', de: 'Vorherige Produkte' };
+const NEXT_LABEL = { tr: 'Sonraki ürünler', en: 'Next products', de: 'Nächste Produkte' };
 
 // Same-category products shown as a horizontally swipeable row at the bottom of every
 // product detail page — plain scroll-snap + drag (no autoplay/infinite-loop like
@@ -35,7 +37,6 @@ export default function RelatedProducts({ products }) {
     const track = trackRef.current;
     if (!track) return;
     dragRef.current = { active: true, startX: e.clientX, startScroll: track.scrollLeft, moved: false };
-    track.classList.add('is-dragging');
     e.preventDefault();
   };
 
@@ -47,7 +48,17 @@ export default function RelatedProducts({ products }) {
       const state = dragRef.current;
       if (!state.active) return;
       const dx = e.clientX - state.startX;
-      if (Math.abs(dx) > 4) state.moved = true;
+      // .is-dragging (which sets pointer-events:none on the cards, see
+      // RelatedProducts.scss) only gets added HERE, once real movement crosses the
+      // threshold — not on mousedown. Adding it eagerly on mousedown made
+      // pointer-events:none active on the very card being pressed for the whole click
+      // gesture, which made Chromium drop the click's target entirely: a plain,
+      // stationary click never navigated to the product at all (see CategorySlider.jsx's
+      // identical fix).
+      if (Math.abs(dx) > 4 && !state.moved) {
+        state.moved = true;
+        track.classList.add('is-dragging');
+      }
       track.scrollLeft = state.startScroll - dx;
     };
 
@@ -85,7 +96,7 @@ export default function RelatedProducts({ products }) {
               className="related-products__control glass-surface--tight glass-surface--solid"
               contentClassName="related-products__control-content"
               onClick={() => scrollByCard(-1)}
-              aria-label="Önceki ürünler"
+              aria-label={t(PREV_LABEL)}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -97,7 +108,7 @@ export default function RelatedProducts({ products }) {
               className="related-products__control glass-surface--tight glass-surface--solid"
               contentClassName="related-products__control-content"
               onClick={() => scrollByCard(1)}
-              aria-label="Sonraki ürünler"
+              aria-label={t(NEXT_LABEL)}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

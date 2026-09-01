@@ -4,6 +4,16 @@ import GlassSurface from './GlassSurface';
 
 const COLLAPSED_COUNT = 6;
 
+const TEXT = {
+  categories: { tr: 'Kategoriler', en: 'Categories', de: 'Kategorien' },
+  reset: { tr: 'Sıfırla', en: 'Reset', de: 'Zurücksetzen' },
+  all: { tr: 'Tümü', en: 'All', de: 'Alle' },
+  showMore: { tr: 'Daha fazla göster', en: 'Show more', de: 'Mehr anzeigen' },
+  showLess: { tr: 'Daha az göster', en: 'Show less', de: 'Weniger anzeigen' },
+  filter: { tr: 'Filtrele', en: 'Filter', de: 'Filtern' },
+  close: { tr: 'Kapat', en: 'Close', de: 'Schließen' },
+};
+
 export default function FilterPanel({ categories, active, onSelect, className = '' }) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
@@ -28,10 +38,10 @@ export default function FilterPanel({ categories, active, onSelect, className = 
   return (
     <div className={`filter-panel ${className}`}>
       <div className="filter-panel__head">
-        <h2 className="filter-panel__title">Kategoriler</h2>
+        <h2 className="filter-panel__title">{t(TEXT.categories)}</h2>
         {active && (
           <button type="button" className="filter-panel__reset" onClick={() => onSelect(null)}>
-            Sıfırla
+            {t(TEXT.reset)}
           </button>
         )}
       </div>
@@ -43,7 +53,7 @@ export default function FilterPanel({ categories, active, onSelect, className = 
             className={`filter-panel__item${!active ? ' filter-panel__item--active' : ''}`}
             onClick={() => onSelect(null)}
           >
-            Tümü
+            {t(TEXT.all)}
           </button>
         </li>
         {base.map((cat) => (
@@ -83,7 +93,7 @@ export default function FilterPanel({ categories, active, onSelect, className = 
           className={`filter-panel__more${expanded ? ' filter-panel__more--open' : ''}`}
           onClick={() => setExpanded((e) => !e)}
         >
-          {expanded ? 'Daha az göster' : 'Daha fazla göster'}
+          {expanded ? t(TEXT.showLess) : t(TEXT.showMore)}
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="filter-panel__more-chevron">
             <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -99,6 +109,7 @@ export default function FilterPanel({ categories, active, onSelect, className = 
 // tap — the sheet only ever holds one control (the category list), so there's nothing left
 // to "apply" once a choice is made.
 export function FilterPanelSheet({ open, onClose, onSelect, ...props }) {
+  const { t } = useLanguage();
   const handleSelect = (value) => {
     onSelect(value);
     onClose();
@@ -126,8 +137,8 @@ export function FilterPanelSheet({ open, onClose, onSelect, ...props }) {
         contentClassName="filter-sheet__content"
       >
         <div className="filter-sheet__head">
-          <span className="filter-sheet__heading">Filtrele</span>
-          <button type="button" className="filter-sheet__close" onClick={onClose} aria-label="Kapat">
+          <span className="filter-sheet__heading">{t(TEXT.filter)}</span>
+          <button type="button" className="filter-sheet__close" onClick={onClose} aria-label={t(TEXT.close)}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>

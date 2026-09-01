@@ -5,9 +5,12 @@ import { useLanguage } from '@/context/LanguageContext';
 // not a switchable attribute on one shared product — so "picking a variant" here means
 // navigating to that sibling product's own detail page, not swapping state in place. Only
 // rendered when the product actually has siblings (see ProductInfo).
+const COLOR_LABEL = { tr: 'Renk', en: 'Color', de: 'Farbe' };
+const SIZE_LABEL = { tr: 'Beden / Ölçü', en: 'Size', de: 'Größe' };
+
 export default function VariantPicker({ current, siblings }) {
   const { t } = useLanguage();
-  const label = current.color ? 'Renk' : 'Beden / Ölçü';
+  const label = t(current.color ? COLOR_LABEL : SIZE_LABEL);
 
   // Sorted by id (not "current first, then siblings in whatever order") so every variant
   // always renders in the same position regardless of which one happens to be active —

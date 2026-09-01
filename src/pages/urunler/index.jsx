@@ -18,6 +18,14 @@ const DESCRIPTION =
   "ChemicalWorkz'ün Türkiye distribütörü Vision Detail üzerinden polisaj makineleri, detay fırçaları, mikrofiber bezler ve daha fazla profesyonel detailing ekipmanını keşfedin.";
 const PAGE_SIZE = 12;
 
+const PAGE_TITLE = { tr: 'Ürünler', en: 'Products', de: 'Produkte' };
+const PAGE_INTRO = {
+  tr: "ChemicalWorkz'ün Türkiye distribütörü Vision Detail üzerinden profesyonel detailing ekipmanlarını ve bakım aksesuarlarını keşfedin.",
+  en: 'Discover professional detailing equipment and care accessories through Vision Detail, ChemicalWorkz\'s Turkey distributor.',
+  de: 'Entdecken Sie professionelle Detailing-Ausrüstung und Pflegezubehör über Vision Detail, den türkischen Vertriebspartner von ChemicalWorkz.',
+};
+const FILTER_LABEL = { tr: 'Filtrele', en: 'Filter', de: 'Filtern' };
+
 const BREADCRUMB_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -172,10 +180,9 @@ export default function ProductsPage({ products: allProducts, categories }) {
 
       <main id="main-content">
         <section className="products-page container">
-          <h1 className="products-page__title" data-reveal>Ürünler</h1>
+          <h1 className="products-page__title" data-reveal>{t(PAGE_TITLE)}</h1>
           <p className="products-page__intro" data-reveal>
-            ChemicalWorkz&apos;ün Türkiye distribütörü Vision Detail üzerinden profesyonel detailing ekipmanlarını ve
-            bakım aksesuarlarını keşfedin.
+            {t(PAGE_INTRO)}
           </p>
 
           <div className="products-page__toolbar" data-reveal>
@@ -185,7 +192,7 @@ export default function ProductsPage({ products: allProducts, categories }) {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
-                Filtrele
+                {t(FILTER_LABEL)}
               </button>
               <SortMenu value={sort} onChange={setSort} />
               <StockFilter value={stock} onChange={setStock} />

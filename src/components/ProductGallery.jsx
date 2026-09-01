@@ -1,7 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import usePresence from '@/hooks/usePresence';
+import { useLanguage } from '@/context/LanguageContext';
 import GlassSurface from './GlassSurface';
+
+const TEXT = {
+  openFullscreen: { tr: 'Görseli tam ekran aç', en: 'Open image fullscreen', de: 'Bild im Vollbild öffnen' },
+  prevImage: { tr: 'Önceki görsel', en: 'Previous image', de: 'Vorheriges Bild' },
+  nextImage: { tr: 'Sonraki görsel', en: 'Next image', de: 'Nächstes Bild' },
+  imageN: { tr: (i) => `${i}. görsel`, en: (i) => `Image ${i}`, de: (i) => `Bild ${i}` },
+  video: { tr: 'Video', en: 'Video', de: 'Video' },
+  close: { tr: 'Kapat', en: 'Close', de: 'Schließen' },
+};
 
 // `thumbs` (optional): pre-generated small (THUMB_MAX_WIDTH, see build-products.mjs)
 // copies of `images`, same order — the thumbnail rail displays each at 68x68 CSS px, but
@@ -16,6 +26,8 @@ import GlassSurface from './GlassSurface';
 // and swipe still cover it, but it never opens the (image-only) lightbox — a <video> with
 // native controls needs real clicks, not a wrapping zoom button.
 export default function ProductGallery({ images, thumbs, video, alt }) {
+  const { t, lang } = useLanguage();
+  const imageN = (i) => (TEXT.imageN[lang] ?? TEXT.imageN.tr)(i);
   const thumbSrcs = thumbs || images;
   const [index, setIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -40,7 +52,7 @@ export default function ProductGallery({ images, thumbs, video, alt }) {
             type="button"
             className="product-gallery__image-wrap"
             onClick={() => setLightboxOpen(true)}
-            aria-label="Görseli tam ekran aç"
+            aria-label={t(TEXT.openFullscreen)}
           >
             <Image
               key={current}
@@ -69,7 +81,7 @@ export default function ProductGallery({ images, thumbs, video, alt }) {
               className="product-gallery__arrow product-gallery__arrow--prev glass-surface--tight glass-surface--solid"
               contentClassName="product-gallery__arrow-content"
               onClick={() => go(index - 1)}
-              aria-label="Önceki görsel"
+              aria-label={t(TEXT.prevImage)}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -81,7 +93,7 @@ export default function ProductGallery({ images, thumbs, video, alt }) {
               className="product-gallery__arrow product-gallery__arrow--next glass-surface--tight glass-surface--solid"
               contentClassName="product-gallery__arrow-content"
               onClick={() => go(index + 1)}
-              aria-label="Sonraki görsel"
+              aria-label={t(TEXT.nextImage)}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -99,7 +111,7 @@ export default function ProductGallery({ images, thumbs, video, alt }) {
                 type="button"
                 className={`product-gallery__thumb${i === index ? ' product-gallery__thumb--active' : ''}`}
                 onClick={() => setIndex(i)}
-                aria-label={typeof slide === 'string' ? `${i + 1}. görsel` : 'Video'}
+                aria-label={typeof slide === 'string' ? imageN(i + 1) : t(TEXT.video)}
                 aria-current={i === index}
               >
                 {typeof slide === 'string' ? (
@@ -138,6 +150,7 @@ export default function ProductGallery({ images, thumbs, video, alt }) {
 // a trailing video slide (see ProductGallery above), and the lightbox has no video variant
 // to show for that index.
 function Lightbox({ open, images, initialIndex, alt, onClose }) {
+  const { t } = useLanguage();
   const dialogRef = useRef(null);
   const { mounted, closing } = usePresence(open, 350);
   const total = images.length;
@@ -183,7 +196,7 @@ function Lightbox({ open, images, initialIndex, alt, onClose }) {
       ref={dialogRef}
       tabIndex={-1}
     >
-      <button type="button" className="product-lightbox__close" onClick={onClose} aria-label="Kapat">
+      <button type="button" className="product-lightbox__close" onClick={onClose} aria-label={t(TEXT.close)}>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
@@ -201,12 +214,12 @@ function Lightbox({ open, images, initialIndex, alt, onClose }) {
 
       {total > 1 && (
         <>
-          <button type="button" className="product-lightbox__arrow product-lightbox__arrow--prev" onClick={() => go(index - 1)} aria-label="Önceki görsel">
+          <button type="button" className="product-lightbox__arrow product-lightbox__arrow--prev" onClick={() => go(index - 1)} aria-label={t(TEXT.prevImage)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-          <button type="button" className="product-lightbox__arrow product-lightbox__arrow--next" onClick={() => go(index + 1)} aria-label="Sonraki görsel">
+          <button type="button" className="product-lightbox__arrow product-lightbox__arrow--next" onClick={() => go(index + 1)} aria-label={t(TEXT.nextImage)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
