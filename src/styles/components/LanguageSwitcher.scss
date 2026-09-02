@@ -55,19 +55,9 @@
   z-index: var(--z-glass);
   border-radius: var(--radius-md);
   min-width: 140px;
-  // Same "drops off the header" entrance as the mobile nav panel — see globals.scss's
-  // @keyframes dropdown-peel.
-  animation: dropdown-peel 0.5s var(--ease-spring);
-
-  // Reverse the entrance on close instead of vanishing (see LanguageSwitcher.jsx's
-  // usePresence usage).
-  &.is-closing {
-    animation: dropdown-peel-close 0.35s var(--ease-out) forwards;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
+  // Entrance/exit (and the .is-closing reverse driven by LanguageSwitcher.jsx's usePresence)
+  // come from GlassSurface.scss's .glass-surface--peel — no animation on this element
+  // itself, see the veil/peel note there for why.
 }
 
 .lang-switch__menu-content {
@@ -133,6 +123,16 @@
   display: flex;
   gap: var(--space-2);
 
+  // Equal widths (not content-sized) — the flex items are the <li> wrappers, the buttons
+  // inside them are width:100%. Sized by content, the pill with the longest name
+  // ("Deutsch") got enough width to keep its flag + code on one row while "Türkçe" /
+  // "English" wrapped to three rows, so the three pills came out different heights. Same
+  // width + same structure = same wrapping, whatever the labels are.
+  > li {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
   .lang-switch__option {
     flex-direction: row;
     flex-wrap: wrap;
@@ -149,5 +149,11 @@
   .lang-switch__option--active {
     border-color: var(--ink);
     background: var(--overlay-06);
+    // The popover's --active rule above shrinks its padding to 7.5px 8.5px to absorb its own
+    // 1.5px gradient border; this inline row keeps a 1px border in BOTH states, so without
+    // this reset the active pill rendered visibly smaller than its two siblings (the
+    // real-phone "İngilizce farklı duruyo" report — whichever language wasn't active looked
+    // different). Must equal .lang-switch__option's resting padding.
+    padding: 9px 10px;
   }
 }

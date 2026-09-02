@@ -272,6 +272,191 @@ button.glass-surface {
   }
 }
 
+// ─── Show/hide for glass panels: "veil" (always mounted) and "peel" (mounted on open) ────
+//
+// Neither ever animates `opacity` on the .glass-surface element itself, and no component
+// may add one on it or on any ancestor. An element with opacity < 1 is a Backdrop Root
+// (Filter Effects L2 §3): for the whole fade, its descendants' backdrop-filter samples that
+// element's own (empty) contents instead of the page. Chromium is lax about this, WebKit is
+// not — on a real iPhone every opacity-faded panel showed as a bare tint over a sharp page
+// with the frost snapping in only at the frame opacity reached exactly 1 ("arada bi bekle
+// oluyor, sonradan opak oluyor arkaplanı"), and on close the frost vanished on the FIRST
+// frame, which read as the panel snapping shut ("zan diye kapanıyo"). So the layers that
+// can fade — tint, shine, content, and the Chromium-only refract — fade, while the blur
+// layer ramps its radius blur(0) → blur($glass-blur): the frost grows together with the
+// shape. backdrop-filter is compositor-animated in both Blink and WebKit (Core Animation
+// interpolates the blur radius). For a popover that mounts fresh on open, ramping from
+// blur(0) also makes the cold-layer first frames (unblurred anyway) indistinguishable from
+// the animation's own start. CLAUDE.md's "never animate the filter itself" is about the SVG
+// displacement — __refract only fades opacity here; its url() filter is never interpolated.
+//
+// Durations are Sass literals (a var() in transition would be fine, but keep one style).
+// Enter is deliberately short so the panel reads as arriving all at once; exit ≈ 70–75%.
+$veil-in: 0.24s;
+$veil-out: 0.18s;
+$peel-in: 0.3s;
+$peel-out: 0.2s;
+$shadow-none: 0 6px 6px rgba(0, 0, 0, 0), 0 0 20px rgba(0, 0, 0, 0);
+
+// Veil — always-mounted panels toggled with .is-open (mobile nav, filter sheet, promo
+// card). The component owns the closed/open `transform` (its slide direction) and nothing
+// else: hidden = pointer-events:none + transparent shadow + every visible layer at opacity
+// 0 + blur(0), with the .glass-surface element itself at opacity 1 throughout. Closed-state
+// declarations carry the CLOSE timings, .is-open the OPEN timings (project convention).
+.glass-surface--veil {
+  transition: scale 0.4s var(--ease-spring), box-shadow $veil-out var(--ease-out), transform $veil-out var(--ease-out);
+
+  &:not(.is-open) {
+    pointer-events: none;
+    box-shadow: $shadow-none;
+  }
+
+  > .glass-surface__clip > .glass-surface__effect {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    transition: -webkit-backdrop-filter $veil-out var(--ease-out), backdrop-filter $veil-out var(--ease-out);
+  }
+
+  > .glass-surface__clip > .glass-surface__refract,
+  > .glass-surface__clip > .glass-surface__tint,
+  > .glass-surface__clip > .glass-surface__shine {
+    opacity: 0;
+    transition: opacity $veil-out var(--ease-out);
+  }
+
+  > .glass-surface__content {
+    opacity: 0;
+    // transform stays listed so the hover content-scale keeps its spring.
+    transition: opacity $veil-out var(--ease-out), transform 0.4s var(--ease-spring);
+  }
+
+  &.is-open {
+    transition: scale 0.4s var(--ease-spring), box-shadow $veil-in var(--ease-out), transform $veil-in var(--ease-spring);
+
+    > .glass-surface__clip > .glass-surface__effect {
+      -webkit-backdrop-filter: blur(#{tokens.$glass-blur});
+      backdrop-filter: blur(#{tokens.$glass-blur});
+      transition: -webkit-backdrop-filter $veil-in var(--ease-out), backdrop-filter $veil-in var(--ease-out);
+    }
+
+    > .glass-surface__clip > .glass-surface__refract,
+    > .glass-surface__clip > .glass-surface__tint,
+    > .glass-surface__clip > .glass-surface__shine {
+      opacity: 1;
+      transition: opacity $veil-in var(--ease-out);
+    }
+
+    > .glass-surface__content {
+      opacity: 1;
+      transition: opacity $veil-in var(--ease-out), transform 0.4s var(--ease-spring);
+    }
+  }
+}
+
+// Peel — popovers that mount on open and unmount after usePresence's exit timer (language
+// dropdown, sort menu, stock filter). Same layer split as the veil, driven by keyframes
+// because the node is fresh on every open. The wrapper keyframes carry translateY + shadow
+// ONLY: this used to scale the panel up from a squashed sliver too, but animating the
+// element's own height (scaleY) while it carries backdrop-filter made the compositor sample
+// nothing (solid black) until the transform settled (screenshotted mid-animation, 2026-08).
+// Separate *-out keyframe names on purpose — per CSS Animations, changing direction /
+// duration while animation-name stays the same retargets the finished instance instead of
+// restarting it (measured as opacity frozen at 1 for the whole close, 2026-08). No fill on
+// the enter: each `to` equals the element's normal computed value, and a forwards fill on
+// box-shadow would pin it and suppress the hover lift.
+.glass-surface--peel {
+  animation: glass-peel $peel-in var(--ease-spring);
+
+  > .glass-surface__clip > .glass-surface__effect {
+    animation: glass-frost-in $peel-in var(--ease-out);
+  }
+
+  > .glass-surface__clip > .glass-surface__refract,
+  > .glass-surface__clip > .glass-surface__tint,
+  > .glass-surface__clip > .glass-surface__shine,
+  > .glass-surface__content {
+    animation: glass-veil-in $peel-in var(--ease-out);
+  }
+
+  &.is-closing {
+    pointer-events: none;
+    animation: glass-peel-out $peel-out var(--ease-out) forwards;
+
+    > .glass-surface__clip > .glass-surface__effect {
+      animation: glass-frost-out $peel-out var(--ease-out) forwards;
+    }
+
+    > .glass-surface__clip > .glass-surface__refract,
+    > .glass-surface__clip > .glass-surface__tint,
+    > .glass-surface__clip > .glass-surface__shine,
+    > .glass-surface__content {
+      animation: glass-veil-out $peel-out var(--ease-out) forwards;
+    }
+  }
+}
+
+@keyframes glass-peel {
+  from {
+    transform: translateY(-14px);
+    box-shadow: $shadow-none;
+  }
+  to {
+    transform: translateY(0);
+    box-shadow: var(--glass-wrapper-shadow);
+  }
+}
+
+@keyframes glass-peel-out {
+  from {
+    transform: translateY(0);
+    box-shadow: var(--glass-wrapper-shadow);
+  }
+  to {
+    transform: translateY(-14px);
+    box-shadow: $shadow-none;
+  }
+}
+
+@keyframes glass-frost-in {
+  from {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+  to {
+    -webkit-backdrop-filter: blur(#{tokens.$glass-blur});
+    backdrop-filter: blur(#{tokens.$glass-blur});
+  }
+}
+
+@keyframes glass-frost-out {
+  from {
+    -webkit-backdrop-filter: blur(#{tokens.$glass-blur});
+    backdrop-filter: blur(#{tokens.$glass-blur});
+  }
+  to {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes glass-veil-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glass-veil-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .glass-surface {
     &:hover,
@@ -287,6 +472,26 @@ button.glass-surface {
 
   .glass-surface.glass-drift {
     transform: none;
+  }
+
+  // Instant show/hide: no fades, no blur ramp, no slide (components zero their transform).
+  .glass-surface--veil,
+  .glass-surface--veil.is-open,
+  .glass-surface--veil > .glass-surface__clip > *,
+  .glass-surface--veil > .glass-surface__content {
+    transition: none;
+  }
+
+  .glass-surface--peel,
+  .glass-surface--peel > .glass-surface__clip > *,
+  .glass-surface--peel > .glass-surface__content {
+    animation: none;
+  }
+
+  // Without the exit animation a closing popover would sit fully visible until usePresence
+  // unmounts it — hide it outright instead.
+  .glass-surface--peel.is-closing {
+    visibility: hidden;
   }
 }
 

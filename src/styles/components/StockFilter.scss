@@ -36,15 +36,8 @@
   z-index: var(--z-glass);
   border-radius: var(--radius-md);
   min-width: 160px;
-  animation: dropdown-peel 0.5s var(--ease-spring);
-
-  &.is-closing {
-    animation: dropdown-peel-close 0.35s var(--ease-out) forwards;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
+  // Entrance/exit (and the .is-closing reverse driven by StockFilter.jsx's usePresence)
+  // come from GlassSurface.scss's .glass-surface--peel — no animation on this element itself.
 }
 
 .stock-filter__list-content {

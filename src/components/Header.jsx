@@ -19,24 +19,18 @@ export default function Header() {
   const headerRef = useRef(null);
   useBodyScrollLock(menuOpen);
 
-  // Same outside-tap-closes behavior as LanguageSwitcher's dropdown — the mobile menu is
-  // the same class of floating panel, and the user-reported bug was that it only closed via
-  // the burger toggle or a nav link, not by tapping the page behind it like every other
-  // dropdown on the site.
+  // The mobile menu closes ONLY by picking a nav item or pressing its own X (owner
+  // decision, 2026-09 — it used to also close on any tap outside the header, like the
+  // dropdowns do, and that was explicitly unwanted here). Escape stays: it's the keyboard
+  // equivalent of the X button, not an outside tap, and dismissing a menu with Escape is a
+  // baseline expectation for keyboard users.
   useEffect(() => {
     if (!menuOpen) return undefined;
-    const onPointerDown = (event) => {
-      if (headerRef.current && !headerRef.current.contains(event.target)) setMenuOpen(false);
-    };
     const onKeyDown = (event) => {
       if (event.key === 'Escape') setMenuOpen(false);
     };
-    document.addEventListener('pointerdown', onPointerDown);
     document.addEventListener('keydown', onKeyDown);
-    return () => {
-      document.removeEventListener('pointerdown', onPointerDown);
-      document.removeEventListener('keydown', onKeyDown);
-    };
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [menuOpen]);
 
   // The header is now a persistent singleton in _app.jsx (never unmounted on client-side
@@ -247,7 +241,7 @@ export default function Header() {
         // GlassFilterDefs.jsx) — the default one tears at this panel's size, which is what
         // read as the menu "screwing up" (page content bleeding through, garbled text).
         // The language dropdown already uses this same fix; this panel just never got it.
-        className={`site-header__mobile-menu glass-surface--calm glass-surface--tight glass-surface--solid glass-surface--menu${menuOpen ? ' is-open' : ''}`}
+        className={`site-header__mobile-menu glass-surface--veil glass-surface--calm glass-surface--tight glass-surface--solid glass-surface--menu${menuOpen ? ' is-open' : ''}`}
         contentClassName="site-header__mobile-menu-content"
         aria-hidden={!menuOpen}
         inert={menuOpen ? undefined : ''}

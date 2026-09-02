@@ -16,15 +16,17 @@
   z-index: var(--z-fab);
   width: min(300px, calc(100vw - var(--space-4) * 2));
   border-radius: var(--radius-lg);
-  opacity: 0;
+  // Show/hide is GlassSurface.scss's --veil (PromoOffer.jsx toggles .is-open alongside
+  // --visible): the layers fade and the blur ramps, but this element never fades `opacity`
+  // itself — that made it a Backdrop Root and left the card unfrosted until the fade ended
+  // on WebKit. This block only owns the rise + settle transform; the transition is declared
+  // here (after the veil's in main.scss order) so the settle keeps its longer spring.
   transform: translateY(calc(var(--fab-lift, 0px) * -1)) translateY(14px) scale(0.94);
-  pointer-events: none;
-  transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-spring);
+  transition: scale 0.4s var(--ease-spring), box-shadow 0.18s var(--ease-out), transform 0.5s var(--ease-spring);
 
   &--visible {
-    opacity: 1;
     transform: translateY(calc(var(--fab-lift, 0px) * -1)) translateY(0) scale(1);
-    pointer-events: auto;
+    transition: scale 0.4s var(--ease-spring), box-shadow 0.24s var(--ease-out), transform 0.5s var(--ease-spring);
   }
 
   @media (min-width: 768px) {
@@ -34,7 +36,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    transition: opacity 0.25s linear;
+    transition: none;
     transform: translateY(calc(var(--fab-lift, 0px) * -1));
 
     &--visible {

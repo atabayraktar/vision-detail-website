@@ -87,7 +87,9 @@ export default function PromoOffer() {
     <GlassSurface
       as="div"
       ref={cardRef}
-      className={`promo-offer glass-surface--calm glass-surface--solid glass-surface--menu${visible ? ' promo-offer--visible' : ''}`}
+      // .is-open drives GlassSurface.scss's --veil show/hide (layers fade, blur ramps);
+      // --visible keeps owning this card's own rise/settle transform in PromoOffer.scss.
+      className={`promo-offer glass-surface--veil glass-surface--calm glass-surface--solid glass-surface--menu${visible ? ' promo-offer--visible is-open' : ''}`}
       contentClassName="promo-offer__content"
       role="dialog"
       aria-label={t(TEXT.title)}

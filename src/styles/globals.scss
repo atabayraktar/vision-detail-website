@@ -134,46 +134,11 @@ ol {
   }
 }
 
-// Shared by every panel that drops out of the floating header (the mobile nav menu, the
-// language dropdown — see Header.scss and LanguageSwitcher.scss) — translateY + opacity
-// only. This used to also scale the panel up from a squashed sliver (transform: scaleY),
-// which read as a nicer "unfurl" but broke the glass blur for the animation's whole
-// duration: animating an element's own height via scaleY while it also has
-// backdrop-filter made the compositor sample nothing (solid black) until the transform
-// settled, so the panel looked like a plain black box until it finished landing — verified
-// by screenshotting mid-animation. translateY doesn't have this problem (the header/footer
-// already animate translateY with backdrop-filter every scroll frame via .glass-drift with
-// no issue), so the peel now reads as a drop-in slide rather than an unfurl, but the blur
-// is correct throughout instead of only appearing after the fact.
-@keyframes dropdown-peel {
-  from {
-    opacity: 0;
-    transform: translateY(-14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Exit animation for the same panels, played via .is-closing (see usePresence.js) while
-// the component stays mounted long enough for this to finish. Deliberately a SEPARATE
-// keyframe rather than `animation: dropdown-peel ... reverse` on the same name — per the
-// CSS Animations spec, changing animation-direction/duration while animation-name stays
-// identical does NOT restart the animation, it just retargets the already-finished
-// instance, which measured as opacity frozen at 1 for the whole "closing" duration before
-// the element just vanished (verified via a requestAnimationFrame-sampled trace, 2026-08)
-// — a distinct name forces the browser to actually start a new animation.
-@keyframes dropdown-peel-close {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-14px);
-  }
-}
+// The header/product-page popovers' drop-in entrance (formerly @keyframes dropdown-peel
+// here) now lives in GlassSurface.scss as .glass-surface--peel: the old keyframes faded
+// `opacity` on the glass element itself, which on WebKit made it a Backdrop Root and left
+// the panel unfrosted until the fade finished. See the veil/peel section there for the full
+// reasoning (and for the scaleY / same-keyframe-name lessons that used to be recorded here).
 
 .gradient-text {
   background-image: var(--gradient-text);
@@ -310,10 +275,11 @@ html.has-reveal [data-reveal] {
   }
 }
 
-// Separate keyframe NAMES rather than `animation: quiz-fade ... reverse` on the same name —
-// see dropdown-peel-close above for why: changing direction/duration while animation-name
-// stays identical doesn't restart an already-finished animation, it just silently no-ops,
-// so the panel would vanish instantly instead of fading out.
+// Separate keyframe NAMES rather than `animation: quiz-fade ... reverse` on the same name:
+// per the CSS Animations spec, changing direction/duration while animation-name stays
+// identical doesn't restart an already-finished animation, it just silently no-ops, so the
+// panel would vanish instantly instead of fading out (same lesson as GlassSurface.scss's
+// glass-peel/glass-peel-out pair).
 @keyframes quiz-fade-close {
   from {
     opacity: 1;

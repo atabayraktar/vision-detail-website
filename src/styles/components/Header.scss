@@ -276,23 +276,18 @@
     border-radius: var(--radius-lg);
     // Always in the DOM (see Header.jsx) so the compositor keeps the backdrop-filter layer
     // warm — mounting it at click time made the first frames render unblurred (a sharp
-    // flash, then a blur snap). Hidden state is opacity + pointer-events only: NEVER
-    // display:none or visibility:hidden here, both stop compositing and bring the flash
-    // back. Show/hide is a plain transition now (not the shared dropdown-peel keyframes —
-    // those were tied to mount/unmount). translateY only, no scale — scale +
-    // backdrop-filter broke the blur mid-animation (see globals.scss's dropdown-peel).
-    opacity: 0;
+    // flash, then a blur snap). NEVER display:none or visibility:hidden here, both stop
+    // compositing and bring the flash back. Show/hide is GlassSurface.scss's --veil (the
+    // tint/content layers fade, the blur ramps its radius); this block only owns the slide
+    // direction. It used to fade `opacity` on this element too, which made the element a
+    // Backdrop Root: on WebKit the frost was missing for the whole fade and popped in only
+    // once opacity hit 1, and vanished on the first frame of the close — the "zan diye
+    // kapanıyo" snap. translateY only, no scale — scale + backdrop-filter broke the blur
+    // mid-animation (see GlassSurface.scss's peel note).
     transform: translateY(-10px);
-    pointer-events: none;
-    // Closed-state transition = the CLOSE motion (~65% of open, project convention).
-    transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 
     &.is-open {
-      opacity: 1;
       transform: translateY(0);
-      pointer-events: auto;
-      // Open is snappier than the old 0.5s keyframe but keeps the spring landing.
-      transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-spring);
     }
 
     @media (min-width: 900px) {
@@ -300,8 +295,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      // Instant show/hide, no slide.
-      transition: none;
+      // Instant show/hide, no slide (the veil's transitions are disabled there too).
       transform: none;
     }
   }

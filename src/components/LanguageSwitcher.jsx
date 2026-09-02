@@ -44,7 +44,8 @@ const FLAGS = {
 export default function LanguageSwitcher({ variant = 'dropdown' }) {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const { mounted, closing } = usePresence(open, 350);
+  // 220ms = GlassSurface.scss's $peel-out plus a frame of slack — keep them in step.
+  const { mounted, closing } = usePresence(open, 220);
   useBodyScrollLock(variant === 'dropdown' && open);
   const rootRef = useRef(null);
 
@@ -105,7 +106,7 @@ export default function LanguageSwitcher({ variant = 'dropdown' }) {
       {mounted && (
         <GlassSurface
           as="ul"
-          className={`lang-switch__menu glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
+          className={`lang-switch__menu glass-surface--peel glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
           contentClassName="lang-switch__menu-content"
           role="listbox"
           aria-label="Dil seçimi / Language / Sprache"

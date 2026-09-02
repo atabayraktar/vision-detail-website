@@ -34,18 +34,8 @@
   z-index: var(--z-glass);
   border-radius: var(--radius-md);
   min-width: 180px;
-  // Same "drops off" entrance as the language dropdown/mobile nav — see globals.scss.
-  animation: dropdown-peel 0.5s var(--ease-spring);
-
-  // Reverse the entrance on close instead of vanishing (see SortMenu.jsx's usePresence
-  // usage).
-  &.is-closing {
-    animation: dropdown-peel-close 0.35s var(--ease-out) forwards;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
+  // Entrance/exit (and the .is-closing reverse driven by SortMenu.jsx's usePresence) come
+  // from GlassSurface.scss's .glass-surface--peel — no animation on this element itself.
 }
 
 .sort-menu__list-content {

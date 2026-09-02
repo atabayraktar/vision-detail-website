@@ -53,17 +53,19 @@
 // backdrop-filter compositing layer stays warm — the old usePresence mount + quiz-fade/
 // quiz-pop keyframes stood the glass up cold on every open, flashing flat/unblurred first
 // frames (same bug + same fix as Header.scss's __mobile-menu; read the comments there).
-// Hidden state is opacity + pointer-events only: NEVER display:none or visibility:hidden.
+// NEVER display:none or visibility:hidden, and NO `opacity` on this wrapper either: it is
+// an ancestor of the sheet's glass, and an ancestor at opacity < 1 is a Backdrop Root
+// (Filter Effects L2 §3) — the old opacity fade here meant the sheet's frost could not
+// exist until this wrapper reached opacity 1, i.e. the sheet showed up first and frosted a
+// beat later ("arada bi bekle oluyor, sonradan opak oluyor"). The scrim below fades its own
+// background-color instead; the sheet itself fades via GlassSurface.scss's --veil.
 .filter-sheet__backdrop {
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
   display: flex;
   align-items: flex-end;
-  opacity: 0;
   pointer-events: none;
-  // Closed-state transition = the CLOSE motion (~65% of open, project convention).
-  transition: opacity 0.25s var(--ease-out);
 
   // The scrim (tint + soft blur) is a ::before SIBLING of the sheet, not a background +
   // backdrop-filter on this wrapper. A backdrop-filter on the wrapper made the wrapper the
@@ -82,19 +84,21 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    // Fades via background-color alpha, not opacity (see above). Closed = CLOSE timing.
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.18s var(--ease-out);
   }
 
   &.is-open {
-    opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.35s var(--ease-out);
 
     // The scrim's own soft blur lives only on the open state: unlike the sheet's glass it
     // covers the whole viewport, and an always-composited full-screen backdrop-filter is a
     // scroll-perf tax on the grid behind it. Standing THIS layer up cold is imperceptible —
-    // 2px of blur arriving under a scrim that's still fading in from opacity 0.
+    // 2px of blur arriving under a scrim that's still fading in from transparent.
     &::before {
+      background-color: rgba(0, 0, 0, 0.35);
+      transition: background-color 0.24s var(--ease-out);
       -webkit-backdrop-filter: blur(2px);
       backdrop-filter: blur(2px);
     }
@@ -112,18 +116,13 @@
   max-height: 85vh;
   overflow-y: auto;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  // translateY only, no scale — scale + backdrop-filter breaks the blur mid-animation
-  // (see Header.scss's __mobile-menu note on the old dropdown-peel keyframes).
-  opacity: 0;
+  // Show/hide is GlassSurface.scss's --veil (layers fade, blur ramps; timings live there);
+  // this block only owns the slide direction. translateY only, no scale — scale +
+  // backdrop-filter breaks the blur mid-animation (see GlassSurface.scss's peel note).
   transform: translateY(24px);
-  pointer-events: none;
-  transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
 
   &.is-open {
-    opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
-    transition: opacity 0.35s var(--ease-out), transform 0.4s var(--ease-spring);
   }
 
   @media (min-width: 640px) {
@@ -133,8 +132,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    // Instant show/hide, no slide.
-    transition: none;
+    // Instant show/hide, no slide (the veil's transitions are disabled there too).
     transform: none;
   }
 }

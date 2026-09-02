@@ -18,7 +18,8 @@ const SORT_ARIA_LABEL = { tr: 'Sıralama', en: 'Sort', de: 'Sortierung' };
 export default function SortMenu({ value, onChange }) {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
-  const { mounted, closing } = usePresence(open, 350);
+  // 220ms = GlassSurface.scss's $peel-out plus a frame of slack — keep them in step.
+  const { mounted, closing } = usePresence(open, 220);
   useBodyScrollLock(open);
   const rootRef = useRef(null);
   const current = SORT_OPTIONS.find((opt) => opt.value === value) ?? SORT_OPTIONS[0];
@@ -59,7 +60,7 @@ export default function SortMenu({ value, onChange }) {
       {mounted && (
         <GlassSurface
           as="ul"
-          className={`sort-menu__list glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
+          className={`sort-menu__list glass-surface--peel glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
           contentClassName="sort-menu__list-content"
           role="listbox"
           aria-label={t(SORT_ARIA_LABEL)}

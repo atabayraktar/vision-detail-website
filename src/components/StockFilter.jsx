@@ -17,7 +17,8 @@ const STOCK_ARIA_LABEL = { tr: 'Stok durumu', en: 'Stock status', de: 'Lagerstat
 export default function StockFilter({ value, onChange }) {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
-  const { mounted, closing } = usePresence(open, 350);
+  // 220ms = GlassSurface.scss's $peel-out plus a frame of slack — keep them in step.
+  const { mounted, closing } = usePresence(open, 220);
   useBodyScrollLock(open);
   const rootRef = useRef(null);
   const current = STOCK_OPTIONS.find((opt) => opt.value === value) ?? STOCK_OPTIONS[0];
@@ -58,7 +59,7 @@ export default function StockFilter({ value, onChange }) {
       {mounted && (
         <GlassSurface
           as="ul"
-          className={`stock-filter__list glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
+          className={`stock-filter__list glass-surface--peel glass-surface--tight glass-surface--solid glass-surface--menu${closing ? ' is-closing' : ''}`}
           contentClassName="stock-filter__list-content"
           role="listbox"
           aria-label={t(STOCK_ARIA_LABEL)}
