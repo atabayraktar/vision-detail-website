@@ -3,14 +3,12 @@ import { contactSection } from '@/data/homepageContent';
 import { useLanguage } from '@/context/LanguageContext';
 import GlassSurface from './GlassSurface';
 
-// Shows once, a beat after the products page settles, in the bottom-left corner (same
-// column as ScrollTopButton, stacked above its rest height — see PromoOffer.scss — so the
-// two never collide on the rare page where ScrollTopButton is also visible). Dismissing it
-// (or just letting it show) marks it seen for the rest of the browser session via
-// sessionStorage — a shopper who navigates products → a product page → back to products
-// shouldn't see it pop up again every time.
+// Shows every time /urunler is landed on, a beat after the page settles, in the bottom-left
+// corner on mobile (same column as ScrollTopButton, stacked above its rest height — see
+// PromoOffer.scss — so the two never collide on the rare page where ScrollTopButton is also
+// visible) and bottom-right on desktop (WhatsAppFab.scss hides the WhatsApp FAB for as long
+// as this is visible, so no reservation needed there — see PromoOffer.scss).
 const SHOW_DELAY_MS = 1400;
-const SESSION_KEY = 'vd-promo-offer-seen';
 const WHATSAPP_MESSAGE = 'Merhaba, web siteniz üzerinden geldim. VSN10 koduyla sipariş vermek istiyorum.';
 
 const TEXT = {
@@ -43,25 +41,7 @@ export default function PromoOffer() {
   const cardRef = useRef(null);
 
   useEffect(() => {
-    let alreadySeen = false;
-    try {
-      alreadySeen = sessionStorage.getItem(SESSION_KEY) === '1';
-    } catch {
-      // Storage can throw in a locked-down/private context — fail open and just show it once.
-    }
-    if (alreadySeen) return undefined;
-
-    const timer = setTimeout(() => {
-      setVisible(true);
-      // Marked seen the moment it actually shows, not only on an explicit dismiss — a
-      // shopper who lets it sit and navigates away without tapping the X shouldn't get it
-      // popping up again on every other /urunler visit in the same session either.
-      try {
-        sessionStorage.setItem(SESSION_KEY, '1');
-      } catch {
-        // Worst case it can show again next navigation.
-      }
-    }, SHOW_DELAY_MS);
+    const timer = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
 
@@ -100,8 +80,6 @@ export default function PromoOffer() {
     };
   }, []);
 
-  // sessionStorage is already set the moment it became visible (above) — dismissing just
-  // hides it now instead of waiting for its own timer.
   const dismiss = () => setVisible(false);
 
   const whatsappHref = `${contactSection.whatsappHref}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
