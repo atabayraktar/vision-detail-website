@@ -8,6 +8,14 @@ import GlassSurface from './GlassSurface';
 // Slow, unhurried autoplay per the brand direction's "acelesiz" carousel pacing — pauses
 // the moment someone touches the slider (hover, focus, drag) and never fights a manual nav.
 const AUTOPLAY_MS = 8000;
+// Video slides get longer: the hero clips run 5.5–7s (ffprobe on public/videos/hero-*.mp4,
+// mobile crops included) and slides 2/3 only mount their <video> once they become active, so
+// 8s would auto-advance before a clip has really shown itself. One full loop + load latency
+// + breathing room.
+const VIDEO_AUTOPLAY_MS = 12000;
+
+const autoplayDurationFor = (slide) =>
+  slide.media.type === 'video' ? VIDEO_AUTOPLAY_MS : AUTOPLAY_MS;
 
 export default function HeroSlider() {
   const { t } = useLanguage();
@@ -28,16 +36,24 @@ export default function HeroSlider() {
   const total = heroSlides.length;
   const go = (next) => setIndex(((next % total) + total) % total);
 
+  // Re-armed on every index change — autoplay tick, swipe, drag or dot click alike — so the
+  // next auto-advance is always a full duration after the *most recent* slide change. A
+  // fixed-cadence interval created once at mount kept ticking on its own schedule after a
+  // manual nav, so a swipe landing just before a tick got a second, unasked-for advance
+  // moments later: the 0.7s track transition restarted mid-flight (copy flickered) and a
+  // freshly-arrived video slide was cut off before its clip played. Kept as an interval
+  // rather than a one-shot timeout so a tick skipped while paused (hover/focus) is retried
+  // on the next tick instead of silently ending autoplay until the next manual nav.
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
 
     const timer = setInterval(() => {
       if (pausedRef.current) return;
       setIndex((i) => (i + 1) % total);
-    }, AUTOPLAY_MS);
+    }, autoplayDurationFor(heroSlides[index]));
 
     return () => clearInterval(timer);
-  }, [total]);
+  }, [index, total]);
 
   const pause = () => {
     pausedRef.current = true;
