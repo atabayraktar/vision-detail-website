@@ -163,6 +163,7 @@ export default function ProductDetailPage({ product, siblings, related, categori
               a full-width loop. Several SKUs only have a written description and no photo/
               video — ProductPoster still renders those; it only no-ops when both are empty. */}
           <ProductPoster
+            productId={product.id}
             images={product.posterImages}
             video={product.video}
             description={product.posterDescription}

@@ -18,7 +18,8 @@
 }
 
 // Editorial two-column copy on desktop: display-type lead on the left, supporting
-// paragraphs on the right. Single-paragraph products keep one readable measure instead.
+// paragraphs on the right. Sits below the media block (photos lead, copy captions).
+// Single-paragraph products run the lead across the full width instead.
 .product-poster__text {
   display: grid;
   gap: var(--space-5);
@@ -32,8 +33,6 @@
 }
 
 .product-poster__text--solo {
-  max-width: 720px;
-
   @media (min-width: 900px) {
     grid-template-columns: 1fr;
   }
@@ -81,10 +80,29 @@
 .product-poster__media {
   display: grid;
   gap: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
-// Video case (cw-ms): full-width cinematic loop. Kept 16:9 at every size — cropping a
-// moving clip reads worse than a shorter panel on mobile.
+// Video case (cw-ms): the clip and the lead paragraph share a row on desktop — clip on
+// the wider left column, lead beside it — with any further paragraphs running full
+// width underneath. Below 900px it stacks: video, lead, then the rest.
+.product-poster__split {
+  display: grid;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+
+  @media (min-width: 900px) {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: var(--space-8);
+    align-items: start;
+  }
+}
+
+.product-poster--video .product-poster__more {
+  margin-bottom: var(--space-6);
+}
+
+// Kept 16:9 at every size — cropping a moving clip reads worse than a shorter panel.
 .product-poster__video {
   position: relative;
   width: 100%;
@@ -99,6 +117,28 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+// Every poster photo box (single/duo/mosaic/trio/swiper-slide) is a <button> now — the
+// same zoom-to-Lightbox affordance as ProductGallery's main product image (see ZoomHint in
+// ProductPoster.jsx). Reset the UA button chrome once here rather than repeating it on
+// every box below, and match ProductGallery's focus-visible fix: globals.scss's generic
+// :focus-visible rule sets border-radius:var(--radius-sm), which fought these boxes' own
+// var(--radius-lg) rounding.
+.product-poster__single,
+.product-poster__duo-image,
+.product-poster__mosaic-image,
+.product-poster__trio-image,
+.product-poster__swiper-slide {
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: zoom-in;
+
+  &:focus-visible {
+    border-radius: var(--radius-lg);
+  }
 }
 
 // 1 photo: the original full-bleed treatment.
@@ -116,13 +156,16 @@
 }
 
 // 2 photos: a weighted pair — the first shot leads, the second supports. Equal heights
-// via a shared clamped row height so the bottom edge stays flush.
+// via a shared clamped row height so the bottom edge stays flush. Below 700px this grid
+// stays out of the layout entirely — .product-poster__swiper (see below) takes over,
+// same breakpoint as the mosaic/trio grids it mirrors.
 .product-poster__duo {
-  display: grid;
+  display: none;
   gap: var(--space-4);
   grid-template-columns: 1fr;
 
   @media (min-width: 700px) {
+    display: grid;
     grid-template-columns: 1.4fr 1fr;
   }
 }
@@ -130,6 +173,7 @@
 .product-poster__duo-image {
   position: relative;
   display: block;
+  width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--hair);
@@ -142,13 +186,16 @@
 }
 
 // 3 photos: editorial mosaic — first shot runs tall on the left, the other two stack
-// beside it; the whole block keeps a 16:9 footprint on desktop.
+// beside it; the whole block keeps a 16:9 footprint on desktop. Below 700px, the swiper
+// (see below) shows instead — three stacked full-width photos read as a long scroll of
+// "photo, photo, photo" before the copy ever shows up.
 .product-poster__mosaic {
-  display: grid;
+  display: none;
   gap: var(--space-4);
   grid-template-columns: 1fr;
 
   @media (min-width: 700px) {
+    display: grid;
     grid-template-columns: 1.55fr 1fr;
     grid-template-rows: repeat(2, minmax(0, 1fr));
     aspect-ratio: 16 / 9;
@@ -158,6 +205,7 @@
 .product-poster__mosaic-image {
   position: relative;
   display: block;
+  width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--hair);
@@ -170,4 +218,101 @@
       grid-row: 1 / span 2;
     }
   }
+}
+
+// 3 portrait posters (cw-cfgt-1pc — see PORTRAIT_POSTER_SKUS in ProductPoster.jsx): three
+// equal columns from tablet up, each frame keeping the shots' native 3:4 so the designed
+// poster shows whole — no landscape crop. Below 700px the swiper (see below) shows instead,
+// same breakpoint as the duo/mosaic grids so the "one photo at a time" mobile treatment is
+// consistent across every multi-photo poster.
+.product-poster__trio {
+  display: none;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+
+  @media (min-width: 700px) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.product-poster__trio-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hair);
+}
+
+// One photo at a time, drag/swipe-only (no autoplay) — see PosterSwiper in
+// ProductPoster.jsx. Mirrors HeroSlider's translateX track + touch/mouse-drag mechanics
+// and ProductGallery's glass arrow-button styling, so the gesture and the affordance both
+// read the same way they already do elsewhere on the site. Hidden from 700px up, where the
+// duo/mosaic/trio grid it sits beside takes over instead.
+.product-poster__swiper {
+  position: relative;
+  margin-bottom: var(--space-4);
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
+
+.product-poster__swiper-viewport {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  cursor: grab;
+  user-select: none;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.product-poster__swiper-track {
+  display: flex;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.product-poster__swiper-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--hair);
+}
+
+.product-poster__swiper--portrait .product-poster__swiper-slide {
+  aspect-ratio: 3 / 4;
+}
+
+.product-poster__swiper-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  border-radius: var(--radius-md);
+  color: var(--ink);
+
+  &--prev {
+    left: var(--space-3);
+  }
+
+  &--next {
+    right: var(--space-3);
+  }
+}
+
+.product-poster__swiper-arrow-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
