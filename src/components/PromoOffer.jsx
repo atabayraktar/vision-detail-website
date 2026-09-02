@@ -3,9 +3,9 @@ import { contactSection } from '@/data/homepageContent';
 import { useLanguage } from '@/context/LanguageContext';
 import GlassSurface from './GlassSurface';
 
-// Shows once, a beat after the products page settles, in the same bottom-right FAB column
-// as WhatsAppFab (stacked above it, same footer-avoidance lift technique as
-// WhatsAppFab.jsx/ScrollTopButton.jsx so it never sits on top of the footer). Dismissing it
+// Shows once, a beat after the products page settles, in the bottom-left corner (same
+// column as ScrollTopButton, stacked above its rest height — see PromoOffer.scss — so the
+// two never collide on the rare page where ScrollTopButton is also visible). Dismissing it
 // (or just letting it show) marks it seen for the rest of the browser session via
 // sessionStorage — a shopper who navigates products → a product page → back to products
 // shouldn't see it pop up again every time.
@@ -23,6 +23,19 @@ const TEXT = {
   cta: { tr: 'WhatsApp ile Ulaş', en: 'Message on WhatsApp', de: 'Über WhatsApp kontaktieren' },
   close: { tr: 'Kapat', en: 'Close', de: 'Schließen' },
 };
+
+// The VSN10 code is the one thing in the body copy that has to jump out — same string in
+// every locale (a code isn't translated), so split on it once and wrap it regardless of
+// which language's sentence it's sitting in.
+function BodyWithCode({ text }) {
+  const parts = text.split('VSN10');
+  return parts.map((part, i) => (
+    <span key={i}>
+      {part}
+      {i < parts.length - 1 && <strong className="promo-offer__code gradient-text">VSN10</strong>}
+    </span>
+  ));
+}
 
 export default function PromoOffer() {
   const { t } = useLanguage();
@@ -45,8 +58,7 @@ export default function PromoOffer() {
   }, []);
 
   // Same footer-avoidance lift as WhatsAppFab.jsx/ScrollTopButton.jsx, tracked
-  // independently (--fab-lift is set inline per-element, not shared) — this card sits
-  // above the WhatsApp FAB in the same right-edge stack, so it needs to rise with it.
+  // independently (--fab-lift is set inline per-element, not shared).
   useEffect(() => {
     const footer = document.querySelector('.site-footer');
     const card = cardRef.current;
@@ -106,7 +118,9 @@ export default function PromoOffer() {
       </button>
 
       <p className="promo-offer__title">{t(TEXT.title)}</p>
-      <p className="promo-offer__body">{t(TEXT.body)}</p>
+      <p className="promo-offer__body">
+        <BodyWithCode text={t(TEXT.body)} />
+      </p>
 
       <a
         href={whatsappHref}

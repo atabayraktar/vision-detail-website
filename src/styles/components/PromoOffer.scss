@@ -1,12 +1,16 @@
-// Small campaign card, /urunler only (PromoOffer.jsx) — same bottom-right FAB column as
-// WhatsAppFab/ScrollTopButton, stacked above the WhatsApp FAB (60px + a gap) rather than a
-// separate corner, so the right-edge stack reads as one system. Entrance combines the
-// footer-avoidance lift with a fade + rise + settle in one transform (same reasoning as
-// ScrollTopButton.scss: a second transform declaration would fight the lift math).
+// Small campaign card, /urunler only (PromoOffer.jsx). Bottom-left on mobile — same column
+// as ScrollTopButton, stacked above its 52px rest height + a gap so the two never collide
+// even on the rare page where ScrollTopButton is also visible. From 768px up the left
+// corner sits on top of the category filter sidebar (real navigational content, not empty
+// space like the right side), so desktop switches back to the right, stacked above the
+// WhatsApp FAB instead — same reasoning, opposite corner per breakpoint (explicit owner
+// call after seeing both). Entrance combines the footer-avoidance lift with a fade + rise +
+// settle in one transform (same reasoning as ScrollTopButton.scss: a second transform
+// declaration would fight the lift math).
 .promo-offer {
   position: fixed;
-  right: var(--space-4);
-  bottom: calc(var(--space-4) + 60px + var(--space-3));
+  left: var(--space-4);
+  bottom: calc(var(--space-4) + 52px + var(--space-3));
   z-index: var(--z-fab);
   width: min(300px, calc(100vw - var(--space-4) * 2));
   border-radius: var(--radius-lg);
@@ -22,6 +26,7 @@
   }
 
   @media (min-width: 768px) {
+    left: auto;
     right: var(--space-6);
     bottom: calc(var(--space-6) + 60px + var(--space-4));
     width: 320px;
@@ -82,8 +87,21 @@
 .promo-offer__body {
   font-size: 13px;
   line-height: 1.55;
-  color: var(--mute);
+  // Darker + a touch heavier than the brand's usual --mute/240 body copy — this card is a
+  // small floating surface competing with a busy product grid behind it, so it needs more
+  // weight than a full-width paragraph would to actually read at a glance.
+  color: var(--ink-strong);
+  font-variation-settings: 'wght' 380, 'wdth' 95;
   margin-bottom: var(--space-4);
+}
+
+// The promo code: Archivo (display, not body) at real display weight, gradient-clipped —
+// a deliberate, one-off exception to the brand's "gradient is hover-only" rule (explicit
+// owner instruction) so the code itself reads as the thing to remember, not just more copy.
+.promo-offer__code {
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 650, 'wdth' 125;
+  letter-spacing: 0.02em;
 }
 
 // Plain solid button, not a nested GlassSurface — this card is already one blurred
