@@ -3,10 +3,14 @@ import { contactSection } from '@/data/homepageContent';
 import GlassSurface from './GlassSurface';
 import VariantPicker from './VariantPicker';
 
+// The VSN10 line is appended verbatim (not translated per locale) — it's a promo code
+// callout, not product copy, and stays the same regardless of which language the rest of
+// the message is in.
+const PROMO_LINE = 'VSN10 kodu ile web sitesine özel kampanyadan yararlanmak istiyorum.';
 const WHATSAPP_MESSAGE = {
-  tr: (name, id) => `Merhaba, ${name} (${id}) hakkında bilgi almak istiyorum.`,
-  en: (name, id) => `Hello, I'd like information about ${name} (${id}).`,
-  de: (name, id) => `Hallo, ich hätte gerne Informationen zu ${name} (${id}).`,
+  tr: (name, id) => `Merhaba, ${name} (${id}) hakkında bilgi almak istiyorum. ${PROMO_LINE}`,
+  en: (name, id) => `Hello, I'd like information about ${name} (${id}). ${PROMO_LINE}`,
+  de: (name, id) => `Hallo, ich hätte gerne Informationen zu ${name} (${id}). ${PROMO_LINE}`,
 };
 const CTA_LABEL = { tr: 'WhatsApp ile Bilgi Al', en: 'Ask on WhatsApp', de: 'Über WhatsApp anfragen' };
 
