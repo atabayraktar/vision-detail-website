@@ -6,15 +6,29 @@
   width: 60px;
   height: 60px;
   border-radius: var(--radius-md);
+  opacity: 1;
+  pointer-events: auto;
   // --fab-lift (WhatsAppFab.jsx, scroll-driven) is 0 until the footer's top edge starts
   // rising past this rest position, then tracks the overlap 1:1 — the FAB rides up and
   // parks just above the footer instead of sitting on top of it or disappearing.
   transform: translateY(calc(var(--fab-lift, 0px) * -1));
+  transition: opacity 0.3s var(--ease-out), transform 0.4s var(--ease-spring);
 
   @media (min-width: 768px) {
     right: var(--space-6);
     bottom: var(--space-6);
   }
+}
+
+// While the /urunler promo card (PromoOffer.jsx) is showing, the two floating corner
+// elements shouldn't compete for attention at once — hide the WhatsApp FAB for as long as
+// the card is visible, and let it fade back in the moment the card is dismissed/times out.
+// :has() lets this live entirely in CSS rather than threading shared state between two
+// components that don't otherwise share a parent (WhatsAppFab is a persistent singleton in
+// _app.jsx; PromoOffer only mounts on the products page).
+body:has(.promo-offer--visible) .whatsapp-fab {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .whatsapp-fab__content {

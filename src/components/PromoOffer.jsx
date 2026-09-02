@@ -40,7 +40,6 @@ function BodyWithCode({ text }) {
 export default function PromoOffer() {
   const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(true); // start hidden until the session check resolves
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -52,13 +51,27 @@ export default function PromoOffer() {
     }
     if (alreadySeen) return undefined;
 
-    setDismissed(false);
-    const timer = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
+    const timer = setTimeout(() => {
+      setVisible(true);
+      // Marked seen the moment it actually shows, not only on an explicit dismiss — a
+      // shopper who lets it sit and navigates away without tapping the X shouldn't get it
+      // popping up again on every other /urunler visit in the same session either.
+      try {
+        sessionStorage.setItem(SESSION_KEY, '1');
+      } catch {
+        // Worst case it can show again next navigation.
+      }
+    }, SHOW_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
 
   // Same footer-avoidance lift as WhatsAppFab.jsx/ScrollTopButton.jsx, tracked
-  // independently (--fab-lift is set inline per-element, not shared).
+  // independently (--fab-lift is set inline per-element, not shared). This needs the card
+  // to be mounted (not conditionally returned as null) from the very first render, same as
+  // those two — otherwise this effect's one-time run (empty deps) finds `cardRef.current`
+  // still null and bails out for good, which is exactly what silently broke the
+  // footer-avoidance here before: the component used to return null until a state flip a
+  // render later, so the ref was never populated in time.
   useEffect(() => {
     const footer = document.querySelector('.site-footer');
     const card = cardRef.current;
@@ -87,17 +100,9 @@ export default function PromoOffer() {
     };
   }, []);
 
-  const dismiss = () => {
-    setVisible(false);
-    setDismissed(true);
-    try {
-      sessionStorage.setItem(SESSION_KEY, '1');
-    } catch {
-      // Nothing to fall back to here — worst case it can show again next navigation.
-    }
-  };
-
-  if (dismissed) return null;
+  // sessionStorage is already set the moment it became visible (above) — dismissing just
+  // hides it now instead of waiting for its own timer.
+  const dismiss = () => setVisible(false);
 
   const whatsappHref = `${contactSection.whatsappHref}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
@@ -110,6 +115,7 @@ export default function PromoOffer() {
       role="dialog"
       aria-label={t(TEXT.title)}
       aria-hidden={!visible}
+      inert={visible ? undefined : ''}
     >
       <button type="button" className="promo-offer__close" onClick={dismiss} aria-label={t(TEXT.close)}>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
