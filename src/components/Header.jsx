@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useLanguage } from '@/context/LanguageContext';
 import { header } from '@/data/homepageContent';
-import useBodyScrollLock from '@/hooks/useBodyScrollLock';
 import GlassSurface from './GlassSurface';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
@@ -17,7 +16,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
-  useBodyScrollLock(menuOpen);
 
   // The mobile menu closes ONLY by picking a nav item or pressing its own X (owner
   // decision, 2026-09 — it used to also close on any tap outside the header, like the
