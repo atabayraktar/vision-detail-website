@@ -1,6 +1,15 @@
 // Vision Detail brand tokens — mirror of .claude/brand_assets/brand_guidelines.jpg.
 // Do not invent values here; pull from the brand file.
 
+// Sass-side source of the glass blur radius. --glass-blur below mirrors it for reference,
+// but GlassSurface.scss interpolates THIS literal into backdrop-filter instead of writing
+// blur(var(--glass-blur)): WebKit (Safari 18.x — and every iOS browser, Chrome/Instagram
+// included, runs WebKit) silently drops a backdrop-filter whose value goes through var()
+// (WebKit bug 297620, MDN BCD issue #25914). Real-iPhone screenshots (2026-09) showed every
+// glass panel sharp behind a faint tint; Chrome DevTools' device mode can't reproduce it.
+// Change the radius here only.
+$glass-blur: 5px;
+
 :root {
   // surfaces
   --bg: #fcfcfd;
@@ -106,7 +115,9 @@
   // structural panes (header/footer/forms).
   --glass-glow: rgba(255, 255, 255, 0.55);
   --glass-glow-calm: rgba(255, 255, 255, 0.32);
-  --glass-blur: 5px;
+  // Mirror of $glass-blur (top of file) — see the note there for why the consumer reads the
+  // Sass variable, not this custom property.
+  --glass-blur: #{$glass-blur};
 
   // motion
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 2.2);

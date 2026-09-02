@@ -15,6 +15,12 @@ const GlassSurface = forwardRef(function GlassSurface(
   return (
     <Tag ref={ref} className={`glass-surface ${className}`} onPointerMove={trackPointer} {...rest}>
       <span className="glass-surface__clip" aria-hidden="true">
+        {/* __refract (SVG displacement texture) and __effect (blur) are deliberately two
+            sibling layers, not one combined backdrop-filter: WebKit can parse but not
+            render url(#svg) inside backdrop-filter, and one bad function voids the whole
+            filter list — so on real iOS the old combined value lost the blur too. Keep
+            __refract FIRST so it paints below __effect (see GlassSurface.scss). */}
+        <span className="glass-surface__refract" aria-hidden="true" />
         <span className="glass-surface__effect" aria-hidden="true" />
         <span className="glass-surface__tint" aria-hidden="true" />
         <span className="glass-surface__shine" aria-hidden="true" />

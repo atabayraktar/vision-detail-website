@@ -1,3 +1,5 @@
+@use '../tokens';
+
 .glass-surface {
   position: relative;
   isolation: isolate;
@@ -31,38 +33,81 @@
     border-radius: inherit;
   }
 
-  // The distortion lives INSIDE the backdrop-filter chain, never as an element-level
-  // `filter`. With `filter: url(...)` on this span, feDisplacementMap operates on the
-  // element's own paint (the backdrop-filter output, hard-clipped to the border box) —
-  // edge pixels displace into nothing and come back as a dark semi-transparent inset
-  // ring hugging the whole contour (the "TR button corner blackness" / banner-CTA corner
-  // smudge bug, empirically isolated 2026-08). Inside backdrop-filter the displacement
-  // samples the real backdrop, which extends past the element, so edges get true pixels
-  // on every side and the result is spec-clipped to the rounded border box. Blur stays
-  // first in the list so the visual (blur, then refraction) matches the brand reference.
+  // The base frost. Three WebKit rules here, each learned from real-iPhone screenshots
+  // (2026-09) where EVERY glass panel — mobile nav, filter sheet, dropdowns — rendered as a
+  // sharp page behind a faint tint. Chrome DevTools' device mode can't reproduce any of
+  // them (it's still Blink); iOS Chrome and Instagram's in-app browser are WebKit too.
+  //
+  //  1. The radius is a LITERAL (Sass-interpolated from tokens.$glass-blur), not
+  //     blur(var(--glass-blur)). Safari 18.x silently drops a backdrop-filter whose value
+  //     goes through var() — WebKit bug 297620 / MDN BCD #25914.
+  //  2. The blur is unconditional and is never overridden by the distortion. The SVG
+  //     refraction used to be spliced into THIS value as `blur() url(#glass-distortion)`
+  //     behind an @supports gate; WebKit parses that fine (so the gate passes) but can't
+  //     render url() inside backdrop-filter (WebKit bug 245510, still open) — and one
+  //     unrenderable function invalidates the whole filter list, so the combined value
+  //     took the blur down with it. The refraction now lives on its own sibling layer
+  //     (__refract, below) whose success or failure can't touch this declaration.
+  //  3. translateZ(0) promotes the span onto its own compositing layer up front — iOS
+  //     WebKit is known to skip backdrop-filter on layers it hasn't promoted. Transforms
+  //     do NOT form a Backdrop Root (Filter Effects L2 §3), so this is free; by contrast
+  //     will-change: backdrop-filter / opacity / filter WOULD form one and cut the blur
+  //     off from the page, which is why none of those are used. No collision with the
+  //     other motion on a glass surface: the hover inflate is the standalone `scale`
+  //     property and the .glass-drift float is a transform — both on the PARENT
+  //     .glass-surface, never on this span.
   &__effect {
     position: absolute;
     inset: 0;
     z-index: 0;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(#{tokens.$glass-blur});
+    backdrop-filter: blur(#{tokens.$glass-blur});
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  // Refraction layer — the feDisplacementMap "pulled glass" texture, ADDITIVE to __effect
+  // and structurally independent of it. It carries no filter at all until the @supports
+  // block below opts it in, so an engine that can't run SVG reference filters inside
+  // backdrop-filter is left with an empty transparent span here and keeps the plain blur.
+  //
+  // The distortion still lives INSIDE a backdrop-filter, never as an element-level
+  // `filter`: with `filter: url(...)` feDisplacementMap operates on the element's own
+  // paint, hard-clipped to the border box, so edge pixels displace into nothing and come
+  // back as a dark inset ring hugging the contour (the "TR button corner blackness" /
+  // banner-CTA corner smudge bug, isolated 2026-08). Inside backdrop-filter it samples the
+  // real backdrop, which extends past the element, so every edge gets true pixels.
+  //
+  // Painted BELOW __effect (earlier in the DOM, same z-index): the displacement samples
+  // the raw page — true pixels on every side of the box — and the blur then runs over the
+  // displaced result. The other order (refraction on top, sampling the blurred layer)
+  // would pull unblurred page pixels from outside the box into the edge band, a sharp
+  // fringe of exactly the kind the expanded filter regions in GlassFilterDefs.jsx exist to
+  // prevent. Verified against the old single-chain render on Chromium (2026-09): the
+  // pixel diff on every glass surface is sub-threshold.
+  &__refract {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
   }
 }
 
-// Progressive enhancement: browsers that can run SVG reference filters in
-// backdrop-filter (Chromium) get the displacement texture; others (Safari) keep the
-// plain blur — an acceptable, still-legible fallback, same as before.
+// Progressive enhancement: engines that can run SVG reference filters in backdrop-filter
+// (Chromium — desktop Chrome, Android Chrome) get the displacement texture on the
+// dedicated __refract layer. This gate is a SYNTAX check, not a rendering check — WebKit
+// passes it and then draws nothing — which is fine now that the layer is additive: a
+// no-op here costs the refraction texture only, never the blur.
 @supports (backdrop-filter: url('#glass-distortion')) {
-  .glass-surface__effect {
-    backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion');
-    -webkit-backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion');
+  .glass-surface__refract {
+    -webkit-backdrop-filter: url('#glass-distortion');
+    backdrop-filter: url('#glass-distortion');
   }
 
   // Small surfaces (buttons, pills, icon chips) get the gentler-scale distortion —
   // see GlassFilterDefs.jsx for why the default filter tears at this size.
-  .glass-surface--tight .glass-surface__effect {
-    backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion-sm');
-    -webkit-backdrop-filter: blur(var(--glass-blur)) url('#glass-distortion-sm');
+  .glass-surface--tight .glass-surface__refract {
+    -webkit-backdrop-filter: url('#glass-distortion-sm');
+    backdrop-filter: url('#glass-distortion-sm');
   }
 }
 
