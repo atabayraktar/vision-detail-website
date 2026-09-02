@@ -1,0 +1,115 @@
+// Small campaign card, /urunler only (PromoOffer.jsx) — same bottom-right FAB column as
+// WhatsAppFab/ScrollTopButton, stacked above the WhatsApp FAB (60px + a gap) rather than a
+// separate corner, so the right-edge stack reads as one system. Entrance combines the
+// footer-avoidance lift with a fade + rise + settle in one transform (same reasoning as
+// ScrollTopButton.scss: a second transform declaration would fight the lift math).
+.promo-offer {
+  position: fixed;
+  right: var(--space-4);
+  bottom: calc(var(--space-4) + 60px + var(--space-3));
+  z-index: var(--z-fab);
+  width: min(300px, calc(100vw - var(--space-4) * 2));
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transform: translateY(calc(var(--fab-lift, 0px) * -1)) translateY(14px) scale(0.94);
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out), transform 0.5s var(--ease-spring);
+
+  &--visible {
+    opacity: 1;
+    transform: translateY(calc(var(--fab-lift, 0px) * -1)) translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  @media (min-width: 768px) {
+    right: var(--space-6);
+    bottom: calc(var(--space-6) + 60px + var(--space-4));
+    width: 320px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: opacity 0.25s linear;
+    transform: translateY(calc(var(--fab-lift, 0px) * -1));
+
+    &--visible {
+      transform: translateY(calc(var(--fab-lift, 0px) * -1));
+    }
+  }
+}
+
+.promo-offer__content {
+  position: relative;
+  padding: var(--space-5) var(--space-4) var(--space-4);
+}
+
+.promo-offer__close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 1;
+  // Visual target is small (matches the card's own scale) but the hit area clears the
+  // 24x24px WCAG 2.5.8 / Lighthouse target-size minimum.
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  background: transparent;
+  border-radius: 50%;
+  color: var(--mute);
+  transition: color 0.25s var(--ease-out), background-color 0.25s var(--ease-out);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ink);
+    background: var(--hair);
+  }
+}
+
+.promo-offer__title {
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' 560, 'wdth' 125;
+  font-size: 15.5px;
+  line-height: 1.35;
+  color: var(--ink);
+  // Clears the close button in the top-right corner.
+  padding-right: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.promo-offer__body {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--mute);
+  margin-bottom: var(--space-4);
+}
+
+// Plain solid button, not a nested GlassSurface — this card is already one blurred
+// surface, and CLAUDE.md's performance rule asks to keep simultaneously-blurred surfaces
+// few. WhatsApp's own brand green (already used for WhatsAppFab's badge) reads
+// unambiguously as "chat on WhatsApp" without needing a second glass layer to say so.
+.promo-offer__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: 12px var(--space-4);
+  border-radius: var(--radius-pill);
+  background: #25d366;
+  color: #fff;
+  font-size: 13.5px;
+  font-variation-settings: 'wght' 450, 'wdth' 95;
+  transition: background-color 0.25s var(--ease-out), transform 0.3s var(--ease-spring);
+
+  &:hover,
+  &:focus-visible {
+    background: #1fb959;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

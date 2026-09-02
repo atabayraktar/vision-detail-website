@@ -8,6 +8,7 @@ import FilterPanel, { FilterPanelSheet } from '@/components/FilterPanel';
 import ProductGrid from '@/components/ProductGrid';
 import Pagination from '@/components/Pagination';
 import EmptyState from '@/components/EmptyState';
+import PromoOffer from '@/components/PromoOffer';
 import { useLanguage } from '@/context/LanguageContext';
 import { products, PRODUCT_CATEGORIES } from '@/data/products';
 import useScrollReveal from '@/hooks/useScrollReveal';
@@ -228,6 +229,8 @@ export default function ProductsPage({ products: allProducts, categories }) {
         active={category}
         onSelect={setCategory}
       />
+
+      <PromoOffer />
     </>
   );
 }
