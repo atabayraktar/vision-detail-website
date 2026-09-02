@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { LANGUAGES, useLanguage } from '@/context/LanguageContext';
 import usePresence from '@/hooks/usePresence';
+import useBodyScrollLock from '@/hooks/useBodyScrollLock';
 import GlassSurface from './GlassSurface';
 
 const LANGUAGE_NAMES = { tr: 'Türkçe', en: 'English', de: 'Deutsch' };
@@ -44,6 +45,7 @@ export default function LanguageSwitcher({ variant = 'dropdown' }) {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
   const { mounted, closing } = usePresence(open, 350);
+  useBodyScrollLock(variant === 'dropdown' && open);
   const rootRef = useRef(null);
 
   if (variant === 'inline') {

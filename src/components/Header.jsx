@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useLanguage } from '@/context/LanguageContext';
 import { header } from '@/data/homepageContent';
+import useBodyScrollLock from '@/hooks/useBodyScrollLock';
 import GlassSurface from './GlassSurface';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
@@ -16,6 +17,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
+  useBodyScrollLock(menuOpen);
 
   // Same outside-tap-closes behavior as LanguageSwitcher's dropdown — the mobile menu is
   // the same class of floating panel, and the user-reported bug was that it only closed via

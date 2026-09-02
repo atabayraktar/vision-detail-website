@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import usePresence from '@/hooks/usePresence';
+import useBodyScrollLock from '@/hooks/useBodyScrollLock';
 import { useLanguage } from '@/context/LanguageContext';
 import GlassSurface from './GlassSurface';
 
@@ -18,6 +19,7 @@ export default function SortMenu({ value, onChange }) {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const { mounted, closing } = usePresence(open, 350);
+  useBodyScrollLock(open);
   const rootRef = useRef(null);
   const current = SORT_OPTIONS.find((opt) => opt.value === value) ?? SORT_OPTIONS[0];
 

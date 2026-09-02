@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import useBodyScrollLock from '@/hooks/useBodyScrollLock';
 import GlassSurface from './GlassSurface';
 
 const COLLAPSED_COUNT = 6;
@@ -110,6 +111,7 @@ export default function FilterPanel({ categories, active, onSelect, className = 
 // to "apply" once a choice is made.
 export function FilterPanelSheet({ open, onClose, onSelect, ...props }) {
   const { t } = useLanguage();
+  useBodyScrollLock(open);
   const handleSelect = (value) => {
     onSelect(value);
     onClose();
