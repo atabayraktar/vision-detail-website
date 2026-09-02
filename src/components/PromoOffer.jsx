@@ -3,11 +3,10 @@ import { contactSection } from '@/data/homepageContent';
 import { useLanguage } from '@/context/LanguageContext';
 import GlassSurface from './GlassSurface';
 
-// Shows every time /urunler is landed on, a beat after the page settles, in the bottom-left
-// corner on mobile (same column as ScrollTopButton, stacked above its rest height — see
-// PromoOffer.scss — so the two never collide on the rare page where ScrollTopButton is also
-// visible) and bottom-right on desktop (WhatsAppFab.scss hides the WhatsApp FAB for as long
-// as this is visible, so no reservation needed there — see PromoOffer.scss).
+// Shows every time /urunler is landed on, a beat after the page settles, bottom-right at
+// every width — the WhatsApp FAB's own rest position (WhatsAppFab.scss hides the FAB for as
+// long as this is visible, so there's no need to reserve space above it — see
+// PromoOffer.scss).
 const SHOW_DELAY_MS = 1400;
 const WHATSAPP_MESSAGE = 'Merhaba, web siteniz üzerinden geldim. VSN10 koduyla sipariş vermek istiyorum.';
 

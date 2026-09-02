@@ -1,19 +1,14 @@
-// Small campaign card, /urunler only (PromoOffer.jsx). Bottom-left on mobile — same column
-// as ScrollTopButton, stacked above its 52px rest height + a gap so the two never collide
-// even on the rare page where ScrollTopButton is also visible (ScrollTopButton isn't hidden
-// while this card shows, unlike WhatsApp below, so it still needs the reservation). From
-// 768px up the left corner sits on top of the category filter sidebar (real navigational
-// content, not empty space like the right side), so desktop switches back to the right
-// instead — same rest position the WhatsApp FAB itself uses (not stacked above it): the FAB
-// is hidden for as long as this card is visible (WhatsAppFab.scss's :has() rule), so there's
-// nothing left to clear, and reserving that space anyway just left the card floating with a
-// visible gap of nothing underneath it. Entrance combines the footer-avoidance lift with a
-// fade + rise + settle in one transform (same reasoning as ScrollTopButton.scss: a second
-// transform declaration would fight the lift math).
+// Small campaign card, /urunler only (PromoOffer.jsx). Right side at every width — same
+// rest position the WhatsApp FAB itself uses (not stacked above it): the FAB is hidden for
+// as long as this card is visible (WhatsAppFab.scss's :has() rule), so there's nothing left
+// to clear, and reserving extra space above it anyway just left the card floating higher
+// than it needed to. Entrance combines the footer-avoidance lift with a fade + rise + settle
+// in one transform (same reasoning as ScrollTopButton.scss: a second transform declaration
+// would fight the lift math).
 .promo-offer {
   position: fixed;
-  left: var(--space-4);
-  bottom: calc(var(--space-4) + 52px + var(--space-3));
+  right: var(--space-4);
+  bottom: var(--space-4);
   z-index: var(--z-fab);
   width: min(300px, calc(100vw - var(--space-4) * 2));
   border-radius: var(--radius-lg);
@@ -29,7 +24,6 @@
   }
 
   @media (min-width: 768px) {
-    left: auto;
     right: var(--space-6);
     bottom: var(--space-6);
     width: 320px;
