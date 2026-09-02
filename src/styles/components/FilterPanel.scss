@@ -27,27 +27,6 @@
   gap: 2px;
 }
 
-// grid-template-rows 0fr -> 1fr is the standard height-animate trick for content whose
-// height isn't known up front (category count varies) — the grid item's min-height:0 lets
-// it shrink to the 0fr track instead of forcing its own content height, and the track
-// itself animates, so the reveal genuinely grows/shrinks instead of snapping in at full
-// height (the previous behavior — plain conditional render — the user reported as
-// "tak tak açılıyo", opening abruptly with no animation).
-.filter-panel__extra {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s var(--ease-spring);
-
-  &--open {
-    grid-template-rows: 1fr;
-  }
-}
-
-.filter-panel__extra-list {
-  min-height: 0;
-  overflow: hidden;
-}
-
 .filter-panel__item {
   width: 100%;
   text-align: left;
@@ -70,29 +49,6 @@
   }
 }
 
-.filter-panel__more {
-  margin-top: var(--space-3);
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 13px;
-  color: var(--faint);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-
-  &:hover {
-    color: var(--g2);
-  }
-}
-
-.filter-panel__more-chevron {
-  transition: transform 0.3s var(--ease-spring);
-}
-
-.filter-panel__more--open .filter-panel__more-chevron {
-  transform: rotate(180deg);
-}
-
 // Mobile full-screen filter sheet. Always in the DOM (see FilterPanel.jsx) so the sheet's
 // backdrop-filter compositing layer stays warm — the old usePresence mount + quiz-fade/
 // quiz-pop keyframes stood the glass up cold on every open, flashing flat/unblurred first
@@ -102,7 +58,6 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
-  background: rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: flex-end;
   opacity: 0;
@@ -110,15 +65,39 @@
   // Closed-state transition = the CLOSE motion (~65% of open, project convention).
   transition: opacity 0.25s var(--ease-out);
 
+  // The scrim (tint + soft blur) is a ::before SIBLING of the sheet, not a background +
+  // backdrop-filter on this wrapper. A backdrop-filter on the wrapper made the wrapper the
+  // sheet's Backdrop Root (Filter Effects L2 §3), so the sheet's own glass sampled only
+  // this wrapper's translucent black — never the grid behind it: its 5px blur + refraction
+  // never reached the page (only the scrim's 2px did), and every backdrop-filter pass
+  // re-composited the 0.35 black over itself, darkening the sheet interior (measured
+  // 2026-09 when GlassSurface split into two passes and the sheet went visibly greyer while
+  // every other surface stayed pixel-identical). As a sibling the scrim composites over the
+  // opaque page first and the sheet's glass reads that flat, opaque result — same as the
+  // header pill over the page. A backdrop-filter nested inside another is also a known
+  // WebKit failure mode, so this helps the real-iPhone case too. Absolutely positioned, so
+  // it is not a flex item; pseudo-elements aren't event targets, so the mousedown-to-close
+  // check in FilterPanel.jsx still sees the wrapper as the target.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
   &.is-open {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.35s var(--ease-out);
+
     // The scrim's own soft blur lives only on the open state: unlike the sheet's glass it
     // covers the whole viewport, and an always-composited full-screen backdrop-filter is a
     // scroll-perf tax on the grid behind it. Standing THIS layer up cold is imperceptible —
     // 2px of blur arriving under a scrim that's still fading in from opacity 0.
-    backdrop-filter: blur(2px);
+    &::before {
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+    }
   }
 
   @media (min-width: 640px) {

@@ -1,40 +1,17 @@
-import { useEffect, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import useBodyScrollLock from '@/hooks/useBodyScrollLock';
 import GlassSurface from './GlassSurface';
-
-const COLLAPSED_COUNT = 6;
 
 const TEXT = {
   categories: { tr: 'Kategoriler', en: 'Categories', de: 'Kategorien' },
   reset: { tr: 'Sıfırla', en: 'Reset', de: 'Zurücksetzen' },
   all: { tr: 'Tümü', en: 'All', de: 'Alle' },
-  showMore: { tr: 'Daha fazla göster', en: 'Show more', de: 'Mehr anzeigen' },
-  showLess: { tr: 'Daha az göster', en: 'Show less', de: 'Weniger anzeigen' },
   filter: { tr: 'Filtrele', en: 'Filter', de: 'Filtern' },
   close: { tr: 'Kapat', en: 'Close', de: 'Schließen' },
 };
 
 export default function FilterPanel({ categories, active, onSelect, className = '' }) {
   const { t } = useLanguage();
-  const [expanded, setExpanded] = useState(false);
-
-  // A deep link (e.g. the homepage's category cards, or a shared URL) can land on a
-  // category outside the first 6 — without this, the active filter is applied correctly
-  // but invisible, sitting collapsed behind "daha fazla göster" with no visual indication
-  // of which category is actually selected.
-  useEffect(() => {
-    if (!active) return;
-    const activeIndex = categories.findIndex((cat) => cat.slug === active);
-    if (activeIndex >= COLLAPSED_COUNT) setExpanded(true);
-  }, [active, categories]);
-
-  // Split into an always-visible base list and a collapsible "extra" tail instead of
-  // slicing one array — the base items need to stay mounted and static while only the
-  // extra tail animates open/closed (see the grid-rows 0fr/1fr technique in FilterPanel.scss).
-  const base = categories.slice(0, COLLAPSED_COUNT);
-  const extra = categories.slice(COLLAPSED_COUNT);
-  const hasMore = extra.length > 0;
 
   return (
     <div className={`filter-panel ${className}`}>
@@ -57,7 +34,7 @@ export default function FilterPanel({ categories, active, onSelect, className = 
             {t(TEXT.all)}
           </button>
         </li>
-        {base.map((cat) => (
+        {categories.map((cat) => (
           <li key={cat.slug}>
             <button
               type="button"
@@ -69,37 +46,6 @@ export default function FilterPanel({ categories, active, onSelect, className = 
           </li>
         ))}
       </ul>
-
-      {hasMore && (
-        <div className={`filter-panel__extra${expanded ? ' filter-panel__extra--open' : ''}`}>
-          <ul className="filter-panel__list filter-panel__extra-list">
-            {extra.map((cat) => (
-              <li key={cat.slug}>
-                <button
-                  type="button"
-                  className={`filter-panel__item${active === cat.slug ? ' filter-panel__item--active' : ''}`}
-                  onClick={() => onSelect(cat.slug)}
-                >
-                  {t(cat.label)}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {hasMore && (
-        <button
-          type="button"
-          className={`filter-panel__more${expanded ? ' filter-panel__more--open' : ''}`}
-          onClick={() => setExpanded((e) => !e)}
-        >
-          {expanded ? t(TEXT.showLess) : t(TEXT.showMore)}
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="filter-panel__more-chevron">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-      )}
     </div>
   );
 }
