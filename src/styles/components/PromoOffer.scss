@@ -8,7 +8,11 @@
 .promo-offer {
   position: fixed;
   right: var(--space-4);
-  bottom: var(--space-4);
+  // A touch more than the WhatsApp FAB's own var(--space-4) rest offset — the FAB is a
+  // small 60px square so 16px reads as a clear gap under it, but this card is a much taller
+  // panel, and the same 16px against the bottom edge read as almost no margin at all
+  // (explicit owner feedback after seeing it live on a real phone).
+  bottom: var(--space-5);
   z-index: var(--z-fab);
   width: min(300px, calc(100vw - var(--space-4) * 2));
   border-radius: var(--radius-lg);
